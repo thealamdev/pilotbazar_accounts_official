@@ -36,7 +36,7 @@
                  <div class="menu-group">
                      <ul class="navbar-nav flex-column">
                          <li class="nav-item active">
-                             <a class="nav-link" href="index.html">
+                             <a class="nav-link" href="{{route('dashboard')}}">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
                                          <svg xmlns="http://www.w3.org/2000/svg"
