@@ -49,6 +49,7 @@
 
     <!-- CSS -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+    @stack('css')
     @livewireStyles
 </head>
 
@@ -57,7 +58,7 @@
     <div class="hk-wrapper" data-layout="vertical" data-layout-style="default" data-menu="light" data-footer="simple">
         @include('livewire.hooks.navbar')
         @include('livewire.hooks.sidebar')
-         
+
         <!-- Main Content -->
         <div class="hk-pg-wrapper">
             <div class="container-xxl">
@@ -109,6 +110,7 @@
     <script src="{{ asset('assets/js/init.js') }}"></script>
     <script src="{{ asset('assets/js/chips-init.js') }}"></script>
     <script src="{{ asset('assets/js/dashboard-data.js') }}"></script>
+    @stack('js')
 
 </body>
 
