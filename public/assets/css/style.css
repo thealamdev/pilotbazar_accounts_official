@@ -75588,7 +75588,7 @@ div.hopscotch-bubble .hopscotch-bubble-container .hopscotch-actions .btn-group-x
 .hk-pg-wrapper {
   padding: 65px 0 60px;
   position: relative;
-  min-height: 100vh;
+  min-height: 1vh;
 }
 
 /*Gutter*/
