@@ -18,7 +18,6 @@ class InvestorComponent extends Component
     public function render()
     {
         $this->investors = Investor::query()->get();
-        $investors = $this->investors;
-        return view('livewire.investor.table.investor.investor-component', compact('investors'));
+        return view('livewire.investor.table.investor.investor-component', ['investors' => $this->investors]);
     }
 }

@@ -32,7 +32,7 @@
                              <div class="card card-border mb-0 h-100">
                                  <div class="card-header card-header-action">
                                      <h6>Investors
-                                         <span class="badge badge-sm badge-light ms-1">240</span>
+                                         <span class="badge badge-sm badge-light ms-1">{{ count($investors) }}</span>
                                      </h6>
                                      <div class="card-action-wrap">
                                          <a href="{{ route('admin.investor.create') }}"
@@ -86,7 +86,7 @@
                                                          <td>{{ $each?->mobile }}</td>
                                                          <td>
                                                              <span class="badge badge-soft-secondary  my-1  me-2">
-                                                                {{ $each?->amount }} taka
+                                                                 {{ $each?->amount }} taka
                                                              </span>
                                                          </td>
                                                          <td>{{ $each?->profit_percent }} %</td>
