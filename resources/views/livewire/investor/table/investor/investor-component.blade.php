@@ -86,7 +86,7 @@
                                                          <td>{{ $each?->mobile }}</td>
                                                          <td>
                                                              <span class="badge badge-soft-secondary  my-1  me-2">
-                                                                 {{ $each?->amount }} taka
+                                                                {{ $each?->amount }} taka
                                                              </span>
                                                          </td>
                                                          <td>{{ $each?->profit_percent }} %</td>
