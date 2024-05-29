@@ -141,7 +141,7 @@
                              </ul>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="{{route('investor.investor.index')}}">
+                             <a class="nav-link" href="{{route('admin.investor.index')}}">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
                                          <svg xmlns="http://www.w3.org/2000/svg"
