@@ -34,7 +34,6 @@ class CreateComponent extends Component
     public $profit_percent = '';
 
     #[Title('Investor Create')]
-
     public function save()
     {
         Investor::create([
