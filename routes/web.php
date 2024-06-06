@@ -1,7 +1,8 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
- 
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,7 +25,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::prefix('investors')->name('investor.')->group(function () {
             Route::get('/', \App\Livewire\Investor\Table\Investor\InvestorComponent::class)->name('index');
             Route::get('create', \App\Livewire\Investor\Stack\Investor\CreateComponent::class)->name('create');
+        });
 
+        Route::prefix('version1')->name('version1.')->group(function () {
+            Route::prefix('vehicle-management')->name('vehicle-management.')->group(function () {
+                require __DIR__ . '/version1/vehicle-management/base.php';
+            });
         });
     });
 });

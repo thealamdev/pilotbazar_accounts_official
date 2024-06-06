@@ -36,7 +36,7 @@
                  <div class="menu-group">
                      <ul class="navbar-nav flex-column">
                          <li class="nav-item active">
-                             <a class="nav-link" href="{{route('dashboard')}}">
+                             <a class="nav-link" href="{{ route('dashboard') }}">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
                                          <svg xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +141,7 @@
                              </ul>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="{{route('admin.investor.index')}}">
+                             <a class="nav-link" href="{{ route('admin.investor.index') }}">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
                                          <svg xmlns="http://www.w3.org/2000/svg"
@@ -230,10 +230,31 @@
                  <div class="menu-gap"></div>
                  <div class="menu-group">
                      <div class="nav-header">
-                         <span>Pages</span>
+                         <span>Vehicle Management</span>
                      </div>
                      <ul class="navbar-nav flex-column">
                          <li class="nav-item">
+                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.index') }}">
+                                 <span class="nav-icon-wrap">
+                                     <span class="svg-icon">
+                                         <svg xmlns="http://www.w3.org/2000/svg"
+                                             class="icon icon-tabler icon-tabler-calendar-time" width="24"
+                                             height="24" viewBox="0 0 24 24" stroke-width="2"
+                                             stroke="currentColor" fill="none" stroke-linecap="round"
+                                             stroke-linejoin="round">
+                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                             <path
+                                                 d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+                                             <circle cx="18" cy="18" r="4" />
+                                             <path d="M15 3v4" />
+                                             <path d="M7 3v4" />
+                                             <path d="M3 11h16" />
+                                             <path d="M18 16.496v1.504l1 1" />
+                                         </svg>
+                                     </span>
+                                 </span>
+                                 <span class="nav-link-text">Vehicle</span>
+                             </a>
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse"
                                  data-bs-target="#dash_pages">
                                  <span class="nav-icon-wrap">
@@ -250,15 +271,16 @@
                                          </svg>
                                      </span>
                                  </span>
-                                 <span class="nav-link-text">Authentication</span>
+                                 <span class="nav-link-text">Modules</span>
                              </a>
                              <ul id="dash_pages" class="nav flex-column collapse  nav-children">
                                  <li class="nav-item">
                                      <ul class="nav flex-column">
                                          <li class="nav-item">
-                                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse"
-                                                 data-bs-target="#dash_log">
-                                                 <span class="nav-link-text">Log In</span>
+                                             <a class="nav-link"
+                                                 href="{{ route('admin.version1.vehicle-management.vehicle.index') }}"
+                                                 data-bs-toggle="collapse" data-bs-target="#dash_log">
+                                                 <span class="nav-link-text">Create</span>
                                              </a>
                                              <ul id="dash_log" class="nav flex-column collapse  nav-children">
                                                  <li class="nav-item">
