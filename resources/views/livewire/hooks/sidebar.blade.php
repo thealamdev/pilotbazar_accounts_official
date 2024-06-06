@@ -335,24 +335,19 @@
                                                  </li>
                                              </ul>
                                          </li> --}}
-                                         <li
-                                             class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.color.create') ? 'active' : '' }}">
+                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.color.create') ? 'active' : '' }}">
                                              <a class="nav-link"
                                                  href="{{ route('admin.version1.vehicle-management.vehicle.module.color.create') }}">
                                                  <span class="nav-link-text">Color</span>
                                              </a>
                                          </li>
                                          <li class="nav-item">
-                                             <a class="nav-link" href="reset-password.html"><span
-                                                     class="nav-link-text">Reset Password</span></a>
+                                             <a class="nav-link" href="reset-password.html">
+                                                <span class="nav-link-text">Model</span>
+                                             </a>
                                          </li>
                                          <li class="nav-item">
-                                             <a class="nav-link" href="404.html"><span class="nav-link-text">Error
-                                                     404</span></a>
-                                         </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="503.html"><span class="nav-link-text">Error
-                                                     503</span></a>
+                                             <a class="nav-link" href="404.html"><span class="nav-link-text">Model Year</span></a>
                                          </li>
                                      </ul>
                                  </li>
