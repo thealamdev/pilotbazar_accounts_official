@@ -18,5 +18,9 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
             Route::get('/', \App\Livewire\VehicleManagement\Table\Modules\Model\TableComponent::class)->name('index');
             Route::get('create', \App\Livewire\VehicleManagement\Stack\Modules\Model\CreateComponent::class)->name('create');
         });
+        Route::prefix('model-year')->name('model-year.')->group(function () {
+            Route::get('/', \App\Livewire\VehicleManagement\Table\Modules\ModelYear\TableComponent::class)->name('index');
+            Route::get('create', \App\Livewire\VehicleManagement\Stack\Modules\ModelYear\CreateComponent::class)->name('create');
+        });
     });
 });

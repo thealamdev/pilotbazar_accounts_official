@@ -263,7 +263,7 @@
                          </ul>
                      </div>
                      <ul class="navbar-nav flex-column">
-                         <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.create') || Route::is('admin.version1.vehicle-management.vehicle.module.model.create')) active @endif">
+                         <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.create') || Route::is('admin.version1.vehicle-management.vehicle.module.model.create') || Route::is('admin.version1.vehicle-management.vehicle.module.model-year.create')) active @endif">
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse"
                                  data-bs-target="#dash_pages">
                                  <span class="nav-icon-wrap">
@@ -283,7 +283,7 @@
                                  <span class="nav-link-text">Modules</span>
                              </a>
                              <ul id="dash_pages"
-                                 class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.create') || Route::is('admin.version1.vehicle-management.vehicle.module.model.create')) show @endif">
+                                 class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.create') || Route::is('admin.version1.vehicle-management.vehicle.module.model.create') || Route::is('admin.version1.vehicle-management.vehicle.module.model-year.create')) show @endif">
                                  <li class="nav-item">
                                      <ul class="nav flex-column">
                                          {{-- <li class="nav-item">
@@ -347,7 +347,7 @@
                                              </a>
                                          </li>
                                          <li class="nav-item">
-                                             <a class="nav-link" href="404.html"><span class="nav-link-text">Model Year</span></a>
+                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.create') }}"><span class="nav-link-text">Model Year</span></a>
                                          </li>
                                      </ul>
                                  </li>
