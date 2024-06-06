@@ -20,9 +20,9 @@
                 <div class="col-lg-6">
                     <label for="name">Model <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa-solid fa-droplet"></i></span>
+                        <span class="input-group-text"><i class="fa-solid fa-car"></i></span>
                         <input type="text" wire:model="name" name="name" class="form-control"
-                            placeholder="color name">
+                            placeholder="car model name">
                     </div>
                 </div>
                 <div class="col-lg-6">

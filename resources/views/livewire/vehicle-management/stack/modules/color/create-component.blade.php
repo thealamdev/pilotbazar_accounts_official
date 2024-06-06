@@ -20,7 +20,7 @@
                 <div class="col-lg-6">
                     <label for="name">Color <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                        <span class="input-group-text"><i class="fa-solid fa-droplet"></i></span>
                         <input type="text" wire:model="name" name="name" class="form-control"
                             placeholder="color name">
                     </div>
@@ -28,7 +28,7 @@
                 <div class="col-lg-6">
                     <label for="status">Status<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                        <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
                         <select wire:model="status" name="status" class="form-control">
                             <option disabled>-- Please Select Status --</option>
                             <option value="1">Active</option>
