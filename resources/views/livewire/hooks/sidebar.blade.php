@@ -35,7 +35,7 @@
              <div class="menu-content-wrap">
                  <div class="menu-group">
                      <ul class="navbar-nav flex-column">
-                         <li class="nav-item active">
+                         <li class="nav-item {{ Route::is('dashboard') ? 'active' : '' }}">
                              <a class="nav-link" href="{{ route('dashboard') }}">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
