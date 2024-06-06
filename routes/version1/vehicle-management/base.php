@@ -14,5 +14,9 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
             Route::get('/', \App\Livewire\VehicleManagement\Table\Modules\Color\TableComponent::class)->name('index');
             Route::get('create', \App\Livewire\VehicleManagement\Stack\Modules\Color\CreateComponent::class)->name('create');
         });
+        Route::prefix('models')->name('model.')->group(function () {
+            Route::get('/', \App\Livewire\VehicleManagement\Table\Modules\Model\TableComponent::class)->name('index');
+            Route::get('create', \App\Livewire\VehicleManagement\Stack\Modules\Model\CreateComponent::class)->name('create');
+        });
     });
 });
