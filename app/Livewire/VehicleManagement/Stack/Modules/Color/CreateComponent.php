@@ -4,7 +4,6 @@ namespace App\Livewire\VehicleManagement\Stack\Modules\Color;
 
 use App\Models\VehicleManagement\Modules\Color;
 use Livewire\Component;
-use Illuminate\Http\Request;
 use Livewire\Attributes\Title;
 
 class CreateComponent extends Component
