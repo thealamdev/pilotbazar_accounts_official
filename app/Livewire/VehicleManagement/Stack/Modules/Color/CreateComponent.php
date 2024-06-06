@@ -3,22 +3,17 @@
 namespace App\Livewire\VehicleManagement\Stack\Modules\Color;
 
 use App\Models\VehicleManagement\Modules\Color;
+use App\Services\VehicleManagement\Stack\Modules\Color\CreateColor;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 
 class CreateComponent extends Component
 {
     /**
-     * @var <string>
-     * public property $name
+     * @var <array>
+     * public property $form
      */
-    public $name = '';
-
-    /**
-     * @var <boolean>
-     * public property $status
-     */
-    public $status;
+    public $form = [];
 
     /**
      * method for save data
@@ -26,13 +21,9 @@ class CreateComponent extends Component
      */
     public function save(): array|object
     {
-        $response = Color::create([
-            'user_id' => auth()->user()->id,
-            'name' => $this->name,
-            'status' => $this->status,
-        ]);
-
-        return back()->with('success', 'Data has been submited');
+        $isCreate = CreateColor::store($this->form);
+        $response = $isCreate ? 'Data Insert Successfull' : 'Sorry ! Some problem happend';
+        return back()->with('success', $response);
     }
     #[Title('Color Create')]
     public function render()
