@@ -20,7 +20,6 @@ class CreateComponent extends Component
      */
     public $status;
 
-    #[Title('Color Create')]
     /**
      * method for save data
      * @return array|object
@@ -35,6 +34,7 @@ class CreateComponent extends Component
 
         return back()->with('success', 'Data has been submited');
     }
+    #[Title('Color Create')]
     public function render()
     {
         return view('livewire.vehicle-management.stack.modules.color.create-component');
