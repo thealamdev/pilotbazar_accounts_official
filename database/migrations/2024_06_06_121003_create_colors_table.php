@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('investors', function (Blueprint $table) {
+        Schema::create('colors', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('mobile')->nullable();
-            $table->string('email')->nullable();
-            $table->double('amount');
-            $table->double('profit_percent');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->string('name');
+            $table->boolean('status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('investors');
+        Schema::dropIfExists('colors');
     }
 };
