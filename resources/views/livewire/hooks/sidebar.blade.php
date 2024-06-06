@@ -234,7 +234,8 @@
                      </div>
                      <div class="menu-group">
                          <ul class="navbar-nav flex-column">
-                             <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.index') ? 'active' : '' }}">
+                             <li
+                                 class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.index') ? 'active' : '' }}">
                                  <a class="nav-link"
                                      href="{{ route('admin.version1.vehicle-management.vehicle.index') }}">
                                      <span class="nav-icon-wrap">
@@ -262,7 +263,7 @@
                          </ul>
                      </div>
                      <ul class="navbar-nav flex-column">
-                         <li class="nav-item">
+                         <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.create')) active @endif">
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse"
                                  data-bs-target="#dash_pages">
                                  <span class="nav-icon-wrap">
@@ -281,16 +282,17 @@
                                  </span>
                                  <span class="nav-link-text">Modules</span>
                              </a>
-                             <ul id="dash_pages" class="nav flex-column collapse nav-children">
+                             <ul id="dash_pages"
+                                 class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.create')) show @endif">
                                  <li class="nav-item">
                                      <ul class="nav flex-column">
-                                         <li class="nav-item">
+                                         {{-- <li class="nav-item">
                                              <a class="nav-link"
                                                  href="{{ route('admin.version1.vehicle-management.vehicle.index') }}"
                                                  data-bs-toggle="collapse" data-bs-target="#dash_log">
                                                  <span class="nav-link-text">Create</span>
                                              </a>
-                                             {{-- <ul id="dash_log" class="nav flex-column collapse  nav-children">
+                                             <ul id="dash_log" class="nav flex-column collapse  nav-children">
                                                  <li class="nav-item">
                                                      <ul class="nav flex-column">
                                                          <li class="nav-item">
@@ -307,7 +309,7 @@
                                                          </li>
                                                      </ul>
                                                  </li>
-                                             </ul> --}}
+                                             </ul>
                                          </li>
                                          <li class="nav-item">
                                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse"
@@ -332,13 +334,14 @@
                                                      </ul>
                                                  </li>
                                              </ul>
+                                         </li> --}}
+                                         <li
+                                             class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.color.create') ? 'active' : '' }}">
+                                             <a class="nav-link"
+                                                 href="{{ route('admin.version1.vehicle-management.vehicle.module.color.create') }}">
+                                                 <span class="nav-link-text">Color</span>
+                                             </a>
                                          </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="lock-screen.html"><span
-                                                     class="nav-link-text">Lock
-                                                     Screen</span></a>
-                                         </li>
-
                                          <li class="nav-item">
                                              <a class="nav-link" href="reset-password.html"><span
                                                      class="nav-link-text">Reset Password</span></a>
