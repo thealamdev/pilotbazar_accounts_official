@@ -263,7 +263,7 @@
                          </ul>
                      </div>
                      <ul class="navbar-nav flex-column">
-                         <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.create')) active @endif">
+                         <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.create') || Route::is('admin.version1.vehicle-management.vehicle.module.model.create')) active @endif">
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse"
                                  data-bs-target="#dash_pages">
                                  <span class="nav-icon-wrap">
