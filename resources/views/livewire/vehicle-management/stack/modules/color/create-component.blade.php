@@ -7,7 +7,7 @@
         </div>
 
         <div>
-            <button class="bg-transparent border border-slate-400 px-2 py-1 rounded" type="button">Colors</button>
+            <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="button">Colors</button>
         </div>
     </header>
     <!-- Header Part End !-->
@@ -17,17 +17,29 @@
         <form action="#" wire:submit="save" method="POST">
             <input type="hidden" name="created_by" value="{{ auth()->user()->id }}">
             <div class="row">
-                <div class="col-lg-6 m-auto">
+                <div class="col-lg-6">
+                    <label for="name">Color <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
                         <input type="text" wire:model="name" name="name" class="form-control"
                             placeholder="color name">
                     </div>
                 </div>
+                <div class="col-lg-6">
+                    <label for="status">Status<span class="text-danger">*</span></label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                        <select wire:model="status" name="status" class="form-control">
+                            <option disabled>-- Please Select Status --</option>
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 
-            <div class="text-center">
-                <button class="bg-transparent border border-slate-400 px-2 py-1 rounded" type="submit">Save</button>
+            <div class="text-start">
+                <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save</button>
             </div>
         </form>
     </div>
