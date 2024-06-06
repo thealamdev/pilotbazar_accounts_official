@@ -15,7 +15,7 @@
     <!-- Form Part End !-->
     <div class="border border-slate-400 rounded p-3">
         <form action="#" wire:submit="save" method="POST">
-            <input type="hidden" name="created_by" value="{{ auth()->user()->id }}">
+            @csrf
             <div class="row">
                 <div class="col-lg-6">
                     <label for="name">Color <span class="text-danger">*</span></label>
