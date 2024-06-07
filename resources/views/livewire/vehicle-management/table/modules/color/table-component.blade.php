@@ -15,9 +15,7 @@
 
                     <div class="content-options-wrap">
                         <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover ms-0 d-xl-inline-block d-none"
-                            href="{{ route('admin.version1.vehicle-management.vehicle.module.color.create') }}"
-                            data-bs-toggle="tooltip" data-bs-placement="top" title=""
-                            data-bs-original-title="Add New">
+                            href="{{ route('admin.version1.vehicle-management.vehicle.module.color.create') }}">
                             <span class="icon">
                                 <span class="feather-icon">
                                     <i data-feather="folder-plus"></i>
