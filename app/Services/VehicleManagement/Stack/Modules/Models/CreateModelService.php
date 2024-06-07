@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\VehicleManagement\Stack\Modules\Color;
+namespace App\Services\VehicleManagement\Stack\Modules\Models;
 
-use App\Models\VehicleManagement\Modules\Color;
+use App\Models\VehicleManagement\Modules\Models;
 
-class CreateColor
+class CreateModelService
 {
     /**
      * Create static store method
@@ -12,7 +12,7 @@ class CreateColor
      */
     public static function store($form): array|object
     {
-        $response = Color::create([
+        $response = Models::create([
             'user_id' => auth()->user()->id,
             'name' => $form->name,
             'status' => $form->status

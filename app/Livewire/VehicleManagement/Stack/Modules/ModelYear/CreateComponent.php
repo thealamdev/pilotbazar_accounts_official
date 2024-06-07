@@ -5,7 +5,7 @@ namespace App\Livewire\VehicleManagement\Stack\Modules\ModelYear;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Livewire\Forms\VehicleManagement\Modules\ModelYear\CreatPost;
-use App\Services\VehicleManagement\Stack\Modules\ModelYear\CreateModelYear;
+use App\Services\VehicleManagement\Stack\Modules\ModelYear\CreateModelYearService;
 
 class CreateComponent extends Component
 {
@@ -22,7 +22,7 @@ class CreateComponent extends Component
     public function save(): void
     {
         $this->form->validate();
-        $isCreate = CreateModelYear::store($this->form);
+        $isCreate = CreateModelYearService::store($this->form);
         $response = $isCreate ? 'Data has been submited' : 'Something went wrong';
         $this->dispatch('success', ['message' => $response]);
         $this->form->reset();

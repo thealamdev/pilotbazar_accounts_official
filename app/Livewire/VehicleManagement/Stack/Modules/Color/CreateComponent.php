@@ -5,7 +5,7 @@ namespace App\Livewire\VehicleManagement\Stack\Modules\Color;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Livewire\Forms\VehicleManagement\Modules\Color\CreatePost;
-use App\Services\VehicleManagement\Stack\Modules\Color\CreateColor;
+use App\Services\VehicleManagement\Stack\Modules\Color\CreateColorService;
 
 class CreateComponent extends Component
 {
@@ -22,12 +22,12 @@ class CreateComponent extends Component
     public function save(): void
     {
         $this->form->validate();
-        $isCreate = CreateColor::store($this->form);
+        $isCreate = CreateColorService::store($this->form);
         $response = $isCreate ? 'Data Insert Successfull' : 'Sorry ! Some problem happend';
         $this->dispatch('success', ['message' => $response]);
         $this->form->reset();
     }
-    
+
     #[Title('Color Create')]
     public function render()
     {

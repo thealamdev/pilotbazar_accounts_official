@@ -20,7 +20,7 @@
                     <label for="name">Model <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-car"></i></span>
-                        <input type="text" wire:model.live="name"
+                        <input type="text" wire:model.live="form.name"
                             class="form-control @error('form.name')
                             {{ 'is-invalid' }}
                         @enderror"
@@ -34,7 +34,7 @@
                     <label for="status">Status<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
-                        <select wire:model.live="status"
+                        <select wire:model.live="form.status"
                             class="form-control @error('form.status')
                             {{ 'is-invalid' }}
                         @enderror">

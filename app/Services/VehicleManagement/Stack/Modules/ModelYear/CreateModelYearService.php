@@ -4,7 +4,7 @@ namespace App\Services\VehicleManagement\Stack\Modules\ModelYear;
 
 use App\Models\VehicleManagement\Modules\ModelYear;
 
-class CreateModelYear
+class CreateModelYearService
 {
     /**
      * Create static store method
