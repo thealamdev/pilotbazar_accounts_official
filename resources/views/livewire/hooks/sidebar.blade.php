@@ -263,7 +263,7 @@
                          </ul>
                      </div>
                      <ul class="navbar-nav flex-column">
-                         <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.create') || Route::is('admin.version1.vehicle-management.vehicle.module.model.create') || Route::is('admin.version1.vehicle-management.vehicle.module.model-year.create')) active @endif">
+                         <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.index') || Route::is('admin.version1.vehicle-management.vehicle.module.model.index') || Route::is('admin.version1.vehicle-management.vehicle.module.model-year.index')) active @endif">
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse"
                                  data-bs-target="#dash_pages">
                                  <span class="nav-icon-wrap">
@@ -283,7 +283,7 @@
                                  <span class="nav-link-text">Modules</span>
                              </a>
                              <ul id="dash_pages"
-                                 class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.create') || Route::is('admin.version1.vehicle-management.vehicle.module.model.create') || Route::is('admin.version1.vehicle-management.vehicle.module.model-year.create')) show @endif">
+                                 class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.index') || Route::is('admin.version1.vehicle-management.vehicle.module.model.index') || Route::is('admin.version1.vehicle-management.vehicle.module.model-year.index')) show @endif">
                                  <li class="nav-item">
                                      <ul class="nav flex-column">
                                          {{-- <li class="nav-item">
@@ -335,19 +335,19 @@
                                                  </li>
                                              </ul>
                                          </li> --}}
-                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.color.create') ? 'active' : '' }}">
+                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.color.index') ? 'active' : '' }}">
                                              <a class="nav-link"
-                                                 href="{{ route('admin.version1.vehicle-management.vehicle.module.color.create') }}">
+                                                 href="{{ route('admin.version1.vehicle-management.vehicle.module.color.index') }}">
                                                  <span class="nav-link-text">Color</span>
                                              </a>
                                          </li>
-                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.model.create') ? 'active' : '' }}">
-                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.model.create') }}">
+                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.model.index') ? 'aindextive' : '' }}">
+                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.model.index') }}">
                                                 <span class="nav-link-text">Model</span>
                                              </a>
                                          </li>
-                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.model-year.create') ? 'active' : '' }}">
-                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.create') }}"><span class="nav-link-text">Model Year</span></a>
+                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.model-year.index') ? 'active' : '' }}">
+                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.index') }}"><span class="nav-link-text">Model Year</span></a>
                                          </li>
                                      </ul>
                                  </li>
