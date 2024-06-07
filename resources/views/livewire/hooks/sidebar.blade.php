@@ -341,7 +341,7 @@
                                                  <span class="nav-link-text">Color</span>
                                              </a>
                                          </li>
-                                         <li class="nav-item {{  Route::is('admin.version1.vehicle-management.vehicle.module.model.create') ? 'active' : '' }}">
+                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.model.create') ? 'active' : '' }}">
                                              <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.model.create') }}">
                                                 <span class="nav-link-text">Model</span>
                                              </a>

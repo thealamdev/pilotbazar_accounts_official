@@ -4,6 +4,9 @@
         <div class="">
             <p for="investor" class="fs-5 fw-600">Model Year Create</p>
             <span>Please must fill the field where (*) sign is visible.</span>
+            @if (Session::has('status'))
+                <p class="text-success">{{ Session::get('status') }}</p>
+            @endif
         </div>
 
         <div>
@@ -49,7 +52,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="text-start">
                 <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save</button>
             </div>
@@ -58,6 +60,28 @@
     <!-- Form Part End !-->
 </div>
 
-@if (Session::has('success'))
-    {{ Session::get('success') }}
-@endif
+@push('js')
+    @if (Session::has('status'))
+        <script>
+            Command: toastr["info"]("Data added", "success")
+
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": true,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+        </script>
+    @endif
+@endpush
