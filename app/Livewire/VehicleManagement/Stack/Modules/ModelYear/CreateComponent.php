@@ -26,7 +26,7 @@ class CreateComponent extends Component
      */
     public function save(): array|object
     {
-        dd($this->name);
+        // dd($this->name);
         $response = ModelYear::create([
             'user_id' => auth()->user()->id,
             'name' => $this->name,

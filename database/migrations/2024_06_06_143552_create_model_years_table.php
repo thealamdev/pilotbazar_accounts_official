@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('model_years', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
             $table->boolean('status');
