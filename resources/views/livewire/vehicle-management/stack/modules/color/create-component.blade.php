@@ -2,10 +2,9 @@
     <!-- Header Part Start !-->
     <header class="pb-4 d-flex justify-content-between align-items-center">
         <div class="">
-            <p for="investor" class="fs-5 fw-600">Color Create</p>
+            <p class="fs-5 fw-600">Color Create</p>
             <span>Please must fill the field where (*) sign is visible.</span>
         </div>
-
         <div>
             <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="button">Colors</button>
         </div>

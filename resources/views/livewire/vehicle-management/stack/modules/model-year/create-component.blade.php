@@ -2,11 +2,8 @@
     <!-- Header Part Start !-->
     <header class="pb-4 d-flex justify-content-between align-items-center">
         <div class="">
-            <p for="investor" class="fs-5 fw-600">Model Year Create</p>
+            <p class="fs-5 fw-600">Model Year Create</p>
             <span>Please must fill the field where (*) sign is visible.</span>
-            @if (Session::has('status'))
-                <p class="text-success">{{ Session::get('status') }}</p>
-            @endif
         </div>
 
         <div>
