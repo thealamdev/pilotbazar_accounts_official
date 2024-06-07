@@ -21,18 +21,31 @@
                     <label for="form.name">Color <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-droplet"></i></span>
-                        <input type="text" wire:model="form.name" class="form-control" placeholder="color name">
+                        <input type="text" wire:model.live="form.name"
+                            class="form-control @error('form.name')
+                            {{ 'is-invalid' }}
+                        @enderror"
+                            placeholder="color name">
+                        @error('form.name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <label for="status">Status<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
-                        <select wire:model="form.status" class="form-control">
-                            <option disabled>-- Please Select Status --</option>
+                        <select wire:model.live="form.status"
+                            class="form-control @error('form.status')
+                            {{ 'is-invalid' }}
+                        @enderror">
+                            <option selected value>-- Please Select Status --</option>
                             <option value="1">Active</option>
                             <option value="0">Inactive</option>
                         </select>
+                        @error('form.status')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -44,7 +57,3 @@
     </div>
     <!-- Form Part End !-->
 </div>
-
-@if (Session::has('success'))
-    {{ Session::get('success') }}
-@endif

@@ -8,8 +8,9 @@ class CreateModelYear
 {
     /**
      * Create static store method
+     * @return array|object
      */
-    public static function store($form)
+    public static function store($form) :array|object
     {
         $response = ModelYear::create([
             'user_id' => auth()->user()->id,
