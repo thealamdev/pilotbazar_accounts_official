@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('colors', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->boolean('status');
             $table->softDeletes();
             $table->timestamps();

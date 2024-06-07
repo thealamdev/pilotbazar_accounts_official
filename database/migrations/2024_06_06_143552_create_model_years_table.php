@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('model_years', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->boolean('status');
             $table->softDeletes();
             $table->timestamps();
