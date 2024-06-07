@@ -26,7 +26,7 @@
                         </a>
                     </div>
                 </header>
-                
+
                 <div class="py-5">
                     <div class="row">
                         <div class="col-md-12 mb-md-4 mb-3">
@@ -92,7 +92,7 @@
                                                                 <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
                                                                     data-bs-toggle="tooltip" data-placement="top"
                                                                     title="" data-bs-original-title="Edit"
-                                                                    href="#">
+                                                                    href="{{route('admin.version1.vehicle-management.vehicle.module.color.update',['color' => $each->id])}}">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
                                                                             <i data-feather="edit-2"></i>
