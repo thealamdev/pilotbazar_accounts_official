@@ -24,7 +24,8 @@ class CreateComponent extends Component
         $this->form->validate();
         $isCreate = CreateModelYear::store($this->form);
         $response = $isCreate ? 'Data has been submited' : 'Something went wrong';
-        session()->flash('status', $response);
+        // session()->flash('status', $response);
+        $this->dispatch('success', ['message' => $response]);
         $this->form->reset();
     }
 

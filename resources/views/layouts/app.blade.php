@@ -53,7 +53,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Toastr css cdn !-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" />
 
     <!-- CSS -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
@@ -120,7 +120,21 @@
     <script src="{{ asset('assets/js/dashboard-data.js') }}"></script>
 
     <!-- Toastr js cdn !-->
-    <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+
+    <!-- Toaster noticiction init !-->
+    <script>
+        $(document).ready(function() {
+            toastr.options = {
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+            }
+        });
+
+        window.addEventListener('success', event => {
+            toastr.success(event.detail[0].message);
+        })
+    </script>
     @stack('js')
 
 </body>
