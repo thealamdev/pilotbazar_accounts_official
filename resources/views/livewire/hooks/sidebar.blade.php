@@ -346,7 +346,7 @@
                                                 <span class="nav-link-text">Model</span>
                                              </a>
                                          </li>
-                                         <li class="nav-item">
+                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.model-year.create') ? 'active' : '' }}">
                                              <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.create') }}"><span class="nav-link-text">Model Year</span></a>
                                          </li>
                                      </ul>

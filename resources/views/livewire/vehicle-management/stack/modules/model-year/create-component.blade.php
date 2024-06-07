@@ -21,19 +21,31 @@
                     <label for="name">Model Year <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-car"></i></span>
-                        <input type="text" wire:model="name" name="name" class="form-control"
+                        <input type="text" wire:model.live="form.name"
+                            class="form-control @error('form.name')
+                            {{ 'is-invalid' }}
+                        @enderror"
                             placeholder="car model year">
+                        @error('form.name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <label for="status">Status<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
-                        <select wire:model="status" name="status" class="form-control">
-                            <option disabled>-- Please Select Status --</option>
+                        <select wire:model.live="form.status"
+                            class="form-control @error('form.status')
+                            {{ 'is-invalid' }}
+                        @enderror">
+                            <option selected value>-- Please Select Status --</option>
                             <option value="1">Active</option>
                             <option value="0">Inactive</option>
                         </select>
+                        @error('form.status')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             </div>

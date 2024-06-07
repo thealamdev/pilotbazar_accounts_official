@@ -2,38 +2,30 @@
 
 namespace App\Livewire\VehicleManagement\Stack\Modules\ModelYear;
 
-use App\Models\VehicleManagement\Modules\ModelYear;
 use Livewire\Component;
 use Livewire\Attributes\Title;
+use App\Livewire\Forms\VehicleManagement\Modules\ModelYear\CreatPost;
+use App\Services\VehicleManagement\Stack\Modules\ModelYear\CreateModelYear;
 
 class CreateComponent extends Component
 {
     /**
-     * @var <string>
-     * public property $name
+     * Create form object
+     * @var object
      */
-    public $name = '';
-
-    /**
-     * @var <boolean>
-     * public property $status
-     */
-    public $status;
+    public CreatPost $form;
 
     /**
      * method for save data
-     * @return array|object
+     * @return void
      */
-    public function save(): array|object
+    public function save(): void
     {
-        // dd($this->name);
-        $response = ModelYear::create([
-            'user_id' => auth()->user()->id,
-            'name' => $this->name,
-            'status' => $this->status,
-        ]);
-
-        return back()->with('success', 'Data has been submited');
+        $this->form->validate();
+        $isCreate = CreateModelYear::store($this->form);
+        $response = $isCreate ? 'Data has been submited' : 'Something went wrong';
+        $this->form->reset();
+        // return back()->with('success', 'Data has been submited');
     }
 
     #[Title('Model Year Create')]
