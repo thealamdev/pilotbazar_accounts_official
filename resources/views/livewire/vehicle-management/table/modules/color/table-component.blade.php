@@ -88,25 +88,23 @@
                                                         <td>
                                                             <div class="d-flex align-items-center">
                                                                 <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
-                                                                    data-bs-toggle="tooltip" data-placement="top"
-                                                                    title="" data-bs-original-title="Edit"
-                                                                    href="{{route('admin.version1.vehicle-management.vehicle.module.color.update',['color' => $each->id])}}">
+                                                                    href="{{ route('admin.version1.vehicle-management.vehicle.module.color.update', ['color' => $each->id]) }}">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
                                                                             <i data-feather="edit-2"></i>
                                                                         </span>
                                                                     </span>
                                                                 </a>
-                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
-                                                                    data-bs-toggle="tooltip" data-placement="top"
-                                                                    title="" data-bs-original-title="Delete"
-                                                                    href="#">
+                                                                <button type="button"
+                                                                    wire:click="delete({{ $each->id }})"
+                                                                    class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
+                                                                    wire:confirm="Are you sure you want to delete this post?">
                                                                     <span class="icon">
                                                                         <span class="feather-icon"><i
                                                                                 data-feather="trash"></i>
                                                                         </span>
                                                                     </span>
-                                                                </a>
+                                                                </button>
                                                             </div>
                                                         </td>
                                                     </tr>
