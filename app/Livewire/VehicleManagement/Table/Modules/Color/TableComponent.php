@@ -17,7 +17,9 @@ class TableComponent extends Component
     #[Title('Colors')]
     public function render()
     {
-        $responses = Color::query()->latest()->where('status', 1)->paginate(10);
+        $this->responses = Color::query()->latest()
+            ->with('user')
+            ->get();
         return view('livewire.vehicle-management.table.modules.color.table-component', ['responses' => $this->responses]);
     }
 }

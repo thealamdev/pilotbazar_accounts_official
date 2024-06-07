@@ -15,7 +15,8 @@
 
                     <div class="content-options-wrap">
                         <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover ms-0 d-xl-inline-block d-none"
-                            href="#" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                            href="{{ route('admin.version1.vehicle-management.vehicle.module.color.create') }}"
+                            data-bs-toggle="tooltip" data-bs-placement="top" title=""
                             data-bs-original-title="Add New">
                             <span class="icon">
                                 <span class="feather-icon">
@@ -36,7 +37,7 @@
                                             class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
                                     </h6>
                                     <div class="card-action-wrap">
-                                        <a href="{{ route('admin.investor.create') }}"
+                                        <a href="{{ route('admin.version1.vehicle-management.vehicle.module.color.create') }}"
                                             class="btn btn-sm btn-primary ms-3">
                                             <span>
                                                 <span class="icon">
@@ -72,50 +73,48 @@
                                             </thead>
 
                                             <tbody>
-                                                @if (is_object($responses) && count($responses))
-                                                    @forelse ($responses as $each)
-                                                        <tr>
-                                                            <td>
-                                                            </td>
-                                                            <td>
-                                                                <div class="text-high-em">{{ $each?->name }}</div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="fs-8 ms-3">
-                                                                    {{ $each?->status == 1 ? 'Active' : 'Inactive' }}
-                                                                </div>
-                                                            </td>
-                                                            <td>{{ $each?->user_id }}</td>
+                                                @forelse ($responses as $each)
+                                                    <tr>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                            <div class="text-high-em">{{ $each?->name }}</div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="fs-8 ms-3">
+                                                                {{ $each?->status == 1 ? 'Active' : 'Inactive' }}
+                                                            </div>
+                                                        </td>
+                                                        <td>{{ $each?->user?->name }}</td>
 
-                                                            <td>
-                                                                <div class="d-flex align-items-center">
-                                                                    <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
-                                                                        data-bs-toggle="tooltip" data-placement="top"
-                                                                        title="" data-bs-original-title="Edit"
-                                                                        href="#">
-                                                                        <span class="icon">
-                                                                            <span class="feather-icon">
-                                                                                <i data-feather="edit-2"></i>
-                                                                            </span>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
+                                                                    data-bs-toggle="tooltip" data-placement="top"
+                                                                    title="" data-bs-original-title="Edit"
+                                                                    href="#">
+                                                                    <span class="icon">
+                                                                        <span class="feather-icon">
+                                                                            <i data-feather="edit-2"></i>
                                                                         </span>
-                                                                    </a>
-                                                                    <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
-                                                                        data-bs-toggle="tooltip" data-placement="top"
-                                                                        title="" data-bs-original-title="Delete"
-                                                                        href="#">
-                                                                        <span class="icon">
-                                                                            <span class="feather-icon"><i
-                                                                                    data-feather="trash"></i>
-                                                                            </span>
+                                                                    </span>
+                                                                </a>
+                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
+                                                                    data-bs-toggle="tooltip" data-placement="top"
+                                                                    title="" data-bs-original-title="Delete"
+                                                                    href="#">
+                                                                    <span class="icon">
+                                                                        <span class="feather-icon"><i
+                                                                                data-feather="trash"></i>
                                                                         </span>
-                                                                    </a>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    @empty
-                                                        <td>No data found !!</td>
-                                                    @endforelse
-                                                @endif
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @empty
+                                                    <td>No data found !!</td>
+                                                @endforelse
                                             </tbody>
                                         </table>
                                     </div>
