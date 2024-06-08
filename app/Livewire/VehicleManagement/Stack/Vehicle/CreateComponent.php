@@ -2,6 +2,7 @@
 
 namespace App\Livewire\VehicleManagement\Stack\Vehicle;
 
+use App\Livewire\Forms\VehicleManagement\Vehicle\CreateVehicleRequest;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Modules\Color;
@@ -11,22 +12,10 @@ use App\Models\VehicleManagement\Modules\ModelYear;
 class CreateComponent extends Component
 {
     /**
-     * public property $name
-     * @var string
+     * Define form object
+     * @var object
      */
-    public $form = [];
-
-    /**
-     * public bind array
-     * @var array
-     */
-    public $bindData;
-
-    /**
-     * public property $status
-     * @var string
-     */
-    public $status;
+    public CreateVehicleRequest $form;
 
     /**
      * Define models property
@@ -46,7 +35,6 @@ class CreateComponent extends Component
      */
     public $colors = [];
 
-
     /**
      * Define the mount 
      * @return void
@@ -56,6 +44,15 @@ class CreateComponent extends Component
         $this->models = Models::query()->latest()->where('status', 1)->get();
         $this->modelYears = ModelYear::query()->latest()->where('status', 1)->get();
         $this->colors = Color::query()->latest()->where('status', 1)->get();
+    }
+
+    /**
+     * Define save function for store data
+     * @return void
+     */
+    public function save()
+    {
+        $this->validate($this->form->rules(), attributes: $this->form->attributes());
     }
 
     #[Title('Vehicle Create')]
