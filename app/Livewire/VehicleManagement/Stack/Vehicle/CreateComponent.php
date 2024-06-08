@@ -8,6 +8,7 @@ use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Modules\Color;
 use App\Models\VehicleManagement\Modules\Models;
 use App\Models\VehicleManagement\Modules\ModelYear;
+use App\Services\VehicleManagement\Stack\Vehicle\CreateVehicleService;
 
 class CreateComponent extends Component
 {
@@ -50,9 +51,13 @@ class CreateComponent extends Component
      * Define save function for store data
      * @return void
      */
-    public function save()
+    public function save(): void
     {
         $this->validate($this->form->rules(), attributes: $this->form->attributes());
+        $isCreate = CreateVehicleService::store($this->form);
+        $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
+        $this->dispatch('success', ['message' => $response]);
+        $this->form->reset();
     }
 
     #[Title('Vehicle Create')]
