@@ -95485,7 +95485,7 @@ div.hopscotch-bubble .hopscotch-bubble-container .hopscotch-actions .emailapp-wr
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  padding-left: 270px;
+  /* padding-left: 270px; */
   position: relative;
   height: 100%;
   left: 0;
@@ -95502,12 +95502,12 @@ div.hopscotch-bubble .hopscotch-bubble-container .hopscotch-actions .emailapp-wr
   flex-grow: 1;
   background: #fff;
   flex-flow: column;
-  height: 100%;
-  z-index: 10;
-  width: calc(100vw - 270px);
+  /* height: 100%; */
+  /* z-index: 10; */
+  /* width: calc(100vw - 270px); */
 }
 
-.todoapp-wrap .todoapp-content .todoapp-detail-wrap header.todo-header {
+/* .todoapp-wrap .todoapp-content .todoapp-detail-wrap header.todo-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -95522,7 +95522,7 @@ div.hopscotch-bubble .hopscotch-bubble-container .hopscotch-actions .emailapp-wr
   background: #fff;
   border-bottom: 1px solid #eaeaea;
   position: relative;
-}
+} */
 
 .todoapp-wrap .todoapp-content .todoapp-detail-wrap header.todo-header .todoapp-title {
   display: -webkit-box;
@@ -97451,3 +97451,8 @@ div.hopscotch-bubble .hopscotch-bubble-container .hopscotch-actions .emailapp-wr
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* my own made for the project */
+.bottom-divider {
+  border-bottom: 1px solid rgb(148 163 184);
+}

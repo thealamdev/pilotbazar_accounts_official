@@ -7,6 +7,20 @@ use Livewire\Attributes\Title;
 
 class CreateComponent extends Component
 {
+    /**
+     * public property $name
+     * @var string
+     */
+    public $name;
+
+    /**
+     * public property $status
+     * @var string
+     */
+    public $status;
+
+
+
     #[Title('Vehicle Create')]
     public function render()
     {

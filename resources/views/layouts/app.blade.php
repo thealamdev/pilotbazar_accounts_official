@@ -66,7 +66,6 @@
     <div class="hk-wrapper" data-layout="vertical" data-layout-style="default" data-menu="light" data-footer="simple">
         @include('livewire.hooks.navbar')
         @include('livewire.hooks.sidebar')
-
         <!-- Main Content -->
         <div class="hk-pg-wrapper">
             <div class="container-xxl">
@@ -133,7 +132,7 @@
 
         window.addEventListener('success', event => {
             toastr.success(event.detail[0].message);
-        })
+        });
     </script>
     @stack('js')
 
