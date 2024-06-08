@@ -15,7 +15,7 @@
 
                     <div class="content-options-wrap">
                         <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover ms-0 d-xl-inline-block d-none"
-                            href="{{ route('admin.version1.vehicle-management.vehicle.module.color.create') }}"
+                            href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.create') }}"
                             data-bs-toggle="tooltip" data-bs-placement="top" title=""
                             data-bs-original-title="Add New">
                             <span class="icon">
@@ -37,7 +37,7 @@
                                             class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
                                     </h6>
                                     <div class="card-action-wrap">
-                                        <a href="{{ route('admin.version1.vehicle-management.vehicle.module.color.create') }}"
+                                        <a href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.create') }}"
                                             class="btn btn-sm btn-primary ms-3">
                                             <span>
                                                 <span class="icon">
