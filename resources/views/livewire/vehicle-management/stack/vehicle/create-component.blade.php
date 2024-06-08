@@ -1,5 +1,5 @@
 <div class="row mt-7 border border-slate-400 rounded">
-    <div class="col-lg-12 px-3 py-3">
+    <div class="col-lg-12 px-4 py-3">
         <!-- Header Part Start !-->
         <header class="pb-4 d-flex justify-content-between align-items-center">
             <div class="">
@@ -47,16 +47,16 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <label for="form.modelYear_id">Model Year<span class="text-danger">*</span></label>
+                        <label for="form.model_year_id">Model Year<span class="text-danger">*</span></label>
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
-                            <select wire:model="form.modelYear_id" class="form-control @error('form.modelYear_id') {{ 'is-invalid' }} @enderror">
+                            <select wire:model="form.model_year_id" class="form-control @error('form.model_year_id') {{ 'is-invalid' }} @enderror">
                                 <option selected value>-- Please Select Status --</option>
                                 @foreach ($modelYears as $each)
                                   <option value="{{$each->id}}">{{ $each->name }}</option>
                                 @endforeach
                             </select>
-                            @error('form.modelYear_id')
+                            @error('form.model_year_id')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
@@ -140,7 +140,7 @@
                         <label for="form.media_cost_selling">Media Cost Selling<span class="text-danger"></span></label>
                         <div class="input-group mb-3">
                             <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.media_cost_selling" placeholder="media cost selling" class="form-control">
+                            <input type="number" wire:model="form.media_selling_cost" placeholder="media cost selling" class="form-control">
                             @error('form.media_cost_selling')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -177,11 +177,11 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <label for="form.engine_service">Engine Service<span class="text-danger"></span></label>
+                        <label for="form.engine_service_cost">Engine Service<span class="text-danger"></span></label>
                         <div class="input-group mb-3">
                             <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.engine_service" placeholder="engine service" class="form-control">
-                            @error('form.engine_service')
+                            <input type="number" wire:model="form.engine_service_cost" placeholder="engine service cost" class="form-control">
+                            @error('form.engine_service_cost')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
@@ -197,11 +197,11 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <label for="form.bikrom_ad">Bikroy Ad Cost<span class="text-danger"></span></label>
+                        <label for="form.bikroy_ad_cost">Bikroy Ad Cost<span class="text-danger"></span></label>
                         <div class="input-group mb-3">
                             <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.bikrom_ad_cost" placeholder="bikroy ad cost" class="form-control">
-                            @error('form.bikrom_ad_cost')
+                            <input type="number" wire:model="form.bikroy_ad_cost" placeholder="bikroy ad cost" class="form-control">
+                            @error('form.bikroy_ad_cost')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
@@ -242,6 +242,16 @@
                             <span class="input-group-text">৳</span>
                             <input type="number" wire:model="form.electric_cost" placeholder="electric cost" class="form-control">
                             @error('form.electric_cost')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <label for="form.total_cost">Total Cost<span class="text-danger"></span></label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">৳</span>
+                            <input type="number" wire:model="form.total_cost" placeholder="total cost" class="form-control">
+                            @error('form.total_cost')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
