@@ -253,7 +253,7 @@
                      <!-- 'Vehicle Management -> Dependency !-->
                      <ul class="navbar-nav flex-column">
                          <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create')) active @endif">
-                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_pages">
+                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dependency_pages">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
                                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -266,7 +266,7 @@
                                  </span>
                                  <span class="nav-link-text">Dependency</span>
                              </a>
-                             <ul id="dash_pages" class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create')) show @endif">
+                             <ul id="dependency_pages" class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create')) show @endif">
                                  <li class="nav-item">
                                      <ul class="nav flex-column">
                                          <li class="nav-item">
