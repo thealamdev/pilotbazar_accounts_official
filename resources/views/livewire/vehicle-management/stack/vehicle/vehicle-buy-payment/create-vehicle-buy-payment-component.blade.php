@@ -30,6 +30,9 @@
                         @enderror
                     </div>
                 </div>
+                {{-- @if ($formTypeCast === 1)
+                    <div class="col-lg-6">Bank form type</div>
+                @endif --}}
                 <div class="col-lg-6">
                     <label for="form.amount">Amount<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">

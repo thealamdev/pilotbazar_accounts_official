@@ -17,6 +17,11 @@ class CreateVehicleBuyPaymentComponent extends Component
     public CreateVehicleBuyPaymentRequest  $form;
 
     /**
+     * Define public property $formType
+     */
+    public $formTypeCast;
+
+    /**
      * Define public property $vehicle
      * @var array|object
      */
