@@ -78,13 +78,13 @@
                                                             <div class="text-high-em">{{ $each?->name }}</div>
                                                         </td>
                                                         <td>
-                                                            <div class="text-high-em">{{ $each?->model_id }}</div>
+                                                            <div class="text-high-em">{{ $each?->models?->name }}</div>
                                                         </td>
                                                         <td>
-                                                            <div class="text-high-em">{{ $each?->model_year_id }}</div>
+                                                            <div class="text-high-em">{{ $each?->model_year?->name }}</div>
                                                         </td>
                                                         <td>
-                                                            <div class="text-high-em">{{ $each?->color_id }}</div>
+                                                            <div class="text-high-em">{{ $each?->color?->name }}</div>
                                                         </td>
                                                         <td>
                                                             <div class="text-high-em">{{ $each?->purchase_price }}</div>

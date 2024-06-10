@@ -19,10 +19,12 @@ class TableVehicleComponent extends Component
     #[Title('Vehicles')]
     public function render()
     {
-        return view('livewire.vehicle-management.table.vehicle.table-component', ['responses'  => Vehicle::query()
+        $responses = Vehicle::query()
             ->latest()
+            ->with('color')
             ->where('status', 1)
             ->where('name', 'like', "%{$this->search}%")
-            ->paginate(10)]);
+            ->paginate(10);
+        return view('livewire.vehicle-management.table.vehicle.table-component', ['responses'  =>  $responses]);
     }
 }
