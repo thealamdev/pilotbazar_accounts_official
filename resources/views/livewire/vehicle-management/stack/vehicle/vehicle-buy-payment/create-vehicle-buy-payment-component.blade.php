@@ -25,11 +25,19 @@
                 </div>
             </div>
         </div>
+
+        <hr class="hr">
+        <div class="text-center">
+            <p style="width:50px;margin:0 auto;margin-top:-32px;background:white;padding:0 10px;font-size:20px">{{ $currentFormType ? $currentFormType : 'Nothing' }}</p>
+        </div>
         <!-- Select the Payment Method End !-->
 
-        <!-- Bank Form Start !-->
-        @include('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.partials.bank-form')
-        <!-- Bank Form End !-->
+        <div class="mt-5">
+            <!-- Bank Form Start !-->
+            @include('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.partials.bank-form')
+            <!-- Bank Form End !-->
+        </div>
+
     </div>
     <!-- Form Part End !-->
 </div>
