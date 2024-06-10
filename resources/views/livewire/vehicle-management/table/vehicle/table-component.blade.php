@@ -14,8 +14,7 @@
                     </div>
 
                     <div class="content-options-wrap">
-                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover ms-0 d-xl-inline-block d-none"
-                            href="{{ route('admin.version1.vehicle-management.vehicle.create') }}">
+                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover ms-0 d-xl-inline-block d-none" href="{{ route('admin.version1.vehicle-management.vehicle.create') }}">
                             <span class="icon">
                                 <span class="feather-icon">
                                     <i data-feather="folder-plus"></i>
@@ -31,12 +30,10 @@
                             <div class="card card-border mb-0 h-100">
                                 <div class="card-header card-header-action">
                                     <h6>Colors
-                                        <span
-                                            class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
+                                        <span class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
                                     </h6>
                                     <div class="card-action-wrap">
-                                        <a href="{{ route('admin.version1.vehicle-management.vehicle.create') }}"
-                                            class="btn btn-sm btn-primary ms-3">
+                                        <a href="{{ route('admin.version1.vehicle-management.vehicle.create') }}" class="btn btn-sm btn-primary ms-3">
                                             <span>
                                                 <span class="icon">
                                                     <span class="feather-icon">
@@ -57,9 +54,7 @@
                                                 <tr>
                                                     <th>
                                                         <span class="form-check fs-6 mb-0">
-                                                            <input type="checkbox"
-                                                                class="form-check-input check-select-all"
-                                                                id="customCheck1">
+                                                            <input type="checkbox" class="form-check-input check-select-all" id="customCheck1">
                                                             <label class="form-check-label" for="customCheck1"></label>
                                                         </span>
                                                     </th>
@@ -105,21 +100,16 @@
 
                                                         <td>
                                                             <div class="d-flex align-items-center">
-                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
-                                                                    href="{{ route('admin.version1.vehicle-management.vehicle.module.color.update', ['color' => $each->id]) }}">
+                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" href="{{ route('admin.version1.vehicle-management.vehicle.module.color.update', ['color' => $each->id]) }}">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
                                                                             <i data-feather="edit-2"></i>
                                                                         </span>
                                                                     </span>
                                                                 </a>
-                                                                <button type="button"
-                                                                    wire:click="delete({{ $each->id }})"
-                                                                    class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
-                                                                    wire:confirm="Are you sure you want to delete this post?">
+                                                                <button type="button" wire:click="delete({{ $each->id }})" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" wire:confirm="Are you sure you want to delete this post?">
                                                                     <span class="icon">
-                                                                        <span class="feather-icon"><i
-                                                                                data-feather="trash"></i>
+                                                                        <span class="feather-icon"><i data-feather="trash"></i>
                                                                         </span>
                                                                     </span>
                                                                 </button>

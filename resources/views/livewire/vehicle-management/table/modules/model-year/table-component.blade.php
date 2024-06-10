@@ -14,10 +14,7 @@
                     </div>
 
                     <div class="content-options-wrap">
-                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover ms-0 d-xl-inline-block d-none"
-                            href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.create') }}"
-                            data-bs-toggle="tooltip" data-bs-placement="top" title=""
-                            data-bs-original-title="Add New">
+                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover ms-0 d-xl-inline-block d-none" href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.create') }}" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Add New">
                             <span class="icon">
                                 <span class="feather-icon">
                                     <i data-feather="folder-plus"></i>
@@ -25,6 +22,8 @@
                             </span>
                         </a>
                     </div>
+
+
                 </header>
 
                 <div class="py-5">
@@ -33,12 +32,10 @@
                             <div class="card card-border mb-0 h-100">
                                 <div class="card-header card-header-action">
                                     <h6>Model Year
-                                        <span
-                                            class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
+                                        <span class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
                                     </h6>
                                     <div class="card-action-wrap">
-                                        <a href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.create') }}"
-                                            class="btn btn-sm btn-primary ms-3">
+                                        <a href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.create') }}" class="btn btn-sm btn-primary ms-3">
                                             <span>
                                                 <span class="icon">
                                                     <span class="feather-icon">
@@ -59,9 +56,7 @@
                                                 <tr>
                                                     <th>
                                                         <span class="form-check fs-6 mb-0">
-                                                            <input type="checkbox"
-                                                                class="form-check-input check-select-all"
-                                                                id="customCheck1">
+                                                            <input type="checkbox" class="form-check-input check-select-all" id="customCheck1">
                                                             <label class="form-check-label" for="customCheck1"></label>
                                                         </span>
                                                     </th>
@@ -93,23 +88,16 @@
 
                                                         <td>
                                                             <div class="d-flex align-items-center">
-                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
-                                                                    data-bs-toggle="tooltip" data-placement="top"
-                                                                    title="" data-bs-original-title="Edit"
-                                                                    href="#">
+                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
                                                                             <i data-feather="edit-2"></i>
                                                                         </span>
                                                                     </span>
                                                                 </a>
-                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
-                                                                    data-bs-toggle="tooltip" data-placement="top"
-                                                                    title="" data-bs-original-title="Delete"
-                                                                    href="#">
+                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#">
                                                                     <span class="icon">
-                                                                        <span class="feather-icon"><i
-                                                                                data-feather="trash"></i>
+                                                                        <span class="feather-icon"><i data-feather="trash"></i>
                                                                         </span>
                                                                     </span>
                                                                 </a>
