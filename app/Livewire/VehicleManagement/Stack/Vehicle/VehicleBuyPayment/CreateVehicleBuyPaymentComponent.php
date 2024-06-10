@@ -10,15 +10,31 @@ use Livewire\Attributes\Title;
 class CreateVehicleBuyPaymentComponent extends Component
 {
     /**
-     * Define public property $vehicle_id
-     * @var string
+     * Define public object $form;
+     * @var array|object
      */
-    public $vehicle;
+    public $form = [];
+
+    /**
+     * Define public property $vehicle
+     * @var array|object
+     */
+    public ?object $vehicle;
+
     /**
      * Define public property $methods
-     * @var string
+     * @var array|object
      */
-    public $methods;
+    public ?object $methods;
+
+    /**
+     * Define public method save()
+     * @return 
+     */
+    public function save()
+    {
+        dd($this->vehicle->id);
+    }
 
     /**
      * Define the mount method

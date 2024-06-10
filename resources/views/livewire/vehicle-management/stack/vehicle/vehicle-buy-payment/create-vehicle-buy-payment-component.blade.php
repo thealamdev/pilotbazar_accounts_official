@@ -14,7 +14,6 @@
             @csrf
             <div class="row">
                 <div class="col-lg-6">
-                    <input type="hidden" value="{{ $vehicle?->id }}">
                     <label for="form.name">Method Name<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
@@ -34,11 +33,11 @@
                 <div class="col-lg-6">
                     <label for="form.amount">Amount<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa-solid fa-droplet"></i></span>
-                        <input type="text" wire:model.live="form.name" class="form-control @error('form.name')
+                        <span class="input-group-text">৳</span>
+                        <input type="text" wire:model="form.amount" class="form-control @error('form.amount')
                             {{ 'is-invalid' }}
                         @enderror" placeholder="method name">
-                        @error('form.name')
+                        @error('form.amount')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
