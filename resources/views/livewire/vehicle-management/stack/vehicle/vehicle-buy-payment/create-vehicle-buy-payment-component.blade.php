@@ -25,7 +25,7 @@
                                 <option value="{{ $each?->id }}">{{ $each?->name }}</option>
                             @endforeach
                         </select>
-                        @error('form.status')
+                        @error('form.name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
