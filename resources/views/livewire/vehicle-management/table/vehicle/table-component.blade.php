@@ -116,7 +116,7 @@
                                                         </td>
                                                     </tr>
                                                 @empty
-                                                    <td>No data found !!</td>
+                                                    <td class="text-center text-danger fs-3" colspan="9">No data found !!</td>
                                                 @endforelse
                                             </tbody>
 

@@ -10,7 +10,7 @@ use App\Models\VehicleManagement\Modules\Models;
 use App\Models\VehicleManagement\Modules\ModelYear;
 use App\Services\VehicleManagement\Stack\Vehicle\CreateVehicleService;
 
-class CreateComponent extends Component
+class CreateVehicleComponent extends Component
 {
     /**
      * Define form object

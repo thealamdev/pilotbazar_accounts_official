@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('vehicles')->name('vehicle.')->group(function () {
-    Route::get('/', \App\Livewire\VehicleManagement\Table\Vehicle\TableComponent::class)->name('index');
-    Route::get('create', \App\Livewire\VehicleManagement\Stack\Vehicle\CreateComponent::class)->name('create');
+    Route::get('/', \App\Livewire\VehicleManagement\Table\Vehicle\TableVehicleComponent::class)->name('index');
+    Route::get('create', \App\Livewire\VehicleManagement\Stack\Vehicle\CreateVehicleComponent::class)->name('create');
 
     /**
      * Vehicle modules Routes.
