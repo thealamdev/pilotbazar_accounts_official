@@ -58,7 +58,7 @@ class CreateVehicleComponent extends Component
         $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
         $this->dispatch('success', ['message' => $response]);
         $this->form->reset();
-        return redirect()->route('admin.version1.vehicle-management.vehicle.payment-method.create', ['vehicle' => $isCreate->getKey()]);
+        return redirect()->route('admin.version1.vehicle-management.vehicle.buy-payment.create', ['vehicle' => $isCreate->getKey()]);
     }
 
     #[Title('Vehicle Create')]
