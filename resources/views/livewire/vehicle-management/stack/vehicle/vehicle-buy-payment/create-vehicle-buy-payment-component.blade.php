@@ -2,7 +2,7 @@
     <!-- Header Part Start !-->
     <header class="pb-4 d-flex justify-content-between align-items-center">
         <div class="">
-            <p class="fs-5 fw-600">Vehicle Buy Payment of <span class="text-success">{{ $vehicle->name . ' ' . $vehicle->model?->name . ' ' . $vehicle->model_year?->name }}</span> </p>
+            <p class="fs-5 fw-600">Vehicle Buy Payment of <span class="text-success">{{ $vehicle->name . ' ' . $vehicle->models?->name . ' ' . $vehicle->model_year?->name }}</span> </p>
             <span>Please must fill the field where (<span class="text-danger">*</span>) sign is visible.</span>
         </div>
     </header>
