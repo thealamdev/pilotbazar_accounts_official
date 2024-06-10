@@ -23,6 +23,6 @@ class TableComponent extends Component
             ->latest()
             ->where('status', 1)
             ->where('name', 'like', "%{$this->search}%")
-            ->paginate(3)]);
+            ->paginate(10)]);
     }
 }
