@@ -30,7 +30,7 @@
                         @enderror
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <label for="form.amount">Amount<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
