@@ -97453,6 +97453,7 @@ div.hopscotch-bubble .hopscotch-bubble-container .hopscotch-actions .emailapp-wr
 /*# sourceMappingURL=style.css.map */
 
 /* my own made for the project */
-.bottom-divider {
-  border-bottom: 1px solid rgb(148 163 184);
+.hr-bg {
+  background: rgb(148 163 184) !important;
+  margin-top: -10px !important;
 }

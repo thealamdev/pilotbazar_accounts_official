@@ -9,15 +9,15 @@
 
             <div>
                 <a href="{{ route('admin.version1.vehicle-management.vehicle.index') }}" class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="button">
-                   Vehicles
+                    Vehicles
                 </a>
             </div>
         </header>
-        <hr>
+        <hr class="hr-bg">
         <!-- Header Part End !-->
 
         <!-- Form Part End !-->
-        <div class="">
+        <div class="mt-5">
             <form action="#" wire:submit="save" method="POST">
                 @csrf
                 <div class="row">
@@ -38,7 +38,7 @@
                             <select wire:model="form.model_id" class="form-control @error('form.model_id') {{ 'is-invalid' }} @enderror">
                                 <option selected value>-- Please Select Status --</option>
                                 @foreach ($models as $each)
-                                  <option value="{{$each->id}}">{{ $each->name }}</option>
+                                    <option value="{{ $each->id }}">{{ $each->name }}</option>
                                 @endforeach
                             </select>
                             @error('form.model_id')
@@ -53,7 +53,7 @@
                             <select wire:model="form.model_year_id" class="form-control @error('form.model_year_id') {{ 'is-invalid' }} @enderror">
                                 <option selected value>-- Please Select Status --</option>
                                 @foreach ($modelYears as $each)
-                                  <option value="{{$each->id}}">{{ $each->name }}</option>
+                                    <option value="{{ $each->id }}">{{ $each->name }}</option>
                                 @endforeach
                             </select>
                             @error('form.model_year_id')
@@ -68,7 +68,7 @@
                             <select wire:model="form.color_id" class="form-control @error('form.color_id') {{ 'is-invalid' }} @enderror">
                                 <option selected value>-- Please Select Status --</option>
                                 @foreach ($colors as $each)
-                                  <option value="{{$each->id}}">{{ $each->name }}</option>
+                                    <option value="{{ $each->id }}">{{ $each->name }}</option>
                                 @endforeach
                             </select>
                             @error('form.color_id')
@@ -126,136 +126,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <label for="form.media_cost_purchase">Media Cost Purchase<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.media_cost_purchase" placeholder="media cost purchase" class="form-control">
-                            @error('form.media_cost_purchase')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.media_cost_selling">Media Cost Selling<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.media_selling_cost" placeholder="media cost selling" class="form-control">
-                            @error('form.media_cost_selling')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.checkup_cost_purchase">Checkup Cost Purchase<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.checkup_cost_purchase" placeholder="checkup cost purchase" class="form-control">
-                            @error('form.checkup_cost_purchase')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.estimate_cost">Estimate Cost<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.estimate_cost" placeholder="estimate cost" class="form-control">
-                            @error('form.estimate_cost')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.touchup_cost">Touchup Cost<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.touchup_cost" placeholder="touchup cost" class="form-control">
-                            @error('form.touchup_cost')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.engine_service_cost">Engine Service<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.engine_service_cost" placeholder="engine service cost" class="form-control">
-                            @error('form.engine_service_cost')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.fuel_cost">Fuel Cost<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.fuel_cost" placeholder="fuel cost" class="form-control">
-                            @error('form.fuel_cost')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.bikroy_ad_cost">Bikroy Ad Cost<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.bikroy_ad_cost" placeholder="bikroy ad cost" class="form-control">
-                            @error('form.bikroy_ad_cost')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.facebook_ad_cost">Facebook Ad Cost<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.facebook_ad_cost" placeholder="facebook ad cost" class="form-control">
-                            @error('form.facebook_ad_cost')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.paper_update_cost">Paper Update Cost<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.paper_update_cost" placeholder="paper update cost" class="form-control">
-                            @error('form.paper_update_cost')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.seat_cover_cost">Seat Cover Cost<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.seat_cover_cost" placeholder="sear cover cost" class="form-control">
-                            @error('form.seat_cover_cost')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.electric_cost">Electric Cost<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.electric_cost" placeholder="electric cost" class="form-control">
-                            @error('form.electric_cost')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="form.total_cost">Total Cost<span class="text-danger"></span></label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">৳</span>
-                            <input type="number" wire:model="form.total_cost" placeholder="total cost" class="form-control">
-                            @error('form.total_cost')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
+
                     <div class="col-lg-3">
                         <label for="form.status">Status<span class="text-danger">*</span></label>
                         <div class="input-group mb-3">
@@ -272,36 +143,10 @@
                     </div>
                 </div>
                 <div class="text-start mt-3">
-                    <button class="bg-transparent border border-slate-400 px-4 py-1 rounded"
-                        type="submit">Save</button>
+                    <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save</button>
                 </div>
             </form>
         </div>
         <!-- Form Part End !-->
     </div>
-    {{-- <div class="col-lg-4 px-3 py-3" style="border-left:1px solid gray">
-        <!-- Header Part Start !-->
-        <header class="pb-4 d-flex justify-content-between align-items-center">
-            <div class="">
-                <p class="fs-5 fw-600">Details</p>
-                <span>Details for shown</span>
-            </div>
-        </header>
-        <hr>
-        <!-- Header Part End !-->
-
-        <!-- Details Part Start !-->
-        <div class="row">
-            <div class="col-lg-5">
-                <p class="fs-6 fw-400">Vehicle Name</p>
-            </div>
-            <div class="col-lg-2">
-                <p class="fs-6 fw-400">:</p>
-            </div>
-            <div class="col-lg-5">
-                 <p class="fs-6 fw-400">Toyota CHR</p>
-            </div>
-        </div>
-        <!-- Details Part End !-->
-    </div> --}}
 </div>
