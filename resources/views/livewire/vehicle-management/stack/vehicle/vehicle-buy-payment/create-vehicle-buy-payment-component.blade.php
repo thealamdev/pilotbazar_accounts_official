@@ -2,7 +2,7 @@
     <!-- Header Part Start !-->
     <header class="pb-4 d-flex justify-content-between align-items-center">
         <div class="">
-            <p class="fs-5 fw-600">Vehicle Buy Payment of {{ $vehicle->name . ' ' . $vehicle->model?->name . ' ' . $vehicle->model_year?->name }}</p>
+            <p class="fs-5 fw-600">Vehicle Buy Payment of <span class="text-success">{{ $vehicle->name . ' ' . $vehicle->model?->name . ' ' . $vehicle->model_year?->name }}</span> </p>
             <span>Please must fill the field where (*) sign is visible.</span>
         </div>
     </header>
@@ -34,9 +34,9 @@
                     <label for="form.amount">Amount<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text">৳</span>
-                        <input type="text" wire:model="form.amount" class="form-control @error('form.amount')
+                        <input type="number" wire:model.live="form.amount" class="form-control @error('form.amount')
                             {{ 'is-invalid' }}
-                        @enderror" placeholder="method name">
+                        @enderror" placeholder="amout">
                         @error('form.amount')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

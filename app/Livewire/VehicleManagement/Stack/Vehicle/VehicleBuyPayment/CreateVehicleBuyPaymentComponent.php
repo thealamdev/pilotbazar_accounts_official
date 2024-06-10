@@ -2,6 +2,7 @@
 
 namespace App\Livewire\VehicleManagement\Stack\Vehicle\VehicleBuyPayment;
 
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentRequest;
 use App\Models\VehicleManagement\Dependency\Payment\Method\PaymentMethod;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use Livewire\Component;
@@ -13,7 +14,7 @@ class CreateVehicleBuyPaymentComponent extends Component
      * Define public object $form;
      * @var array|object
      */
-    public $form = [];
+    public CreateVehicleBuyPaymentRequest  $form;
 
     /**
      * Define public property $vehicle
@@ -33,7 +34,7 @@ class CreateVehicleBuyPaymentComponent extends Component
      */
     public function save()
     {
-        dd($this->vehicle->id);
+        $this->validate();
     }
 
     /**
