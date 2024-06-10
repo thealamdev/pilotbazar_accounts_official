@@ -97,7 +97,6 @@
                                                                 {{ $each?->status == 1 ? 'Active' : 'Inactive' }}
                                                             </div>
                                                         </td>
-
                                                         <td>
                                                             <div class="d-flex align-items-center">
                                                                 <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" href="{{ route('admin.version1.vehicle-management.vehicle.module.color.update', ['color' => $each->id]) }}">
@@ -141,8 +140,8 @@
                                             </tfoot>
                                         </table>
                                     </div>
-                                     <!-- Pagination links here !-->
-                                     {{ $responses->links() }}
+                                    <!-- Pagination links here !-->
+                                    {{ $responses->links() }}
                                 </div>
                             </div>
                         </div>
