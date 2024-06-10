@@ -274,10 +274,10 @@
                                                  <span class="nav-link-text">Payment</span>
                                              </a>
                                              <ul id="dash_log" class="nav flex-column collapse  nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create')) show @endif">
-                                                 <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') ? 'active' : '' }}">
+                                                 <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') ? 'active' : '' }}">
                                                      <ul class="nav flex-column">
-                                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') ? 'active' : '' }}">
-                                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') }}">
+                                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') ? 'active' : '' }}">
+                                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') }}">
                                                                  <span class="nav-link-text">
                                                                      Method
                                                                  </span>
