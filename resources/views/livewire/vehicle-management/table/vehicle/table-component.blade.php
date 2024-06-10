@@ -9,7 +9,7 @@
                         </a>
 
                         <form class="mx-3 flex-grow-1 mw-400p" role="search">
-                            <input type="text" class="form-control" placeholder="Search media by Name">
+                            <input type="text" wire:model.live="search" class="form-control" placeholder="Search media by Name">
                         </form>
                     </div>
 
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="contact-list-view">
-                                        <table id="datable_1" class="table nowrap w-100 mb-5">
+                                        <table class="table nowrap w-100 mb-5">
                                             <thead>
                                                 <tr>
                                                     <th>
@@ -120,8 +120,29 @@
                                                     <td>No data found !!</td>
                                                 @endforelse
                                             </tbody>
+
+                                            <tfoot>
+                                                <tr>
+                                                    <td>
+                                                        <span class="form-check fs-6 mb-0">
+                                                            <input type="checkbox" class="form-check-input check-select-all" id="customCheck1">
+                                                            <label class="form-check-label" for="customCheck1"></label>
+                                                        </span>
+                                                    </td>
+                                                    <td>Name</td>
+                                                    <td>Model</td>
+                                                    <td>Model Year</td>
+                                                    <td>Color</td>
+                                                    <td>Purchase Price</td>
+                                                    <td>Total Price</td>
+                                                    <td>Status</td>
+                                                    <td>Action</td>
+                                                </tr>
+                                            </tfoot>
                                         </table>
                                     </div>
+                                     <!-- Pagination links here !-->
+                                     {{ $responses->links() }}
                                 </div>
                             </div>
                         </div>

@@ -5,19 +5,25 @@ namespace App\Livewire\VehicleManagement\Table\Vehicle;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use Livewire\Component;
 use Livewire\Attributes\Title;
+use Livewire\WithPagination;
 
 class TableComponent extends Component
 {
+    use WithPagination;
     /**
-     * Define property $responses
-     * @var array|object
+     * public property $search
+     * @var string
      */
-    public $responses = [];
+    public ?string $search = '';
 
     #[Title('Vehicles')]
     public function render()
     {
-        $this->responses = Vehicle::query()->latest()->where('status', 1)->get();
-        return view('livewire.vehicle-management.table.vehicle.table-component', ['responses'  => $this->responses]);
+        $responses = Vehicle::query()
+            ->latest()
+            ->where('status', 1)
+            ->where('name', 'like', "%{$this->search}%")
+            ->paginate(3);
+        return view('livewire.vehicle-management.table.vehicle.table-component', ['responses'  => $responses]);
     }
 }

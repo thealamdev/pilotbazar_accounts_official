@@ -9,7 +9,7 @@
                         </a>
 
                         <form class="mx-3 flex-grow-1 mw-400p" role="search">
-                            <input type="text" class="form-control" placeholder="Search media by Name">
+                            <input type="text" wire:model.live="search" class="form-control" placeholder="Search media by Name">
                         </form>
                     </div>
 
@@ -22,8 +22,6 @@
                             </span>
                         </a>
                     </div>
-
-
                 </header>
 
                 <div class="py-5">
