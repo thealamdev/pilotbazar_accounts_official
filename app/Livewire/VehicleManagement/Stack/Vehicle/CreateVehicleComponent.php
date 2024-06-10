@@ -49,15 +49,16 @@ class CreateVehicleComponent extends Component
 
     /**
      * Define save function for store data
-     * @return void
+     * @return array|object
      */
-    public function save(): void
+    public function save(): array|object
     {
         $this->validate($this->form->rules(), attributes: $this->form->attributes());
         $isCreate = CreateVehicleService::store($this->form);
         $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
         $this->dispatch('success', ['message' => $response]);
         $this->form->reset();
+        return redirect()->route('admin.version1.vehicle-management.vehicle.payment-method.create', ['vehicle' => $isCreate->getKey()]);
     }
 
     #[Title('Vehicle Create')]
