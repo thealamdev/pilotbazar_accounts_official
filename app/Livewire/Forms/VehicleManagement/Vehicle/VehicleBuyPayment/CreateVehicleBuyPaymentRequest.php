@@ -12,7 +12,7 @@ class CreateVehicleBuyPaymentRequest extends Form
      * @var ?string
      */
     #[Validate('required')]
-    public ?string $name;
+    public ?string $client_name;
 
 
     /**

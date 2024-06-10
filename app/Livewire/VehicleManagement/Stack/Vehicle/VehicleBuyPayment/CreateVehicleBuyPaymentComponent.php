@@ -17,9 +17,22 @@ class CreateVehicleBuyPaymentComponent extends Component
     public CreateVehicleBuyPaymentRequest  $form;
 
     /**
-     * Define public property $formType
+     * Define public property $selectedMethod
+     * @var string
      */
-    public $formTypeCast;
+    public ?string $selectedMethod = '';
+
+    /**
+     * Define the formType
+     * @var string
+     */
+    public $formType = [];
+
+    /**
+     * Define public property $currentFormType
+     * @var string
+     */
+    public ?string $currentFormType =  '';
 
     /**
      * Define public property $vehicle
@@ -32,6 +45,15 @@ class CreateVehicleBuyPaymentComponent extends Component
      * @var array|object
      */
     public ?object $methods;
+
+    /**
+     * Define the public updatedSelectedMethod for get the seleted method.
+     */
+    public function updatedSelectedMethod()
+    {
+        $this->formType = PaymentMethod::query()->where('id', $this->selectedMethod)->first();
+        $this->currentFormType = $this->formType['name'];
+    }
 
     /**
      * Define public method save()
@@ -55,6 +77,6 @@ class CreateVehicleBuyPaymentComponent extends Component
     #[Title('Vehicle Buy Payment')]
     public function render()
     {
-        return view('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.create-vehicle-buy-payment-component', ['vehicle' => $this->vehicle, 'methods' => $this->methods]);
+        return view('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.create-vehicle-buy-payment-component', ['vehicle' => $this->vehicle, 'methods' => $this->methods, 'currentFormType' => $this->currentFormType]);
     }
 }
