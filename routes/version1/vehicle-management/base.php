@@ -24,4 +24,15 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
             Route::get('create', \App\Livewire\VehicleManagement\Stack\Modules\ModelYear\CreateComponent::class)->name('create');
         });
     });
+    /**
+     * Vehicle Dependency Routes
+     */
+    Route::prefix('dependencies')->name('dependency.')->group(function () {
+        Route::prefix('payments')->name('payment.')->group(function () {
+            Route::prefix('methods')->name('method.')->group(function () {
+                Route::get('/', \App\Livewire\VehicleManagement\Table\Dependency\Payment\Method\TableMethodComponent::class)->name('index');
+                Route::get('create', \App\Livewire\VehicleManagement\Stack\Dependency\Payment\Method\CreateMethodComponent::class)->name('create');
+            });
+        });
+    });
 });
