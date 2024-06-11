@@ -25,6 +25,17 @@ class CreateVehicleBuyPaymentService
                 'date' => $form->date
             ]);
         } elseif ($method->name === 'Cash Deposit') {
+            $response = VehicleBuyPayment::create([
+                'vehicle_id' => $vehicle->id,
+                'payment_method_id' => $method?->id,
+                'pbl_bank' => $form?->pbl_bank,
+                'clients_bank' => $form?->clients_bank,
+                'client_bank_account_number' => $form?->client_bank_account_number,
+                'client_name' => $form?->client_name,
+                'amount' => $form?->amount,
+                'remarks' => $form?->remarks,
+                'date' => $form->date
+            ]);
         }
 
         return $response;

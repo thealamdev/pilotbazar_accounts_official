@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('model_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('model_year_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
-            $table->string('registratrion_number')->nullable();
+            $table->string('registration_number')->nullable();
             $table->string('chassis_number')->nullable();
             $table->string('engine_number')->nullable();
             $table->date('purchase_date')->nullable();

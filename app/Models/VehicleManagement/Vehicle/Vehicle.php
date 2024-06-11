@@ -3,16 +3,17 @@
 namespace App\Models\VehicleManagement\Vehicle;
 
 use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\VehicleManagement\Modules\Color;
 use App\Models\VehicleManagement\Modules\Models;
 use App\Models\VehicleManagement\Modules\ModelYear;
-use App\Models\VehicleManagement\Vehicle\VehicleBuyPayment\VehicleBuyPayment;
-use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCosting;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\VehicleManagement\Dependency\Payment\Method\PaymentMethod;
+use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCosting;
+use App\Models\VehicleManagement\Vehicle\VehicleBuyPayment\VehicleBuyPayment;
 
 class Vehicle extends Model
 {

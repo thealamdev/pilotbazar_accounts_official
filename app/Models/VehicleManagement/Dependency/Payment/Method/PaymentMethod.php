@@ -19,9 +19,15 @@ class PaymentMethod extends Model
     protected $guarded = ['id'];
 
     /**
+     * Define proptected property $table
+     * @var string
+     */
+    protected $table = 'payment_methods';
+    /**
      * relation with User $user Model.
      * @return BelongsTo
      */
+    
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id', 'id');

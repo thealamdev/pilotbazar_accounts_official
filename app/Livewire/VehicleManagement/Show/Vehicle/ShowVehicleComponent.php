@@ -12,7 +12,7 @@ class ShowVehicleComponent extends Component
      * Define public property $responses
      * @var array|object
      */
-    public ?object $responses;
+    public ?object $response;
 
     /**
      * Define public mount method 
@@ -20,15 +20,18 @@ class ShowVehicleComponent extends Component
      */
     public function mount($vehicle): void
     {
-        $this->responses = Vehicle::query()
+        $this->response = Vehicle::query()
             ->where('id', $vehicle)
-            ->with('user', 'color', 'models', 'model_year', 'buyPayments', 'mediaCosting')
+            ->with('user', 'color', 'models', 'model_year', 'mediaCosting')
+            ->with('buyPayments', function ($q) {
+                $q->with('paymentMethod');
+            })
             ->first();
     }
 
     #[Title('Vehicle | Show')]
     public function render()
     {
-        return view('livewire.vehicle-management.show.vehicle.show-vehicle-component', ['responses' => $this->responses]);
+        return view('livewire.vehicle-management.show.vehicle.show-vehicle-component', ['response' => $this->response]);
     }
 }

@@ -83,10 +83,10 @@ class CreateVehicleBuyPaymentComponent extends Component
     public function saveCashDeposit()
     {
         $this->formCashDeposit->validate();
-        $isCreate = CreateVehicleBuyPaymentService::store($this->form, $this->vehicle, $this->formType);
+        $isCreate = CreateVehicleBuyPaymentService::store($this->formCashDeposit, $this->vehicle, $this->formType);
         $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
-        $this->form->reset();
+        $this->formCashDeposit->reset();
     }
 
     /**
