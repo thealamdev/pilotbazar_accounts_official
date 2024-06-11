@@ -28,11 +28,11 @@ class VehicleMediaCostingRequest extends Form
      */
     #[Validate('required|array|min:1')]
     public ?array $amount = [];
-    
+
     /**
      * Define public property $remarks
      * @var array
      */
-    #[Validate('required|array|min:1')]
+    #[Validate('nullable|array|min:1')]
     public ?array $remarks = [];
 }

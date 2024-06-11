@@ -14,7 +14,7 @@ class VehicleCostingComponent extends Component
      * Define form object $form
      * @var object
      */
-    public VehicleMediaCostingRequest $form;
+    public VehicleMediaCostingRequest $vehicleMediaCostingRequest;
 
     /**
      * Define public property $mediaCostingForm;
@@ -23,9 +23,20 @@ class VehicleCostingComponent extends Component
     public $mediaCostingForm = 'no';
 
     /**
+     * Define public property $maintenanceCostingForm;
+     * @var bool
+     */
+    public $maintenanceCostingForm = 'no';
+
+    /**
      * Define public property $mediaCostFormLen
      */
     public $mediaCostFormLen = 1;
+
+    /**
+     * Define public property $mediaCostFormLen
+     */
+    public $maintenanceCostingFormLen = 1;
 
     /**
      * Define public property $vehicle
@@ -43,12 +54,30 @@ class VehicleCostingComponent extends Component
     }
 
     /**
-     * Define public method mediaCostFormLenIncrement() for increment the mediaCostingForm
+     * Define public method maintenanceCostingFormStatus() for update $maintenanceCostingForm
+     * @return void
+     */
+    public function maintenanceCostingFormStatus()
+    {
+        $this->maintenanceCostingForm = $this->maintenanceCostingForm == 'no'  ? 'yes' : 'no';
+    }
+
+    /**
+     * Define public method mediaCostFormLenIncrement() for increment the mediaCostingFormLen
      * @return void
      */
     public function mediaCostFormLenIncrement()
     {
         $this->mediaCostFormLen++;
+    }
+
+    /**
+     * Define public method maintenanceCostFormLenIncrement() for increment the maintenanceCostingFormLen
+     * @return void
+     */
+    public function maintenanceCostFormLenIncrement()
+    {
+        $this->maintenanceCostingFormLen++;
     }
 
     /**
@@ -66,15 +95,16 @@ class VehicleCostingComponent extends Component
      */
     public function saveMediaCost()
     {
-        $this->form->validate();
-        $isCreate = CreateVehicleCostingService::store($this->form, $this->vehicle);
+        $this->vehicleMediaCostingRequest->validate();
+        $isCreate = CreateVehicleCostingService::store($this->vehicleMediaCostingRequest, $this->vehicle);
         $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
+        $this->vehicleMediaCostingRequest->reset();
     }
 
     #[Title('Vehicle Costings')]
     public function render()
     {
-        return view('livewire.vehicle-management.stack.vehicle.vehicle-costing.vehicle-costing-component', ['mediaCostingForm' => $this->mediaCostingForm, 'mediaCostFormLen' => $this->mediaCostFormLen]);
+        return view('livewire.vehicle-management.stack.vehicle.vehicle-costing.vehicle-costing-component');
     }
 }
