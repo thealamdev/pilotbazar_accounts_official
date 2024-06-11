@@ -6,10 +6,13 @@ use App\Models\User;
 use App\Models\VehicleManagement\Modules\Color;
 use App\Models\VehicleManagement\Modules\Models;
 use App\Models\VehicleManagement\Modules\ModelYear;
+use App\Models\VehicleManagement\Vehicle\VehicleBuyPayment\VehicleBuyPayment;
+use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCosting;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Vehicle extends Model
 {
@@ -20,6 +23,24 @@ class Vehicle extends Model
      * protected guarded $guarded
      */
     protected $guarded = ['id'];
+
+    /**
+     * Define public method buyPayments
+     * @return HasMany
+     */
+    public function buyPayments(): HasMany
+    {
+        return $this->hasMany(VehicleBuyPayment::class, 'vehicle_id', 'id');
+    }
+
+    /**
+     * Define public method mediaCosting
+     * @return HasMany
+     */
+    public function mediaCosting(): HasMany
+    {
+        return $this->hasMany(VehicleMediaCosting::class, 'vehicle_id', 'id');
+    }
 
     /**
      * Define public method color

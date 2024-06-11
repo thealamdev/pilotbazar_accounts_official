@@ -102,16 +102,24 @@
                                                                 <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" href="{{ route('admin.version1.vehicle-management.vehicle.module.color.update', ['color' => $each->id]) }}">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
-                                                                            <i data-feather="edit-2"></i>
+                                                                            <i class="fa-solid fa-pen"></i>
                                                                         </span>
                                                                     </span>
                                                                 </a>
                                                                 <button type="button" wire:click="delete({{ $each->id }})" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" wire:confirm="Are you sure you want to delete this post?">
                                                                     <span class="icon">
-                                                                        <span class="feather-icon"><i data-feather="trash"></i>
+                                                                        <span class="feather-icon">
+                                                                            <i class="fa-solid fa-eraser"></i>
                                                                         </span>
                                                                     </span>
                                                                 </button>
+                                                                <a href="{{ route('admin.version1.vehicle-management.vehicle.show', ['vehicle' => $each?->id]) }}" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover">
+                                                                    <span class="icon">
+                                                                        <span class="feather-icon">
+                                                                            <i class="fa-solid fa-arrow-right"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                </a>
                                                             </div>
                                                         </td>
                                                     </tr>
