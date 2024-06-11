@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCostingRequest;
+use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehicleCostingService;
 
 class VehicleCostingComponent extends Component
 {
@@ -65,8 +66,10 @@ class VehicleCostingComponent extends Component
      */
     public function saveMediaCost()
     {
-        // $this->form->validate();
-        dd($this->form);
+        $this->form->validate();
+        $isCreate = CreateVehicleCostingService::store($this->form, $this->vehicle);
+        $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
     }
 
     #[Title('Vehicle Costings')]

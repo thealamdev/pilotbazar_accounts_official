@@ -9,11 +9,11 @@ use Livewire\Form;
 class VehicleMediaCostingRequest extends Form
 {
     /**
-     * Define public property $client_name
+     * Define public property $costing_name
      * @var array
      */
     #[Validate('required|array|min:1')]
-    public ?array $client_name = [];
+    public ?array $costing_name = [];
 
     /**
      * Define public property $date
@@ -28,6 +28,7 @@ class VehicleMediaCostingRequest extends Form
      */
     #[Validate('required|array|min:1')]
     public ?array $amount = [];
+    
     /**
      * Define public property $remarks
      * @var array

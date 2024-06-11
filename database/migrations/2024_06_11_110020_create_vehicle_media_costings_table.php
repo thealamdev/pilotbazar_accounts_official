@@ -11,17 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vehicle_buy_payments', function (Blueprint $table) {
+        Schema::create('vehicle_media_costings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('vehicle_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('payment_method_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->string('pbl_bank')->nullable();
-            $table->string('clients_bank')->nullable();
-            $table->string('client_bank_account_number')->nullable();
-            $table->string('client_name');
-            $table->string('amount');
-            $table->longText('remarks')->nullable();
+            $table->string('costing_name');
+            $table->double('amount');
             $table->date('date');
+            $table->longText('remarks')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vehicle_buy_payments');
+        Schema::dropIfExists('vehicle_media_costings');
     }
 };
