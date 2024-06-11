@@ -14,7 +14,7 @@ class CreateVehicleBuyPaymentComponent extends Component
      * Define public object $form;
      * @var array|object
      */
-    public CreateVehicleBuyPaymentRequest  $form;
+    public CreateVehicleBuyPaymentRequest $form;
 
     /**
      * Define public property $selectedMethod
@@ -62,6 +62,7 @@ class CreateVehicleBuyPaymentComponent extends Component
     public function saveBank()
     {
         $this->validate();
+        dd($this->form);
     }
 
     /**
