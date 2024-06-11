@@ -18,7 +18,12 @@ class CreateVehicleBuyPaymentComponent extends Component
      * @var array|object
      */
     public CreateVehicleBuyPaymentRequest $form;
-    public CreateVehicleBuyPaymentBankRequest $formData;
+
+    /**
+     * Define public Form object $formCashDeposit
+     * @var object
+     */
+    public CreateVehicleBuyPaymentBankRequest $formCashDeposit;
 
     /**
      * Define public property $selectedMethod
@@ -60,10 +65,10 @@ class CreateVehicleBuyPaymentComponent extends Component
     }
 
     /**
-     * Define public method save()
-     * @return 
+     * Define public method saveBank()
+     * @return void
      */
-    public function saveBank()
+    public function saveBank(): void
     {
         $this->form->validate();
         $isCreate = CreateVehicleBuyPaymentService::store($this->form, $this->vehicle, $this->formType);
@@ -72,9 +77,17 @@ class CreateVehicleBuyPaymentComponent extends Component
         $this->form->reset();
     }
 
+    /**
+     * Define public method saveCashDeposit() for submit CashDeposit
+     * @return void
+     */
     public function saveCashDeposit()
     {
-        $this->formData->validate();
+        $this->formCashDeposit->validate();
+        $isCreate = CreateVehicleBuyPaymentService::store($this->form, $this->vehicle, $this->formType);
+        $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
+        $this->form->reset();
     }
 
     /**

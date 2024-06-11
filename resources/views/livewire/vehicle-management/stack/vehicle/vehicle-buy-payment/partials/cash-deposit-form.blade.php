@@ -3,69 +3,69 @@
         @csrf
         <div class="row">
             <div class="col-lg-6">
-                <label for="form.pbl_bank">PBL Bank<span class="text-danger">*</span></label>
+                <label for="formCashDeposit.pbl_bank">PBL Bank<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="form.pbl_bank" class="form-control @error('form.pbl_bank') {{ 'is-invalid' }} @enderror" placeholder="client name">
-                    @error('form.pbl_bank')
+                    <input type="text" wire:model.live="formCashDeposit.pbl_bank" class="form-control @error('formCashDeposit.pbl_bank') {{ 'is-invalid' }} @enderror" placeholder="client name">
+                    @error('formCashDeposit.pbl_bank')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="form.client_name">Client Name<span class="text-danger">*</span></label>
+                <label for="formCashDeposit.client_name">Client Name<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="form.client_name" class="form-control @error('form.client_name') {{ 'is-invalid' }} @enderror" placeholder="client name">
-                    @error('form.client_name')
+                    <input type="text" wire:model.live="formCashDeposit.client_name" class="form-control @error('formCashDeposit.client_name') {{ 'is-invalid' }} @enderror" placeholder="client name">
+                    @error('formCashDeposit.client_name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="form.clients_bank">Client Bank<span class="text-danger">*</span></label>
+                <label for="formCashDeposit.clients_bank">Client Bank<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="form.clients_bank" class="form-control @error('form.clients_bank') {{ 'is-invalid' }} @enderror" placeholder="client bank">
-                    @error('form.clients_bank')
+                    <input type="text" wire:model.live="formCashDeposit.clients_bank" class="form-control @error('formCashDeposit.clients_bank') {{ 'is-invalid' }} @enderror" placeholder="client bank">
+                    @error('formCashDeposit.clients_bank')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="form.client_bank_account_number">Account Number<span class="text-danger">*</span></label>
+                <label for="formCashDeposit.client_bank_account_number">Account Number<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="form.client_bank_account_number" class="form-control @error('form.client_bank_account_number') {{ 'is-invalid' }} @enderror" placeholder="client bacnk account number">
-                    @error('form.client_bank_account_number')
+                    <input type="text" wire:model.live="formCashDeposit.client_bank_account_number" class="form-control @error('formCashDeposit.client_bank_account_number') {{ 'is-invalid' }} @enderror" placeholder="client bacnk account number">
+                    @error('formCashDeposit.client_bank_account_number')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="form.amount">Amount<span class="text-danger">*</span></label>
+                <label for="formCashDeposit.amount">Amount<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="number" wire:model.live="form.amount" class="form-control @error('form.amount') {{ 'is-invalid' }} @enderror" placeholder="amout">
-                    @error('form.amount')
+                    <input type="number" wire:model.live="formCashDeposit.amount" class="form-control @error('formCashDeposit.amount') {{ 'is-invalid' }} @enderror" placeholder="amout">
+                    @error('formCashDeposit.amount')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="form.date">Date<span class="text-danger">*</span></label>
+                <label for="formCashDeposit.date">Date<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="date" wire:model.live="form.date" class="form-control @error('form.date') {{ 'is-invalid' }} @enderror">
-                    @error('form.date')
+                    <input type="date" wire:model.live="formCashDeposit.date" class="form-control @error('formCashDeposit.date') {{ 'is-invalid' }} @enderror">
+                    @error('formCashDeposit.date')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-12">
-                <label for="form.remarks">Remark<span class="text-danger"></span></label>
+                <label for="formCashDeposit.remarks">Remark<span class="text-danger"></span></label>
                 <div class="input-group mb-3">
-                    <textarea wire:model.live="form.remarks" cols="30" rows="10" class="form-control" placeholder="remakrs"></textarea>
+                    <textarea wire:model.live="formCashDeposit.remarks" cols="30" rows="5" class="form-control" placeholder="remakrs"></textarea>
                 </div>
             </div>
         </div>
