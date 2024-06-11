@@ -5,6 +5,7 @@
             <span>Please must fill the field where (<span class="text-danger">*</span>) sign is visible.</span>
         </div>
     </header>
+    <hr class="hr-bg">
 
     <!-- Media Cost Form Start !-->
     @include('livewire.vehicle-management.stack.vehicle.vehicle-costing.partials.media-cost-form')
