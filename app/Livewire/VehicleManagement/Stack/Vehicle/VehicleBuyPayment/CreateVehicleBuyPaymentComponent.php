@@ -2,6 +2,8 @@
 
 namespace App\Livewire\VehicleManagement\Stack\Vehicle\VehicleBuyPayment;
 
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentBankRequest;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentCashDeposit;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentRequest;
 use App\Models\VehicleManagement\Dependency\Payment\Method\PaymentMethod;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
@@ -16,6 +18,7 @@ class CreateVehicleBuyPaymentComponent extends Component
      * @var array|object
      */
     public CreateVehicleBuyPaymentRequest $form;
+    public CreateVehicleBuyPaymentBankRequest $formData;
 
     /**
      * Define public property $selectedMethod
@@ -62,11 +65,16 @@ class CreateVehicleBuyPaymentComponent extends Component
      */
     public function saveBank()
     {
-        $this->validate();
+        $this->form->validate();
         $isCreate = CreateVehicleBuyPaymentService::store($this->form, $this->vehicle, $this->formType);
         $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
         $this->form->reset();
+    }
+
+    public function creditSubmit()
+    {
+        $this->formData->validate();
     }
 
     /**

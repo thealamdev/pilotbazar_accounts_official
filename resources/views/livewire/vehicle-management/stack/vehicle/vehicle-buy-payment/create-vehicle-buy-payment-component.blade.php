@@ -36,6 +36,10 @@
             <!-- Bank Form Start !-->
             @include('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.partials.bank-form')
             <!-- Bank Form End !-->
+
+            <form action="#" wire:submit="creditSubmit">
+                <input type="text" wire:model.live="formCreditCard.cash_credit_amount" class="form-control">
+            </form>
         </div>
 
     </div>
