@@ -65,13 +65,14 @@
             <div class="col-lg-12">
                 <label for="form.remarks">Remark<span class="text-danger"></span></label>
                 <div class="input-group mb-3">
-                    <textarea wire:model.live="form.remarks" cols="30" rows="10" class="form-control" placeholder="remakrs"></textarea>
+                    <textarea wire:model.live="form.remarks" cols="30" rows="5" class="form-control" placeholder="remakrs"></textarea>
                 </div>
             </div>
         </div>
 
         <div class="text-start">
             <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save & Next</button>
+            <button wire:click='skip' class="bg-transparent border border-blue-400 px-4 py-1 rounded" type="button">Skip</button>
         </div>
     </form>
 @endif

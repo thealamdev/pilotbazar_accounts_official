@@ -91,6 +91,14 @@ class CreateVehicleBuyPaymentComponent extends Component
     }
 
     /**
+     * Define public method skip() for skip the process
+     */
+    public function skip()
+    {
+        dd('Skipping the process');
+    }
+
+    /**
      * Define the mount method
      * @return void
      */
