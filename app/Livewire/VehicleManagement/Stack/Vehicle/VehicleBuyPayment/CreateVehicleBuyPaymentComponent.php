@@ -72,7 +72,7 @@ class CreateVehicleBuyPaymentComponent extends Component
         $this->form->reset();
     }
 
-    public function creditSubmit()
+    public function saveCashDeposit()
     {
         $this->formData->validate();
     }

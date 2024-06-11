@@ -13,7 +13,7 @@
         <!-- Select the Payment Method Start !-->
         <div class="row">
             <div class="col-lg-12">
-                <label for="form.name">Method Name<span class="text-danger">*</span></label>
+                <label>Method Name<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
                     <select wire:model.live="selectedMethod" class="form-control">
@@ -37,9 +37,9 @@
             @include('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.partials.bank-form')
             <!-- Bank Form End !-->
 
-            <form action="#" wire:submit="creditSubmit">
-                <input type="text" wire:model.live="formCreditCard.cash_credit_amount" class="form-control">
-            </form>
+            <!-- Cash Deposit Form Start !-->
+            @include('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.partials.cash-deposit-form')
+            <!-- Cash Deposit Form End !-->
         </div>
 
     </div>
