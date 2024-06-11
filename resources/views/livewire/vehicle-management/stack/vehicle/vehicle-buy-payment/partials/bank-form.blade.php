@@ -23,11 +23,11 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="form.clienk_bank_name">Client Bank<span class="text-danger">*</span></label>
+                <label for="form.clients_bank">Client Bank<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="form.clienk_bank_name" class="form-control @error('form.clienk_bank_name') {{ 'is-invalid' }} @enderror" placeholder="client bank">
-                    @error('form.clienk_bank_name')
+                    <input type="text" wire:model.live="form.clients_bank" class="form-control @error('form.clients_bank') {{ 'is-invalid' }} @enderror" placeholder="client bank">
+                    @error('form.clients_bank')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
@@ -63,9 +63,9 @@
                 </div>
             </div>
             <div class="col-lg-12">
-                <label for="form.remark">Remark<span class="text-danger"></span></label>
+                <label for="form.remarks">Remark<span class="text-danger"></span></label>
                 <div class="input-group mb-3">
-                    <textarea wire:model.live="form.remark" cols="30" rows="10" class="form-control" placeholder="remakrs"></textarea>
+                    <textarea wire:model.live="form.remarks" cols="30" rows="10" class="form-control" placeholder="remakrs"></textarea>
                 </div>
             </div>
         </div>

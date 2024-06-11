@@ -5,6 +5,7 @@ namespace App\Livewire\VehicleManagement\Stack\Vehicle\VehicleBuyPayment;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentRequest;
 use App\Models\VehicleManagement\Dependency\Payment\Method\PaymentMethod;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
+use App\Services\VehicleManagement\Stack\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentService;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 
@@ -62,7 +63,10 @@ class CreateVehicleBuyPaymentComponent extends Component
     public function saveBank()
     {
         $this->validate();
-        dd($this->form);
+        $isCreate = CreateVehicleBuyPaymentService::store($this->form, $this->vehicle, $this->formType);
+        $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
+        $this->form->reset();
     }
 
     /**

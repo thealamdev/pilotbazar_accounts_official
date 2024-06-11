@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('vehicle_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('payment_method_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->string('pbl_bank')->nullable();
+            $table->string('clients_bank')->nullable();
+            $table->string('client_bank_account_number')->nullable();
+            $table->string('client_name');
             $table->string('amount');
             $table->longText('remarks')->nullable();
             $table->date('date');

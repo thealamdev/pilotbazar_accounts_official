@@ -22,11 +22,11 @@ class CreateVehicleBuyPaymentRequest extends Form
     public ?string $client_name;
 
     /**
-     * Define public property $clienk_bank_name;
+     * Define public property $clients_bank;
      * @var ?string
      */
     #[Validate('required')]
-    public ?string $clienk_bank_name;
+    public ?string $clients_bank;
 
     /**
      * Define public property $client_bank_account_number.
@@ -50,9 +50,9 @@ class CreateVehicleBuyPaymentRequest extends Form
     public $amount;
 
     /**
-     * Define public property $remak;
+     * Define public property $remarks;
      * @var string
      */
     #[Validate('nullable')]
-    public ?string $remark;
+    public ?string $remarks;
 }
