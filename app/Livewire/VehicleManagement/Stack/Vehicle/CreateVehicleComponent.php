@@ -64,6 +64,6 @@ class CreateVehicleComponent extends Component
     #[Title('Vehicle Create')]
     public function render()
     {
-        return view('livewire.vehicle-management.stack.vehicle.create-component');
+        return view('livewire.vehicle-management.stack.vehicle.create-vehicle-component');
     }
 }
