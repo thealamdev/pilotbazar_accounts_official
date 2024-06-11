@@ -3,11 +3,18 @@
 namespace App\Livewire\VehicleManagement\Stack\Vehicle\VehicleCosting;
 
 use Livewire\Component;
-use App\Models\VehicleManagement\Vehicle\Vehicle;
 use Livewire\Attributes\Title;
+use App\Models\VehicleManagement\Vehicle\Vehicle;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCostingRequest;
 
 class VehicleCostingComponent extends Component
 {
+    /**
+     * Define form object $form
+     * @var object
+     */
+    public VehicleMediaCostingRequest $form;
+
     /**
      * Define public property $mediaCostingForm;
      * @var bool
@@ -58,7 +65,8 @@ class VehicleCostingComponent extends Component
      */
     public function saveMediaCost()
     {
-        dd('Hi');
+        // $this->form->validate();
+        dd($this->form);
     }
 
     #[Title('Vehicle Costings')]
