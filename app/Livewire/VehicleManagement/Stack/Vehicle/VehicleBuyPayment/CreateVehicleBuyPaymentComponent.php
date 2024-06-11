@@ -94,7 +94,7 @@ class CreateVehicleBuyPaymentComponent extends Component
      */
     public function skip()
     {
-        dd('Skipping the process');
+        return redirect()->route('admin.version1.vehicle-management.vehicle.costing.create', ['vehicle' => $this->vehicle->id]);
     }
 
     /**
