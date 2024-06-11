@@ -143,7 +143,7 @@
                     </div>
                 </div>
                 <div class="text-start mt-3">
-                    <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save</button>
+                    <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save & Next</button>
                 </div>
             </form>
         </div>

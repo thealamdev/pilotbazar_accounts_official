@@ -28,7 +28,7 @@
 
         <hr class="hr">
         <div class="text-center">
-            <p style="width:50px;margin:0 auto;margin-top:-32px;background:white;padding:0 10px;font-size:20px">{{ $currentFormType ? $currentFormType : 'Nothing' }}</p>
+            <p style="width:150px;margin:0 auto;margin-top:-32px;background:white;padding:0 10px;font-size:20px">{{ $currentFormType ? $currentFormType : 'Nothing' }}</p>
         </div>
         <!-- Select the Payment Method End !-->
 

@@ -59,7 +59,7 @@ class CreateVehicleBuyPaymentComponent extends Component
      * Define public method save()
      * @return 
      */
-    public function save()
+    public function saveBank()
     {
         $this->validate();
     }
