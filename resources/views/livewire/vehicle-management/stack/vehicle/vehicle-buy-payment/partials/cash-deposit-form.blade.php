@@ -71,7 +71,8 @@
         </div>
 
         <div class="text-start">
-            <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save & Next</button>
+            <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save</button>
+            <button wire:click='skip' class="bg-transparent border border-blue-400 px-4 py-1 rounded" type="button">Skip &Next</button>
         </div>
     </form>
 @endif
