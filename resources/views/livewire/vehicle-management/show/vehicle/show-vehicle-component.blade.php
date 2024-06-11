@@ -1,6 +1,6 @@
 <div class="mt-7">
-    <div class="row border border-slate-400 p-5">
-        <div class="col-lg-5 pe-5" style="border-right:1px solid #c2c7ce">
+    <div class="row border border-slate-400 p-3">
+        <div class="col-lg-6 pe-3" style="border-right:1px solid #c2c7ce">
             <!-- Image Name & Color Part Start !-->
             <div class="row">
                 <div class="col-lg-12 pt-3 m-auto text-center">
@@ -30,22 +30,22 @@
                 <div class="col-lg-12">
                     <div class="d-flex justify-content-between pb-1">
                         <p style="width:49%">Engine Number</p>
-                        <p style="width:1%">:</p>
+                        {{-- <p style="width:1%">:</p> --}}
                         <p style="width:50%;text-align:end">{{ $response?->engine_number ?? '---' }}</p>
                     </div>
                     <div class="d-flex justify-content-between pb-1">
                         <p style="width:49%">Chassis Number</p>
-                        <p style="width:1%">:</p>
+                        {{-- <p style="width:1%">:</p> --}}
                         <p style="width:50%;text-align:end">{{ $response?->chassis_number ?? '---' }}</p>
                     </div>
                     <div class="d-flex justify-content-between pb-1">
                         <p style="width:49%">Registration Number</p>
-                        <p style="width:1%">:</p>
+                        {{-- <p style="width:1%">:</p> --}}
                         <p style="width:50%;text-align:end">{{ $response?->registration_number ?? '---' }}</p>
                     </div>
                     <div class="d-flex justify-content-between pb-1">
                         <p style="width:49%">Purchase Date</p>
-                        <p style="width:1%">:</p>
+                        {{-- <p style="width:1%">:</p> --}}
                         <p style="width:50%;text-align:end">{{ date('d M, Y', strtotime($response?->purchase_date)) ?? '---' }}</p>
                     </div>
                 </div>
@@ -69,16 +69,21 @@
                 <div class="col-lg-12">
                     @forelse ($response?->buyPayments as $payment)
                         <div class="d-flex justify-content-between pb-1">
-                            <p style="width:49%">{{ $payment->paymentMethod?->name }}</p>
-                            <p style="width:1%">:</p>
-                            <p style="width:50%;text-align:end">{{ $payment?->amount ?? '---' }} taka</p>
+                            <p style="width:78%">{{ $payment->client_name . ' '. '(' . $payment?->client_bank_account_number . ')' }} <i class="fa-solid fa-arrow-right"></i> {{ $payment->paymentMethod?->name }}</p>
+                            {{-- <p style="width:1%">:</p> --}}
+                            <p style="width:21%;text-align:end">{{ $payment?->amount ?? '---' }} tk</p>
                         </div>
                     @empty
                         <div class="text-center">
                             <p class="text-danger">No Payment Done Yet.</p>
                         </div>
                     @endforelse
-
+                    <hr class="hr">
+                    <div class="d-flex justify-content-between pb-1">
+                        <p style="width:78%">Total Purchase</p>
+                        {{-- <p style="width:1%">:</p> --}}
+                        <p style="width:21%;text-align:end">{{ $response?->purchase_price ?? '---' }} tk</p>
+                    </div>
 
                 </div>
             </div>
