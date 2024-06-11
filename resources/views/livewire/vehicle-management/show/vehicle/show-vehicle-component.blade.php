@@ -1,6 +1,6 @@
 <div class="mt-7">
     <div class="row border border-slate-400 p-5">
-        <div class="col-lg-5">
+        <div class="col-lg-5 pe-5" style="border-right:1px solid #c2c7ce">
             <!-- Image Name & Color Part Start !-->
             <div class="row">
                 <div class="col-lg-12 pt-3 m-auto text-center">
