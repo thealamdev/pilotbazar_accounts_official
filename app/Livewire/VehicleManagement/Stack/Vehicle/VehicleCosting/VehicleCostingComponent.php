@@ -102,6 +102,10 @@ class VehicleCostingComponent extends Component
         $this->vehicleMediaCostingRequest->reset();
     }
 
+    /**
+     * Define public method
+     */
+
     #[Title('Vehicle Costings')]
     public function render()
     {
