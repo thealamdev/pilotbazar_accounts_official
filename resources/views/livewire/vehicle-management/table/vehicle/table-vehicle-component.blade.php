@@ -64,8 +64,8 @@
                                                     <th>Color</th>
                                                     <th>Purchase Price</th>
                                                     <th>Total Price</th>
-                                                    <th>Status</th>
-                                                    <th>Action</th>
+                                                    <th class="text-center">Status</th>
+                                                    <th class="text-center">Action</th>
                                                 </tr>
                                             </thead>
 
@@ -99,31 +99,31 @@
                                                         </td>
                                                         <td>
                                                             <div class="d-flex align-items-center">
-                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" href="{{ route('admin.version1.vehicle-management.vehicle.module.color.update', ['color' => $each->id]) }}">
+                                                                <a title="Edit" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" href="{{ route('admin.version1.vehicle-management.vehicle.module.color.update', ['color' => $each->id]) }}">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
-                                                                            <i class="fa-solid fa-pen"></i>
+                                                                            <i class="fa-solid fa-pen" style="color:gray"></i>
                                                                         </span>
                                                                     </span>
                                                                 </a>
-                                                                <button type="button" wire:click="delete({{ $each->id }})" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" wire:confirm="Are you sure you want to delete this post?">
+                                                                <button title="Trash" type="button" wire:click="delete({{ $each->id }})" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" wire:confirm="Are you sure you want to delete this post?">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
-                                                                            <i class="fa-solid fa-eraser"></i>
+                                                                            <i class="fa-solid fa-eraser" style="color:gray"></i>
                                                                         </span>
                                                                     </span>
                                                                 </button>
-                                                                <a href="{{ route('admin.version1.vehicle-management.vehicle.costing.create', ['vehicle' => $each?->id]) }}" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover">
+                                                                <a title="Add Costing" href="{{ route('admin.version1.vehicle-management.vehicle.costing.create', ['vehicle' => $each?->id]) }}" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
-                                                                            <i class="fa-solid fa-coins"></i>
+                                                                            <i class="fa-solid fa-coins" style="color:gray"></i>
                                                                         </span>
                                                                     </span>
                                                                 </a>
-                                                                <a href="{{ route('admin.version1.vehicle-management.vehicle.show', ['vehicle' => $each?->id]) }}" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover">
+                                                                <a title="Show" href="{{ route('admin.version1.vehicle-management.vehicle.show', ['vehicle' => $each?->id]) }}" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
-                                                                            <i class="fa-solid fa-arrow-right"></i>
+                                                                            <i class="fa-solid fa-arrow-right" style="color:gray"></i>
                                                                         </span>
                                                                     </span>
                                                                 </a>
