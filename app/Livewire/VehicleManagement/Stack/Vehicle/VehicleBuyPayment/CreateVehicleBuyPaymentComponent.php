@@ -90,6 +90,15 @@ class CreateVehicleBuyPaymentComponent extends Component
     }
 
     /**
+     * Define public method saveRTGS() for submit RTGS
+     * @return void
+     */
+    public function saveRTGS()
+    {
+        dd('Hi');
+    }
+
+    /**
      * Define public method skip() for skip the process
      */
     public function skip()
