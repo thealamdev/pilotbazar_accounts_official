@@ -8,32 +8,32 @@ use Livewire\Form;
 class CreateVehicleBuyPaymentRequest extends Form
 {
     /**
-     * Define public property $pbl_bank
+     * Define public property $debit_bank
      * @var ?string
      */
     #[Validate('required')]
-    public $pbl_bank;
+    public $debit_bank;
 
     /**
-     * Define public property $client_name.
+     * Define public property $account_holder_name.
      * @var ?string
      */
     #[Validate('required')]
-    public ?string $client_name;
+    public ?string $account_holder_name;
 
     /**
-     * Define public property $clients_bank;
+     * Define public property $credit_bank_name;
      * @var ?string
      */
     #[Validate('required')]
-    public ?string $clients_bank;
+    public ?string $credit_bank_name;
 
     /**
-     * Define public property $client_bank_account_number.
+     * Define public property $credit_bank_account_number.
      * @var ?string
      */
     #[Validate('required')]
-    public ?string $client_bank_account_number;
+    public ?string $credit_bank_account_number;
 
     /**
      * Define public property $date.

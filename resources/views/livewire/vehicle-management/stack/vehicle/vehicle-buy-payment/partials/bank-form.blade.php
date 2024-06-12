@@ -3,41 +3,41 @@
         @csrf
         <div class="row">
             <div class="col-lg-6">
-                <label for="form.pbl_bank">PBL Bank<span class="text-danger">*</span></label>
+                <label for="form.debit_bank">PBL Bank<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="form.pbl_bank" class="form-control @error('form.pbl_bank') {{ 'is-invalid' }} @enderror" placeholder="client name">
-                    @error('form.pbl_bank')
+                    <input type="text" wire:model.live="form.debit_bank" class="form-control @error('form.debit_bank') {{ 'is-invalid' }} @enderror" placeholder="client name">
+                    @error('form.debit_bank')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="form.client_name">Client Name<span class="text-danger">*</span></label>
+                <label for="form.account_holder_name">Client Name<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="form.client_name" class="form-control @error('form.client_name') {{ 'is-invalid' }} @enderror" placeholder="client name">
-                    @error('form.client_name')
+                    <input type="text" wire:model.live="form.account_holder_name" class="form-control @error('form.account_holder_name') {{ 'is-invalid' }} @enderror" placeholder="client name">
+                    @error('form.account_holder_name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="form.clients_bank">Client Bank<span class="text-danger">*</span></label>
+                <label for="form.credit_bank_name">Client Bank<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="form.clients_bank" class="form-control @error('form.clients_bank') {{ 'is-invalid' }} @enderror" placeholder="client bank">
-                    @error('form.clients_bank')
+                    <input type="text" wire:model.live="form.credit_bank_name" class="form-control @error('form.credit_bank_name') {{ 'is-invalid' }} @enderror" placeholder="client bank">
+                    @error('form.credit_bank_name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="form.client_bank_account_number">Account Number<span class="text-danger">*</span></label>
+                <label for="form.credit_bank_account_number">Account Number<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="form.client_bank_account_number" class="form-control @error('form.client_bank_account_number') {{ 'is-invalid' }} @enderror" placeholder="client bacnk account number">
-                    @error('form.client_bank_account_number')
+                    <input type="text" wire:model.live="form.credit_bank_account_number" class="form-control @error('form.credit_bank_account_number') {{ 'is-invalid' }} @enderror" placeholder="client bacnk account number">
+                    @error('form.credit_bank_account_number')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
