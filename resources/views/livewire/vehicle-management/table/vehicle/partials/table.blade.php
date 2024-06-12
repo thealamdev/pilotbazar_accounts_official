@@ -61,6 +61,13 @@
                                 </span>
                             </span>
                         </a>
+                        <a title="Buy Payment" href="{{ route('admin.version1.vehicle-management.vehicle.buy-payment.create', ['vehicle' => $each?->id]) }}" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover">
+                            <span class="icon">
+                                <span class="feather-icon">
+                                    <i class="fa-solid fa-money-bill-wave"></i>
+                                </span>
+                            </span>
+                        </a>
                         <a title="Show" href="{{ route('admin.version1.vehicle-management.vehicle.show', ['vehicle' => $each?->id]) }}" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover">
                             <span class="icon">
                                 <span class="feather-icon">
