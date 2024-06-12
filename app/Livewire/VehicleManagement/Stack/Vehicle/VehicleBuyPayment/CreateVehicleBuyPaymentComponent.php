@@ -31,10 +31,10 @@ class CreateVehicleBuyPaymentComponent extends Component
     public ?string $selectedMethod = '';
 
     /**
-     * Define the formType
-     * @var string
+     * Define the paymentMethodType
+     * @var array
      */
-    public $formType = [];
+    public $paymentMethodType = [];
 
     /**
      * Define public property $currentFormType
@@ -59,8 +59,8 @@ class CreateVehicleBuyPaymentComponent extends Component
      */
     public function updatedSelectedMethod()
     {
-        $this->formType = PaymentMethod::query()->where('id', $this->selectedMethod)->first();
-        $this->currentFormType = $this->formType['name'];
+        $this->paymentMethodType = PaymentMethod::query()->where('id', $this->selectedMethod)->first();
+        $this->currentFormType = $this->paymentMethodType['name'];
     }
 
     /**

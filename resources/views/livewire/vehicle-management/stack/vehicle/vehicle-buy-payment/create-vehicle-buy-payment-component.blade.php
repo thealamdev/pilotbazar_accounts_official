@@ -40,6 +40,10 @@
             <!-- Cash Deposit Form Start !-->
             @include('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.partials.cash-deposit-form')
             <!-- Cash Deposit Form End !-->
+
+            <!-- RTGS Form Start !-->
+            @include('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.partials.rtgs-form')
+            <!-- RTGS Form End !-->
         </div>
 
     </div>
