@@ -55,7 +55,4 @@ class CreateVehicleBuyPaymentBankRequest extends Form
      */
     #[Validate('nullable')]
     public ?string $remarks;
-
-    #[Validate('required')]
-    public $cash_credit_amount;
 }
