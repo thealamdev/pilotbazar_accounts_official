@@ -19,6 +19,5 @@
             @include('livewire.vehicle-management.show.vehicle.partials.service-costing')
             <!--Service Costing Part End !-->
         </div>
-
     </div>
 </div>
