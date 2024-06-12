@@ -3,41 +3,41 @@
         @csrf
         <div class="row">
             <div class="col-lg-6">
-                <label for="formCashDeposit.pbl_bank">PBL Bank<span class="text-danger">*</span></label>
+                <label for="formCashDeposit.debit_bank">Debit Bank(Our Bank)<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="formCashDeposit.pbl_bank" class="form-control @error('formCashDeposit.pbl_bank') {{ 'is-invalid' }} @enderror" placeholder="client name">
-                    @error('formCashDeposit.pbl_bank')
+                    <input type="text" wire:model.live="formCashDeposit.debit_bank" class="form-control @error('formCashDeposit.debit_bank') {{ 'is-invalid' }} @enderror" placeholder="client name">
+                    @error('formCashDeposit.debit_bank')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="formCashDeposit.client_name">Client Name<span class="text-danger">*</span></label>
+                <label for="formCashDeposit.account_holder_name">Account Holder Name<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="formCashDeposit.client_name" class="form-control @error('formCashDeposit.client_name') {{ 'is-invalid' }} @enderror" placeholder="client name">
-                    @error('formCashDeposit.client_name')
+                    <input type="text" wire:model.live="formCashDeposit.account_holder_name" class="form-control @error('formCashDeposit.account_holder_name') {{ 'is-invalid' }} @enderror" placeholder="client name">
+                    @error('formCashDeposit.account_holder_name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="formCashDeposit.clients_bank">Client Bank<span class="text-danger">*</span></label>
+                <label for="formCashDeposit.credit_bank_name">Credit Bank Name<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="formCashDeposit.clients_bank" class="form-control @error('formCashDeposit.clients_bank') {{ 'is-invalid' }} @enderror" placeholder="client bank">
+                    <input type="text" wire:model.live="formCashDeposit.account_holder_bank_name" class="form-control @error('formCashDeposit.clients_bank') {{ 'is-invalid' }} @enderror" placeholder="client bank">
                     @error('formCashDeposit.clients_bank')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="formCashDeposit.client_bank_account_number">Account Number<span class="text-danger">*</span></label>
+                <label for="formCashDeposit.credit_bank_account_number">Credit Bank Account Number<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="formCashDeposit.client_bank_account_number" class="form-control @error('formCashDeposit.client_bank_account_number') {{ 'is-invalid' }} @enderror" placeholder="client bacnk account number">
-                    @error('formCashDeposit.client_bank_account_number')
+                    <input type="text" wire:model.live="formCashDeposit.credit_bank_account_number" class="form-control @error('formCashDeposit.credit_bank_account_number') {{ 'is-invalid' }} @enderror" placeholder="client bacnk account number">
+                    @error('formCashDeposit.credit_bank_account_number')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>

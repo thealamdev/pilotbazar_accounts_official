@@ -110,6 +110,6 @@ class CreateVehicleBuyPaymentComponent extends Component
     #[Title('Vehicle Buy Payment')]
     public function render()
     {
-        return view('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.create-vehicle-buy-payment-component', ['vehicle' => $this->vehicle, 'methods' => $this->methods, 'currentFormType' => $this->currentFormType]);
+        return view('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.create-vehicle-buy-payment-component');
     }
 }
