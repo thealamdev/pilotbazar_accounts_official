@@ -6,7 +6,9 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCostingRequest;
-use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehicleCostingService;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMaintenanceCostingRequest;
+use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehicleMediaCostingService;
+use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehicleMaintenanceCostingService;
 
 class VehicleCostingComponent extends Component
 {
@@ -15,6 +17,11 @@ class VehicleCostingComponent extends Component
      * @var object
      */
     public VehicleMediaCostingRequest $vehicleMediaCostingRequest;
+
+    /**
+     * Define form object $vehicleMaintenanceCostingRequest
+     */
+    public VehicleMaintenanceCostingRequest $vehicleMaintenanceCostingRequest;
 
     /**
      * Define public property $mediaCostingForm;
@@ -93,18 +100,27 @@ class VehicleCostingComponent extends Component
      * Define public method saveMediaCost() for save the record
      * @return void
      */
-    public function saveMediaCost()
+    public function saveMediaCost(): void
     {
         $this->vehicleMediaCostingRequest->validate();
-        $isCreate = CreateVehicleCostingService::store($this->vehicleMediaCostingRequest, $this->vehicle);
+        $isCreate = CreateVehicleMediaCostingService::store($this->vehicleMediaCostingRequest, $this->vehicle);
         $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
         $this->vehicleMediaCostingRequest->reset();
     }
 
     /**
-     * Define public method
+     * Define public method saveMaintenanceCost()
+     * @return void
      */
+    public function saveMaintenanceCost(): void
+    {
+        $this->vehicleMaintenanceCostingRequest->validate();
+        $isCreate = CreateVehicleMaintenanceCostingService::store($this->vehicleMaintenanceCostingRequest, $this->vehicle);
+        $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
+        $this->vehicleMaintenanceCostingRequest->reset();
+    }
 
     #[Title('Vehicle Costings')]
     public function render()

@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\VehicleManagement\Dependency\Payment\Method\PaymentMethod;
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCosting;
 use App\Models\VehicleManagement\Vehicle\VehicleBuyPayment\VehicleBuyPayment;
+use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMaintenanceCosting;
 
 class Vehicle extends Model
 {
@@ -41,6 +42,15 @@ class Vehicle extends Model
     public function mediaCosting(): HasMany
     {
         return $this->hasMany(VehicleMediaCosting::class, 'vehicle_id', 'id');
+    }
+
+    /**
+     * Define public method maintenanceCosting
+     * @return HasMany
+     */
+    public function maintenanceCosting(): HasMany
+    {
+        return $this->hasMany(VehicleMaintenanceCosting::class, 'vehicle_id', 'id');
     }
 
     /**

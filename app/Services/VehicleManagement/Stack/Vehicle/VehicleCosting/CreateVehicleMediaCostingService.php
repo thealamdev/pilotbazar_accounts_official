@@ -4,7 +4,7 @@ namespace App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting;
 
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCosting;
 
-class CreateVehicleCostingService
+class CreateVehicleMediaCostingService
 {
     /**
      * Create static store method
