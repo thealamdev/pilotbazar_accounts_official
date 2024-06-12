@@ -14,4 +14,8 @@
     <!-- Maintenance Cost Form Start !-->
     @include('livewire.vehicle-management.stack.vehicle.vehicle-costing.partials.maintenance-cost-form')
     <!-- Maintenance Cost Form End !-->
+
+    <!-- Service Cost Form Start !-->
+    @include('livewire.vehicle-management.stack.vehicle.vehicle-costing.partials.service-cost-form')
+    <!-- Service Cost Form End !-->
 </div>

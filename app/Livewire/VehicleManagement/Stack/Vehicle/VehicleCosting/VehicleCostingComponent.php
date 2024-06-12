@@ -6,9 +6,11 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCostingRequest;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleServiceCostingRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMaintenanceCostingRequest;
 use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehicleMediaCostingService;
 use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehicleMaintenanceCostingService;
+use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehicleServiceCostingService;
 
 class VehicleCostingComponent extends Component
 {
@@ -24,16 +26,27 @@ class VehicleCostingComponent extends Component
     public VehicleMaintenanceCostingRequest $vehicleMaintenanceCostingRequest;
 
     /**
-     * Define public property $mediaCostingForm;
-     * @var bool
+     * Define form object $vehicleServiceCostingRequest
      */
-    public $mediaCostingForm = 'no';
+    public VehicleServiceCostingRequest $vehicleServiceCostingRequest;
+
+    /**
+     * Define public property $mediaCostingForm;
+     * @var string
+     */
+    public ?string $mediaCostingForm = 'no';
 
     /**
      * Define public property $maintenanceCostingForm;
-     * @var bool
+     * @var string
      */
-    public $maintenanceCostingForm = 'no';
+    public ?string $maintenanceCostingForm = 'no';
+
+    /**
+     * Define public property $serviceCostingForm;
+     * @var string
+     */
+    public ?string $serviceCostingForm = 'no';
 
     /**
      * Define public property $mediaCostFormLen
@@ -46,6 +59,11 @@ class VehicleCostingComponent extends Component
     public $maintenanceCostingFormLen = 1;
 
     /**
+     * Define public property $serviceCostFormLen
+     */
+    public $serviceCostFormLen = 1;
+
+    /**
      * Define public property $vehicle
      * @var array|object
      */
@@ -55,7 +73,7 @@ class VehicleCostingComponent extends Component
      * Define public method updatedmediaCostingForm() for update $mediaCostingForm
      * @return void
      */
-    public function mediaCostingFormStatus()
+    public function mediaCostingFormStatus(): void
     {
         $this->mediaCostingForm = $this->mediaCostingForm == 'no'  ? 'yes' : 'no';
     }
@@ -64,9 +82,18 @@ class VehicleCostingComponent extends Component
      * Define public method maintenanceCostingFormStatus() for update $maintenanceCostingForm
      * @return void
      */
-    public function maintenanceCostingFormStatus()
+    public function maintenanceCostingFormStatus(): void
     {
         $this->maintenanceCostingForm = $this->maintenanceCostingForm == 'no'  ? 'yes' : 'no';
+    }
+
+    /**
+     * Define public method serviceCostingFormStatus() for update $serviceCostingForm
+     * @return void
+     */
+    public function serviceCostingFormStatus(): void
+    {
+        $this->serviceCostingForm = $this->serviceCostingForm == 'no' ? 'yes' : 'no';
     }
 
     /**
@@ -85,6 +112,15 @@ class VehicleCostingComponent extends Component
     public function maintenanceCostFormLenIncrement()
     {
         $this->maintenanceCostingFormLen++;
+    }
+
+    /**
+     * Define public method maintenanceCostFormLenIncrement() for increment the maintenanceCostingFormLen
+     * @return void
+     */
+    public function serviceCostFormLenIncrement()
+    {
+        $this->serviceCostFormLen++;
     }
 
     /**
@@ -107,6 +143,19 @@ class VehicleCostingComponent extends Component
         $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
         $this->vehicleMediaCostingRequest->reset();
+    }
+
+    /**
+     * Define public method saveServiceCost() for save the record
+     * @var void
+     */
+    public function saveServiceCost(): void
+    {
+        $this->vehicleServiceCostingRequest->validate();
+        $isCreate = CreateVehicleServiceCostingService::store($this->vehicleServiceCostingRequest, $this->vehicle);
+        $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
+        $this->vehicleServiceCostingRequest->reset();
     }
 
     /**
