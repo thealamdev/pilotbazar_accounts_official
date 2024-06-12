@@ -77,11 +77,11 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <label for="form.registratrion_number">Registration Number<span class="text-danger"></span></label>
+                        <label for="form.registration_number">Registration Number<span class="text-danger"></span></label>
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
-                            <input type="text" wire:model="form.registratrion_number" placeholder="registration number" class="form-control">
-                            @error('form.registratrion_number')
+                            <input type="text" wire:model="form.registration_number" placeholder="registration number" class="form-control">
+                            @error('form.registration_number')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>

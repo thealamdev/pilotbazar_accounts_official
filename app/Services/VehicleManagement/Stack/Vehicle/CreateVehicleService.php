@@ -20,7 +20,7 @@ class CreateVehicleService
             'color_id' => $form?->color_id,
             'model_id' => $form?->model_id,
             'model_year_id' => $form?->model_year_id,
-            'registratrion_number' => $form?->registratrion_number,
+            'registration_number' => $form?->registration_number,
             'chassis_number' => $form?->chassis_number,
             'engine_number' => $form?->engine_number,
             'purchase_date' => $form?->purchase_date,
