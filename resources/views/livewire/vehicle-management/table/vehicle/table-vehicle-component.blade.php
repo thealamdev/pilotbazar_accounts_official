@@ -52,12 +52,6 @@
                                         <table class="table nowrap w-100 mb-5">
                                             <thead>
                                                 <tr>
-                                                    <th>
-                                                        <span class="form-check fs-6 mb-0">
-                                                            <input type="checkbox" class="form-check-input check-select-all" id="customCheck1">
-                                                            <label class="form-check-label" for="customCheck1"></label>
-                                                        </span>
-                                                    </th>
                                                     <th>Name</th>
                                                     <th>Model</th>
                                                     <th>Model Year</th>
@@ -72,8 +66,6 @@
                                             <tbody>
                                                 @forelse ($responses as $each)
                                                     <tr>
-                                                        <td>
-                                                        </td>
                                                         <td>
                                                             <div class="text-high-em">{{ $each?->name }}</div>
                                                         </td>
@@ -137,20 +129,14 @@
 
                                             <tfoot>
                                                 <tr>
-                                                    <td>
-                                                        <span class="form-check fs-6 mb-0">
-                                                            <input type="checkbox" class="form-check-input check-select-all" id="customCheck1">
-                                                            <label class="form-check-label" for="customCheck1"></label>
-                                                        </span>
-                                                    </td>
                                                     <td>Name</td>
                                                     <td>Model</td>
                                                     <td>Model Year</td>
                                                     <td>Color</td>
                                                     <td>Purchase Price</td>
                                                     <td>Total Price</td>
-                                                    <td>Status</td>
-                                                    <td>Action</td>
+                                                    <td class="text-center">Status</td>
+                                                    <td class="text-center">Action</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
