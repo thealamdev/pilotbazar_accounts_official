@@ -6,7 +6,7 @@
         </div>
         <!-- Basic Infos part End !-->
 
-        <div class="col-lg-6">
+        <div class="col-lg-6 ps-3">
             <!-- Media Costing Part Start !-->
             @include('livewire.vehicle-management.show.vehicle.partials.media-costing')
             <!--Media Costing Part End !-->
