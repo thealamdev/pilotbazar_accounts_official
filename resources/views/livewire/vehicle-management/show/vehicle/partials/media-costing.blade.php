@@ -22,7 +22,7 @@
      <div class="d-flex justify-content-between pb-1">
          <p style="width:30%">{{ $each?->costing_name }}</p>
          <p style="width:25%">{{ date('d M, Y', strtotime($each?->date)) }}</p>
-         <p style="width:30%" title="{{ $each?->remarks }}">{{ Str::limit($each?->remarks, 15, '...') }}</p>
+         <p style="width:30%" title="{{ $each?->remarks }}">{{ Str::limit($each?->remarks, 25, '...') }}</p>
          <p style="width:15%;text-align:end">{{ $each?->amount }} tk</p>
      </div>
  @empty
