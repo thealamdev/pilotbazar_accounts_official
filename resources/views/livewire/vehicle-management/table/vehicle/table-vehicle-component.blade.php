@@ -113,6 +113,13 @@
                                                                         </span>
                                                                     </span>
                                                                 </button>
+                                                                <a href="{{ route('admin.version1.vehicle-management.vehicle.costing.create', ['vehicle' => $each?->id]) }}" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover">
+                                                                    <span class="icon">
+                                                                        <span class="feather-icon">
+                                                                            <i class="fa-solid fa-coins"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                </a>
                                                                 <a href="{{ route('admin.version1.vehicle-management.vehicle.show', ['vehicle' => $each?->id]) }}" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
