@@ -77,9 +77,9 @@
          @endforelse
          <hr class="hr">
          <div class="d-flex justify-content-between pb-1">
-             <p style="width:78%">Total Purchase</p>
+             <p style="width:70%">Total Purchase</p>
              {{-- <p style="width:1%">:</p> --}}
-             <p style="width:21%;text-align:end">{{ $response?->purchase_price ?? '---' }} tk</p>
+             <p style="width:29%;text-align:end">{{ $response?->purchase_price ?? '---' }} tk</p>
          </div>
 
      </div>
