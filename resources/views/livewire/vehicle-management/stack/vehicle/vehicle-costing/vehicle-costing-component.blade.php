@@ -18,4 +18,8 @@
     <!-- Service Cost Form Start !-->
     @include('livewire.vehicle-management.stack.vehicle.vehicle-costing.partials.service-cost-form')
     <!-- Service Cost Form End !-->
+
+    <!-- Parts Cost Form Start !-->
+    @include('livewire.vehicle-management.stack.vehicle.vehicle-costing.partials.parts-cost-form')
+    <!-- Parts Cost Form End !-->
 </div>

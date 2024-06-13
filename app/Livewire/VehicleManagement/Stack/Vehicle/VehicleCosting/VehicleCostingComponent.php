@@ -6,11 +6,13 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCostingRequest;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehiclePartsCostingRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleServiceCostingRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMaintenanceCostingRequest;
 use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehicleMediaCostingService;
-use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehicleMaintenanceCostingService;
+use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehiclePartsCostingService;
 use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehicleServiceCostingService;
+use App\Services\VehicleManagement\Stack\Vehicle\VehicleCosting\CreateVehicleMaintenanceCostingService;
 
 class VehicleCostingComponent extends Component
 {
@@ -31,6 +33,11 @@ class VehicleCostingComponent extends Component
     public VehicleServiceCostingRequest $vehicleServiceCostingRequest;
 
     /**
+     * Define form object $vehiclePartsCostingRequest;
+     */
+    public VehiclePartsCostingRequest $vehiclePartsCostingRequest;
+
+    /**
      * Define public property $mediaCostingForm;
      * @var string
      */
@@ -49,6 +56,12 @@ class VehicleCostingComponent extends Component
     public ?string $serviceCostingForm = 'no';
 
     /**
+     * Define public property $partsCostingForm;
+     * @var string
+     */
+    public ?string $partsCostingForm = 'no';
+
+    /**
      * Define public property $mediaCostFormLen
      */
     public $mediaCostFormLen = 1;
@@ -62,6 +75,11 @@ class VehicleCostingComponent extends Component
      * Define public property $serviceCostFormLen
      */
     public $serviceCostFormLen = 1;
+
+    /**
+     * Define public property $partsCostFormLen
+     */
+    public $partsCostFormLen = 1;
 
     /**
      * Define public property $vehicle
@@ -97,6 +115,15 @@ class VehicleCostingComponent extends Component
     }
 
     /**
+     * Define public method partsCostingFormStatus() for update $partsCostingFormStatus
+     * @return void
+     */
+    public function partsCostingFormStatus(): void
+    {
+        $this->partsCostingForm = $this->partsCostingForm == 'no' ? 'yes' : 'no';
+    }
+
+    /**
      * Define public method mediaCostFormLenIncrement() for increment the mediaCostingFormLen
      * @return void
      */
@@ -115,12 +142,21 @@ class VehicleCostingComponent extends Component
     }
 
     /**
-     * Define public method maintenanceCostFormLenIncrement() for increment the maintenanceCostingFormLen
+     * Define public method serviceCostFormLenIncrement() for increment the serviceCostingFormLen
      * @return void
      */
     public function serviceCostFormLenIncrement()
     {
         $this->serviceCostFormLen++;
+    }
+
+    /**
+     * Define public method partsCostFormLenIncrement() for increment the partsCostingFormLen
+     * @return void
+     */
+    public function partsCostFormLenIncrement()
+    {
+        $this->partsCostFormLen++;
     }
 
     /**
@@ -169,6 +205,19 @@ class VehicleCostingComponent extends Component
         $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
         $this->vehicleMaintenanceCostingRequest->reset();
+    }
+
+    /**
+     * Define public method savePartsCost()
+     * @return void
+     */
+    public function savePartsCost(): void
+    {
+        $this->vehiclePartsCostingRequest->validate();
+        $isCreate = CreateVehiclePartsCostingService::store($this->vehiclePartsCostingRequest, $this->vehicle);
+        $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
+        $this->vehiclePartsCostingRequest->reset();
     }
 
     #[Title('Vehicle Costings')]
