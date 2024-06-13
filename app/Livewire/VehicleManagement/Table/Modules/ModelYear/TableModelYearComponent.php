@@ -6,7 +6,7 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Modules\ModelYear;
 
-class TableComponent extends Component
+class TableModelYearComponent extends Component
 {
     /**
      * @var array|object
@@ -14,12 +14,19 @@ class TableComponent extends Component
      */
     public $responses;
 
+    /**
+     * @var string
+     * public property $search
+     */
+    public ?string $search = '';
+
     #[Title('Model Years')]
     public function render()
     {
         $this->responses = ModelYear::query()->latest()
-        ->with('user')
-        ->get();
-        return view('livewire.vehicle-management.table.modules.model-year.table-component');
+            ->where('name', 'like', "%{$this->search}%")
+            ->with('user')
+            ->get();
+        return view('livewire.vehicle-management.table.modules.model-year.table-model-year-component');
     }
 }

@@ -33,7 +33,7 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
             Route::get('update/{model}', \App\Livewire\VehicleManagement\Stack\Modules\Models\UpdateModelComponent::class)->name('update');
         });
         Route::prefix('model-year')->name('model-year.')->group(function () {
-            Route::get('/', \App\Livewire\VehicleManagement\Table\Modules\ModelYear\TableComponent::class)->name('index');
+            Route::get('/', \App\Livewire\VehicleManagement\Table\Modules\ModelYear\TableModelYearComponent::class)->name('index');
             Route::get('create', \App\Livewire\VehicleManagement\Stack\Modules\ModelYear\CreateComponent::class)->name('create');
         });
     });
