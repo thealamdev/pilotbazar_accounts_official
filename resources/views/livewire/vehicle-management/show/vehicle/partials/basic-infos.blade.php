@@ -66,7 +66,7 @@
      <div class="col-lg-12">
          @forelse ($response?->buyPayments as $payment)
              <div class="d-flex justify-content-between pb-1">
-                 <p style="width:78%">{{ $payment->client_name . ' ' . '(' . $payment?->client_bank_account_number . ')' }} <i class="fa-solid fa-arrow-right"></i> {{ $payment->paymentMethod?->name }}</p>
+                 <p style="width:78%">{{ $payment->account_holder_name . ' ' . '(' . $payment?->credit_bank_account_number . ')' }} <i class="fa-solid fa-arrow-right"></i> {{ $payment->paymentMethod?->name }}</p>
                  {{-- <p style="width:1%">:</p> --}}
                  <p style="width:21%;text-align:end">{{ $payment?->amount ?? '---' }} tk</p>
              </div>
