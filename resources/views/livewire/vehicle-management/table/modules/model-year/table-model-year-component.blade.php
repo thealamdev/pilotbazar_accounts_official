@@ -81,13 +81,14 @@
                                                                 <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
-                                                                            <i data-feather="edit-2"></i>
+                                                                            <i class="fa-solid fa-pen" style="color:gray"></i>
                                                                         </span>
                                                                     </span>
                                                                 </a>
                                                                 <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#">
                                                                     <span class="icon">
-                                                                        <span class="feather-icon"><i data-feather="trash"></i>
+                                                                        <span class="feather-icon">
+                                                                            <i class="fa-solid fa-eraser" style="color:gray"></i>
                                                                         </span>
                                                                     </span>
                                                                 </a>
