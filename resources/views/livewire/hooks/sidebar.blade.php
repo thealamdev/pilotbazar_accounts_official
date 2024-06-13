@@ -50,8 +50,8 @@
                          </li>
                      </ul>
                  </div>
-                 <div class="menu-gap"></div>
-                 <div class="menu-group">
+                 {{-- <div class="menu-gap"></div> --}}
+                 {{-- <div class="menu-group">
                      <div class="nav-header">
                          <span>Apps</span>
                      </div>
@@ -184,7 +184,7 @@
                              </ul>
                          </li>
                      </ul>
-                 </div>
+                 </div> --}}
 
                  <div class="menu-gap"></div>
                  <div class="menu-group">
