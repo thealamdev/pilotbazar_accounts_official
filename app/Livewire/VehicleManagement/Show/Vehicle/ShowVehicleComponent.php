@@ -22,7 +22,7 @@ class ShowVehicleComponent extends Component
     {
         $this->response = Vehicle::query()
             ->where('id', $vehicle)
-            ->with('user', 'color', 'models', 'model_year', 'mediaCosting', 'maintenanceCosting', 'serviceCosting')
+            ->with('user', 'color', 'models', 'model_year', 'mediaCosting', 'maintenanceCosting', 'serviceCosting','partsCosting')
             ->with('buyPayments', fn ($query) => $query->with('paymentMethod'))
             ->first();
     }

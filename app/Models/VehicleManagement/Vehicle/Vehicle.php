@@ -15,6 +15,7 @@ use App\Models\VehicleManagement\Dependency\Payment\Method\PaymentMethod;
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCosting;
 use App\Models\VehicleManagement\Vehicle\VehicleBuyPayment\VehicleBuyPayment;
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMaintenanceCosting;
+use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehiclePartsCosting;
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleServiceCosting;
 
 class Vehicle extends Model
@@ -61,6 +62,15 @@ class Vehicle extends Model
     public function serviceCosting(): HasMany
     {
         return $this->hasMany(VehicleServiceCosting::class, 'vehicle_id', 'id');
+    }
+
+    /**
+     * Define public method partsCosting
+     * @return HasMany
+     */
+    public function partsCosting(): HasMany
+    {
+        return $this->hasMany(VehiclePartsCosting::class, 'vehicle_id', 'id');
     }
 
     /**
