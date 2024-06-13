@@ -49,15 +49,9 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="contact-list-view">
-                                        <table id="datable_1" class="table nowrap w-100 mb-5">
+                                        <table class="table nowrap w-100 mb-5">
                                             <thead>
                                                 <tr>
-                                                    <th>
-                                                        <span class="form-check fs-6 mb-0">
-                                                            <input type="checkbox" class="form-check-input check-select-all" id="customCheck1">
-                                                            <label class="form-check-label" for="customCheck1"></label>
-                                                        </span>
-                                                    </th>
                                                     <th>Name</th>
                                                     <th>Status</th>
                                                     <th>Created By</th>
@@ -68,8 +62,6 @@
                                             <tbody>
                                                 @forelse ($responses as $each)
                                                     <tr>
-                                                        <td>
-                                                        </td>
                                                         <td>
                                                             <div class="text-high-em">{{ $each?->name }}</div>
                                                         </td>
@@ -82,16 +74,17 @@
 
                                                         <td>
                                                             <div class="d-flex align-items-center">
-                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" href="{{ route('admin.version1.vehicle-management.vehicle.module.color.update', ['color' => $each->id]) }}">
+                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" href="{{ route('admin.version1.vehicle-management.vehicle.module.model.update', ['model' => $each->id]) }}">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
-                                                                            <i data-feather="edit-2"></i>
+                                                                            <i class="fa-solid fa-pen" style="color:gray"></i>
                                                                         </span>
                                                                     </span>
                                                                 </a>
                                                                 <button type="button" wire:click="delete({{ $each->id }})" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" wire:confirm="Are you sure you want to delete this post?">
                                                                     <span class="icon">
-                                                                        <span class="feather-icon"><i data-feather="trash"></i>
+                                                                        <span class="feather-icon">
+                                                                            <i class="fa-solid fa-eraser" style="color:gray"></i>
                                                                         </span>
                                                                     </span>
                                                                 </button>
@@ -102,6 +95,15 @@
                                                     <td>No data found !!</td>
                                                 @endforelse
                                             </tbody>
+
+                                            <tfoot>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Status</td>
+                                                    <td>Created By</td>
+                                                    <td>Action</td>
+                                                </tr>
+                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>
