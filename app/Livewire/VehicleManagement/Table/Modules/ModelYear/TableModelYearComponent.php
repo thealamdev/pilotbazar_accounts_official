@@ -5,6 +5,7 @@ namespace App\Livewire\VehicleManagement\Table\Modules\ModelYear;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Modules\ModelYear;
+use App\Services\VehicleManagement\Stack\Modules\ModelYear\DeleteModelYearService;
 
 class TableModelYearComponent extends Component
 {
@@ -19,6 +20,17 @@ class TableModelYearComponent extends Component
      * public property $search
      */
     public ?string $search = '';
+
+    /**
+     * Define public method delete for delete the record
+     * @return void
+     */
+    public function delete(string $id)
+    {
+        $isDelete = DeleteModelYearService::erase($id);
+        $response = $isDelete ? 'Record has been Delete !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
+    }
 
     #[Title('Model Years')]
     public function render()

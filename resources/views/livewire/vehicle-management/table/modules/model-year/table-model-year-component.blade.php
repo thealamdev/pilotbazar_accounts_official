@@ -85,13 +85,13 @@
                                                                         </span>
                                                                     </span>
                                                                 </a>
-                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#">
+                                                                <button type="button" wire:click="delete({{ $each->id }})" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" wire:confirm="Are you sure you want to delete this post?">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
                                                                             <i class="fa-solid fa-eraser" style="color:gray"></i>
                                                                         </span>
                                                                     </span>
-                                                                </a>
+                                                                </button>
                                                             </div>
                                                         </td>
                                                     </tr>
