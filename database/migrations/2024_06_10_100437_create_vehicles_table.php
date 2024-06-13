@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('color_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('model_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('model_year_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('color_id')->constrained();
+            $table->foreignId('model_id')->constrained();
+            $table->foreignId('model_year_id')->constrained();
             $table->string('name');
             $table->string('registration_number')->nullable();
             $table->string('chassis_number')->nullable();
@@ -26,11 +26,11 @@ return new class extends Migration
             $table->double('total_cost')->nullable();
             $table->boolean('sell_status')->default(0)->comment('sell = 1, not sell = 0');
             $table->boolean('status');
-            $table->foreignId('created_by')->constrained('users')->onUpdate('cascade')->onDelete('cascade')->name('created_by_fk');
+            $table->foreignId('created_by')->constrained('users')->name('created_by_fk');
             $table->foreignId('updated_by')->nullable();
-            $table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade')->name('updated_by_fk');
+            $table->foreign('updated_by')->references('id')->on('users')->name('updated_by_fk');
             $table->foreignId('deleted_by')->nullable();
-            $table->foreign('deleted_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade')->name('deleted_by_fk');
+            $table->foreign('deleted_by')->references('id')->on('users')->name('deleted_by_fk');
             $table->softDeletes();
             $table->timestamps();
         });
