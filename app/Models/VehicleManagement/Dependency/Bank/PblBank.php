@@ -11,13 +11,11 @@ class PblBank extends Model
 
     /**
      * Define protected property $guarded
-     * @var array
      */
-    protected ?array $guarded = ['id'];
+    protected $guarded = ['id'];
 
     /**
      * Define protected property $table
-     * @var string
      */
-    protected ?string $table = 'pbl_banks';
+    protected $table = 'pbl_banks';
 }

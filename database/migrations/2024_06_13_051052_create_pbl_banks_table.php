@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pbl_banks', function (Blueprint $table) {
             $table->id();
-            $table->string('bank_name');
+            $table->string('name');
             $table->string('account_number');
             $table->boolean('status')->default(true);
             $table->timestamps();

@@ -231,7 +231,6 @@
                              <ul id="dash_pages" class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.index') || Route::is('admin.version1.vehicle-management.vehicle.module.model.index') || Route::is('admin.version1.vehicle-management.vehicle.module.model-year.index')) show @endif">
                                  <li class="nav-item">
                                      <ul class="nav flex-column">
-
                                          <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.color.index') ? 'active' : '' }}">
                                              <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.color.index') }}">
                                                  <span class="nav-link-text">Color</span>
