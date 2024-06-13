@@ -6,7 +6,7 @@
             <span>Please must fill the field where (*) sign is visible.</span>
         </div>
         <div>
-            <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="button">Models</button>
+            <a href="{{route('admin.version1.vehicle-management.vehicle.module.model.create')}}" class="bg-transparent border border-slate-400 px-4 py-1 rounded">Models</a>
         </div>
     </header>
     <!-- Header Part End !-->

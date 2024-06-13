@@ -32,6 +32,6 @@ class CreateComponent extends Component
     #[Title('Model Create')]
     public function render()
     {
-        return view('livewire.vehicle-management.stack.modules.model.create-component');
+        return view('livewire.vehicle-management.stack.modules.models.create-component');
     }
 }

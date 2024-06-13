@@ -78,7 +78,7 @@
 
                                                         <td>
                                                             <div class="d-flex align-items-center">
-                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#">
+                                                                <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.update', ['model_year' => $each?->id]) }}">
                                                                     <span class="icon">
                                                                         <span class="feather-icon">
                                                                             <i class="fa-solid fa-pen" style="color:gray"></i>

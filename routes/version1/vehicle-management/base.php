@@ -28,13 +28,14 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
             Route::get('update/{color}', \App\Livewire\VehicleManagement\Stack\Modules\Color\UpdateComponent::class)->name('update');
         });
         Route::prefix('models')->name('model.')->group(function () {
-            Route::get('/', \App\Livewire\VehicleManagement\Table\Modules\Model\TableModelComponent::class)->name('index');
+            Route::get('/', \App\Livewire\VehicleManagement\Table\Modules\Models\TableModelComponent::class)->name('index');
             Route::get('create', \App\Livewire\VehicleManagement\Stack\Modules\Models\CreateComponent::class)->name('create');
             Route::get('update/{model}', \App\Livewire\VehicleManagement\Stack\Modules\Models\UpdateModelComponent::class)->name('update');
         });
         Route::prefix('model-year')->name('model-year.')->group(function () {
             Route::get('/', \App\Livewire\VehicleManagement\Table\Modules\ModelYear\TableModelYearComponent::class)->name('index');
             Route::get('create', \App\Livewire\VehicleManagement\Stack\Modules\ModelYear\CreateComponent::class)->name('create');
+            Route::get('update/{model_year}', \App\Livewire\VehicleManagement\Stack\Modules\ModelYear\UpdateModelYearComponent::class)->name('update');
         });
     });
     /**

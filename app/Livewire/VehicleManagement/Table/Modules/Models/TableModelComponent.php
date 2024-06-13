@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\VehicleManagement\Table\Modules\Model;
+namespace App\Livewire\VehicleManagement\Table\Modules\Models;
 
 use Livewire\Component;
 use Livewire\Attributes\Title;
@@ -36,6 +36,6 @@ class TableModelComponent extends Component
     public function render()
     {
         $this->responses = Models::query()->latest()->where('name', 'like', "%{$this->search}%")->get();
-        return view('livewire.vehicle-management.table.modules.model.table-model-component');
+        return view('livewire.vehicle-management.table.modules.models.table-model-component');
     }
 }
