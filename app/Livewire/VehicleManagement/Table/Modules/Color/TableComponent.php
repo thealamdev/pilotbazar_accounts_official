@@ -15,15 +15,6 @@ class TableComponent extends Component
      */
     public $responses;
 
-    #[Title('Colors')]
-    public function render()
-    {
-        $this->responses = Color::query()->latest()
-            ->with('user')
-            ->get();
-        return view('livewire.vehicle-management.table.modules.color.table-component', ['responses' => $this->responses]);
-    }
-
     /**
      * public delete method 
      * @return void
@@ -33,5 +24,14 @@ class TableComponent extends Component
         $isDelete = DeleteColorService::erase($id);
         $response = $isDelete ? 'Record has been Delete !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
+    }
+
+    #[Title('Colors')]
+    public function render()
+    {
+        $this->responses = Color::query()->latest()
+            ->with('user')
+            ->get();
+        return view('livewire.vehicle-management.table.modules.color.table-component', ['responses' => $this->responses]);
     }
 }

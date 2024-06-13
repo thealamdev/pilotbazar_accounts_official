@@ -2,9 +2,10 @@
 
 namespace App\Livewire\VehicleManagement\Table\Modules\Model;
 
-use App\Models\VehicleManagement\Modules\Models;
-use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\Attributes\Title;
+use App\Models\VehicleManagement\Modules\Models;
+use App\Services\VehicleManagement\Stack\Modules\Models\DeleteModelService;
 
 class TableModelComponent extends Component
 {
@@ -19,6 +20,17 @@ class TableModelComponent extends Component
      * @return object 
      */
     public $search;
+
+    /**
+     * Define public method delete
+     * @return void
+     */
+    public function delete(string $id)
+    {
+        $isDelete = DeleteModelService::erase($id);
+        $response = $isDelete ? 'Record has been Delete !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
+    }
 
     #[Title('Models')]
     public function render()
