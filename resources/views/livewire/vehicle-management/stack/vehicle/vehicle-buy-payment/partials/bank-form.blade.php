@@ -3,10 +3,15 @@
         @csrf
         <div class="row">
             <div class="col-lg-6">
-                <label for="form.debit_bank">PBL Bank<span class="text-danger">*</span></label>
+                <label for="form.debit_bank">Debit Bank(Our Bank)<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="form.debit_bank" class="form-control @error('form.debit_bank') {{ 'is-invalid' }} @enderror" placeholder="client name">
+                    <select wire:model.live="form.debit_bank" class="form-control @error('form.debit_bank') {{ 'is-invalid' }} @enderror">
+                        <option selected>--Select an Option--</option>
+                        @foreach ($banks as $each)
+                            <option value="{{ $each?->id }}">{{ $each?->name }}</option>
+                        @endforeach
+                    </select>
                     @error('form.debit_bank')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

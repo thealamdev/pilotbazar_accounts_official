@@ -7,7 +7,7 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
                     <select wire:model.live="createVehicleBuyPaymentRTGSRequest.debit_bank" class="form-control @error('createVehicleBuyPaymentRTGSRequest.debit_bank') {{ 'is-invalid' }} @enderror">
-                        <option selected></option>
+                        <option selected>--Select an Option--</option>
                         @foreach ($banks as $each)
                             <option value="{{ $each?->id }}">{{ $each?->name }}</option>
                         @endforeach

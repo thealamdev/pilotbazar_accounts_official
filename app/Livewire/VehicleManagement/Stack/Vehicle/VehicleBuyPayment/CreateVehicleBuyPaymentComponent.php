@@ -109,6 +109,11 @@ class CreateVehicleBuyPaymentComponent extends Component
     public function saveRTGS()
     {
         $this->createVehicleBuyPaymentRTGSRequest->validate();
+        $isCreate = CreateVehicleBuyPaymentService::store($this->createVehicleBuyPaymentRTGSRequest, $this->vehicle, $this->paymentMethodType);
+        $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
+        $this->createVehicleBuyPaymentRTGSRequest->reset();
+
     }
 
     /**

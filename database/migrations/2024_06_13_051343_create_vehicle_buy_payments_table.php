@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreignId('payment_method_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('debit_bank')->nullable();
             $table->foreign('debit_bank')->references('id')->on('pbl_banks')->onDelete('cascade')->onUpdate('cascade')->name('debit_bank_by_fk');
-            $table->string('debit_bank_account_number')->nullable();
             $table->string('account_holder_name');
             $table->string('credit_bank_name')->nullable();
             $table->string('credit_bank_account_number')->nullable();
