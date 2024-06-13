@@ -7,29 +7,22 @@ use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Models\VehicleManagement\Dependency\Bank\PblBank;
 use App\Models\VehicleManagement\Dependency\Payment\Method\PaymentMethod;
-use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentRequest;
 use App\Services\VehicleManagement\Stack\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentService;
-use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentBankRequest;
-use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentRTGSRequest;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentCeDRBRequest;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentCashDepositRequest;
 
 class CreateVehicleBuyPaymentComponent extends Component
 {
     /**
      * Define public object $createVehicleBuyPaymentRTGSRequest
      */
-    public CreateVehicleBuyPaymentRTGSRequest $createVehicleBuyPaymentRTGSRequest;
-
-    /**
-     * Define public object $form;
-     * @var array|object
-     */
-    public CreateVehicleBuyPaymentRequest $form;
+    public CreateVehicleBuyPaymentCeDRBRequest $form;
 
     /**
      * Define public Form object $formCashDeposit
      * @var object
      */
-    public CreateVehicleBuyPaymentBankRequest $formCashDeposit;
+    public CreateVehicleBuyPaymentCashDepositRequest $createVehicleBuyPaymentCashDepositRequest;
 
     /**
      * Define public property $selectedMethod
@@ -77,10 +70,10 @@ class CreateVehicleBuyPaymentComponent extends Component
     }
 
     /**
-     * Define public method saveBank()
+     * Define public method saveRTGS() for submit RTGS
      * @return void
      */
-    public function saveBank(): void
+    public function saveCeDRB(): void
     {
         $this->form->validate();
         $isCreate = CreateVehicleBuyPaymentService::store($this->form, $this->vehicle, $this->paymentMethodType);
@@ -93,27 +86,13 @@ class CreateVehicleBuyPaymentComponent extends Component
      * Define public method saveCashDeposit() for submit CashDeposit
      * @return void
      */
-    public function saveCashDeposit()
+    public function saveCashDeposit(): void
     {
-        $this->formCashDeposit->validate();
-        $isCreate = CreateVehicleBuyPaymentService::store($this->formCashDeposit, $this->vehicle, $this->paymentMethodType);
+        $this->createVehicleBuyPaymentCashDepositRequest->validate();
+        $isCreate = CreateVehicleBuyPaymentService::store($this->createVehicleBuyPaymentCashDepositRequest, $this->vehicle, $this->paymentMethodType);
         $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
-        $this->formCashDeposit->reset();
-    }
-
-    /**
-     * Define public method saveRTGS() for submit RTGS
-     * @return void
-     */
-    public function saveRTGS()
-    {
-        $this->createVehicleBuyPaymentRTGSRequest->validate();
-        $isCreate = CreateVehicleBuyPaymentService::store($this->createVehicleBuyPaymentRTGSRequest, $this->vehicle, $this->paymentMethodType);
-        $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
-        $this->dispatch('success', ['message' => $response]);
-        $this->createVehicleBuyPaymentRTGSRequest->reset();
-
+        $this->createVehicleBuyPaymentCashDepositRequest->reset();
     }
 
     /**

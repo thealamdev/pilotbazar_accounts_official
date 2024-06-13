@@ -5,35 +5,35 @@ namespace App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
-class CreateVehicleBuyPaymentCashDeposit extends Form
+class CreateVehicleBuyPaymentCeDRBRequest extends Form
 {
     /**
-     * Define public property $pbl_bank
+     * Define public property $debit_bank
      * @var ?string
      */
     #[Validate('required')]
-    public $pbl_bank;
+    public $debit_bank;
 
     /**
-     * Define public property $client_name.
+     * Define public property $account_holder_name.
      * @var ?string
      */
     #[Validate('required')]
-    public ?string $client_name;
+    public ?string $account_holder_name;
 
     /**
-     * Define public property $clients_bank;
+     * Define public property $credit_bank_name;
      * @var ?string
      */
     #[Validate('required')]
-    public ?string $clients_bank;
+    public ?string $credit_bank_name;
 
     /**
-     * Define public property $client_bank_account_number.
+     * Define public property $credit_bank_account_number.
      * @var ?string
      */
     #[Validate('required')]
-    public ?string $client_bank_account_number;
+    public ?string $credit_bank_account_number;
 
     /**
      * Define public property $date.
@@ -46,7 +46,7 @@ class CreateVehicleBuyPaymentCashDeposit extends Form
      * Define public property $amount.
      * @var ?double
      */
-    #[Validate('required|numeric')]
+    #[Validate('required|decimal:0')]
     public $amount;
 
     /**

@@ -33,17 +33,13 @@
         <!-- Select the Payment Method End !-->
 
         <div class="mt-5">
-            <!-- Bank Form Start !-->
-            @include('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.partials.bank-form')
-            <!-- Bank Form End !-->
-
             <!-- Cash Deposit Form Start !-->
             @include('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.partials.cash-deposit-form')
             <!-- Cash Deposit Form End !-->
 
-            <!-- RTGS Form Start !-->
-            @include('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.partials.rtgs-form')
-            <!-- RTGS Form End !-->
+            <!-- Check Depost, RTGS and Bank Pay Order  Form Start !-->
+            @include('livewire.vehicle-management.stack.vehicle.vehicle-buy-payment.partials.CeDRB-form')
+            <!-- Check Depost, RTGS and Bank Pay Order Form End !-->
         </div>
 
     </div>
