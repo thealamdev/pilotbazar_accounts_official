@@ -2,16 +2,23 @@
 
 namespace App\Livewire\VehicleManagement\Stack\Vehicle\VehicleBuyPayment;
 
-use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentBankRequest;
-use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentRequest;
-use App\Models\VehicleManagement\Dependency\Payment\Method\PaymentMethod;
-use App\Models\VehicleManagement\Vehicle\Vehicle;
-use App\Services\VehicleManagement\Stack\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentService;
 use Livewire\Component;
 use Livewire\Attributes\Title;
+use App\Models\VehicleManagement\Vehicle\Vehicle;
+use App\Models\VehicleManagement\Dependency\Bank\PblBank;
+use App\Models\VehicleManagement\Dependency\Payment\Method\PaymentMethod;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentRequest;
+use App\Services\VehicleManagement\Stack\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentService;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentBankRequest;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentRTGSRequest;
 
 class CreateVehicleBuyPaymentComponent extends Component
 {
+    /**
+     * Define public object $createVehicleBuyPaymentRTGSRequest
+     */
+    public CreateVehicleBuyPaymentRTGSRequest $createVehicleBuyPaymentRTGSRequest;
+
     /**
      * Define public object $form;
      * @var array|object
@@ -55,6 +62,12 @@ class CreateVehicleBuyPaymentComponent extends Component
     public ?object $methods;
 
     /**
+     * Define public property $banks
+     * @return object
+     */
+    public ?object $banks;
+
+    /**
      * Define the public updatedSelectedMethod for get the seleted method.
      */
     public function updatedSelectedMethod()
@@ -95,7 +108,7 @@ class CreateVehicleBuyPaymentComponent extends Component
      */
     public function saveRTGS()
     {
-        dd('Hi');
+        $this->createVehicleBuyPaymentRTGSRequest->validate();
     }
 
     /**
@@ -114,6 +127,7 @@ class CreateVehicleBuyPaymentComponent extends Component
     {
         $this->vehicle = $vehicle;
         $this->methods = PaymentMethod::query()->latest()->get();
+        $this->banks = PblBank::query()->latest()->get();
     }
 
     #[Title('Vehicle Buy Payment')]
