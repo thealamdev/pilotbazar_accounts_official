@@ -46,5 +46,11 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
                 Route::get('create', \App\Livewire\VehicleManagement\Stack\Dependency\Payment\Method\CreateMethodComponent::class)->name('create');
             });
         });
+
+        Route::prefix('banks')->name('bank.')->group(function () {
+            Route::prefix('pbl_banks')->name('pbl_bank.')->group(function () {
+                Route::get('create', \App\Livewire\VehicleManagement\Stack\Dependency\Bank\CreatePblBankComponent::class)->name('create');
+            });
+        });
     });
 });
