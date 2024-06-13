@@ -28,7 +28,7 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
             Route::get('update/{color}', \App\Livewire\VehicleManagement\Stack\Modules\Color\UpdateComponent::class)->name('update');
         });
         Route::prefix('models')->name('model.')->group(function () {
-            Route::get('/', \App\Livewire\VehicleManagement\Table\Modules\Model\TableComponent::class)->name('index');
+            Route::get('/', \App\Livewire\VehicleManagement\Table\Modules\Model\TableModelComponent::class)->name('index');
             Route::get('create', \App\Livewire\VehicleManagement\Stack\Modules\Models\CreateComponent::class)->name('create');
         });
         Route::prefix('model-year')->name('model-year.')->group(function () {
