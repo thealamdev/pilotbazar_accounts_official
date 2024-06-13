@@ -1,4 +1,4 @@
-@if ($currentFormType === 'RTGS')
+@if ($currentFormType === 'RTGS' || $currentFormType === 'Check Deposit' || $currentFormType === 'Bank Pay Order')
     <form action="#" wire:submit="saveRTGS" method="POST">
         @csrf
         <div class="row">
