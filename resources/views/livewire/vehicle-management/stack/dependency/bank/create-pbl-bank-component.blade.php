@@ -32,9 +32,7 @@
                     <label for="form.account_number">Account Number<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-credit-card"></i></span>
-                        <input type="text" wire:model.live="form.account_number" class="form-control @error('form.account_number')
-                            {{ 'is-invalid' }}
-                        @enderror" placeholder="account number">
+                        <input type="text" wire:model.live="form.account_number" class="form-control @error('form.account_number') {{ 'is-invalid' }} @enderror" placeholder="account number">
                         @error('form.account_number')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
