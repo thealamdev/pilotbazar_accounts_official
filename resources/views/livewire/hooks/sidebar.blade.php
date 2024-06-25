@@ -212,7 +212,7 @@
                              </li>
                          </ul>
                      </div>
-                     <!-- 'Vehicle Management -> Modules !-->
+                     <!-- Vehicle Management -> Modules !-->
                      <ul class="navbar-nav flex-column">
                          <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.module.color.index') || Route::is('admin.version1.vehicle-management.vehicle.module.model.index') || Route::is('admin.version1.vehicle-management.vehicle.module.model-year.index')) active @endif">
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_pages">
@@ -249,7 +249,7 @@
                              </ul>
                          </li>
                      </ul>
-                     <!-- 'Vehicle Management -> Dependency !-->
+                     <!-- Vehicle Management -> Dependency !-->
                      <ul class="navbar-nav flex-column">
                          <li class="nav-item @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') || Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.create')) active @endif">
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dependency_pages">
