@@ -6,7 +6,7 @@
             <span>Please must fill the field where (*) sign is visible.</span>
         </div>
         <div>
-            <a href="{{ route('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.create') }}" class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="button">Banks</a>
+            <a href="{{ route('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.index') }}" class="bg-transparent border border-slate-400 px-4 py-1 rounded">Banks</a>
         </div>
     </header>
     <!-- Header Part End !-->
