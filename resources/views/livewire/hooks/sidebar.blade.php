@@ -276,7 +276,7 @@
                                                  <li class="nav-item">
                                                      <ul class="nav flex-column">
                                                          <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') ? 'active' : '' }}">
-                                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') }}"><span class="nav-link-text">Method</span></a>
+                                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') }}"><span class="nav-link-text">Method</span></a>
                                                          </li>
                                                      </ul>
                                                  </li>
