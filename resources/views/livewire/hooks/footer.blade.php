@@ -11,4 +11,4 @@
         </div>
     </footer>
 </div>
-<!-- / Page Footer -->
+<!-- Page Footer -->
