@@ -20,9 +20,7 @@
                     <label for="form.name">Bank Name<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-credit-card"></i></span>
-                        <input type="text" wire:model.live="form.name" class="form-control @error('form.name')
-                            {{ 'is-invalid' }}
-                        @enderror" placeholder="bank name">
+                        <input type="text" wire:model.live="form.name" class="form-control @error('form.name') {{ 'is-invalid' }} @enderror" placeholder="bank name">
                         @error('form.name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -38,7 +36,6 @@
                         @enderror
                     </div>
                 </div>
-
             </div>
 
             <div class="text-start">
