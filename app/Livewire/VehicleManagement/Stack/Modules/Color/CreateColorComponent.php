@@ -31,6 +31,6 @@ class CreateColorComponent extends Component
     #[Title('Color Create')]
     public function render()
     {
-        return view('livewire.vehicle-management.stack.modules.color.create-component');
+        return view('livewire.vehicle-management.stack.modules.color.create-color-component');
     }
 }
