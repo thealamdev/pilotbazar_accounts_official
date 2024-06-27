@@ -9,6 +9,7 @@
             <th>Total Price</th>
             <th class="text-center">Status</th>
             <th class="text-center">Action</th>
+            <th class="text-end">Modified</th>
         </tr>
     </thead>
 
@@ -77,6 +78,7 @@
                         </a>
                     </div>
                 </td>
+                <td class="text-end">{!! Helper::ISOdate($each?->updated_at) !!}</td>
             </tr>
         @empty
             <td class="text-center text-danger fs-3" colspan="9">No data found !!</td>
@@ -93,6 +95,7 @@
             <td>Total Price</td>
             <td class="text-center">Status</td>
             <td class="text-center">Action</td>
+            <td class="text-end">Modified</td>
         </tr>
     </tfoot>
 </table>
