@@ -55,8 +55,8 @@
                                                     <th>Name</th>
                                                     <th class="text-center">Status</th>
                                                     <th>Created By</th>
-                                                    <th>Action</th>
                                                     <th class="text-end">Modified</th>
+                                                    <th class="text-end">Action</th>
                                                 </tr>
                                             </thead>
 
@@ -71,7 +71,11 @@
                                                         </td>
                                                         <td>{{ $each?->user?->name }}</td>
 
-                                                        <td>
+
+                                                        <td class="text-end">
+                                                            {!! Helper::ISOdate($each?->updated_at) !!}
+                                                        </td>
+                                                        <td class="text-end">
                                                             <div class="dropdown">
                                                                 <button class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover dropdown-toggle no-caret" aria-expanded="false" data-bs-toggle="dropdown">
                                                                     <span class="icon">
@@ -108,9 +112,6 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="text-end">
-                                                            {!! Helper::ISOdate($each?->updated_at) !!}
-                                                        </td>
                                                     </tr>
                                                 @empty
                                                     <td colspan="4">No data found !!</td>
@@ -120,8 +121,8 @@
                                                 <td>Name</td>
                                                 <td class="text-center">Status</td>
                                                 <td>Created By</td>
-                                                <td>Action</td>
                                                 <td class="text-end">Modified</td>
+                                                <td class="text-end">Action</td>
                                             </tfoot>
                                         </table>
                                         <!-- Pagination links !-->
