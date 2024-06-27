@@ -104,7 +104,7 @@
                                                     <td class="text-center">Status</td>
                                                     <td>Created By</td>
                                                     <td>Action</td>
-                                                    <td class="text-end"></td>
+                                                    <td class="text-end">Modified</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
