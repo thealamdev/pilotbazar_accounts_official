@@ -4,16 +4,16 @@ namespace App\Livewire\VehicleManagement\Stack\Modules\ModelYear;
 
 use Livewire\Component;
 use Livewire\Attributes\Title;
-use App\Livewire\Forms\VehicleManagement\Modules\ModelYear\CreatPost;
+use App\Livewire\Forms\VehicleManagement\Modules\ModelYear\CreatModelYearRequest;
 use App\Services\VehicleManagement\Stack\Modules\ModelYear\CreateModelYearService;
 
-class CreateComponent extends Component
+class CreateModelYearComponent extends Component
 {
     /**
      * Create form object
      * @var object
      */
-    public CreatPost $form;
+    public CreatModelYearRequest $form;
 
     /**
      * method for save data

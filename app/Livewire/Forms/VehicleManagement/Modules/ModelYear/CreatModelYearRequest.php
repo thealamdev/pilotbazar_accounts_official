@@ -5,13 +5,13 @@ namespace App\Livewire\Forms\VehicleManagement\Modules\ModelYear;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
-class CreatPost extends Form
+class CreatModelYearRequest extends Form
 {
     /**
      * Define the name property
      * @var string
      */
-    #[Validate('required|max:4', as: 'Name')]
+    #[Validate('required|max:4|unique:model_years', as: 'Name')]
     public ?string $name = '';
 
     /**
