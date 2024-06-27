@@ -11,7 +11,8 @@ use App\Services\VehicleManagement\Stack\Modules\ModelYear\UpdateModelYearServic
 class UpdateModelYearComponent extends Component
 {
     /**
-     * Define form object $form
+     * Define form object $form of UpdateModelYearRequest
+     * @var object
      */
     public UpdateModelYearRequest $form;
 
@@ -28,6 +29,7 @@ class UpdateModelYearComponent extends Component
     public function mount(ModelYear $model_year): void
     {
         $this->response = $model_year;
+        $this->form->ignore = $model_year->id;
         $this->form->name = $model_year->name;
         $this->form->status = $model_year->status;
     }
@@ -38,7 +40,7 @@ class UpdateModelYearComponent extends Component
      */
     public function update()
     {
-        $this->form->validate();
+        $this->validate($this->form->rules(), attributes: $this->form->attributes());
         $isCreate = UpdateModelYearService::adapt($this->form, $this->response);
         $response = $isCreate ? 'Data has been update !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
