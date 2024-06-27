@@ -12,6 +12,7 @@ class UpdatePblBankComponent extends Component
 {
     /**
      * Define form object
+     * @var object
      */
     public UpdatePblBankRequest $form;
 
