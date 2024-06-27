@@ -56,6 +56,7 @@
                                                     <th class="text-center">Status</th>
                                                     <th>Created By</th>
                                                     <th>Action</th>
+                                                    <th class="text-end">Modified</th>
                                                 </tr>
                                             </thead>
 
@@ -90,6 +91,9 @@
                                                                 </button>
                                                             </div>
                                                         </td>
+                                                        <td class="text-end">
+                                                            {!! Helper::ISOdate($each?->updated_at) !!}
+                                                        </td>
                                                     </tr>
                                                 @empty
                                                     <td colspan="5" class="text-center text-danger">No data found !!</td>
@@ -102,6 +106,7 @@
                                                     <td class="text-center">Status</td>
                                                     <td>Created By</td>
                                                     <td>Action</td>
+                                                    <td class="text-end">Modified</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
