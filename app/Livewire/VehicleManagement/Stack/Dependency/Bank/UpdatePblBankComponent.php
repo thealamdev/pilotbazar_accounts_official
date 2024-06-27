@@ -36,9 +36,9 @@ class UpdatePblBankComponent extends Component
 
     /**
      * Define public method update to update PBL Bank
-     * @return void
+     * @return array|object
      */
-    public function update()
+    public function update(): array|object
     {
         // $this->validate($this->form->rules(), attributes: $this->form->attributes());
         $isCreate = UpdatePblBankService::adapt($this->form, $this->response);
