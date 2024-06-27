@@ -5,15 +5,16 @@ namespace App\Livewire\VehicleManagement\Stack\Modules\Color;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Modules\Color;
-use App\Livewire\Forms\VehicleManagement\Modules\Color\UpdatePost;
+use App\Livewire\Forms\VehicleManagement\Modules\Color\UpdateColorRequest;
 use App\Services\VehicleManagement\Stack\Modules\Color\UpdateColorService;
 
-class UpdateComponent extends Component
+class UpdateColorComponent extends Component
 {
     /**
-     * UpdateForm $updateForm
+     * UpdateColorRequest $form
+     * @var object
      */
-    public UpdatePost $form;
+    public UpdateColorRequest $form;
 
     /**
      * public property color
@@ -28,6 +29,7 @@ class UpdateComponent extends Component
     public function mount(Color $color): void
     {
         $this->response = $color;
+        $this->form->ignore = $color->id;
         $this->form->name = $color->name;
         $this->form->status = $color->status;
     }
@@ -38,7 +40,7 @@ class UpdateComponent extends Component
      */
     public function update()
     {
-        $this->form->validate();
+        $this->validate($this->form->rules(), attributes: $this->form->attributes());
         $isCreate = UpdateColorService::adapt($this->form, $this->response);
         $response = $isCreate ? 'Data has been update !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
@@ -48,6 +50,6 @@ class UpdateComponent extends Component
     #[Title('Color Update')]
     public function render()
     {
-        return view('livewire.vehicle-management.stack.modules.color.update-component', ['response' => $this->response]);
+        return view('livewire.vehicle-management.stack.modules.color.update-color-component', ['response' => $this->response]);
     }
 }
