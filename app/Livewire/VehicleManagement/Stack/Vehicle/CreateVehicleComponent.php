@@ -53,7 +53,7 @@ class CreateVehicleComponent extends Component
      */
     public function save(): array|object
     {
-        $this->validate($this->form->rules(), attributes: $this->form->attributes());
+        $this->validate(rules: $this->form->rules(), attributes: $this->form->attributes());
         $isCreate = CreateVehicleService::store($this->form);
         $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
         $this->dispatch('success', ['message' => $response]);

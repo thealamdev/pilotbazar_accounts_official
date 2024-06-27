@@ -12,6 +12,7 @@ class CreateVehicleRequest extends Form
      * @var string
      */
     public $name, $model_id, $model_year_id, $color_id, $purchase_price, $status;
+    
     /**
      * Define the rules method
      * @return array

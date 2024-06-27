@@ -53,6 +53,7 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
             Route::prefix('pbl_banks')->name('pbl_bank.')->group(function () {
                 Route::get('/', \App\Livewire\VehicleManagement\Table\Dependency\Bank\TablePblBankComponent::class)->name('index');
                 Route::get('create', \App\Livewire\VehicleManagement\Stack\Dependency\Bank\CreatePblBankComponent::class)->name('create');
+                Route::get('update/{pbl_bank}', \App\Livewire\VehicleManagement\Stack\Dependency\Bank\UpdatePblBankComponent::class)->name('update');
             });
         });
     });
