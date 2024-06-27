@@ -34,8 +34,8 @@
                     <div class="text-high-em">{{ $each?->total_cost }}</div>
                 </td>
                 <td>
-                    <div class="fs-8 ms-3">
-                        {{ $each?->status == 1 ? 'Active' : 'Inactive' }}
+                    <div class="text-center">
+                        {!! Helper::status($each->status) !!}
                     </div>
                 </td>
                 <td>

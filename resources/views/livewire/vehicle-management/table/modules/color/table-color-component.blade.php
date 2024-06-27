@@ -53,7 +53,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Name</th>
-                                                    <th>Status</th>
+                                                    <th class="text-center">Status</th>
                                                     <th>Created By</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -66,8 +66,8 @@
                                                             <div class="text-high-em">{{ $each?->name }}</div>
                                                         </td>
                                                         <td>
-                                                            <div class="fs-8 ms-3">
-                                                                {{ $each?->status == 1 ? 'Active' : 'Inactive' }}
+                                                            <div class="text-center">
+                                                                {!! Helper::status($each?->status) !!}
                                                             </div>
                                                         </td>
                                                         <td>{{ $each?->user?->name }}</td>
@@ -99,7 +99,7 @@
                                             <tfoot>
                                                 <tr>
                                                     <td>Name</td>
-                                                    <td>Status</td>
+                                                    <td class="text-center">Status</td>
                                                     <td>Created By</td>
                                                     <td>Action</td>
                                                 </tr>

@@ -66,13 +66,7 @@
                                                             <div class="text-high-em">{{ $each?->name }}</div>
                                                         </td>
                                                         <td class="text-center">
-                                                            <div class="fs-7 ms-3">
-                                                                @if ($each->status == 1)
-                                                                    <p class="text-success">Active</p>
-                                                                @else
-                                                                    <p class="text-danger">Inactive</p>
-                                                                @endif
-                                                            </div>
+                                                            {!! Helper::status($each?->status) !!}
                                                         </td>
                                                         <td>{{ $each?->user?->name }}</td>
 
