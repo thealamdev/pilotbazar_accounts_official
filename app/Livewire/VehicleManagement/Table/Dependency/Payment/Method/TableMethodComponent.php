@@ -19,7 +19,6 @@ class TableMethodComponent extends Component
     {
         $responses = PaymentMethod::query()
             ->latest()
-            ->where('status', 1)
             ->where('name', 'like', "%{$this->search}%")
             ->paginate(10);
         return view('livewire.vehicle-management.table.dependency.payment.method.table-method-component', ['responses' => $responses]);

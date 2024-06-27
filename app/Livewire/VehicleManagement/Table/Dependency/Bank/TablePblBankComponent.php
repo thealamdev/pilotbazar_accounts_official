@@ -19,7 +19,6 @@ class TablePblBankComponent extends Component
     {
         $responses = PblBank::query()
             ->latest()
-            ->where('status', 1)
             ->where('name', 'like', "%{$this->search}%")
             ->paginate(10);
         return view('livewire.vehicle-management.table.dependency.bank.table-pbl-bank-component', ['responses' => $responses]);

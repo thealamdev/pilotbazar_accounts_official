@@ -10,9 +10,9 @@ class Helper
     public static function status($status): string
     {
         if ($status == '1') {
-            return "<span class='badge badge-success badge-outline'>Active</span>";
+            return "<span class='badge badge-soft-success  my-1  me-2'>Active</span>";
         } else {
-            return "<span class='badge badge-secondary badge-outline'>Inactive</span>";
+            return "<span class='badge badge-soft-danger my-1  me-2'>Inactive</span>";
         }
     }
 
