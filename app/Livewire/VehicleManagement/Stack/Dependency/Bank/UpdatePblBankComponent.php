@@ -29,6 +29,7 @@ class UpdatePblBankComponent extends Component
     public function mount(PblBank $pbl_bank): void
     {
         $this->response = $pbl_bank;
+        $this->form->ignore = $pbl_bank->id;
         $this->form->name = $pbl_bank->name;
         $this->form->account_number = $pbl_bank->account_number;
         $this->form->status = $pbl_bank->status;
@@ -40,7 +41,7 @@ class UpdatePblBankComponent extends Component
      */
     public function update(): array|object
     {
-        // $this->validate($this->form->rules(), attributes: $this->form->attributes());
+        $this->validate($this->form->rules(), attributes: $this->form->attributes());
         $isCreate = UpdatePblBankService::adapt($this->form, $this->response);
         $response = $isCreate ? 'Data has been update !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);

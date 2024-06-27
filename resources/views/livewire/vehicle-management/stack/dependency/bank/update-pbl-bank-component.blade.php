@@ -18,6 +18,7 @@
             @csrf
             <div class="row">
                 <div class="col-lg-6">
+                    <input type="hidden" wire:model="form.ignore" value="{{ $response->id }}">
                     <label for="form.name">PBL Bank <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-droplet"></i></span>

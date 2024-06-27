@@ -2,12 +2,20 @@
 
 namespace App\Livewire\Forms\VehicleManagement\Dependency\Bank;
 
+use App\Models\VehicleManagement\Dependency\Bank\PblBank;
 use Illuminate\Validation\Rule;
+use Livewire\Attributes\Locked;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
 class UpdatePblBankRequest extends Form
 {
+    /**
+     * Define public property to ignore to prevent this colum update
+     * @var string
+     */
+    public ?string $ignore;
+
     /**
      * Define public property $name
      * @var string
@@ -24,7 +32,7 @@ class UpdatePblBankRequest extends Form
      * Define public property $status
      * @var string
      */
-    public $status;
+    public ?string $status;
 
     /**
      * Define public rules method
@@ -32,9 +40,9 @@ class UpdatePblBankRequest extends Form
      */
     public function rules(): array
     {
-        $arr['form.name'] = ['required'];
-        $arr['form.account_number'] = ['required'];
-        $arr['status'] = ['required'];
+        $arr['form.name'] = ['required', Rule::unique(PblBank::class, 'name')->ignore($this->ignore, 'id')];
+        $arr['form.account_number'] = ['required', Rule::exists(PblBank::class, 'account_number')];
+        $arr['form.status'] = ['required','in:0,1'];
 
         return $arr;
     }
@@ -45,10 +53,12 @@ class UpdatePblBankRequest extends Form
      */
     public function attributes(): array
     {
-        $arr['form.name'] = 'name';
-        $arr['form.account_number'] = 'account_number';
-        $arr['form.status'] = 'status';
+        $attributes = [
+            'form.name' => 'name',
+            'form.account_number' => 'account_number',
+            'form.status' => 'status'
+        ];
 
-        return $arr;
+        return $attributes;
     }
 }
