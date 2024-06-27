@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Dependency\Bank\PblBank;
 use App\Livewire\Forms\VehicleManagement\Dependency\Bank\UpdatePblBankRequest;
+use App\Services\VehicleManagement\Stack\Dependency\Bank\UpdatePblBankService;
 
 class UpdatePblBankComponent extends Component
 {
@@ -38,7 +39,11 @@ class UpdatePblBankComponent extends Component
      */
     public function update()
     {
-        $this->validate($this->form->rules(), attributes: $this->form->attributes());
+        // $this->validate($this->form->rules(), attributes: $this->form->attributes());
+        $isCreate = UpdatePblBankService::adapt($this->form, $this->response);
+        $response = $isCreate ? 'Data has been update !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
+        return redirect()->to('admin/version1/vehicle-management/vehicles/dependencies/banks/pbl_banks');
     }
 
     #[Title('Pbl Bank Update')]
