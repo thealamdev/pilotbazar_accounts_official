@@ -40,9 +40,9 @@ class UpdatePblBankRequest extends Form
      */
     public function rules(): array
     {
-        $arr['form.name'] = ['required', Rule::unique(PblBank::class, 'name')->ignore($this->ignore, 'id')];
-        $arr['form.account_number'] = ['required', Rule::exists(PblBank::class, 'account_number')];
-        $arr['form.status'] = ['required','in:0,1'];
+        $arr['form.name'] = ['required', Rule::unique(PblBank::class, 'name')->ignore($this->ignore)];
+        $arr['form.account_number'] = ['required', Rule::unique(PblBank::class, 'account_number')->ignore($this->ignore)];
+        $arr['form.status'] = ['required', 'in:0,1'];
 
         return $arr;
     }
@@ -54,8 +54,8 @@ class UpdatePblBankRequest extends Form
     public function attributes(): array
     {
         $attributes = [
-            'form.name' => 'name',
-            'form.account_number' => 'account_number',
+            'form.name' => 'Name',
+            'form.account_number' => 'Account Number',
             'form.status' => 'status'
         ];
 
