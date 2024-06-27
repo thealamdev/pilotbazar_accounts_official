@@ -53,9 +53,10 @@
                                             <thead>
                                                 <tr>
                                                     <th>Name</th>
-                                                    <th>Status</th>
+                                                    <th class="text-center">Status</th>
                                                     <th>Created By</th>
                                                     <th>Action</th>
+                                                    <th class="text-end">Modified</th>
                                                 </tr>
                                             </thead>
 
@@ -65,10 +66,8 @@
                                                         <td>
                                                             <div class="text-high-em">{{ $each?->name }}</div>
                                                         </td>
-                                                        <td>
-                                                            <div class="fs-8 ms-3">
-                                                                {{ $each?->status == 1 ? 'Active' : 'Inactive' }}
-                                                            </div>
+                                                        <td class="text-center">
+                                                            {!! Helper::status($each?->status) !!}
                                                         </td>
                                                         <td>{{ $each?->user?->name }}</td>
 
@@ -89,11 +88,21 @@
                                                                 </button>
                                                             </div>
                                                         </td>
+                                                        <td class="text-end">
+                                                            {!! Helper::ISOdate($each?->updated_at) !!}
+                                                        </td>
                                                     </tr>
                                                 @empty
                                                     <td colspan="4">No data found !!</td>
                                                 @endforelse
                                             </tbody>
+                                            <tfoot>
+                                                <td>Name</td>
+                                                <td class="text-center">Status</td>
+                                                <td>Created By</td>
+                                                <td>Action</td>
+                                                <td class="text-end">Modified</td>
+                                            </tfoot>
                                         </table>
                                         <!-- Pagination links !-->
                                         {{ $responses->links() }}
