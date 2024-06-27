@@ -2,18 +2,18 @@
 
 namespace App\Livewire\VehicleManagement\Stack\Modules\Color;
 
+use App\Livewire\Forms\VehicleManagement\Modules\Color\CreateColorRequest;
 use Livewire\Component;
 use Livewire\Attributes\Title;
-use App\Livewire\Forms\VehicleManagement\Modules\Color\CreatePost;
 use App\Services\VehicleManagement\Stack\Modules\Color\CreateColorService;
 
-class CreateComponent extends Component
+class CreateColorComponent extends Component
 {
     /**
      * Create form object
      * @return object
      */
-    public CreatePost $form;
+    public CreateColorRequest $form;
 
     /**
      * method for save data
