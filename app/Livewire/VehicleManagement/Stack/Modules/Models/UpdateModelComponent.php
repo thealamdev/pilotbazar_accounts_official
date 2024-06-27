@@ -28,6 +28,7 @@ class UpdateModelComponent extends Component
     public function mount(Models $model): void
     {
         $this->response = $model;
+        $this->form->ignore = $model->id;
         $this->form->name = $model->name;
         $this->form->status = $model->status;
     }
@@ -38,7 +39,7 @@ class UpdateModelComponent extends Component
      */
     public function update()
     {
-        $this->form->validate();
+        $this->validate($this->form->rules(), attributes: $this->form->attributes());
         $isCreate = UpdateModelService::adapt($this->form, $this->response);
         $response = $isCreate ? 'Data has been update !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);

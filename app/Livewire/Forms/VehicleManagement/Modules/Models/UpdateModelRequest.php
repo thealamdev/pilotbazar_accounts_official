@@ -2,22 +2,54 @@
 
 namespace App\Livewire\Forms\VehicleManagement\Modules\Models;
 
-use Livewire\Attributes\Validate;
+use App\Models\VehicleManagement\Modules\Models;
 use Livewire\Form;
+use Illuminate\Validation\Rule;
+use Livewire\Attributes\Validate;
 
 class UpdateModelRequest extends Form
 {
     /**
+     * Define public property $ignore
+     * @var string
+     */
+    public ?string $ignore;
+
+    /**
      * Define the name property
      * @var string
      */
-    #[Validate('required|max:20', as: 'Name')]
     public ?string $name = '';
 
     /**
      * Define the title property
      * @var string
      */
-    #[Validate('required', as: 'Status')]
     public ?string $status = '';
+
+    /**
+     * Define public method rules()
+     * @return array
+     */
+    public function rules(): array
+    {
+        $arr['form.name'] = ['required', 'max:20', Rule::unique(Models::class, 'name')->ignore($this->ignore)];
+        $arr['form.status'] = ['required', 'in:0,1'];
+
+        return $arr;
+    }
+
+    /**
+     * Define public method attributes()
+     * @return array
+     */
+    public function attributes(): array
+    {
+        $attributes = [
+            'form.name' => 'Name',
+            'form.status' => 'Status'
+        ];
+
+        return $attributes;
+    }
 }
