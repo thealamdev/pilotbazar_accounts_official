@@ -4,17 +4,17 @@ namespace App\Livewire\VehicleManagement\Stack\Modules\Models;
 
 use Livewire\Component;
 use Livewire\Attributes\Title;
-use App\Livewire\Forms\VehicleManagement\Modules\Models\CreatPost;
+use App\Livewire\Forms\VehicleManagement\Modules\Models\CreateModelRequest;
 use App\Services\VehicleManagement\Stack\Modules\Models\CreateModelService;
  
 
-class CreateComponent extends Component
+class CreateModelComponent extends Component
 {
     /**
      * Create form object
      * @var array|object
      */
-    public CreatPost $form;
+    public CreateModelRequest $form;
 
     /**
      * method for save data
@@ -32,6 +32,6 @@ class CreateComponent extends Component
     #[Title('Model Create')]
     public function render()
     {
-        return view('livewire.vehicle-management.stack.modules.models.create-component');
+        return view('livewire.vehicle-management.stack.modules.models.create-model-component');
     }
 }
