@@ -76,38 +76,10 @@
                                                         </td>
                                                         <td class="text-end">
                                                             <div class="dropdown">
-                                                                <button class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover dropdown-toggle no-caret" aria-expanded="false" data-bs-toggle="dropdown">
-                                                                    <span class="icon">
-                                                                        <span class="feather-icon">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
-                                                                                <circle cx="12" cy="12" r="1"></circle>
-                                                                                <circle cx="12" cy="5" r="1"></circle>
-                                                                                <circle cx="12" cy="19" r="1"></circle>
-                                                                            </svg>
-                                                                        </span>
-                                                                    </span>
-                                                                </button>
+                                                                <x-action.action-button />
                                                                 <div class="dropdown-menu dropdown-menu-end">
-                                                                    <a class="dropdown-item" href="{{ route('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.update', ['pbl_bank' => $each?->id]) }}">
-                                                                        <span class="feather-icon dropdown-icon">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
-                                                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <span>Edit Method</span>
-                                                                    </a>
-                                                                    <button class="dropdown-item" wire:click="delete({{ $each->id }})" wire:confirm="Are you sure you want to delete this post?">
-                                                                        <span class="feather-icon dropdown-icon">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2">
-                                                                                <polyline points="3 6 5 6 21 6"></polyline>
-                                                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                                                                <line x1="10" y1="11" x2="10" y2="17"></line>
-                                                                                <line x1="14" y1="11" x2="14" y2="17"></line>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <span>Delete</span>
-                                                                    </button>
+                                                                    <x-action.edit name="Edit Vehicle" route="{{ route('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.update', ['pbl_bank' => $each?->id]) }}" />
+                                                                    <x-action.delete name="Delete" :id="$each->id" />
                                                                 </div>
                                                             </div>
                                                         </td>
