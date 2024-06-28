@@ -2,8 +2,11 @@
 
 namespace App\Livewire\Forms\VehicleManagement\Vehicle;
 
-use Livewire\Attributes\Validate;
 use Livewire\Form;
+use Illuminate\Validation\Rule;
+use App\Models\VehicleManagement\Modules\Color;
+use App\Models\VehicleManagement\Modules\Models;
+use App\Models\VehicleManagement\Modules\ModelYear;
 
 class CreateVehicleRequest extends Form
 {
@@ -12,6 +15,7 @@ class CreateVehicleRequest extends Form
      * @var string
      */
     public $name, $model_id, $model_year_id, $color_id, $purchase_price, $status;
+
     /**
      * Define the rules method
      * @return array
@@ -19,11 +23,11 @@ class CreateVehicleRequest extends Form
     public function rules(): array
     {
         $arr['form.name'] = ['required'];
-        $arr['form.model_id'] = ['required'];
-        $arr['form.model_year_id'] = ['required'];
-        $arr['form.color_id'] = ['required'];
-        $arr['form.purchase_price'] = ['required'];
-        $arr['form.status'] = ['required'];
+        $arr['form.model_id'] = ['required', Rule::exists(Models::class, 'id')];
+        $arr['form.model_year_id'] = ['required', Rule::exists(ModelYear::class, 'id')];
+        $arr['form.color_id'] = ['required', Rule::exists(Color::class, 'id')];
+        $arr['form.purchase_price'] = ['required', 'numeric'];
+        $arr['form.status'] = ['required', 'in:0,1'];
 
         return $arr;
     }
