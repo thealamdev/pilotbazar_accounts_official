@@ -46,6 +46,7 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
             Route::prefix('methods')->name('method.')->group(function () {
                 Route::get('/', \App\Livewire\VehicleManagement\Table\Dependency\Payment\Method\TableMethodComponent::class)->name('index');
                 Route::get('create', \App\Livewire\VehicleManagement\Stack\Dependency\Payment\Method\CreateMethodComponent::class)->name('create');
+                Route::get('update/{method}', \App\Livewire\VehicleManagement\Stack\Dependency\Payment\Method\UpdateMethodComponent::class)->name('update');
             });
         });
 
