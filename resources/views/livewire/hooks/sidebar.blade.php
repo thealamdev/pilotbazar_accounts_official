@@ -251,7 +251,7 @@
                      </ul>
                      <!-- Vehicle Management -> Dependency !-->
                      <ul class="navbar-nav flex-column">
-                         <li class="nav-item @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.*')) ?  'active' : '' @endif">
+                         <li class="nav-item @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.*'))  active  @endif">
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dependency_pages">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
@@ -272,17 +272,17 @@
                                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_log">
                                                  <span class="nav-link-text">Payment</span>
                                              </a>
-                                             <ul id="dash_log" class="nav flex-column collapse  nav-children {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') ? 'show' : '' }}">
+                                             <ul id="dash_log" class="nav flex-column collapse  nav-children {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.*') ? 'show' : '' }}">
                                                  <li class="nav-item">
                                                      <ul class="nav flex-column">
-                                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') ? 'active' : '' }}">
+                                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.*') ? 'active' : '' }}">
                                                              <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') }}"><span class="nav-link-text">Method</span></a>
                                                          </li>
                                                      </ul>
                                                  </li>
                                              </ul>
                                          </li>
-                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.create') ? 'active' : '' }}">
+                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.*')  ? 'active' : '' }}">
                                              <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.index') }}"><span class="nav-link-text">Bank</span></a>
                                          </li>
                                      </ul>
