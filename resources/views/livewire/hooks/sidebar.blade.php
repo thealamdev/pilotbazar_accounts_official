@@ -193,7 +193,7 @@
                      </div>
                      <div class="menu-group">
                          <ul class="navbar-nav flex-column">
-                             <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.index') || Route::is('admin.version1.vehicle-management.vehicle.create') ? 'active' : '' }}">
+                             <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.*') ? 'active' : '' }}">
                                  <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.index') }}">
                                      <span class="nav-icon-wrap">
                                          <span class="svg-icon">
