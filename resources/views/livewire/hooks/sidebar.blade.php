@@ -251,7 +251,7 @@
                      </ul>
                      <!-- Vehicle Management -> Dependency !-->
                      <ul class="navbar-nav flex-column">
-                         <li class="nav-item @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.*'))  active  @endif">
+                         <li class="nav-item @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.*')) active @endif">
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dependency_pages">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
@@ -282,7 +282,7 @@
                                                  </li>
                                              </ul>
                                          </li>
-                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.*')  ? 'active' : '' }}">
+                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.*') ? 'active' : '' }}">
                                              <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.index') }}"><span class="nav-link-text">Bank</span></a>
                                          </li>
                                      </ul>
