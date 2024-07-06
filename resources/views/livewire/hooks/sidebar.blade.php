@@ -251,7 +251,7 @@
                      </ul>
                      <!-- Vehicle Management -> Dependency !-->
                      <ul class="navbar-nav flex-column">
-                         <li class="nav-item @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') || Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.create')) active @endif">
+                         <li class="nav-item @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.*')) ?  'active' : '' @endif">
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dependency_pages">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
@@ -265,7 +265,7 @@
                                  </span>
                                  <span class="nav-link-text">Dependency</span>
                              </a>
-                             <ul id="dependency_pages" class="nav flex-column collapse  nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.create') || Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.create')) show @endif">
+                             <ul id="dependency_pages" class="nav flex-column collapse  nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.*') || Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.*')) show @endif">
                                  <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.index') || Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.create') ? 'active' : '' }}">
                                      <ul class="nav flex-column">
                                          <li class="nav-item">
