@@ -22,8 +22,8 @@ require __DIR__ . '/auth.php';
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
-        Route::prefix('investors')->name('investor.')->group(function () {
-            Route::get('/', \App\Livewire\Investor\Table\Investor\InvestorComponent::class)->name('index');
+        Route::prefix('investors-management')->name('investors-management.')->group(function () {
+            Route::get('/',  \App\Livewire\InvestorManagement\Stack\Investor\CreateInvestorComponent::class)->name('index');
             Route::get('create', \App\Livewire\Investor\Stack\Investor\CreateComponent::class)->name('create');
         });
 

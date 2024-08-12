@@ -306,7 +306,7 @@
                      <div class="menu-group">
                          <ul class="navbar-nav flex-column">
                              <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.index') || Route::is('admin.version1.vehicle-management.vehicle.create') ? 'active' : '' }}">
-                                 <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.index') }}">
+                                 <a class="nav-link" href="{{ route('admin.investors-management.create') }}">
                                      <span class="nav-icon-wrap">
                                          <span class="svg-icon">
                                              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
