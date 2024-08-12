@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('mobile');
             $table->double('amount');
-            $table->integer('profit_percentage');
+            $table->string('address');
             $table->softDeletes();
             $table->timestamps();
         });

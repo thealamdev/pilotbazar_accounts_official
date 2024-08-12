@@ -69,31 +69,13 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <label for="form.profit">Profit Percentage <span class="text-danger">*</span></label>
+                    <label for="form.address">Investor Address <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa-solid fa-percent"></i></span>
-                        <input type="text" wire:model.live="form.profit" class="form-control @error('form.profit')
+                        <span class="input-group-text"><i class="fa-solid fa-house-user"></i></span>
+                        <input type="text" wire:model="form.address" class="form-control @error('form.address')
                             {{ 'is-invalid' }}
-                        @enderror" placeholder="profit percentage">
-                        @error('form.profit')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <label for="vehicle_id">Invested On<span class="text-danger">*</span></label>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa-solid fa-car"></i></span>
-                        <select wire:model.live="form.vehicle_id" class="form-control @error('form.vehicle_id')
-                            {{ 'is-invalid' }}
-                        @enderror">
-                            <option selected value>-- Please Select Status --</option>
-                            @foreach ($vehicles as $each)
-                                <option value="{{ $each?->id }}">{{ $each?->name . ' ' . $each?->models->name . ' ' . $each?->model_year->name}}</option>
-                            @endforeach
-                        </select>
-                        @error('form.vehicle_id')
+                        @enderror" placeholder="investor address">
+                        @error('form.address')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
