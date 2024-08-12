@@ -247,7 +247,6 @@
                                             @csrf
                                             <button class="d-block fs-8 border border-slate-900 px-4 py-1 bg-transparent rounded" type="submit">Sign Out</button>
                                         </form>
-                                        
                                     </div>
                                 </div>
                             </div>
