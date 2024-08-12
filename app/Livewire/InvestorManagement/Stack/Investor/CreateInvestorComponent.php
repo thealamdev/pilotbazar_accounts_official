@@ -49,6 +49,6 @@ class CreateInvestorComponent extends Component
 
     public function render()
     {
-        return view('livewire.investor.stack.investor-management.create-component');
+        return view('livewire.investor-management.stack.investor.create-investor-component');
     }
 }
