@@ -29,7 +29,7 @@
                         <div class="col-md-12 mb-md-4 mb-3">
                             <div class="card card-border mb-0 h-100">
                                 <div class="card-header card-header-action">
-                                    <h6>Colors
+                                    <h6>Vehicles
                                         <span class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
                                     </h6>
                                     <div class="card-action-wrap">
