@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Models\Investor;
+namespace App\Models\InvestorManagement;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Investor extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     /**
-     * protected guarded properties
+     * @var <array>
+     * protected guarded $guarded
      */
     protected $guarded = ['id'];
 }

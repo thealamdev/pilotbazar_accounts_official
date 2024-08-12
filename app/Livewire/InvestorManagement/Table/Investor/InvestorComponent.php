@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Livewire\Investor\Table\Investor;
+namespace App\Livewire\InvestorManagement\Table\Investor;
 
-use App\Models\Investor\Investor;
 use Livewire\Component;
 use Livewire\Attributes\Title;
+use App\Models\InvestorManagement\Investor;
 
 class InvestorComponent extends Component
 {

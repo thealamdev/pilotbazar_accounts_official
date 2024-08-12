@@ -2,10 +2,10 @@
 
 namespace App\Livewire\InvestorManagement\Stack\Investor;
 
-use App\Models\Investor\Investor;
-use App\Models\VehicleManagement\Vehicle\Vehicle;
 use Livewire\Component;
 use Livewire\Attributes\Title;
+use App\Models\InvestorManagement\Investor;
+use App\Models\VehicleManagement\Vehicle\Vehicle;
 
 class CreateInvestorComponent extends Component
 {
@@ -27,7 +27,7 @@ class CreateInvestorComponent extends Component
     /**
      * name properties $amount
      */
-    public $amount = '';
+    public $amount;
 
     /**
      * name properties $profit_percent
@@ -42,6 +42,7 @@ class CreateInvestorComponent extends Component
     #[Title('Investor Create')]
     public function save()
     {
+        dd($this->mobile);
         Investor::create([
             'name' => $this->name,
             'mobile' => $this->mobile,

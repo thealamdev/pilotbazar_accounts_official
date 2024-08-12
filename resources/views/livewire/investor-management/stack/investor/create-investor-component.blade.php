@@ -46,7 +46,7 @@
                     <label for="form.mobile">Investor Mobile <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
-                        <input type="text" wire:model.live="form.mobile" class="form-control @error('form.mobile')
+                        <input type="text" wire:model="form.mobile" class="form-control @error('form.mobile')
                             {{ 'is-invalid' }}
                         @enderror" placeholder="investor mobile">
                         @error('form.mobile')
@@ -59,7 +59,7 @@
                     <label for="form.amount">Invested Amout <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>
-                        <input type="text" wire:model.live="form.mobile" class="form-control @error('form.amount')
+                        <input type="number" wire:model="form.amount" class="form-control @error('form.amount')
                             {{ 'is-invalid' }}
                         @enderror" placeholder="invested amount">
                         @error('form.amount')
