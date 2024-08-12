@@ -43,6 +43,63 @@
                 </div>
 
                 <div class="col-lg-6">
+                    <label for="form.mobile">Investor Mobile <span class="text-danger">*</span></label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                        <input type="text" wire:model.live="form.mobile" class="form-control @error('form.mobile')
+                            {{ 'is-invalid' }}
+                        @enderror" placeholder="investor mobile">
+                        @error('form.mobile')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="form.amount">Invested Amout <span class="text-danger">*</span></label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>
+                        <input type="text" wire:model.live="form.mobile" class="form-control @error('form.amount')
+                            {{ 'is-invalid' }}
+                        @enderror" placeholder="invested amount">
+                        @error('form.amount')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="form.profit">Profit Percentage <span class="text-danger">*</span></label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-percent"></i></span>
+                        <input type="text" wire:model.live="form.profit" class="form-control @error('form.profit')
+                            {{ 'is-invalid' }}
+                        @enderror" placeholder="profit percentage">
+                        @error('form.profit')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="vehicle_id">Invested On<span class="text-danger">*</span></label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-car"></i></span>
+                        <select wire:model.live="form.vehicle_id" class="form-control @error('form.vehicle_id')
+                            {{ 'is-invalid' }}
+                        @enderror">
+                            <option selected value>-- Please Select Status --</option>
+                            @foreach ($vehicles as $each)
+                                <option value="{{ $each?->id }}">{{ $each?->name . ' ' . $each?->models->name . ' ' . $each?->model_year->name}}</option>
+                            @endforeach
+                        </select>
+                        @error('form.status')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
                     <label for="status">Status<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-star"></i></span>

@@ -3,6 +3,7 @@
 namespace App\Livewire\InvestorManagement\Stack\Investor;
 
 use App\Models\Investor\Investor;
+use App\Models\VehicleManagement\Vehicle\Vehicle;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 
@@ -33,6 +34,11 @@ class CreateInvestorComponent extends Component
      */
     public $profit_percent = '';
 
+    /**
+     * vehicles property $vehicles
+     */
+    public $vehicles = [];
+
     #[Title('Investor Create')]
     public function save()
     {
@@ -49,6 +55,7 @@ class CreateInvestorComponent extends Component
 
     public function render()
     {
-        return view('livewire.investor-management.stack.investor.create-investor-component');
+        $this->vehicles = Vehicle::query()->latest()->get();
+        return view('livewire.investor-management.stack.investor.create-investor-component', ['vehicles' => $this->vehicles]);
     }
 }
