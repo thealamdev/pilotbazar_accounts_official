@@ -218,11 +218,12 @@
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_pages">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
-                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                             <circle cx="9" cy="7" r="4" />
-                                             <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                                             <path d="M16 11h6m-3 -3v6" />
+                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-kanban" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                             <line x1="4" y1="4" x2="10" y2="4"></line>
+                                             <line x1="14" y1="4" x2="20" y2="4"></line>
+                                             <rect x="4" y="8" width="6" height="12" rx="2"></rect>
+                                             <rect x="14" y="8" width="6" height="6" rx="2"></rect>
                                          </svg>
                                      </span>
                                  </span>
@@ -255,11 +256,14 @@
                              <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dependency_pages">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
-                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                             <circle cx="9" cy="7" r="4" />
-                                             <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                                             <path d="M16 11h6m-3 -3v6" />
+                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list-details" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                             <path d="M13 5h8"></path>
+                                             <path d="M13 9h5"></path>
+                                             <path d="M13 15h8"></path>
+                                             <path d="M13 19h5"></path>
+                                             <rect x="3" y="4" width="6" height="6" rx="1"></rect>
+                                             <rect x="3" y="14" width="6" height="6" rx="1"></rect>
                                          </svg>
                                      </span>
                                  </span>
