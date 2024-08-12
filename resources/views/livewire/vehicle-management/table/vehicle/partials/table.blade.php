@@ -29,7 +29,7 @@
                     <div class="text-high-em">{{ $each?->color?->name }}</div>
                 </td>
                 <td>
-                    <div class="text-high-em">{{ $each?->purchase_price }}</div>
+                    <div class="text-high-em">{{ $each?->purchase_price }} tk</div>
                 </td>
                 <td>
                     <div class="text-high-em">{{ $each?->total_cost }}</div>
