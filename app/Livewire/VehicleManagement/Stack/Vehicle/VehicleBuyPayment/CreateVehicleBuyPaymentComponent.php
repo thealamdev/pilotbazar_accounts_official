@@ -70,7 +70,7 @@ class CreateVehicleBuyPaymentComponent extends Component
     }
 
     /**
-     * Define public method saveRTGS() for submit RTGS
+     * Define public method saveCeDRB() for submit saveCeDRB
      * @return void
      */
     public function saveCeDRB(): void
