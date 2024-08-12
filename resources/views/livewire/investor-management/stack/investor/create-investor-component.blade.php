@@ -93,7 +93,7 @@
                                 <option value="{{ $each?->id }}">{{ $each?->name . ' ' . $each?->models->name . ' ' . $each?->model_year->name}}</option>
                             @endforeach
                         </select>
-                        @error('form.status')
+                        @error('form.vehicle_id')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
