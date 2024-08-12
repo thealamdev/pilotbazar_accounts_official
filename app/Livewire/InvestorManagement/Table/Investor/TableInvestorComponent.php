@@ -3,6 +3,7 @@
 namespace App\Livewire\InvestorManagement\Table\Investor;
 
 use App\Models\InvestorManagement\Investor;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class TableInvestorComponent extends Component
@@ -12,6 +13,7 @@ class TableInvestorComponent extends Component
      */
     public $responses;
 
+    #[Title('Investors')]
     public function render()
     {
         $this->responses = Investor::query()->latest()->get();
