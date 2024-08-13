@@ -13,10 +13,19 @@ class TableInvestorComponent extends Component
      */
     public $responses;
 
+    /**
+     * public property $search
+     * @var string
+     */
+    public ?string $search = '';
+
     #[Title('Investors')]
     public function render()
     {
-        $this->responses = Investor::query()->latest()->get();
-        return view('livewire.investor-management.table.investor.table-investor-component',['responses' => $this->responses]);
+        $this->responses = Investor::query()
+            ->latest()
+            ->where('name', 'like', "%{$this->search}%")
+            ->get();
+        return view('livewire.investor-management.table.investor.table-investor-component', ['responses' => $this->responses]);
     }
 }
