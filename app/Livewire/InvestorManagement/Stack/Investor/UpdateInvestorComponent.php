@@ -2,10 +2,11 @@
 
 namespace App\Livewire\InvestorManagement\Stack\Investor;
 
-use App\Livewire\Forms\InvestorManagement\Investor\UpdateInvestorRequest;
-use App\Models\InvestorManagement\Investor;
-use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\Attributes\Title;
+use App\Models\InvestorManagement\Investor;
+use App\Livewire\Forms\InvestorManagement\Investor\UpdateInvestorRequest;
+use App\Services\InvestorManagement\Stack\Investor\UpdateInvestorService;
 
 class UpdateInvestorComponent extends Component
 {
@@ -40,7 +41,10 @@ class UpdateInvestorComponent extends Component
      */
     public function update()
     {
-        dd($this->form);
+        $this->validate($this->form->rules(), attributes: $this->form->attributes());
+        $isCreate = UpdateInvestorService::adapt($this->form, $this->response);
+        $response = $isCreate ? 'Data has been update !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
     }
 
     #[Title('Investor Update')]

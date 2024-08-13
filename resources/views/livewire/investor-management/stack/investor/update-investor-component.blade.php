@@ -6,7 +6,7 @@
             <span>Please must fill the field where (*) sign is visible.</span>
         </div>
         <div>
-            <a href="{{ route('admin.version1.vehicle-management.vehicle.module.color.index') }}" class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="button">Investors</a>
+            <a href="{{ route('admin.version1.investor-management.investors.index') }}" class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="button">Investors</a>
         </div>
     </header>
     <!-- Header Part End !-->
@@ -21,7 +21,7 @@
                     <label for="form.name">Investor Name <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                        <input type="text" wire:model="form.name" class="form-control @error('form.name')
+                        <input type="text" wire:model="form.name" value="{{ $response?->name }}" class="form-control @error('form.name')
                             {{ 'is-invalid' }}
                         @enderror" placeholder="investor name">
                         @error('form.name')
@@ -34,7 +34,7 @@
                     <label for="form.email">Investor Email <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
-                        <input type="text" wire:model="form.email" class="form-control @error('form.email')
+                        <input type="text" wire:model="form.email" value="{{ $response?->email }}" class="form-control @error('form.email')
                             {{ 'is-invalid' }}
                         @enderror" placeholder="investor email">
                         @error('form.email')
@@ -47,7 +47,7 @@
                     <label for="form.mobile">Investor Mobile <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
-                        <input type="text" wire:model="form.mobile" class="form-control @error('form.mobile')
+                        <input type="text" wire:model="form.mobile" value="{{ $response?->mobile }}" class="form-control @error('form.mobile')
                             {{ 'is-invalid' }}
                         @enderror" placeholder="investor mobile">
                         @error('form.mobile')
@@ -60,7 +60,7 @@
                     <label for="form.amount">Invested Amout <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-bangladeshi-taka-sign"></i></span>
-                        <input type="number" wire:model="form.amount" class="form-control @error('form.amount')
+                        <input type="number" wire:model="form.amount" value="{{ $response?->amount }}" class="form-control @error('form.amount')
                             {{ 'is-invalid' }}
                         @enderror" placeholder="invested amount">
                         @error('form.amount')
@@ -73,7 +73,7 @@
                     <label for="form.address">Investor Address <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-house-user"></i></span>
-                        <input type="text" wire:model="form.address" class="form-control @error('form.address')
+                        <input type="text" wire:model="form.address" value="{{ $response?->address }}" class="form-control @error('form.address')
                             {{ 'is-invalid' }}
                         @enderror" placeholder="investor address">
                         @error('form.address')
@@ -101,7 +101,7 @@
             </div>
 
             <div class="text-start">
-                <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save</button>
+                <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Update</button>
             </div>
         </form>
     </div>
