@@ -96,8 +96,9 @@
 
                                             <tfoot>
                                                 <tr>
-                                                    <td>Name</td>
-
+                                                    <td>Investor Name</td>
+                                                    <td>Vehicle Name</td>
+                                                    <td>Invested Amount</td>
                                                     <td class="text-end">Modified</td>
                                                     <td class="text-end">Action</td>
                                                 </tr>
