@@ -305,7 +305,7 @@
                      </div>
                      <div class="menu-group">
                          <ul class="navbar-nav flex-column">
-                             <li class="nav-item {{ Route::is('admin.version1.investor-management.investor.*') ? 'active' : '' }}">
+                             <li class="nav-item {{ Route::is('admin.version1.investor-management.investor.index') ? 'active' : '' }}">
                                  <a class="nav-link" href="{{ route('admin.version1.investor-management.investor.index') }}">
                                      <span class="nav-icon-wrap">
                                          <span class="svg-icon">
