@@ -44,7 +44,7 @@ class CreateInvestorComponent extends Component
         $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
         $this->dispatch('success', ['message' => $response]);
         $this->form->reset();
-        // return redirect()->route('admin.version1.vehicle-management.vehicle.buy-payment.create', ['vehicle' => $isCreate->getKey()]);
+        return redirect()->route('admin.version1.investor-management.investor.invested-vehicle.create', ['investor' => $isCreate->getKey()]);
     }
 
     public function render()

@@ -14,7 +14,7 @@
                     </div>
 
                     <div class="content-options-wrap">
-                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover ms-0 d-xl-inline-block d-none" href="{{ route('admin.version1.investor-management.investors.create') }}">
+                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover ms-0 d-xl-inline-block d-none" href="{{ route('admin.version1.investor-management.investor.create') }}">
                             <span class="icon">
                                 <span class="feather-icon">
                                     <i data-feather="folder-plus"></i>
@@ -33,7 +33,7 @@
                                         <span class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
                                     </h6>
                                     <div class="card-action-wrap">
-                                        <a href="{{ route('admin.version1.investor-management.investors.create') }}" class="btn btn-sm btn-primary ms-3">
+                                        <a href="{{ route('admin.version1.investor-management.investor.create') }}" class="btn btn-sm btn-primary ms-3">
                                             <span>
                                                 <span class="icon">
                                                     <span class="feather-icon">
@@ -94,8 +94,9 @@
                                                             <div class="dropdown">
                                                                 <x-action.action-button />
                                                                 <div class="dropdown-menu dropdown-menu-end">
-                                                                    <x-action.edit name="Edit" route="{{ route('admin.version1.investor-management.investors.update', ['investor' => $each->id]) }}" />
+                                                                    <x-action.edit name="Edit" route="{{ route('admin.version1.investor-management.investor.update', ['investor' => $each->id]) }}" />
                                                                     <x-action.delete name="Delete" :id="$each->id" />
+                                                                    <x-action.edit name="Invested On" route="{{ route('admin.version1.investor-management.investor.invested-vehicle.create', ['investor' => $each->id]) }}" />
                                                                 </div>
                                                             </div>
                                                         </td>
