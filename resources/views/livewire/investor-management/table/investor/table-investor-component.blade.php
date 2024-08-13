@@ -30,6 +30,11 @@
                             <div class="card card-border mb-0 h-100">
                                 <div class="card-header card-header-action">
 
+
+
+
+
+
                                     <h6>Investors
                                         <span class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
                                     </h6>
@@ -57,6 +62,7 @@
                                                     <th>Email</th>
                                                     <th>Mobile</th>
                                                     <th>Amount</th>
+                                                    <th>Invested On</th>
                                                     <th>Address</th>
                                                     <th class="text-center">Status</th>
                                                     <th class="text-end">Modified</th>
@@ -78,6 +84,14 @@
                                                         </td>
                                                         <td>
                                                             <div class="text-high-em">{{ $each?->amount }}</div>
+                                                        </td>
+                                                        <td>
+                                                            @foreach ($each->investedOn as $car)
+                                                                <div class="d-flex justify-content-between">
+                                                                    <div class="text-high-em"> {{ $car->investedVehicles->first()->name }}</div>
+                                                                    <div class="text-high-em"> {{ $car?->profit_percentage . '%' }}</div>
+                                                                </div>
+                                                            @endforeach
                                                         </td>
                                                         <td>
                                                             <div class="text-high-em">{{ $each?->address }}</div>
