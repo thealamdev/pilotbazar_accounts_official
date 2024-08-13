@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('invested_vehicles', function (Blueprint $table) {
             $table->id();
-            $table->integer('profit_percentage');
+            $table->double('invested_amount');
             $table->foreignId('vehicle_id')->constrained();
             $table->foreignId('investor_id')->constrained();
             $table->softDeletes();

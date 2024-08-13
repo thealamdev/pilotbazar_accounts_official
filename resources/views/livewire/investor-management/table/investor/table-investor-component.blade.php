@@ -83,13 +83,13 @@
                                                             <div class="text-high-em">{{ $each?->mobile }}</div>
                                                         </td>
                                                         <td>
-                                                            <div class="text-high-em">{{ $each?->amount }}</div>
+                                                            <div class="text-high-em">{{ $each?->amount . ' tk' }}</div>
                                                         </td>
                                                         <td>
                                                             @foreach ($each->investedOn as $car)
                                                                 <div class="d-flex justify-content-between">
                                                                     <div class="text-high-em"> {{ $car->investedVehicles->first()->name }}</div>
-                                                                    <div class="text-high-em"> {{ $car?->profit_percentage . '%' }}</div>
+                                                                    <div class="text-high-em"> {{ $car?->invested_amount . 'tk' }}</div>
                                                                 </div>
                                                             @endforeach
                                                         </td>

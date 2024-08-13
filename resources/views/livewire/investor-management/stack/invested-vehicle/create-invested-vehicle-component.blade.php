@@ -17,13 +17,13 @@
             @csrf
             <div class="row">
                 <div class="col-lg-6">
-                    <label for="form.profit_percentage">Invested Percentage <span class="text-danger">*</span></label>
+                    <label for="form.invested_amount">Invested Amount <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-percent"></i></span>
-                        <input type="number" wire:model="form.profit_percentage" class="form-control @error('form.profit_percentage')
+                        <input type="number" wire:model="form.invested_amount" class="form-control @error('form.invested_amount')
                             {{ 'is-invalid' }}
-                        @enderror" placeholder="invested profit percentage">
-                        @error('form.profit_percentage')
+                        @enderror" placeholder="invested amount">
+                        @error('form.invested_amount')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>

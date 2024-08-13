@@ -13,7 +13,7 @@ class CreateInvestedVehicleService
     public static function store($form, $investor): array|object
     {
         $response = InvestedVehicle::create([
-            'profit_percentage' => $form->profit_percentage,
+            'invested_amount' => $form->invested_amount,
             'investor_id' => $investor,
             'vehicle_id' => $form->vehicle_id,
         ]);
