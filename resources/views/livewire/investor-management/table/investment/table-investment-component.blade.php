@@ -74,7 +74,6 @@
                                                             <div class="text-high-em">{{ $each?->invested_amount . ' tk' }}</div>
                                                         </td>
 
-
                                                         <td class="text-end">
                                                             {!! Helper::ISOdate($each?->updated_at) !!}
                                                         </td>
