@@ -3,7 +3,6 @@
 namespace App\Services\InvestorManagement\Stack\Investor;
 
 use App\Models\InvestorManagement\Investor;
-use App\Models\VehicleManagement\Vehicle\Vehicle;
 
 class CreateInvestorService
 {

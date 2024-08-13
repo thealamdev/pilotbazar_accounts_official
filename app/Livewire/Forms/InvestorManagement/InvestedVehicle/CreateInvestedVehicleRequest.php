@@ -20,7 +20,7 @@ class CreateInvestedVehicleRequest extends Form
      */
     public function rules(): array
     {
-        $rule['form.profit_percentage'] = ['required', 'decimal'];
+        $rule['form.profit_percentage'] = ['required', 'integer'];
         $rule['form.vehicle_id']        = ['required', Rule::exists(Vehicle::class, 'id')];
 
         return $rule;
