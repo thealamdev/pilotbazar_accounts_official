@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models\InvestorManagement;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class InvestedVehicle extends Model
+{
+    use HasFactory, SoftDeletes;
+
+    /**
+     * Define protected property $guarded
+     */
+    protected $guarded = ['id'];
+}
