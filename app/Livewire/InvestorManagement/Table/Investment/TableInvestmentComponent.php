@@ -14,19 +14,18 @@ class TableInvestmentComponent extends Component
     public $responses;
 
     /**
-     * Define public method mount()
-     * @return void
+     * Define public property $search
      */
-    public function mount(): void
-    {
-        $this->responses = InvestedVehicle::query()
-        ->with('investedVehicles','investors')
-        ->latest()->get();
-    }
+    public $search = '';
 
     #[Title('Investments')]
     public function render()
     {
-        return view('livewire.investor-management.table.investment.table-investment-component');
+        $this->responses = InvestedVehicle::query()
+            ->latest()
+            ->where('invested_amount', 'like', "%{$this->search}%")
+            ->with('investedVehicles', 'investors')
+            ->get();
+        return view('livewire.investor-management.table.investment.table-investment-component', ['responses' => $this->responses]);
     }
 }

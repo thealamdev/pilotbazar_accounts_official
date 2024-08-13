@@ -9,7 +9,7 @@
                         </a>
 
                         <form class="mx-3 flex-grow-1 mw-400p" role="search">
-                            <input wire:model.live="search" type="text" class="form-control" placeholder="Search Color by Name">
+                            <input wire:model.live="search" type="text" class="form-control" placeholder="Search investor by amount">
                         </form>
                     </div>
 
