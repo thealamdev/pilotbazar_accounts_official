@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('mobile');
             $table->double('amount');
             $table->string('address');
+            $table->boolean('status');
             $table->softDeletes();
             $table->timestamps();
         });
