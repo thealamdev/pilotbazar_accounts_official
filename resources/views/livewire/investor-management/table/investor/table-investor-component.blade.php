@@ -126,6 +126,7 @@
                                                     <td>Email</td>
                                                     <td>Mobile</td>
                                                     <td>Amount</td>
+                                                    <td>Invested On</td>
                                                     <td>Address</td>
                                                     <td class="text-center">Status</td>
                                                     <td class="text-end">Modified</td>
