@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('profit_percentage');
             $table->foreignId('vehicle_id')->constrained();
+            $table->foreignId('investor_id')->constrained();
             $table->softDeletes();
             $table->timestamps();
         });
