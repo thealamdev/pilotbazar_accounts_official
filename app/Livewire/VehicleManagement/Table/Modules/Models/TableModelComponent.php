@@ -35,7 +35,7 @@ class TableModelComponent extends Component
     #[Title('Models')]
     public function render()
     {
-        $this->responses = Models::query()->latest()->where('name', 'like', "%{$this->search}%")->get();
+        $this->responses = Models::query()->latest()->with('user')->where('name', 'like', "%{$this->search}%")->get();
         return view('livewire.vehicle-management.table.modules.models.table-model-component');
     }
 }
