@@ -84,7 +84,6 @@
                                                                 <div class="dropdown-menu dropdown-menu-end">
                                                                     <x-action.edit name="Edit" route="{{ route('admin.version1.investor-management.investor.update', ['investor' => $each->id]) }}" />
                                                                     <x-action.delete name="Delete" :id="$each->id" />
-                                                                    <x-action.edit name="Invested On" route="{{ route('admin.version1.investor-management.investor.invested-vehicle.create', ['investor' => $each->id]) }}" />
                                                                 </div>
                                                             </div>
                                                         </td>
