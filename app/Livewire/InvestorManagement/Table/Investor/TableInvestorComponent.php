@@ -2,9 +2,10 @@
 
 namespace App\Livewire\InvestorManagement\Table\Investor;
 
-use App\Models\InvestorManagement\Investor;
-use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\Attributes\Title;
+use App\Models\InvestorManagement\Investor;
+use App\Services\InvestorManagement\Stack\Investor\DeleteInvestorService;
 
 class TableInvestorComponent extends Component
 {
@@ -18,6 +19,17 @@ class TableInvestorComponent extends Component
      * @var string
      */
     public ?string $search = '';
+
+    /**
+     * public delete method 
+     * @return void
+     */
+    public function delete(string $id): void
+    {
+        $isDelete = DeleteInvestorService::erase($id);
+        $response = $isDelete ? 'Record has been Delete !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
+    }
 
     #[Title('Investors')]
     public function render()

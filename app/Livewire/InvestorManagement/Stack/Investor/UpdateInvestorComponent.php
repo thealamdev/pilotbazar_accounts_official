@@ -38,8 +38,9 @@ class UpdateInvestorComponent extends Component
 
     /**
      * Define public method update() to update the resourses
+     * @return void
      */
-    public function update()
+    public function update(): void
     {
         $this->validate($this->form->rules(), attributes: $this->form->attributes());
         $isCreate = UpdateInvestorService::adapt($this->form, $this->response);
