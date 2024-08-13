@@ -71,7 +71,7 @@
                                                             <div class="text-high-em">{{ $each->investedVehicles->first()->name . ' ' . $each->investedVehicles?->first()->models?->name . ' ' . $each->investedVehicles?->first()->model_year?->name }}</div>
                                                         </td>
                                                         <td>
-                                                            <div class="text-high-em">{{ $each?->profit_percentage  }}</div>
+                                                            <div class="text-high-em">{{ $each?->profit_percentage }}</div>
                                                         </td>
 
 
