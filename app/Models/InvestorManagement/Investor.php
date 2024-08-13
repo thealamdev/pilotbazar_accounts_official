@@ -15,4 +15,12 @@ class Investor extends Model
      * protected guarded $guarded
      */
     protected $guarded = ['id'];
+
+    /**
+     * Define public method investedOn()
+     */
+    public function investedOn()
+    {
+        return $this->hasMany(InvestedVehicle::class, 'investor_id', 'id');
+    }
 }
