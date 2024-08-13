@@ -5,7 +5,7 @@
                 <header class="content-header">
                     <div class="d-flex align-items-center flex-grow-1">
                         <a class="content-title link-dark" href="#">
-                            <h1>Investors</h1>
+                            <h1>Investments</h1>
                         </a>
 
                         <form class="mx-3 flex-grow-1 mw-400p" role="search">
@@ -29,7 +29,8 @@
                         <div class="col-md-12 mb-md-4 mb-3">
                             <div class="card card-border mb-0 h-100">
                                 <div class="card-header card-header-action">
-                                    <h6>Investors
+                                    <h6>Investments
+
                                         <span class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
                                     </h6>
                                     <div class="card-action-wrap">
@@ -52,13 +53,9 @@
                                         <table class="table nowrap w-100 mb-5">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Mobile</th>
-                                                    <th>Amount</th>
-                                                    <th>Invested On</th>
-                                                    <th>Address</th>
-                                                    <th class="text-center">Status</th>
+                                                    <th>Investor Name</th>
+                                                    <th>Vehicle Name</th>
+                                                    <th>Invested Amount</th>
                                                     <th class="text-end">Modified</th>
                                                     <th class="text-end">Action</th>
                                                 </tr>
@@ -68,33 +65,16 @@
                                                 @forelse ($responses as $each)
                                                     <tr>
                                                         <td>
-                                                            <div class="text-high-em">{{ $each?->name }}</div>
+                                                            <div class="text-high-em">{{ $each->investors->first()->name }}</div>
                                                         </td>
                                                         <td>
-                                                            <div class="text-high-em">{{ $each?->email }}</div>
+                                                            <div class="text-high-em">{{ $each->investedVehicles->first()->name . ' ' . $each->investedVehicles?->first()->models?->name . ' ' . $each->investedVehicles?->first()->model_year?->name }}</div>
                                                         </td>
                                                         <td>
-                                                            <div class="text-high-em">{{ $each?->mobile }}</div>
+                                                            <div class="text-high-em">{{ $each?->profit_percentage  }}</div>
                                                         </td>
-                                                        <td>
-                                                            <div class="text-high-em">{{ $each?->amount }}</div>
-                                                        </td>
-                                                        <td>
-                                                            @foreach ($each->investedOn as $car)
-                                                                <div class="d-flex justify-content-between">
-                                                                    <div class="text-high-em"> {{ $car->investedVehicles->first()->name }}</div>
-                                                                    <div class="text-high-em"> {{ $car?->profit_percentage . '%' }}</div>
-                                                                </div>
-                                                            @endforeach
-                                                        </td>
-                                                        <td>
-                                                            <div class="text-high-em">{{ $each?->address }}</div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="text-center">
-                                                                {!! Helper::status($each?->status) !!}
-                                                            </div>
-                                                        </td>
+
+
                                                         <td class="text-end">
                                                             {!! Helper::ISOdate($each?->updated_at) !!}
                                                         </td>
@@ -117,11 +97,7 @@
                                             <tfoot>
                                                 <tr>
                                                     <td>Name</td>
-                                                    <td>Email</td>
-                                                    <td>Mobile</td>
-                                                    <td>Amount</td>
-                                                    <td>Address</td>
-                                                    <td class="text-center">Status</td>
+
                                                     <td class="text-end">Modified</td>
                                                     <td class="text-end">Action</td>
                                                 </tr>

@@ -23,4 +23,15 @@ class InvestedVehicle extends Model
     {
         return $this->hasMany(Vehicle::class, 'id', 'vehicle_id');
     }
+
+    /**
+     * Define public method investors()
+     */
+    public function investors()
+    {
+        return $this->hasMany(Investor::class, 'id', 'investor_id');
+    }
+
+
+    
 }
