@@ -2,6 +2,7 @@
 
 namespace App\Livewire\InvestorManagement\Stack\InvestedVehicle;
 
+use App\Models\InvestorManagement\InvestedVehicle;
 use Livewire\Component;
 use App\Models\InvestorManagement\Investor;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
@@ -15,6 +16,11 @@ class UpdateInvestedVehicleComponent extends Component
     public $vehicles;
 
     /**
+     * Define public property $investedVehicle
+     */
+    public $investedVehicle;
+
+    /**
      * Define public property $investor
      */
     public ?string $investor;
@@ -22,8 +28,9 @@ class UpdateInvestedVehicleComponent extends Component
     /**
      * Define public method mount()
      */
-    public function mount(Investor $investor)
+    public function mount(Investor $investor, InvestedVehicle $investedVehicle)
     {
+        $this->investedVehicle = $investedVehicle;
         $this->investor = $investor->id;
         $this->vehicles = Vehicle::query()->latest()->get();
     }
