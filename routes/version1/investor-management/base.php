@@ -9,6 +9,7 @@ Route::prefix('investors')->name('investor.')->group(function () {
 
     Route::prefix('invested-vehicle/{investor}')->name('invested-vehicle.')->group(function () {
         Route::get('create', \App\Livewire\InvestorManagement\Stack\InvestedVehicle\CreateInvestedVehicleComponent::class)->name('create');
+        Route::get('{investedVehicle}', \App\Livewire\InvestorManagement\Stack\InvestedVehicle\UpdateInvestedVehicleComponent::class)->name('update');
     });
 
     Route::prefix('investments')->name('investment.')->group(function () {
