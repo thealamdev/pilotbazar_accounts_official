@@ -56,6 +56,7 @@
                                                     <th>Investor Name</th>
                                                     <th>Vehicle Name</th>
                                                     <th>Invested Amount</th>
+                                                    <th>Profit Percentage</th>
                                                     <th class="text-end">Modified</th>
                                                     <th class="text-end">Action</th>
                                                 </tr>
@@ -73,7 +74,9 @@
                                                         <td>
                                                             <div class="text-high-em">{{ $each?->invested_amount . ' tk' }}</div>
                                                         </td>
-
+                                                        <td>
+                                                            <div class="text-high-em">{{ $each?->profit_percentage . ' %' }}</div>
+                                                        </td>
                                                         <td class="text-end">
                                                             {!! Helper::ISOdate($each?->updated_at) !!}
                                                         </td>
@@ -97,6 +100,7 @@
                                                     <td>Investor Name</td>
                                                     <td>Vehicle Name</td>
                                                     <td>Invested Amount</td>
+                                                    <td>Profit Percentage</td>
                                                     <td class="text-end">Modified</td>
                                                     <td class="text-end">Action</td>
                                                 </tr>
