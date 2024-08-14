@@ -35,6 +35,14 @@ class UpdateInvestedVehicleComponent extends Component
         $this->vehicles = Vehicle::query()->latest()->get();
     }
 
+    /**
+     * Define public method update() to update the resourses
+     */
+    public function update()
+    {
+        dd('Hi');
+    }
+
     #[Title('Invested Vehicle Update')]
     public function render()
     {

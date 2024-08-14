@@ -13,7 +13,7 @@
 
     <!-- Form Part End !-->
     <div class="border border-slate-400 rounded p-3">
-        <form action="#" wire:submit="save" method="POST">
+        <form action="#" wire:submit="update" method="POST">
             @csrf
             <div class="row">
                 <div class="col-lg-6">
