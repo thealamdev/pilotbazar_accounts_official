@@ -12,7 +12,7 @@ class CreateInvestedVehicleRequest extends Form
      * Define public properties
      * @var string
      */
-    public $invested_amount, $vehicle_id;
+    public $invested_amount, $profit_percentage, $vehicle_id;
 
     /**
      * Define public method rules()
@@ -21,6 +21,7 @@ class CreateInvestedVehicleRequest extends Form
     public function rules(): array
     {
         $rule['form.invested_amount'] = ['required', 'integer'];
+        $rule['form.profit_percentage'] = ['required', 'integer'];
         $rule['form.vehicle_id']        = ['required', Rule::exists(Vehicle::class, 'id')];
 
         return $rule;
@@ -33,6 +34,7 @@ class CreateInvestedVehicleRequest extends Form
     public function attributes(): array
     {
         $rule['form.invested_amount'] = 'Invested Amount';
+        $rule['form.profit_percentage'] = 'Profit Percentage';
         $rule['form.vehicle_id']        = 'Vehicle';
 
         return $rule;

@@ -14,6 +14,7 @@ class CreateInvestedVehicleService
     {
         $response = InvestedVehicle::create([
             'invested_amount' => $form->invested_amount,
+            'profit_percentage' => $form->profit_percentage,
             'investor_id' => $investor,
             'vehicle_id' => $form->vehicle_id,
         ]);

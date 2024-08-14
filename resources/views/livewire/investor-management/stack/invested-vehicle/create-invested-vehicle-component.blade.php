@@ -30,6 +30,19 @@
                 </div>
 
                 <div class="col-lg-6">
+                    <label for="form.profit_percentage"> Profit Percentage <span class="text-danger">*</span></label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-percent"></i></span>
+                        <input type="number" wire:model="form.profit_percentage" class="form-control @error('form.profit_percentage')
+                            {{ 'is-invalid' }}
+                        @enderror" placeholder="profit percentage">
+                        @error('form.profit_percentage')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
                     <label for="form.vehicle_id">Invested On<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-car"></i></span>
