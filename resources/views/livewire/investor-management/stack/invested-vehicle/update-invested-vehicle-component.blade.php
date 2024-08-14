@@ -51,7 +51,7 @@
                         @enderror">
                             <option selected value>-- Please Select Status --</option>
                             @foreach ($vehicles as $each)
-                                <option @selected(old('vehicle_id',$investedVehicle->vehicle_id) == $each->id) value="{{ $each?->id }}">{{ $each?->name . ' ' . $each?->models?->name . ' ' . $each?->model_year?->name }}</option>
+                                <option @selected(old('vehicle_id', $investedVehicle->vehicle_id) == $each->id) value="{{ $each?->id }}">{{ $each?->name . ' ' . $each?->models?->name . ' ' . $each?->model_year?->name }}</option>
                             @endforeach
                         </select>
                         @error('form.vehicle_id')
