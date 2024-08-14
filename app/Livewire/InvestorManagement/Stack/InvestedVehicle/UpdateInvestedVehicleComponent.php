@@ -2,14 +2,21 @@
 
 namespace App\Livewire\InvestorManagement\Stack\InvestedVehicle;
 
-use App\Models\InvestorManagement\InvestedVehicle;
 use Livewire\Component;
+use Livewire\Attributes\Title;
 use App\Models\InvestorManagement\Investor;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
-use Livewire\Attributes\Title;
+use App\Models\InvestorManagement\InvestedVehicle;
+use App\Livewire\Forms\InvestorManagement\InvestedVehicle\UpdateInvestedVehicleRequest;
+use App\Services\InvestorManagement\Stack\InvestedVehicle\UpdateInvestedVehicleService;
 
 class UpdateInvestedVehicleComponent extends Component
 {
+    /**
+     * Define public form object UpdateInvestedVehicleRequest $form 
+     */
+    public UpdateInvestedVehicleRequest $form;
+
     /**
      * Define public property $vehicle
      */
@@ -30,6 +37,9 @@ class UpdateInvestedVehicleComponent extends Component
      */
     public function mount(Investor $investor, InvestedVehicle $investedVehicle)
     {
+        $this->form->invested_amount = $investedVehicle->invested_amount;
+        $this->form->profit_percentage = $investedVehicle->profit_percentage;
+        $this->form->vehicle_id = $investedVehicle->vehicle_id;
         $this->investedVehicle = $investedVehicle;
         $this->investor = $investor->id;
         $this->vehicles = Vehicle::query()->latest()->get();
@@ -37,10 +47,14 @@ class UpdateInvestedVehicleComponent extends Component
 
     /**
      * Define public method update() to update the resourses
+     * @return void
      */
-    public function update()
+    public function update(): void
     {
-        dd('Hi');
+        $this->validate(rules: $this->form->rules(), attributes: $this->form->attributes());
+        $isCreate = UpdateInvestedVehicleService::adapt($this->form, $this->investor, $this->investedVehicle);
+        $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
+        $this->dispatch('success', ['message' => $response]);
     }
 
     #[Title('Invested Vehicle Update')]

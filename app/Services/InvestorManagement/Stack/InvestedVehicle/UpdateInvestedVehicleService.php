@@ -10,9 +10,9 @@ class UpdateInvestedVehicleService
      * Create static adapt method
      * @return bool
      */
-    public static function adapt($form, $investor): bool
+    public static function adapt($form, $investor, $investedVehicle): bool
     {
-        $response = InvestedVehicle::create([
+        $response = $investedVehicle->update([
             'invested_amount' => $form->invested_amount,
             'profit_percentage' => $form->profit_percentage,
             'investor_id' => $investor,
