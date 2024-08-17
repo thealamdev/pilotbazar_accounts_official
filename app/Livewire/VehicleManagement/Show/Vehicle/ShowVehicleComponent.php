@@ -21,7 +21,6 @@ class ShowVehicleComponent extends Component
      */
     public $mediaCostingUpdateResponse;
 
-
     /**
      * Define public property $responses
      * @var array|object
