@@ -30,6 +30,7 @@ class ShowVehicleComponent extends Component
 
     /**
      * Define public mount method 
+     * @param ?string $vehicle
      * @return void
      */
     public function mount($vehicle): void
@@ -56,8 +57,7 @@ class ShowVehicleComponent extends Component
     }
 
     /**
-     * Define public method mediaCostUpdate() 
-     * @param ?string id
+     * Define public method mediaCostUpdate()
      */
     public function mediaCostUpdate()
     {
@@ -71,6 +71,7 @@ class ShowVehicleComponent extends Component
         ]);
         $this->dispatch('success', ['message' => 'Media Costing has been uploaded']);
     }
+
     #[Title('Vehicle | Show')]
     public function render()
     {
