@@ -6,19 +6,21 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCosting;
-use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCostingRequest;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaUpdateRequest;
 
 class ShowVehicleComponent extends Component
 {
     /**
-     * Define public object mediaCostingUpdate $form
+     * Define public object VehicleMediaCostingRequest $vehicleMediaCostingRequest
      */
+    public VehicleMediaUpdateRequest $vehicleMediaUpdateRequest;
 
     /**
-     *  Define public property $vehicleMediaCostingRequest.
+     *  Define public property $mediaCostingUpdateResponse.
      * @var array|object
      */
-    public VehicleMediaCostingRequest $vehicleMediaCostingRequest;
+    public $mediaCostingUpdateResponse;
+
 
     /**
      * Define public property $responses
@@ -45,13 +47,33 @@ class ShowVehicleComponent extends Component
      */
     public function mediaCostingUpdate(?string $id)
     {
-        $this->validate();
-        $this->vehicleMediaCostingRequest = VehicleMediaCosting::query()->get();
+        $this->mediaCostingUpdateResponse = VehicleMediaCosting::query()->where('id', $id)->first();
+        $this->vehicleMediaUpdateRequest->id = $this->mediaCostingUpdateResponse->id;
+        $this->vehicleMediaUpdateRequest->costing_name = $this->mediaCostingUpdateResponse->costing_name;
+        $this->vehicleMediaUpdateRequest->amount = $this->mediaCostingUpdateResponse->amount;
+        $this->vehicleMediaUpdateRequest->date = $this->mediaCostingUpdateResponse->date;
+        $this->vehicleMediaUpdateRequest->remarks = $this->mediaCostingUpdateResponse->remarks;
     }
 
+    /**
+     * Define public method mediaCostUpdate() 
+     * @param ?string id
+     */
+    public function mediaCostUpdate()
+    {
+        $this->validate();
+        $response = VehicleMediaCosting::where('id', $this->vehicleMediaUpdateRequest->id)->first();
+        $response->update([
+            'costing_name' => $this->vehicleMediaUpdateRequest->costing_name,
+            'amount' => $this->vehicleMediaUpdateRequest->amount,
+            'date' => $this->vehicleMediaUpdateRequest->date,
+            'remarks' => $this->vehicleMediaUpdateRequest->remarks,
+        ]);
+        $this->dispatch('success', ['message' => 'Media Costing has been uploaded']);
+    }
     #[Title('Vehicle | Show')]
     public function render()
     {
-        return view('livewire.vehicle-management.show.vehicle.show-vehicle-component', ['response' => $this->response, 'vehicleMediaCostingRequest' => $this->vehicleMediaCostingRequest]);
+        return view('livewire.vehicle-management.show.vehicle.show-vehicle-component', ['response' => $this->response, 'mediaCostingUpdateResponse' => $this->mediaCostingUpdateResponse]);
     }
 }

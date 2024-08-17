@@ -49,8 +49,7 @@
  </div>
 
  <!-- Update Modal !-->
-
- <div class="modal fade" id="mediaCostingUpdateModal" tabindex="-1" role="dialog" aria-labelledby="mediaCostingUpdateLabel" aria-hidden="true" wire:ignore>
+ <div class="modal fade" id="mediaCostingUpdateModal" tabindex="-1" aria-labelledby="mediaCostingUpdateLabel" aria-hidden="true" wire:ignore>
      <div class="modal-dialog" role="document">
          <div class="modal-content">
              <div class="modal-header">
@@ -60,66 +59,53 @@
                  </button>
              </div>
              <div class="modal-body">
-                 <form action="#">
+                 <form action="#" wire:submit="mediaCostUpdate">
+                     <input type="hidden" wire:model.live='vehicleMediaUpdateRequest.id' value="{{ $mediaCostingUpdateResponse?->id }}">
                      <div class="row">
                          <div class="col-lg-4">
-                             <label for="vehicleMediaCostingRequest.costing_name">Costing Name<span class="text-danger">*</span></label>
+                             <label for="vehicleMediaUpdateRequest.costing_name">Costing Name<span class="text-danger">*</span></label>
                              <div class="input-group mb-3">
                                  <span class="input-group-text">৳</span>
-                                 <input type="text" wire:model.live="vehicleMediaCostingRequest.costing_name" class="form-control @error('vehicleMediaCostingRequest.costing_name') is-invalid @enderror" placeholder="client name">
-                                 @error('vehicleMediaCostingRequest.costing_name')
+                                 <input type="text" wire:model.live="vehicleMediaUpdateRequest.costing_name" value="{{ $mediaCostingUpdateResponse?->costing_name }}" class="form-control @error('vehicleMediaUpdateRequest.costing_name') is-invalid @enderror" placeholder="client name">
+                                 @error('vehicleMediaUpdateRequest.costing_name')
                                      <div class="invalid-feedback">{{ $message }}</div>
                                  @enderror
                              </div>
                          </div>
                          <div class="col-lg-4">
-                             <label for="vehicleMediaCostingRequest.amount">Amount<span class="text-danger">*</span></label>
+                             <label for="vehicleMediaUpdateRequest.amount">Amount<span class="text-danger">*</span></label>
                              <div class="input-group mb-3">
                                  <span class="input-group-text">৳</span>
-                                 <input type="number" wire:model.live="vehicleMediaCostingRequest.amount" class="form-control @error('vehicleMediaCostingRequest.amount') is-invalid @enderror" placeholder="amount">
-                                 @error('vehicleMediaCostingRequest.amount')
+                                 <input type="number" wire:model.live="vehicleMediaUpdateRequest.amount" value="{{ $mediaCostingUpdateResponse?->amount }}" class="form-control @error('vehicleMediaUpdateRequest.amount') is-invalid @enderror" placeholder="amount">
+                                 @error('vehicleMediaUpdateRequest.amount')
                                      <div class="invalid-feedback">{{ $message }}</div>
                                  @enderror
                              </div>
                          </div>
                          <div class="col-lg-4">
-                             <label for="vehicleMediaCostingRequest.date">Date<span class="text-danger">*</span></label>
+                             <label for="vehicleMediaUpdateRequest.date">Date<span class="text-danger">*</span></label>
                              <div class="input-group mb-3">
                                  <span class="input-group-text">৳</span>
-                                 <input type="date" wire:model.live="vehicleMediaCostingRequest.date" class="form-control @error('vehicleMediaCostingRequest.date') is-invalid @enderror">
-                                 @error('vehicleMediaCostingRequest.date')
+                                 <input type="date" wire:model.live="vehicleMediaUpdateRequest.date" value="{{ $mediaCostingUpdateResponse?->date }}" class="form-control @error('vehicleMediaUpdateRequest.date') is-invalid @enderror">
+                                 @error('vehicleMediaUpdateRequest.date')
                                      <div class="invalid-feedback">{{ $message }}</div>
                                  @enderror
                              </div>
                          </div>
                          <div class="col-lg-12">
-                             <label for="vehicleMediaCostingRequest.remarks">Remark</label>
+                             <label for="vehicleMediaUpdateRequest.remarks">Remark</label>
                              <div class="input-group mb-3">
-                                 <textarea wire:model.live="vehicleMediaCostingRequest.remarks" cols="30" rows="3" class="form-control" placeholder="remarks"></textarea>
+                                 <textarea wire:model.live="vehicleMediaUpdateRequest.remarks" value="{{ $mediaCostingUpdateResponse?->remarks }}" cols="30" rows="3" class="form-control" placeholder="remarks"></textarea>
                              </div>
                          </div>
                      </div>
+                     <button type="submit" class="btn btn-success">Update</button>
                  </form>
              </div>
+
              <div class="modal-footer">
                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
              </div>
          </div>
      </div>
  </div>
-
- @push('js')
-     <script>
-         document.addEventListener('DOMContentLoaded', () => {
-             const modal = new bootstrap.Modal(document.getElementById('mediaCostingUpdateModal'));
-             modal.show();
-
-             // Check if there's any automatic hide
-             document.querySelectorAll('.modal').forEach(m => {
-                 m.addEventListener('hide.bs.modal', () => {
-                     console.log('Modal is being hidden');
-                 });
-             });
-         });
-     </script>
- @endpush
