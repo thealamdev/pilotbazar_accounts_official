@@ -4,7 +4,7 @@
         <a style="margin-top: -10px" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" href="{{ route('admin.version1.vehicle-management.vehicle.create') }}">
             <span class="icon">
                 <span class="feather-icon">
-                    <i class="fa-solid fa-pen" style="color:gray"></i>
+                    <i class="fa-solid fa-circle-plus" style="color:gray"></i>
                 </span>
             </span>
         </a>
