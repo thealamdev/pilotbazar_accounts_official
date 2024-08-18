@@ -1,7 +1,7 @@
 <div class="row pt-5 pb-3">
     <div class="col-lg-12 d-flex justify-content-between">
         <p class="color-bluis">Maintenance Costing Infos</p>
-        <a style="margin-top: -10px" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" href="{{ route('admin.version1.vehicle-management.vehicle.create') }}">
+        <a style="margin-top: -10px" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" href="{{ route('admin.version1.vehicle-management.vehicle.costing.create',['vehicle' => $response->id]) }}">
             <span class="icon">
                 <span class="feather-icon">
                     <i class="fa-solid fa-circle-plus" style="color:gray"></i>
