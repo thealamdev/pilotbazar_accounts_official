@@ -7,10 +7,12 @@ use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCosting;
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleServiceCosting;
+use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMaintenanceCosting;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCostingUpdateRequest;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehiclePartsCostingUpdateRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleServiceCostingUpdateRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMaintenanceCostingUpdateRequest;
-use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMaintenanceCosting;
+use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehiclePartsCosting;
 
 class ShowVehicleComponent extends Component
 {
@@ -30,6 +32,11 @@ class ShowVehicleComponent extends Component
     public VehicleMaintenanceCostingUpdateRequest $vehicleMaintenanceCostingUpdateRequest;
 
     /**
+     * Define public object VehiclePartsCostingUpdateRequest $vehiclePartsCostingUpdateRequest;
+     */
+    public VehiclePartsCostingUpdateRequest $vehiclePartsCostingUpdateRequest;
+
+    /**
      *  Define public property $mediaCostingUpdateResponse.
      * @var array|object
      */
@@ -46,6 +53,12 @@ class ShowVehicleComponent extends Component
      * @var array|object
      */
     public $maintenanceCostingUpdateResponse;
+
+    /**
+     * Define public property $partsCostingUpdateResponse
+     * @var array|object
+     */
+    public $partsCostingUpdateResponse;
 
     /**
      * Define public property $responses
@@ -161,6 +174,38 @@ class ShowVehicleComponent extends Component
             'remarks' => $this->vehicleMaintenanceCostingUpdateRequest->remarks,
         ]);
         $this->dispatch('success', ['message' => 'Maintenance Costing has been uploaded']);
+    }
+
+    /**
+     * Define public method partsCostingUpdate() to update parts costing
+     * @param ?string $id
+     * @return void
+     */
+    public function partsCostingUpdate(?string $id): void
+    {
+        $this->partsCostingUpdateResponse = VehiclePartsCosting::query()->where('id', $id)->first();
+        $this->vehiclePartsCostingUpdateRequest->id = $this->partsCostingUpdateResponse->id;
+        $this->vehiclePartsCostingUpdateRequest->costing_name = $this->partsCostingUpdateResponse->costing_name;
+        $this->vehiclePartsCostingUpdateRequest->amount = $this->partsCostingUpdateResponse->amount;
+        $this->vehiclePartsCostingUpdateRequest->date = $this->partsCostingUpdateResponse->date;
+        $this->vehiclePartsCostingUpdateRequest->remarks = $this->partsCostingUpdateResponse->remarks;
+    }
+
+    /**
+     * Define public method partsCostUpdate()
+     * @return void
+     */
+    public function partsCostUpdate(): void
+    {
+        $this->vehiclePartsCostingUpdateRequest->validate();
+        $response = VehiclePartsCosting::where('id', $this->vehiclePartsCostingUpdateRequest->id)->first();
+        $response->update([
+            'costing_name' => $this->vehiclePartsCostingUpdateRequest->costing_name,
+            'amount' => $this->vehiclePartsCostingUpdateRequest->amount,
+            'date' => $this->vehiclePartsCostingUpdateRequest->date,
+            'remarks' => $this->vehiclePartsCostingUpdateRequest->remarks,
+        ]);
+        $this->dispatch('success', ['message' => 'Parts Costing has been uploaded']);
     }
 
     #[Title('Vehicle | Show')]

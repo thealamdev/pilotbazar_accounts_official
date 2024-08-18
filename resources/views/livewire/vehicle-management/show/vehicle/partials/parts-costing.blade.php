@@ -26,7 +26,7 @@
         <p style="width:25%" title="{{ $each?->remarks }}">{{ Str::limit($each?->remarks, 25, '...') }}</p>
         <p style="width:10%;text-align:end">{{ $each?->amount }} tk</p>
         <p style="width:10%;text-align:end">
-            <button style="margin-top: -10px;" type="button" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="modal" data-bs-target="#maintenanceCostingUpdateModal" wire:click="maintenanceCostingUpdate({{ $each?->id }})">
+            <button style="margin-top: -10px;" type="button" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="modal" data-bs-target="#partsCostingUpdateModal" wire:click="partsCostingUpdate({{ $each?->id }})">
                 <span class="icon">
                     <span class="feather-icon">
                         <i class="fa-solid fa-pen" style="color:gray"></i>
@@ -59,14 +59,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="#" wire:submit="maintenanceCostUpdate">
-                    <input type="hidden" wire:model.live='vehiclePartsCostingUpdateRequest.id' value="{{ $maintenanceCostingUpdateResponse?->id }}">
+                <form action="#" wire:submit="partsCostUpdate">
+                    <input type="hidden" wire:model.live='vehiclePartsCostingUpdateRequest.id' value="{{ $partsCostingUpdateResponse?->id }}">
                     <div class="row">
                         <div class="col-lg-4">
                             <label for="vehiclePartsCostingUpdateRequest.costing_name">Costing Name<span class="text-danger">*</span></label>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">৳</span>
-                                <input type="text" wire:model.live="vehiclePartsCostingUpdateRequest.costing_name" value="{{ $maintenanceCostingUpdateResponse?->costing_name }}" class="form-control @error('vehiclePartsCostingUpdateRequest.costing_name') is-invalid @enderror" placeholder="client name">
+                                <input type="text" wire:model.live="vehiclePartsCostingUpdateRequest.costing_name" value="{{ $partsCostingUpdateResponse?->costing_name }}" class="form-control @error('vehiclePartsCostingUpdateRequest.costing_name') is-invalid @enderror" placeholder="client name">
                                 @error('vehiclePartsCostingUpdateRequest.costing_name')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -76,7 +76,7 @@
                             <label for="vehiclePartsCostingUpdateRequest.amount">Amount<span class="text-danger">*</span></label>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">৳</span>
-                                <input type="number" wire:model.live="vehiclePartsCostingUpdateRequest.amount" value="{{ $maintenanceCostingUpdateResponse?->amount }}" class="form-control @error('vehiclePartsCostingUpdateRequest.amount') is-invalid @enderror" placeholder="amount">
+                                <input type="number" wire:model.live="vehiclePartsCostingUpdateRequest.amount" value="{{ $partsCostingUpdateResponse?->amount }}" class="form-control @error('vehiclePartsCostingUpdateRequest.amount') is-invalid @enderror" placeholder="amount">
                                 @error('vehiclePartsCostingUpdateRequest.amount')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -86,7 +86,7 @@
                             <label for="vehiclePartsCostingUpdateRequest.date">Date<span class="text-danger">*</span></label>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">৳</span>
-                                <input type="date" wire:model.live="vehiclePartsCostingUpdateRequest.date" value="{{ $maintenanceCostingUpdateResponse?->date }}" class="form-control @error('vehiclePartsCostingUpdateRequest.date') is-invalid @enderror">
+                                <input type="date" wire:model.live="vehiclePartsCostingUpdateRequest.date" value="{{ $partsCostingUpdateResponse?->date }}" class="form-control @error('vehiclePartsCostingUpdateRequest.date') is-invalid @enderror">
                                 @error('vehiclePartsCostingUpdateRequest.date')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -95,7 +95,7 @@
                         <div class="col-lg-12">
                             <label for="vehiclePartsCostingUpdateRequest.remarks">Remark</label>
                             <div class="input-group mb-3">
-                                <textarea wire:model.live="vehiclePartsCostingUpdateRequest.remarks" value="{{ $maintenanceCostingUpdateResponse?->remarks }}" cols="30" rows="3" class="form-control" placeholder="remarks"></textarea>
+                                <textarea wire:model.live="vehiclePartsCostingUpdateRequest.remarks" value="{{ $partsCostingUpdateResponse?->remarks }}" cols="30" rows="3" class="form-control" placeholder="remarks"></textarea>
                             </div>
                         </div>
                     </div>
