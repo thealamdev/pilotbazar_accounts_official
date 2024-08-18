@@ -6,9 +6,11 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCosting;
+use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleServiceCosting;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMediaCostingUpdateRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleServiceCostingUpdateRequest;
-use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleServiceCosting;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleCosting\VehicleMaintenanceCostingUpdateRequest;
+use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMaintenanceCosting;
 
 class ShowVehicleComponent extends Component
 {
@@ -23,6 +25,11 @@ class ShowVehicleComponent extends Component
     public VehicleServiceCostingUpdateRequest $vehicleServiceCostingUpdateRequest;
 
     /**
+     * Define public object VehicleMaintenanceCostingUpdateRequest $vehicleMaintenanceCostingUpdateRequest;
+     */
+    public VehicleMaintenanceCostingUpdateRequest $vehicleMaintenanceCostingUpdateRequest;
+
+    /**
      *  Define public property $mediaCostingUpdateResponse.
      * @var array|object
      */
@@ -33,6 +40,12 @@ class ShowVehicleComponent extends Component
      * @var array|object
      */
     public $serviceCostingUpdateResponse;
+
+    /**
+     * Define public property $maintenanceCostingUpdateResponse
+     * @var array|object
+     */
+    public $maintenanceCostingUpdateResponse;
 
     /**
      * Define public property $responses
@@ -116,6 +129,38 @@ class ShowVehicleComponent extends Component
             'remarks' => $this->vehicleServiceCostingUpdateRequest->remarks,
         ]);
         $this->dispatch('success', ['message' => 'Service Costing has been uploaded']);
+    }
+
+    /**
+     * Define public method maintenanceCostingUpdate() to update maintenance costing page
+     * @var ?string $id
+     * @return void
+     */
+    public function maintenanceCostingUpdate(?string $id): void
+    {
+        $this->maintenanceCostingUpdateResponse = VehicleMaintenanceCosting::query()->where('id', $id)->first();
+        $this->vehicleMaintenanceCostingUpdateRequest->id = $this->maintenanceCostingUpdateResponse->id;
+        $this->vehicleMaintenanceCostingUpdateRequest->costing_name = $this->maintenanceCostingUpdateResponse->costing_name;
+        $this->vehicleMaintenanceCostingUpdateRequest->amount = $this->maintenanceCostingUpdateResponse->amount;
+        $this->vehicleMaintenanceCostingUpdateRequest->date = $this->maintenanceCostingUpdateResponse->date;
+        $this->vehicleMaintenanceCostingUpdateRequest->remarks = $this->maintenanceCostingUpdateResponse->remarks;
+    }
+
+    /**
+     * Define public method maintenanceCostUpdate()
+     * @return void
+     */
+    public function maintenanceCostUpdate(): void
+    {
+        $this->vehicleMaintenanceCostingUpdateRequest->validate();
+        $response = VehicleMaintenanceCosting::where('id', $this->vehicleMaintenanceCostingUpdateRequest->id)->first();
+        $response->update([
+            'costing_name' => $this->vehicleMaintenanceCostingUpdateRequest->costing_name,
+            'amount' => $this->vehicleMaintenanceCostingUpdateRequest->amount,
+            'date' => $this->vehicleMaintenanceCostingUpdateRequest->date,
+            'remarks' => $this->vehicleMaintenanceCostingUpdateRequest->remarks,
+        ]);
+        $this->dispatch('success', ['message' => 'Maintenance Costing has been uploaded']);
     }
 
     #[Title('Vehicle | Show')]
