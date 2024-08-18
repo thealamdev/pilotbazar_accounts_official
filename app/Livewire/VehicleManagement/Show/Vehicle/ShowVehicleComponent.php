@@ -75,11 +75,11 @@ class ShowVehicleComponent extends Component
     public function mediaCostingUpdate(?string $id): void
     {
         $this->mediaCostingUpdateResponse = VehicleMediaCosting::query()->where('id', $id)->first();
-        $this->VehicleMediaCostingUpdateRequest->id = $this->mediaCostingUpdateResponse->id;
-        $this->VehicleMediaCostingUpdateRequest->costing_name = $this->mediaCostingUpdateResponse->costing_name;
-        $this->VehicleMediaCostingUpdateRequest->amount = $this->mediaCostingUpdateResponse->amount;
-        $this->VehicleMediaCostingUpdateRequest->date = $this->mediaCostingUpdateResponse->date;
-        $this->VehicleMediaCostingUpdateRequest->remarks = $this->mediaCostingUpdateResponse->remarks;
+        $this->vehicleMediaCostingUpdateRequest->id = $this->mediaCostingUpdateResponse->id;
+        $this->vehicleMediaCostingUpdateRequest->costing_name = $this->mediaCostingUpdateResponse->costing_name;
+        $this->vehicleMediaCostingUpdateRequest->amount = $this->mediaCostingUpdateResponse->amount;
+        $this->vehicleMediaCostingUpdateRequest->date = $this->mediaCostingUpdateResponse->date;
+        $this->vehicleMediaCostingUpdateRequest->remarks = $this->mediaCostingUpdateResponse->remarks;
     }
 
     /**
@@ -88,13 +88,13 @@ class ShowVehicleComponent extends Component
      */
     public function mediaCostUpdate(): void
     {
-        $this->validate();
-        $response = VehicleMediaCosting::where('id', $this->vehicleMediaUpdateRequest->id)->first();
+        $this->vehicleMediaCostingUpdateRequest->validate();
+        $response = VehicleMediaCosting::where('id', $this->vehicleMediaCostingUpdateRequest->id)->first();
         $response->update([
-            'costing_name' => $this->vehicleMediaUpdateRequest->costing_name,
-            'amount' => $this->vehicleMediaUpdateRequest->amount,
-            'date' => $this->vehicleMediaUpdateRequest->date,
-            'remarks' => $this->vehicleMediaUpdateRequest->remarks,
+            'costing_name' => $this->vehicleMediaCostingUpdateRequest->costing_name,
+            'amount' => $this->vehicleMediaCostingUpdateRequest->amount,
+            'date' => $this->vehicleMediaCostingUpdateRequest->date,
+            'remarks' => $this->vehicleMediaCostingUpdateRequest->remarks,
         ]);
         $this->dispatch('success', ['message' => 'Media Costing has been uploaded']);
     }
