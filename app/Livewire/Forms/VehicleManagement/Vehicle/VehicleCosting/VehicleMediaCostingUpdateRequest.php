@@ -6,7 +6,7 @@ use Illuminate\Support\Arr;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
-class VehicleMediaUpdateRequest extends Form
+class VehicleMediaCostingUpdateRequest extends Form
 {
     /**
      * Define public property $id

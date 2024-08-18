@@ -48,7 +48,7 @@
      <p style="width:30%;text-align:end">{{ $response?->mediaCosting?->sum('amount') }} tk</p>
  </div>
 
- <!-- Update Modal !-->
+ <!-- Media Costing Update Modal !-->
  <div class="modal fade" id="mediaCostingUpdateModal" tabindex="-1" aria-labelledby="mediaCostingUpdateLabel" aria-hidden="true" wire:ignore>
      <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -60,42 +60,42 @@
              </div>
              <div class="modal-body">
                  <form action="#" wire:submit="mediaCostUpdate">
-                     <input type="hidden" wire:model.live='vehicleMediaUpdateRequest.id' value="{{ $mediaCostingUpdateResponse?->id }}">
+                     <input type="hidden" wire:model.live='VehicleMediaCostingUpdateRequest.id' value="{{ $mediaCostingUpdateResponse?->id }}">
                      <div class="row">
                          <div class="col-lg-4">
-                             <label for="vehicleMediaUpdateRequest.costing_name">Costing Name<span class="text-danger">*</span></label>
+                             <label for="VehicleMediaCostingUpdateRequest.costing_name">Costing Name<span class="text-danger">*</span></label>
                              <div class="input-group mb-3">
                                  <span class="input-group-text">৳</span>
-                                 <input type="text" wire:model.live="vehicleMediaUpdateRequest.costing_name" value="{{ $mediaCostingUpdateResponse?->costing_name }}" class="form-control @error('vehicleMediaUpdateRequest.costing_name') is-invalid @enderror" placeholder="client name">
-                                 @error('vehicleMediaUpdateRequest.costing_name')
+                                 <input type="text" wire:model.live="VehicleMediaCostingUpdateRequest.costing_name" value="{{ $mediaCostingUpdateResponse?->costing_name }}" class="form-control @error('VehicleMediaCostingUpdateRequest.costing_name') is-invalid @enderror" placeholder="client name">
+                                 @error('VehicleMediaCostingUpdateRequest.costing_name')
                                      <div class="invalid-feedback">{{ $message }}</div>
                                  @enderror
                              </div>
                          </div>
                          <div class="col-lg-4">
-                             <label for="vehicleMediaUpdateRequest.amount">Amount<span class="text-danger">*</span></label>
+                             <label for="VehicleMediaCostingUpdateRequest.amount">Amount<span class="text-danger">*</span></label>
                              <div class="input-group mb-3">
                                  <span class="input-group-text">৳</span>
-                                 <input type="number" wire:model.live="vehicleMediaUpdateRequest.amount" value="{{ $mediaCostingUpdateResponse?->amount }}" class="form-control @error('vehicleMediaUpdateRequest.amount') is-invalid @enderror" placeholder="amount">
-                                 @error('vehicleMediaUpdateRequest.amount')
+                                 <input type="number" wire:model.live="VehicleMediaCostingUpdateRequest.amount" value="{{ $mediaCostingUpdateResponse?->amount }}" class="form-control @error('VehicleMediaCostingUpdateRequest.amount') is-invalid @enderror" placeholder="amount">
+                                 @error('VehicleMediaCostingUpdateRequest.amount')
                                      <div class="invalid-feedback">{{ $message }}</div>
                                  @enderror
                              </div>
                          </div>
                          <div class="col-lg-4">
-                             <label for="vehicleMediaUpdateRequest.date">Date<span class="text-danger">*</span></label>
+                             <label for="VehicleMediaCostingUpdateRequest.date">Date<span class="text-danger">*</span></label>
                              <div class="input-group mb-3">
                                  <span class="input-group-text">৳</span>
-                                 <input type="date" wire:model.live="vehicleMediaUpdateRequest.date" value="{{ $mediaCostingUpdateResponse?->date }}" class="form-control @error('vehicleMediaUpdateRequest.date') is-invalid @enderror">
-                                 @error('vehicleMediaUpdateRequest.date')
+                                 <input type="date" wire:model.live="VehicleMediaCostingUpdateRequest.date" value="{{ $mediaCostingUpdateResponse?->date }}" class="form-control @error('VehicleMediaCostingUpdateRequest.date') is-invalid @enderror">
+                                 @error('VehicleMediaCostingUpdateRequest.date')
                                      <div class="invalid-feedback">{{ $message }}</div>
                                  @enderror
                              </div>
                          </div>
                          <div class="col-lg-12">
-                             <label for="vehicleMediaUpdateRequest.remarks">Remark</label>
+                             <label for="VehicleMediaCostingUpdateRequest.remarks">Remark</label>
                              <div class="input-group mb-3">
-                                 <textarea wire:model.live="vehicleMediaUpdateRequest.remarks" value="{{ $mediaCostingUpdateResponse?->remarks }}" cols="30" rows="3" class="form-control" placeholder="remarks"></textarea>
+                                 <textarea wire:model.live="VehicleMediaCostingUpdateRequest.remarks" value="{{ $mediaCostingUpdateResponse?->remarks }}" cols="30" rows="3" class="form-control" placeholder="remarks"></textarea>
                              </div>
                          </div>
                      </div>
