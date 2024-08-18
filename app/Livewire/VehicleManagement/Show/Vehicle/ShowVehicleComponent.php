@@ -57,8 +57,9 @@ class ShowVehicleComponent extends Component
     /**
      * Define public method mediaCostUpdate to update media costing
      * @var ?string $id
+     * @return void
      */
-    public function mediaCostingUpdate(?string $id)
+    public function mediaCostingUpdate(?string $id): void
     {
         $this->mediaCostingUpdateResponse = VehicleMediaCosting::query()->where('id', $id)->first();
         $this->VehicleMediaCostingUpdateRequest->id = $this->mediaCostingUpdateResponse->id;
@@ -70,8 +71,9 @@ class ShowVehicleComponent extends Component
 
     /**
      * Define public method mediaCostUpdate()
+     * @return void
      */
-    public function mediaCostUpdate()
+    public function mediaCostUpdate(): void
     {
         $this->validate();
         $response = VehicleMediaCosting::where('id', $this->vehicleMediaUpdateRequest->id)->first();
@@ -87,8 +89,9 @@ class ShowVehicleComponent extends Component
     /**
      * Define public method serviceCostingUpdate() to update service costing page
      * @var ?string $id
+     * @return void
      */
-    public function serviceCostingUpdate(?string $id)
+    public function serviceCostingUpdate(?string $id): void
     {
         $this->serviceCostingUpdateResponse = VehicleServiceCosting::query()->where('id', $id)->first();
         $this->vehicleServiceCostingUpdateRequest->id = $this->serviceCostingUpdateResponse->id;
@@ -100,8 +103,9 @@ class ShowVehicleComponent extends Component
 
     /**
      * Define public method serviceCostUpdate()
+     * @return void
      */
-    public function serviceCostUpdate()
+    public function serviceCostUpdate(): void
     {
         $this->vehicleServiceCostingUpdateRequest->validate();
         $response = VehicleServiceCosting::where('id', $this->vehicleServiceCostingUpdateRequest->id)->first();
