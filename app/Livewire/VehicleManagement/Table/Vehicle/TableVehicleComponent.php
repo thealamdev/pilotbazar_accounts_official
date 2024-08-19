@@ -2,10 +2,11 @@
 
 namespace App\Livewire\VehicleManagement\Table\Vehicle;
 
-use App\Models\VehicleManagement\Vehicle\Vehicle;
+use App\Enums\Status;
 use Livewire\Component;
-use Livewire\Attributes\Title;
 use Livewire\WithPagination;
+use Livewire\Attributes\Title;
+use App\Models\VehicleManagement\Vehicle\Vehicle;
 
 class TableVehicleComponent extends Component
 {
@@ -32,7 +33,7 @@ class TableVehicleComponent extends Component
         $responses = Vehicle::query()
             ->latest()
             ->with('color')
-            ->where('status', 1)
+            ->where('status', Status::ACTIVE->toString())
             ->where('name', 'like', "%{$this->search}%")
             ->paginate(10);
         return view('livewire.vehicle-management.table.vehicle.table-vehicle-component', ['responses'  =>  $responses]);
