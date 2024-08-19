@@ -53,6 +53,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Name</th>
+                                                    <th>Sub Category</th>
                                                     <th class="text-center">Status</th>
                                                     <th class="text-end">Modified</th>
                                                     <th class="text-end">Action</th>
@@ -64,6 +65,18 @@
                                                     <tr>
                                                         <td>
                                                             <div class="text-high-em">{{ $each?->name }}</div>
+                                                        </td>
+                                                        <td>
+                                                            <x-dropdown.sub-category />
+                                                            <div class="dropdown-menu dropdown-menu-end p-3">
+                                                                @forelse ($each->sub_category as $each)
+                                                                    <ul>
+                                                                        <li>{{ $each?->name }}</li>
+                                                                    </ul>
+                                                                @empty
+                                                                    <li class="text-danger">No Sub Category Found !!!</li>
+                                                                @endforelse
+                                                            </div>
                                                         </td>
 
                                                         <td>

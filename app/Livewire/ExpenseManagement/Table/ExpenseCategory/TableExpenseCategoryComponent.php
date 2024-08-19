@@ -37,8 +37,10 @@ class TableExpenseCategoryComponent extends Component
     public function render()
     {
         $this->responses = ExpenseCategory::query()
+            ->with('sub_category')
             ->where('name', 'like', "%{$this->search}%")
             ->get();
+
         return view('livewire.expense-management.table.expense-category.table-expense-category-component', ['responses' => $this->responses]);
     }
 }

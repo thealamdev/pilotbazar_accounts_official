@@ -7,6 +7,7 @@ use Livewire\Attributes\Title;
 use Illuminate\Database\Eloquent\Collection;
 use App\Models\ExpenseManagement\Expense\ExpenseCategory;
 use App\Livewire\Forms\ExpenseManagement\Expense\CreateExpenseSubCategoryRequest;
+use App\Services\ExpenseManagement\Stack\Expense\CreateExpenseSubCategoryService;
 
 class CreateExpenseSubCategoryComponent extends Component
 {
@@ -37,6 +38,10 @@ class CreateExpenseSubCategoryComponent extends Component
     public function save(): void
     {
         $this->form->validate();
+        $isCreate = CreateExpenseSubCategoryService::store($this->form);
+        $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
+        $this->dispatch('success', ['message' => $response]);
+        $this->form->reset();
     }
 
     #[Title('Expense Sub Category Create')]
