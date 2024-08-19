@@ -4,15 +4,15 @@ namespace App\Services\ExpenseManagement\Stack\Expense;
 
 use App\Models\ExpenseManagement\Expense\ExpenseCategory;
 
-class CreateExpenseCategoryService
+class UpdateExpenseCategoryService
 {
     /**
-     * Create static store method
-     * @return array|object
+     * Create static adapt method
+     * @return bool
      */
-    public static function store($form): array|object
+    public static function adapt($form, $expenseCategory): bool
     {
-        $response = ExpenseCategory::create([
+        $response = $expenseCategory->update([
             'name' => $form->name,
             'status' => $form->status,
         ]);

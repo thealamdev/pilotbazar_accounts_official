@@ -22,9 +22,10 @@ class TableInvestorComponent extends Component
 
     /**
      * public delete method 
+     * @var ?string $id
      * @return void
      */
-    public function delete(string $id): void
+    public function delete(?string $id): void
     {
         $isDelete = DeleteInvestorService::erase($id);
         $response = $isDelete ? 'Record has been Delete !' : 'Something went wrong !';
