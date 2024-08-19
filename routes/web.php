@@ -31,6 +31,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::prefix('investor-management')->name('investor-management.')->group(function () {
                 require __DIR__ . '/version1/investor-management/base.php';
             });
+
+            Route::prefix('expense-management')->name('expense-management.')->group(function () {
+                require __DIR__ . '/version1/expense-management/base.php';
+            });
         });
+        
     });
 });
