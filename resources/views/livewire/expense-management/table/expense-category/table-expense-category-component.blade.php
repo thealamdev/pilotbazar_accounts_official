@@ -72,7 +72,7 @@
                                                             </div>
                                                         </td>
                                                         <td class="text-end">
-                                                            {!! Helper::ISOdate($each?->updated_at) !!}
+                                                            {!! Helper::humanReadableDate($each?->updated_at) !!}
                                                         </td>
                                                         <td class="text-end">
                                                             <div class="dropdown">
