@@ -2,13 +2,19 @@
 
 namespace App\Livewire\ExpenseManagement\Stack\ExpenseSubCategory;
 
-use App\Models\ExpenseManagement\Expense\ExpenseCategory;
-use Illuminate\Database\Eloquent\Collection;
-use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\Attributes\Title;
+use Illuminate\Database\Eloquent\Collection;
+use App\Models\ExpenseManagement\Expense\ExpenseCategory;
+use App\Livewire\Forms\ExpenseManagement\Expense\CreateExpenseSubCategoryRequest;
 
 class CreateExpenseSubCategoryComponent extends Component
 {
+    /**
+     * Define public form object CreateExpenseSubCategoryRequest $form
+     */
+    public CreateExpenseSubCategoryRequest $form;
+
     /**
      * Define public property $expense_categories
      * @var ?array|Collection $expense_categories
@@ -22,6 +28,15 @@ class CreateExpenseSubCategoryComponent extends Component
     public function mount(): void
     {
         $this->expense_categories = ExpenseCategory::query()->get();
+    }
+
+    /**
+     * Define public method save() to store the resourses.
+     * @return void
+     */
+    public function save(): void
+    {
+        $this->form->validate();
     }
 
     #[Title('Expense Sub Category Create')]
