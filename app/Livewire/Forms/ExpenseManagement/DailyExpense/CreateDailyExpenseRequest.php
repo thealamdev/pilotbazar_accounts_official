@@ -12,7 +12,7 @@ class CreateDailyExpenseRequest extends Form
      * @var ?string $expense_category_id
      */
     #[Validate('required')]
-    public $expense_category_id;
+    public $expense_category_id = false;
 
     /**
      * Define public property $expense_sub_category_id;
@@ -22,11 +22,11 @@ class CreateDailyExpenseRequest extends Form
     public $expense_sub_category;
 
     /**
-     * Define public property $name
+     * Define public property $amount
      * @var ?string
      */
     #[Validate('required|string|min:1')]
-    public $name;
+    public $amount;
 
     /**
      * Define public property $status

@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-group position-relative col-lg-6">
-                    <label for="searchInput">Sub Category <span class="text-danger">*</span></label>
+                    <label for="searchInput">Purpose <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-list"></i></span>
                         <input type="text" id="searchInput" wire:model="form.expense_sub_category" class="form-control @error('form.expense_sub_category')
@@ -43,6 +43,19 @@
                 @enderror" placeholder="sub category">
                         <div id="searchResults" class="search-results" style="display: none;"></div>
                         @error('form.expense_sub_category')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="form.amount">Amount <span class="text-danger">*</span></label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-list"></i></span>
+                        <input type="text" wire:model.live="form.amount" class="form-control @error('form.amount')
+                            {{ 'is-invalid' }}
+                        @enderror" placeholder="amount">
+                        @error('form.amount')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
@@ -107,7 +120,8 @@
 @push('js')
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const options = @json($expense_sub_categories->pluck('name'));
+            const options = @json($expense_sub_categories_response->pluck('name'));
+             
             const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
 
@@ -123,7 +137,7 @@
                 const filteredOptions = options.filter(option => option.toLowerCase().includes(query));
 
                 if (filteredOptions.length === 0) {
-                    searchResults.style.display = 'none';
+                    searchResults.style.display = 'block';
                 } else {
                     searchResults.style.display = 'block';
                     filteredOptions.forEach(option => {

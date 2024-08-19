@@ -12,6 +12,19 @@ use App\Livewire\Forms\ExpenseManagement\DailyExpense\CreateDailyExpenseRequest;
 class CreateDailyExpenseComponent extends Component
 {
     /**
+     * Define protected property $listeners;
+     * @var array
+     */
+    protected $listeners = [
+        'updateExpenseSubCategory' => 'updateExpenseSubCategory',
+    ];
+
+    /**
+     * Define public property $changeCategory;
+     */
+    public $changeCategory = false;
+
+    /**
      * Define public form object CreateDailyExpenseRequest $form
      */
     public CreateDailyExpenseRequest $form;
@@ -26,7 +39,7 @@ class CreateDailyExpenseComponent extends Component
      * Define public property $expense_sub_categories
      * @var ?array|Collection $expense_sub_categories
      */
-    public array|Collection $expense_sub_categories = [];
+    public array|Collection $expense_sub_categories_response = [];
 
     /**
      * Define public method mount() for load some resourses
@@ -35,16 +48,13 @@ class CreateDailyExpenseComponent extends Component
     public function mount(): void
     {
         $this->expense_categories = ExpenseCategory::query()->get();
-        $this->expense_sub_categories = ExpenseSubCategory::query()->get();
+        if ($this->form->expense_category_id) {
+            $this->expense_sub_categories_response = ExpenseSubCategory::query()->where('expense_category_id', $this->form->expense_category_id)->get();
+        } else {
+            $this->expense_sub_categories_response = ExpenseSubCategory::query()->get();
+        }
     }
 
-    /**
-     * Define protected property $listeners;
-     * @var array
-     */
-    protected $listeners = [
-        'updateExpenseSubCategory' => 'updateExpenseSubCategory',
-    ];
 
     /**
      * Define public method updateExpenseSubCategory()
@@ -67,6 +77,7 @@ class CreateDailyExpenseComponent extends Component
      */
     public function save()
     {
+        dd($this->expense_sub_categories_response);
         $this->form->validate();
         dd($this->form);
     }
