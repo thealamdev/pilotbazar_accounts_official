@@ -444,8 +444,8 @@
                                      <span class="nav-link-text">Daily Expense</span>
                                  </a>
                              </li>
-                             <li class="nav-item {{ Route::is('admin.version1.investor-management.investor.investment.index') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('admin.version1.investor-management.investor.investment.index') }}">
+                             <li class="nav-item {{ Route::is('admin.version1.expense-management.expense.category.create') ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('admin.version1.expense-management.expense.category.create') }}">
                                     <span class="nav-icon-wrap">
                                         <span class="svg-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -460,8 +460,8 @@
                                     <span class="nav-link-text">Expense Category</span>
                                 </a>
                             </li>
-                            <li class="nav-item {{ Route::is('admin.version1.investor-management.investor.investment.index') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('admin.version1.investor-management.investor.investment.index') }}">
+                            <li class="nav-item {{ Route::is('admin.version1.expense-management.expense.category.create') ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('admin.version1.expense-management.expense.category.create') }}">
                                     <span class="nav-icon-wrap">
                                         <span class="svg-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
