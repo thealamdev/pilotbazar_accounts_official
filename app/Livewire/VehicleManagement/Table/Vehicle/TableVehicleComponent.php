@@ -19,9 +19,10 @@ class TableVehicleComponent extends Component
 
     /**
      * Define public delete method for delete perticular item
+     * @param ?string $id
      * @return void
      */
-    public function delete(string $id)
+    public function delete(?string $id)
     {
         Vehicle::find($id)->delete();
         $this->dispatch('success', ['message' => 'Data deleted successfully']);
