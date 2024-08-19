@@ -10,5 +10,6 @@ Route::prefix('expenses')->name('expense.')->group(function () {
     Route::prefix('categories')->name('category.')->group(function () {
         Route::get('/', \App\Livewire\ExpenseManagement\Table\ExpenseCategory\TableExpenseCategoryComponent::class)->name('index');
         Route::get('create', \App\Livewire\ExpenseManagement\Stack\ExpenseCategory\CreateExpenseCategoryComponent::class)->name('create');
+        Route::get('update/{expenseCategory}', \App\Livewire\ExpenseManagement\Stack\ExpenseCategory\UpdateExpenseCategoryComponent::class)->name('update');
     });
 });
