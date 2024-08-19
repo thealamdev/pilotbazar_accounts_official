@@ -93,6 +93,7 @@
                                                                 <div class="dropdown-menu dropdown-menu-end">
                                                                     <x-action.edit name="Edit" route="{{ route('admin.version1.expense-management.expense.category.update', ['expenseCategory' => $each->id]) }}" />
                                                                     <x-action.delete name="Delete" :id="$each->id" />
+                                                                    <x-action.add name="Add Sub Category" route="{{ route('admin.version1.expense-management.expense.sub-category.create') }}" />
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -105,6 +106,7 @@
                                             <tfoot>
                                                 <tr>
                                                     <td>Name</td>
+                                                    <td>Sub Category</td>
                                                     <td class="text-center">Status</td>
                                                     <td class="text-end">Modified</td>
                                                     <td class="text-end">Action</td>
