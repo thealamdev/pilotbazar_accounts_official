@@ -53,21 +53,27 @@
                                             <thead>
                                                 <tr>
                                                     <th>Name</th>
-                                                    <th>Amount</th>
+                                                    <th class="text-end">Amount</th>
                                                     <th class="text-center">Status</th>
                                                     <th class="text-end">Modified</th>
                                                     <th class="text-end">Action</th>
                                                 </tr>
                                             </thead>
-                                           
+
                                             <tbody>
+                                                @php
+                                                    $total = 0;
+                                                @endphp
                                                 @forelse ($responses as $each)
                                                     <tr>
                                                         <td>
                                                             <div class="text-high-em">{{ $each?->name }}</div>
                                                         </td>
-                                                        <td>
-                                                            {{ $each->daily_expense->sum('amount') }}
+                                                        <td class="text-end">
+                                                            {{ $each->daily_expense->sum('amount') }} tk
+                                                            @php
+                                                                $total += $each->daily_expense->sum('amount');
+                                                            @endphp
                                                         </td>
                                                         <td>
                                                             <div class="text-center">
@@ -96,7 +102,7 @@
                                             <tfoot>
                                                 <tr>
                                                     <td>Name</td>
-                                                    <td>Amount</td>
+                                                    <td class="text-end text-success">Total Expense : {{ $total }} tk</td>
                                                     <td class="text-center">Status</td>
                                                     <td class="text-end">Modified</td>
                                                     <td class="text-end">Action</td>
