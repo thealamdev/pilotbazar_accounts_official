@@ -10,6 +10,21 @@ use App\Models\ExpenseManagement\Expense\ExpenseCategory;
 class TableDailyExpenseComponent extends Component
 {
     /**
+     * Define public property $isVisible
+     * @var bool
+     */
+    public $isVisible = true;
+
+    /**
+     * Define public method changeVisiblity() to change div visibility
+     * @return void
+     */
+    public function changeVisiblity(): void
+    {
+        $this->isVisible == false;
+    }
+
+    /**
      * Define public property $responses
      * @var array|object
      */
@@ -28,6 +43,6 @@ class TableDailyExpenseComponent extends Component
             }])
             ->get();
 
-        return view('livewire.expense-management.table.daily-expense.table-daily-expense-component');
+        return view('livewire.expense-management.table.daily-expense.table-daily-expense-component', ['isVisible' => $this->isVisible]);
     }
 }

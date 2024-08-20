@@ -94,7 +94,12 @@
                                                             <div class="dropdown-menu dropdown-menu-end pt-4 pe-5">
                                                                 <ul>
                                                                     @foreach ($each->expense_categories as $purpose)
-                                                                        <li>{{ $purpose->purpose . ' = ' . $purpose->amount }} tk </li>
+                                                                        <li class="mb-2">
+                                                                            <div class="d-flex justify-content-between {{ $isVisible != true ? 'd-none' : 'd-block' }}">
+                                                                                <p>{{ $purpose->purpose . ' =  ' . $purpose->amount }} tk</p>
+                                                                            </div>
+                                                                        </li>
+                                                                        <hr class="hr">
                                                                     @endforeach
                                                                 </ul>
                                                             </div>
