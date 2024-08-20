@@ -95,7 +95,7 @@
                                                                 <ul>
                                                                     @foreach ($each->expense_categories as $purpose)
                                                                         <li class="mb-2">
-                                                                            <div class="d-flex justify-content-between {{ $isVisible != true ? 'd-none' : 'd-block' }}">
+                                                                            <div class="d-flex justify-content-between">
                                                                                 <p>{{ $purpose->purpose . ' =  ' . $purpose->amount }} tk</p>
                                                                             </div>
                                                                         </li>

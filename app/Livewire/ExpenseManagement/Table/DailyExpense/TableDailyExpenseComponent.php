@@ -28,6 +28,6 @@ class TableDailyExpenseComponent extends Component
             }])
             ->get();
 
-        return view('livewire.expense-management.table.daily-expense.table-daily-expense-component', ['isVisible' => $this->isVisible]);
+        return view('livewire.expense-management.table.daily-expense.table-daily-expense-component');
     }
 }
