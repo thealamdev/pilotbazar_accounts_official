@@ -37,6 +37,18 @@
                                             <span>
                                                 <span class="icon">
                                                     <span class="feather-icon">
+                                                        <i class="fa-solid fa-file-pdf"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="btn-text">
+                                                    print
+                                                </span>
+                                            </span>
+                                        </a>
+                                        <a href="{{ route('admin.version1.expense-management.expense.daily.create') }}" class="btn btn-sm btn-primary ms-3">
+                                            <span>
+                                                <span class="icon">
+                                                    <span class="feather-icon">
                                                         <i data-feather="plus"></i>
                                                     </span>
                                                 </span>
@@ -46,6 +58,7 @@
                                             </span>
                                         </a>
                                     </div>
+
                                 </div>
                                 <div class="card-body">
                                     <div class="contact-list-view">
