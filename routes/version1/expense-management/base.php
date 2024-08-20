@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('expenses')->name('expense.')->group(function () {
     Route::prefix('daily')->name('daily.')->group(function () {
+        Route::get('/', \App\Livewire\ExpenseManagement\Table\DailyExpense\TableDailyExpenseComponent::class)->name('index');
         Route::get('create', \App\Livewire\ExpenseManagement\Stack\DailyExpense\CreateDailyExpenseComponent::class)->name('create');
     });
 
