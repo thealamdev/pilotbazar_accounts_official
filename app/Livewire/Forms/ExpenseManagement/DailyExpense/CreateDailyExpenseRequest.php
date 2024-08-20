@@ -29,6 +29,12 @@ class CreateDailyExpenseRequest extends Form
     public $amount;
 
     /**
+     * Define public property $date
+     * @var $date
+     */
+    public $date;
+
+    /**
      * Define public property $remarks
      * @var ?string
      */

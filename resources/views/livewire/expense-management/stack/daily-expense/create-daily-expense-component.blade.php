@@ -78,10 +78,21 @@
                     </div>
                 </div>
 
-                <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <label for="form.date">Date<span class="text-danger">*</span></label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">৳</span>
+                        <input type="date" wire:model.live="form.date" class="form-control @error('form.date') {{ 'is-invalid' }} @enderror">
+                        @error('form.date')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
                     <label for="form.remarks">Remarks<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
-                        <textarea wire:model.live="form.remarks" cols="30" rows="10" placeholder="enter remarks" class="form-control @error('form.remarks')
+                        <textarea wire:model.live="form.remarks" cols="30" rows="1" placeholder="enter remarks" class="form-control @error('form.remarks')
                             {{ 'is-invalid' }}
                         @enderror"></textarea>
                         @error('form.remarks')

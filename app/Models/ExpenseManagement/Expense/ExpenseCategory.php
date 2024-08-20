@@ -24,7 +24,7 @@ class ExpenseCategory extends Model
      */
     public function daily_expense()
     {
-        return $this->belongsToMany(DailyExpense::class, 'daily_expenses', 'expense_category_id', 'id');
+        return $this->hasMany(DailyExpense::class, 'expense_category_id', 'id');
     }
 
     /**

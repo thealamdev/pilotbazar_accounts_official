@@ -17,6 +17,7 @@ class CreateDailyExpenseService
             'expense_category_id' => $form->expense_category_id,
             'purpose' => $form->expense_sub_category,
             'amount'  => $form->amount,
+            'date'    => $form->date,
             'remarks' => $form->remarks,
             'status' => $form->status,
         ]);

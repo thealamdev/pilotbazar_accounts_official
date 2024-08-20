@@ -53,36 +53,22 @@
                                             <thead>
                                                 <tr>
                                                     <th>Name</th>
-                                                    <th>Sub Category</th>
                                                     <th>Amount</th>
                                                     <th class="text-center">Status</th>
                                                     <th class="text-end">Modified</th>
                                                     <th class="text-end">Action</th>
                                                 </tr>
                                             </thead>
-                                             @foreach ($responses as $each)
-                                                 {{ $each->daily_expense }}
-                                             @endforeach
-
-                                            {{-- <tbody>
+                                           
+                                            <tbody>
                                                 @forelse ($responses as $each)
                                                     <tr>
                                                         <td>
                                                             <div class="text-high-em">{{ $each?->name }}</div>
                                                         </td>
                                                         <td>
-                                                            <x-dropdown.sub-category />
-                                                            <div class="dropdown-menu dropdown-menu-end p-3">
-                                                                @forelse ($each->sub_category as $each)
-                                                                    <ul>
-                                                                        <li>{{ $each?->name }}</li>
-                                                                    </ul>
-                                                                @empty
-                                                                    <li class="text-danger">No Sub Category Found !!!</li>
-                                                                @endforelse
-                                                            </div>
+                                                            {{ $each->daily_expense->sum('amount') }}
                                                         </td>
-
                                                         <td>
                                                             <div class="text-center">
                                                                 {!! Helper::status($each?->status) !!}
@@ -103,14 +89,14 @@
                                                         </td>
                                                     </tr>
                                                 @empty
-                                                    <td colspan="4" class="text-center text-danger">No data found !!</td>
+                                                    <td colspan="5" class="text-center text-danger">No data found !!</td>
                                                 @endforelse
-                                            </tbody> --}}
+                                            </tbody>
 
                                             <tfoot>
                                                 <tr>
                                                     <td>Name</td>
-                                                    <td>Sub Category</td>
+                                                    <td>Amount</td>
                                                     <td class="text-center">Status</td>
                                                     <td class="text-end">Modified</td>
                                                     <td class="text-end">Action</td>

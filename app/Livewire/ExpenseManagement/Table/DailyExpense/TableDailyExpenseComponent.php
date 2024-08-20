@@ -2,9 +2,10 @@
 
 namespace App\Livewire\ExpenseManagement\Table\DailyExpense;
 
-use App\Models\ExpenseManagement\Expense\ExpenseCategory;
-use Livewire\Attributes\Title;
+use Carbon\Carbon;
 use Livewire\Component;
+use Livewire\Attributes\Title;
+use App\Models\ExpenseManagement\Expense\ExpenseCategory;
 
 class TableDailyExpenseComponent extends Component
 {
@@ -17,7 +18,15 @@ class TableDailyExpenseComponent extends Component
     #[Title('Daily Expenses')]
     public function render()
     {
-        $this->responses = ExpenseCategory::query()->with('daily_expense')->get();
+        $this->responses = ExpenseCategory::query()
+            ->whereHas('daily_expense', function ($query) {
+                $query->whereDate('date', Carbon::today());
+            })
+            ->with(['daily_expense' => function ($query) {
+                $query->whereDate('date', Carbon::today());
+            }])
+            ->get();
+
         return view('livewire.expense-management.table.daily-expense.table-daily-expense-component');
     }
 }

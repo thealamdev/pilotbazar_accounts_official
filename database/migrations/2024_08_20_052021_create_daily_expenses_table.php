@@ -18,6 +18,7 @@ return new class extends Migration
             $table->double('amount');
             $table->longText('remarks');
             $table->boolean('status');
+            $table->date('date');
             $table->softDeletes();
             $table->timestamps();
         });
