@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 use App\Models\ExpenseManagement\Expense\ExpenseCategory;
 use App\Models\ExpenseManagement\Expense\ExpenseSubCategory;
 use App\Livewire\Forms\ExpenseManagement\DailyExpense\CreateDailyExpenseRequest;
+use App\Services\ExpenseManagement\Stack\DailyExpense\CreateDailyExpenseService;
 
 class CreateDailyExpenseComponent extends Component
 {
@@ -31,13 +32,13 @@ class CreateDailyExpenseComponent extends Component
 
     /**
      * Define public property $expense_categories
-     * @var ?array|Collection $expense_categories
+     * @var ?array|Collection
      */
     public array|Collection $expense_categories = [];
 
     /**
      * Define public property $expense_sub_categories
-     * @var ?array|Collection $expense_sub_categories
+     * @var ?array|Collection
      */
     public array|Collection $expense_sub_categories_response = [];
 
@@ -54,7 +55,6 @@ class CreateDailyExpenseComponent extends Component
             $this->expense_sub_categories_response = ExpenseSubCategory::query()->get();
         }
     }
-
 
     /**
      * Define public method updateExpenseSubCategory()
@@ -74,12 +74,15 @@ class CreateDailyExpenseComponent extends Component
 
     /**
      * Define public method save() to store the resourses
+     * @return void
      */
-    public function save()
+    public function save(): void
     {
-        dd($this->expense_sub_categories_response);
         $this->form->validate();
-        dd($this->form);
+        $isCreate = CreateDailyExpenseService::store($this->form);
+        $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
+        $this->dispatch('success', ['message' => $response]);
+        $this->form->reset();
     }
 
     #[Title('Daily Expense Create')]

@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <label for="status">Status<span class="text-danger">*</span></label>
+                    <label for="form.status">Status<span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
                         <select wire:model.live="form.status" class="form-control @error('form.status')
@@ -73,6 +73,18 @@
                             <option value="0">Inactive</option>
                         </select>
                         @error('form.status')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <label for="form.remarks">Remarks<span class="text-danger">*</span></label>
+                    <div class="input-group mb-3">
+                        <textarea wire:model.live="form.remarks" cols="30" rows="10" placeholder="enter remarks" class="form-control @error('form.remarks')
+                            {{ 'is-invalid' }}
+                        @enderror"></textarea>
+                        @error('form.remarks')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
@@ -121,7 +133,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const options = @json($expense_sub_categories_response->pluck('name'));
-             
+
             const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
 
