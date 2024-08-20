@@ -35,4 +35,13 @@ class ExpenseCategory extends Model
     {
         return $this->hasMany(ExpenseSubCategory::class, 'expense_category_id', 'id');
     }
+
+    /**
+     * Define public method expense_categories() to get sub category
+     * @return HasMany
+     */
+    public function expense_categories(): HasMany
+    {
+        return $this->hasMany(DailyExpense::class, 'expense_category_id', 'id');
+    }
 }

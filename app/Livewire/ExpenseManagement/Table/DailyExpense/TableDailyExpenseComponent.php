@@ -19,6 +19,7 @@ class TableDailyExpenseComponent extends Component
     public function render()
     {
         $this->responses = ExpenseCategory::query()
+            ->with('expense_categories')
             ->whereHas('daily_expense', function ($query) {
                 $query->whereDate('date', Carbon::today());
             })

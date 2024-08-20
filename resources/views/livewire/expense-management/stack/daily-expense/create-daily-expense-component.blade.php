@@ -6,7 +6,7 @@
             <span>Please must fill the field where (*) sign is visible.</span>
         </div>
         <div>
-            <a href="{{ route('admin.version1.expense-management.expense.category.index') }}" class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="button">Category</a>
+            <a href="{{ route('admin.version1.expense-management.expense.daily.index') }}" class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="button">Category</a>
         </div>
     </header>
     <!-- Header Part End !-->

@@ -33,7 +33,7 @@
                                         <span class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
                                     </h6>
                                     <div class="card-action-wrap">
-                                        <a href="{{ route('admin.version1.expense-management.expense.category.create') }}" class="btn btn-sm btn-primary ms-3">
+                                        <a href="{{ route('admin.version1.expense-management.expense.daily.create') }}" class="btn btn-sm btn-primary ms-3">
                                             <span>
                                                 <span class="icon">
                                                     <span class="feather-icon">
@@ -54,6 +54,7 @@
                                                 <tr>
                                                     <th>Name</th>
                                                     <th class="text-end">Amount</th>
+                                                    <th class="text-end">Purposes</th>
                                                     <th class="text-center">Status</th>
                                                     <th class="text-end">Modified</th>
                                                     <th class="text-end">Action</th>
@@ -74,6 +75,16 @@
                                                             @php
                                                                 $total += $each->daily_expense->sum('amount');
                                                             @endphp
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <x-dropdown.sub-category />
+                                                            <div class="dropdown-menu dropdown-menu-end pt-4 pe-5">
+                                                                <ul>
+                                                                    @foreach ($each->expense_categories as $purpose)
+                                                                        <li>{{ $purpose->purpose . ' = ' . $purpose->amount }} tk </li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
                                                         </td>
                                                         <td>
                                                             <div class="text-center">
@@ -103,6 +114,7 @@
                                                 <tr>
                                                     <td>Name</td>
                                                     <td class="text-end text-success">Total Expense : {{ $total }} tk</td>
+                                                    <td class="text-end">Purpose</td>
                                                     <td class="text-center">Status</td>
                                                     <td class="text-end">Modified</td>
                                                     <td class="text-end">Action</td>
