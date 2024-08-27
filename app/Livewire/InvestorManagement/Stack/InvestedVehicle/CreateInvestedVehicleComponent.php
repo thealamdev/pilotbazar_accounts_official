@@ -41,10 +41,10 @@ class CreateInvestedVehicleComponent extends Component
      */
     public function save(): void
     {
-        $this->validate(rules:$this->form->rules(), attributes: $this->form->attributes());
+        $this->validate(rules: $this->form->rules(), attributes: $this->form->attributes());
         $isCreate = CreateInvestedVehicleService::store($this->form, $this->investor);
-        $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
-        $this->dispatch('success', ['message' => $response]);
+        $response = $isCreate ? 'Data has been submited !' : 'Invalid Amount!!!';
+        $this->dispatch($isCreate ? 'success' : 'error', ['message' => $response]);
         $this->form->reset();
     }
 

@@ -131,6 +131,10 @@
             window.addEventListener('success', event => {
                 toastr.success(event.detail[0].message);
             });
+
+            window.addEventListener('error', event => {
+                toastr.error(event.detail[0].message);
+            });
         </script>
         @stack('js')
 
