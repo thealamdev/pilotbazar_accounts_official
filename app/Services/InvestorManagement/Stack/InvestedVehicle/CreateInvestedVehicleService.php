@@ -12,6 +12,8 @@ class CreateInvestedVehicleService
 {
     /**
      * Create static store method
+     * @param $form
+     * @param $investor
      * @return array|object
      */
     public static function store($form, $investor): array|object|bool
@@ -45,6 +47,8 @@ class CreateInvestedVehicleService
 
     /**
      * Define public static method current_balance_check()
+     * @param $main_amount
+     * @param $investor_id
      * @return integer
      */
     public static function current_balance_check($main_amount, $investor_id)
@@ -52,6 +56,6 @@ class CreateInvestedVehicleService
         $invested_amount = InvestedVehicleDetail::query()
             ->where('investor_id', $investor_id)
             ->sum('invested_amount');
-        return  $main_amount - $invested_amount;
+        return $main_amount - $invested_amount;
     }
 }
