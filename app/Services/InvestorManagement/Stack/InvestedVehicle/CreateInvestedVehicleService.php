@@ -7,6 +7,7 @@ use App\Models\InvestedVehicleDetail;
 use App\Models\InvestorManagement\Investor;
 use App\Models\InvestorManagement\InvestedVehicle;
 use App\Models\InvestorManagement\InvestorBalance;
+use Illuminate\Database\Eloquent\Model;
 
 class CreateInvestedVehicleService
 {
@@ -16,16 +17,17 @@ class CreateInvestedVehicleService
      * @param $investor
      * @return array|object
      */
-    public static function store($form, $investor): array|object|bool
+    public static function store($form, Model $investor): array|object|bool
     {
-        $investor_main_amount = Investor::query()->where('id', $investor)->sum('amount');
-        $current_amount = self::current_balance_check($investor_main_amount, $investor);
+        $investor_main_amount = $investor->amount;
+        $old_invested_amount = self::old_balance_check($investor->id);
+        $new_invested_amount = $old_invested_amount + $form->invested_amount;
 
-        if ((int)$current_amount > 0) {
+        if ((int)$new_invested_amount < $investor_main_amount) {
             $response = InvestedVehicle::create([
                 'invested_amount' => $form->invested_amount,
                 'profit_percentage' => $form->profit_percentage,
-                'investor_id' => $investor,
+                'investor_id' => $investor->id,
                 'vehicle_id' => $form->vehicle_id,
             ]);
 
@@ -49,5 +51,19 @@ class CreateInvestedVehicleService
             ->where('investor_id', $investor_id)
             ->sum('invested_amount');
         return $main_amount - $invested_amount;
+    }
+
+    /**
+     * Define public static method old_balance_check()
+     * @param $investedVehicle
+     * @param $investor_id
+     * @return integer
+     */
+    public static function old_balance_check($investor_id)
+    {
+        $invested_amount = InvestedVehicle::query()
+            ->where('investor_id', $investor_id)
+            ->sum('invested_amount');
+        return $invested_amount;
     }
 }

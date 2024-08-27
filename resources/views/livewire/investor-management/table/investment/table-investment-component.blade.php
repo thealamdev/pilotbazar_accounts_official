@@ -84,7 +84,7 @@
                                                             <div class="dropdown">
                                                                 <x-action.action-button />
                                                                 <div class="dropdown-menu dropdown-menu-end">
-                                                                    <x-action.edit name="Edit" route="{{ route('admin.version1.investor-management.investor.invested-vehicle.update', ['investor' => 1, 'investedVehicle' => $each->id]) }}" />
+                                                                    <x-action.edit name="Edit" route="{{ route('admin.version1.investor-management.investor.invested-vehicle.update', ['investor' => $each?->investor_id, 'investedVehicle' => $each->id]) }}" />
                                                                     <x-action.delete name="Delete" :id="$each->id" />
                                                                 </div>
                                                             </div>

@@ -8,6 +8,7 @@ use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Livewire\Forms\InvestorManagement\InvestedVehicle\CreateInvestedVehicleRequest;
 use App\Models\InvestorManagement\Investor;
 use App\Services\InvestorManagement\Stack\InvestedVehicle\CreateInvestedVehicleService;
+use Illuminate\Database\Eloquent\Model;
 
 class CreateInvestedVehicleComponent extends Component
 {
@@ -24,7 +25,7 @@ class CreateInvestedVehicleComponent extends Component
     /**
      * Define public property $investor
      */
-    public ?string $investor;
+    public Model $investor;
 
     /**
      * Define public property $current_amount
