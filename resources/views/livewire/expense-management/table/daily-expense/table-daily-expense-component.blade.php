@@ -34,13 +34,13 @@
                                     </h6>
                                     <div class="card-action-wrap">
                                         <form action="#">
-                                            <div class="form-group">
-                                                <label class="form-label">Predefined Date Ranges</label>
-                                                {{-- <div id="reportrange" class="form-control text-truncate">
-                                                    <span></span>
-                                                </div> --}}
-                                                <input type="text" wire:model.live='dateRange' id="reportrange" class="form-control text-truncate">
-                                                <span></span>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <input type="date" wire:model="start_date" class="form-control">
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <input type="date" wire:model="end_date" class="form-control">
+                                                </div>
                                             </div>
                                         </form>
                                     </div>

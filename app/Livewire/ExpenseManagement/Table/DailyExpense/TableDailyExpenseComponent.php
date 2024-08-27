@@ -47,6 +47,6 @@ class TableDailyExpenseComponent extends Component
             }])
             ->get();
 
-        return view('livewire.expense-management.table.daily-expense.table-daily-expense-component');
+        return view('livewire.expense-management.table.daily-expense.table-daily-expense-component',['dateRange' => $this->dateRange]);
     }
 }
