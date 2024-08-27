@@ -37,7 +37,7 @@ class TableInvestorComponent extends Component
     {
         $this->responses = Investor::query()
             ->latest()
-            ->with('investedOn')
+            ->with('investedOn', fn($query) => $query->with('investedVehicles'))
             ->where('name', 'like', "%{$this->search}%")
             ->get();
         return view('livewire.investor-management.table.investor.table-investor-component', ['responses' => $this->responses]);
