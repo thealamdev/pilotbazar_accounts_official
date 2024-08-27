@@ -4,12 +4,13 @@ namespace App\Livewire\InvestorManagement\Stack\InvestedVehicle;
 
 use Livewire\Component;
 use Livewire\Attributes\Title;
+use Illuminate\Database\Eloquent\Model;
 use App\Models\InvestorManagement\Investor;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Models\InvestorManagement\InvestedVehicle;
 use App\Livewire\Forms\InvestorManagement\InvestedVehicle\UpdateInvestedVehicleRequest;
+use App\Services\InvestorManagement\Stack\InvestedVehicle\CreateInvestedVehicleService;
 use App\Services\InvestorManagement\Stack\InvestedVehicle\UpdateInvestedVehicleService;
-use Illuminate\Database\Eloquent\Model;
 
 class UpdateInvestedVehicleComponent extends Component
 {
@@ -34,10 +35,16 @@ class UpdateInvestedVehicleComponent extends Component
     public Model $investor;
 
     /**
+     * Define public property $current_amount
+     */
+    public $current_amount;
+
+    /**
      * Define public method mount()
      */
     public function mount(Investor $investor, InvestedVehicle $investedVehicle)
     {
+        $this->current_amount = CreateInvestedVehicleService::current_balance_check($investor->amount, $this->investor->id);
         $this->form->invested_amount = $investedVehicle->invested_amount;
         $this->form->profit_percentage = $investedVehicle->profit_percentage;
         $this->form->vehicle_id = $investedVehicle->vehicle_id;
