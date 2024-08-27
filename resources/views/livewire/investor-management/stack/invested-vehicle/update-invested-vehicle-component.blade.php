@@ -3,7 +3,7 @@
     <header class="pb-4 d-flex justify-content-between align-items-center">
         <div class="">
             <p class="fs-5 fw-600">Invested On Update</p>
-            <p class="fs-5 fw-500 {{ $current_amount < 500000 ? 'text-danger' : 'text-success' }}">Current Amount {{ ($current_amount) }} tk</p>
+            <p class="fs-5 fw-500 {{ $current_amount < 500000 ? 'text-danger' : 'text-success' }}">Current Amount {{ $current_amount }} tk</p>
             <span>Please must fill the field where (*) sign is visible.</span>
         </div>
         <div>
