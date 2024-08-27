@@ -15,6 +15,25 @@ class TableDailyExpenseComponent extends Component
      */
     public $responses;
 
+    /**
+     * Define public property $dateRange;
+     */
+    public $dateRange;
+
+    /**
+     * Define public property $search
+     */
+    public $search;
+
+    /**
+     * Define public method mount()
+     * @return void
+     */
+    public function mount(): void
+    {
+        $this->dateRange == true ?  dd($this->dateRange) : null;
+    }
+
     #[Title('Daily Expenses')]
     public function render()
     {

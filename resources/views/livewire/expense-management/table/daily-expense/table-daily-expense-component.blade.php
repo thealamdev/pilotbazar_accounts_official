@@ -33,6 +33,19 @@
                                         <span class="badge badge-sm badge-light ms-1">{{ !empty($responses) ? count($responses) : 0 }}</span>
                                     </h6>
                                     <div class="card-action-wrap">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label class="form-label">Predefined Date Ranges</label>
+                                                {{-- <div id="reportrange" class="form-control text-truncate">
+                                                    <span></span>
+                                                </div> --}}
+                                                <input type="text" wire:model.live='dateRange' id="reportrange" class="form-control text-truncate">
+                                                <span></span>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="card-action-wrap">
                                         <a href="{{ route('admin.version1.expense-management.expense.daily.create') }}" class="btn btn-sm btn-primary ms-3">
                                             <span>
                                                 <span class="icon">
@@ -124,7 +137,7 @@
                                                         </td>
                                                     </tr>
                                                 @empty
-                                                    <td colspan="5" class="text-center text-danger">No data found !!</td>
+                                                    <td colspan="6" class="text-center text-danger">No data found !!</td>
                                                 @endforelse
                                             </tbody>
 

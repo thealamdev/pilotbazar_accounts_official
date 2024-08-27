@@ -10,10 +10,8 @@
                 <div class="pg-header-action-wrap">
                     <div class="input-group w-300p">
                         <span class="input-affix-wrapper">
-                            <span class="input-prefix"><span class="feather-icon"><i
-                                        data-feather="calendar"></i></span></span>
-                            <input class="form-control form-wth-icon" name="datetimes"
-                                value="Aug 18,2020 - Aug 19, 2020">
+                            <span class="input-prefix"><span class="feather-icon"><i data-feather="calendar"></i></span></span>
+                            <input class="form-control form-wth-icon" name="datetimes" value="Aug 18,2020 - Aug 19, 2020">
                         </span>
                     </div>
                 </div>
@@ -49,8 +47,7 @@
                             <div class="card-header card-header-action">
                                 <h6>Audience Overview</h6>
                                 <div class="card-action-wrap">
-                                    <div class="btn-group d-lg-flex d-none" role="group"
-                                        aria-label="Basic outlined example">
+                                    <div class="btn-group d-lg-flex d-none" role="group" aria-label="Basic outlined example">
                                         <button type="button" class="btn btn-outline-light active">All</button>
                                         <button type="button" class="btn btn-outline-light">Sessions</button>
                                         <button type="button" class="btn btn-outline-light">Source</button>
@@ -74,15 +71,13 @@
                                     </div>
                                     <div class="d-inline-block ms-3">
                                         <span class="badge-status">
-                                            <span
-                                                class="badge bg-primary-light-2 badge-indicator badge-indicator-nobdr"></span>
+                                            <span class="badge bg-primary-light-2 badge-indicator badge-indicator-nobdr"></span>
                                             <span class="badge-label">Organic search</span>
                                         </span>
                                     </div>
                                     <div class="d-inline-block ms-3">
                                         <span class="badge-status">
-                                            <span
-                                                class="badge bg-primary-light-4 badge-indicator badge-indicator-nobdr"></span>
+                                            <span class="badge bg-primary-light-4 badge-indicator badge-indicator-nobdr"></span>
                                             <span class="badge-label">Referral</span>
                                         </span>
                                     </div>
@@ -138,10 +133,7 @@
                             <div class="card-header card-header-action">
                                 <h6>Returning Customers</h6>
                                 <div class="card-action-wrap">
-                                    <a class="btn btn-icon btn-rounded btn-flush-dark flush-soft-hover dropdown-toggle no-caret"
-                                        href="#" data-bs-toggle="dropdown"><span class="icon"><span
-                                                class="feather-icon"><i
-                                                    data-feather="more-vertical"></i></span></span></a>
+                                    <a class="btn btn-icon btn-rounded btn-flush-dark flush-soft-hover dropdown-toggle no-caret" href="#" data-bs-toggle="dropdown"><span class="icon"><span class="feather-icon"><i data-feather="more-vertical"></i></span></span></a>
                                     <div class="dropdown-menu dropdown-menu-end">
                                         <a class="dropdown-item" href="#">Action</a>
                                         <a class="dropdown-item" href="#">Another action</a>
@@ -156,16 +148,14 @@
                                 <div class="d-inline-block mt-4">
                                     <div class="mb-4">
                                         <span class="d-block badge-status lh-1">
-                                            <span
-                                                class="badge bg-primary badge-indicator badge-indicator-nobdr d-inline-block"></span>
+                                            <span class="badge bg-primary badge-indicator badge-indicator-nobdr d-inline-block"></span>
                                             <span class="badge-label d-inline-block">Organic</span>
                                         </span>
                                         <span class="d-block text-dark fs-5 fw-medium mb-0 mt-1">$243.50</span>
                                     </div>
                                     <div>
                                         <span class="badge-status lh-1">
-                                            <span
-                                                class="badge bg-primary-light-2 badge-indicator badge-indicator-nobdr"></span>
+                                            <span class="badge bg-primary-light-2 badge-indicator badge-indicator-nobdr"></span>
                                             <span class="badge-label">Marketing</span>
                                         </span>
                                         <span class="d-block text-dark fs-5 fw-medium mb-0 mt-1">$1469</span>
@@ -202,11 +192,8 @@
                                                     <label class="progress-label mb-0">United
                                                         States</label>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                            <div class="progress-bar bg-blue-dark-3 w-80"
-                                                                role="progressbar" aria-valuenow="80"
-                                                                aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                            <div class="progress-bar bg-blue-dark-3 w-80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
                                                             </div>
                                                         </div>
                                                         <div class="fs-8 mnw-30p ms-3">80%</div>
@@ -225,11 +212,8 @@
                                                 <div class="progress-lb-wrap">
                                                     <label class="progress-label mb-0">India</label>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                            <div class="progress-bar bg-blue w-50" role="progressbar"
-                                                                aria-valuenow="50" aria-valuemin="0"
-                                                                aria-valuemax="100">
+                                                        <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                            <div class="progress-bar bg-blue w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
                                                             </div>
                                                         </div>
                                                         <div class="fs-8 mnw-30p ms-3">50%</div>
@@ -249,11 +233,8 @@
                                                     <label class="progress-label mb-0">United
                                                         Kingdom</label>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                            <div class="progress-bar bg-primary w-30"
-                                                                role="progressbar" aria-valuenow="30"
-                                                                aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                            <div class="progress-bar bg-primary w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
                                                             </div>
                                                         </div>
                                                         <div class="fs-8 mnw-30p ms-3">30%</div>
@@ -272,11 +253,8 @@
                                                 <div class="progress-lb-wrap">
                                                     <label class="progress-label mb-0">Australia</label>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                            <div class="progress-bar bg-grey-dark-2 w-15"
-                                                                role="progressbar" aria-valuenow="15"
-                                                                aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                            <div class="progress-bar bg-grey-dark-2 w-15" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
                                                             </div>
                                                         </div>
                                                         <div class="fs-8 mnw-30p ms-3">15%</div>
@@ -295,11 +273,8 @@
                                                 <div class="progress-lb-wrap">
                                                     <label class="progress-label mb-0">Canada</label>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                            <div class="progress-bar bg-grey w-10" role="progressbar"
-                                                                aria-valuenow="10" aria-valuemin="0"
-                                                                aria-valuemax="100">
+                                                        <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                            <div class="progress-bar bg-grey w-10" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
                                                             </div>
                                                         </div>
                                                         <div class="fs-8 mnw-30p ms-3">10%</div>
@@ -323,14 +298,8 @@
                                     <span class="badge badge-sm badge-light ms-1">240</span>
                                 </h6>
                                 <div class="card-action-wrap">
-                                    <button class="btn btn-sm btn-outline-light"><span><span class="icon"><span
-                                                    class="feather-icon"><i
-                                                        data-feather="upload"></i></span></span><span
-                                                class="btn-text">import</span></span></button>
-                                    <button class="btn btn-sm btn-primary ms-3"><span><span class="icon"><span
-                                                    class="feather-icon"><i
-                                                        data-feather="plus"></i></span></span><span
-                                                class="btn-text">Add new</span></span></button>
+                                    <button class="btn btn-sm btn-outline-light"><span><span class="icon"><span class="feather-icon"><i data-feather="upload"></i></span></span><span class="btn-text">import</span></span></button>
+                                    <button class="btn btn-sm btn-primary ms-3"><span><span class="icon"><span class="feather-icon"><i data-feather="plus"></i></span></span><span class="btn-text">Add new</span></span></button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -339,9 +308,7 @@
                                         <thead>
                                             <tr>
                                                 <th><span class="form-check fs-6 mb-0">
-                                                        <input type="checkbox"
-                                                            class="form-check-input check-select-all"
-                                                            id="customCheck1">
+                                                        <input type="checkbox" class="form-check-input check-select-all" id="customCheck1">
                                                         <label class="form-check-label" for="customCheck1"></label>
                                                     </span></th>
                                                 <th>Name</th>
@@ -359,14 +326,12 @@
                                                     <div class="media align-items-center">
                                                         <div class="media-head me-2">
                                                             <div class="avatar avatar-xs avatar-rounded">
-                                                                <img src="#" alt="user"
-                                                                    class="avatar-img">
+                                                                <img src="#" alt="user" class="avatar-img">
                                                             </div>
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="text-high-em">Phone Pay</div>
-                                                            <div class="fs-7"><a href="#"
-                                                                    class="table-link-text link-medium-em">phonepay.in</a>
+                                                            <div class="fs-7"><a href="#" class="table-link-text link-medium-em">phonepay.in</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -374,11 +339,8 @@
                                                 <td>
                                                     <div class="progress-lb-wrap">
                                                         <div class="d-flex align-items-center">
-                                                            <div
-                                                                class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                                <div class="progress-bar bg-blue-dark-3 w-90"
-                                                                    role="progressbar" aria-valuenow="90"
-                                                                    aria-valuemin="0" aria-valuemax="100">
+                                                            <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                                <div class="progress-bar bg-blue-dark-3 w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
                                                                 </div>
                                                             </div>
                                                             <div class="fs-8 ms-3">90%</div>
@@ -392,18 +354,8 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Edit"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="edit-2"></i></span></span></a>
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Delete"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="trash"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#"><span class="icon"><span class="feather-icon"><i data-feather="edit-2"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#"><span class="icon"><span class="feather-icon"><i data-feather="trash"></i></span></span></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -414,14 +366,12 @@
                                                     <div class="media align-items-center">
                                                         <div class="media-head me-2">
                                                             <div class="avatar avatar-xs avatar-rounded">
-                                                                <img src="#" alt="user"
-                                                                    class="avatar-img">
+                                                                <img src="#" alt="user" class="avatar-img">
                                                             </div>
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="text-high-em">Swiggy</div>
-                                                            <div class="fs-7"><a href="#"
-                                                                    class="table-link-text link-medium-em">swiggy.com</a>
+                                                            <div class="fs-7"><a href="#" class="table-link-text link-medium-em">swiggy.com</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -429,11 +379,8 @@
                                                 <td>
                                                     <div class="progress-lb-wrap">
                                                         <div class="d-flex align-items-center">
-                                                            <div
-                                                                class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                                <div class="progress-bar bg-blue w-75"
-                                                                    role="progressbar" aria-valuenow="75"
-                                                                    aria-valuemin="0" aria-valuemax="100">
+                                                            <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                                <div class="progress-bar bg-blue w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                                                                 </div>
                                                             </div>
                                                             <div class="fs-8 ms-3">75%</div>
@@ -449,18 +396,8 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Edit"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="edit-2"></i></span></span></a>
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Delete"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="trash"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#"><span class="icon"><span class="feather-icon"><i data-feather="edit-2"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#"><span class="icon"><span class="feather-icon"><i data-feather="trash"></i></span></span></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -471,14 +408,12 @@
                                                     <div class="media align-items-center">
                                                         <div class="media-head me-2">
                                                             <div class="avatar avatar-xs avatar-rounded">
-                                                                <img src="#" alt="user"
-                                                                    class="avatar-img">
+                                                                <img src="#" alt="user" class="avatar-img">
                                                             </div>
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="text-high-em">Coursera</div>
-                                                            <div class="fs-7"><a href="#"
-                                                                    class="table-link-text link-medium-em">coursera.com</a>
+                                                            <div class="fs-7"><a href="#" class="table-link-text link-medium-em">coursera.com</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -486,11 +421,8 @@
                                                 <td>
                                                     <div class="progress-lb-wrap">
                                                         <div class="d-flex align-items-center">
-                                                            <div
-                                                                class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                                <div class="progress-bar bg-primary w-50"
-                                                                    role="progressbar" aria-valuenow="50"
-                                                                    aria-valuemin="0" aria-valuemax="100">
+                                                            <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                                <div class="progress-bar bg-primary w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
                                                                 </div>
                                                             </div>
                                                             <div class="fs-8 ms-3">50%</div>
@@ -499,25 +431,14 @@
                                                 </td>
                                                 <td>24 Aug, 2022</td>
                                                 <td>
-                                                    <span
-                                                        class="badge badge-soft-secondary my-1  me-2">education</span>
+                                                    <span class="badge badge-soft-secondary my-1  me-2">education</span>
                                                     <span class="badge badge-soft-secondary  my-1  me-2">admin</span>
                                                     <span class="badge badge-soft-secondary  my-1  me-2">+3</span>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Edit"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="edit-2"></i></span></span></a>
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Delete"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="trash"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#"><span class="icon"><span class="feather-icon"><i data-feather="edit-2"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#"><span class="icon"><span class="feather-icon"><i data-feather="trash"></i></span></span></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -528,14 +449,12 @@
                                                     <div class="media align-items-center">
                                                         <div class="media-head me-2">
                                                             <div class="avatar avatar-xs avatar-rounded">
-                                                                <img src="#" alt="user"
-                                                                    class="avatar-img">
+                                                                <img src="#" alt="user" class="avatar-img">
                                                             </div>
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="text-high-em">Tinder</div>
-                                                            <div class="fs-7"><a href="#"
-                                                                    class="table-link-text link-medium-em">tinder.com</a>
+                                                            <div class="fs-7"><a href="#" class="table-link-text link-medium-em">tinder.com</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -543,11 +462,8 @@
                                                 <td>
                                                     <div class="progress-lb-wrap">
                                                         <div class="d-flex align-items-center">
-                                                            <div
-                                                                class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                                <div class="progress-bar bg-primary-dark-2 w-60"
-                                                                    role="progressbar" aria-valuenow="60"
-                                                                    aria-valuemin="0" aria-valuemax="100">
+                                                            <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                                <div class="progress-bar bg-primary-dark-2 w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
                                                                 </div>
                                                             </div>
                                                             <div class="fs-8 ms-3">60%</div>
@@ -560,18 +476,8 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Edit"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="edit-2"></i></span></span></a>
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Delete"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="trash"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#"><span class="icon"><span class="feather-icon"><i data-feather="edit-2"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#"><span class="icon"><span class="feather-icon"><i data-feather="trash"></i></span></span></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -582,14 +488,12 @@
                                                     <div class="media align-items-center">
                                                         <div class="media-head me-2">
                                                             <div class="avatar avatar-xs avatar-rounded">
-                                                                <img src="#" alt="user"
-                                                                    class="avatar-img">
+                                                                <img src="#" alt="user" class="avatar-img">
                                                             </div>
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="text-high-em">PCD</div>
-                                                            <div class="fs-7"><a href="#"
-                                                                    class="table-link-text link-medium-em">pcdeals.com</a>
+                                                            <div class="fs-7"><a href="#" class="table-link-text link-medium-em">pcdeals.com</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -597,11 +501,8 @@
                                                 <td>
                                                     <div class="progress-lb-wrap">
                                                         <div class="d-flex align-items-center">
-                                                            <div
-                                                                class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                                <div class="progress-bar bg-grey w-30"
-                                                                    role="progressbar" aria-valuenow="30"
-                                                                    aria-valuemin="0" aria-valuemax="100">
+                                                            <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                                <div class="progress-bar bg-grey w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
                                                                 </div>
                                                             </div>
                                                             <div class="fs-8 ms-3">30%</div>
@@ -616,18 +517,8 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Edit"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="edit-2"></i></span></span></a>
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Delete"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="trash"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#"><span class="icon"><span class="feather-icon"><i data-feather="edit-2"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#"><span class="icon"><span class="feather-icon"><i data-feather="trash"></i></span></span></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -638,14 +529,12 @@
                                                     <div class="media align-items-center">
                                                         <div class="media-head me-2">
                                                             <div class="avatar avatar-xs avatar-rounded">
-                                                                <img src="#" alt="user"
-                                                                    class="avatar-img">
+                                                                <img src="#" alt="user" class="avatar-img">
                                                             </div>
                                                         </div>
                                                         <div class="media-body">
                                                             <div class="text-high-em">Icons 8</div>
-                                                            <div class="fs-7"><a href="#"
-                                                                    class="table-link-text link-medium-em">icons8.com</a>
+                                                            <div class="fs-7"><a href="#" class="table-link-text link-medium-em">icons8.com</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -653,11 +542,8 @@
                                                 <td>
                                                     <div class="progress-lb-wrap">
                                                         <div class="d-flex align-items-center">
-                                                            <div
-                                                                class="progress progress-bar-rounded progress-bar-xs flex-1">
-                                                                <div class="progress-bar bg-green-dark-1 w-45"
-                                                                    role="progressbar" aria-valuenow="45"
-                                                                    aria-valuemin="0" aria-valuemax="100">
+                                                            <div class="progress progress-bar-rounded progress-bar-xs flex-1">
+                                                                <div class="progress-bar bg-green-dark-1 w-45" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
                                                                 </div>
                                                             </div>
                                                             <div class="fs-8 ms-3">45%</div>
@@ -671,18 +557,8 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Edit"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="edit-2"></i></span></span></a>
-                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button"
-                                                            data-bs-toggle="tooltip" data-placement="top"
-                                                            title="" data-bs-original-title="Delete"
-                                                            href="#"><span class="icon"><span
-                                                                    class="feather-icon"><i
-                                                                        data-feather="trash"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit" href="#"><span class="icon"><span class="feather-icon"><i data-feather="edit-2"></i></span></span></a>
+                                                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover del-button" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Delete" href="#"><span class="icon"><span class="feather-icon"><i data-feather="trash"></i></span></span></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -698,4 +574,3 @@
     </div>
     <!-- /Page Body -->
 </x-app-layout>
- 
