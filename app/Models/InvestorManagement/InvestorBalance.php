@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\InvestorManagement;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class InvestedVehicleDetail extends Model
+class InvestorBalance extends Model
 {
     use HasFactory, SoftDeletes;
 

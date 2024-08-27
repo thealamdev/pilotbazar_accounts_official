@@ -4,9 +4,9 @@ namespace App\Services\InvestorManagement\Stack\InvestedVehicle;
 
 use App\Enums\Status;
 use App\Models\InvestedVehicleDetail;
-use App\Models\InvestorBalance;
-use App\Models\InvestorManagement\InvestedVehicle;
 use App\Models\InvestorManagement\Investor;
+use App\Models\InvestorManagement\InvestedVehicle;
+use App\Models\InvestorManagement\InvestorBalance;
 
 class CreateInvestedVehicleService
 {
@@ -29,15 +29,7 @@ class CreateInvestedVehicleService
                 'vehicle_id' => $form->vehicle_id,
             ]);
 
-            InvestedVehicleDetail::create([
-                'vehicle_id' => $response->vehicle_id,
-                'investor_id' => $response->investor_id,
-                'invested_vehicle_id' => $response->getKey(),
-                'invested_amount' => $response->invested_amount,
-                'status' => Status::ACTIVE->toString(),
-            ]);
-
-            self::current_balance_check($investor_main_amount, $investor);
+            $current_amount = self::current_balance_check($investor_main_amount, $investor);
             InvestorBalance::updateOrCreate(['investor_id' => $response->investor_id], ['current_amount' => $current_amount, 'status' => Status::ACTIVE->toString()]);
             return $response;
         } else {
@@ -53,7 +45,7 @@ class CreateInvestedVehicleService
      */
     public static function current_balance_check($main_amount, $investor_id)
     {
-        $invested_amount = InvestedVehicleDetail::query()
+        $invested_amount = InvestedVehicle::query()
             ->where('investor_id', $investor_id)
             ->sum('invested_amount');
         return $main_amount - $invested_amount;
