@@ -9,6 +9,7 @@ use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Models\InvestorManagement\InvestedVehicle;
 use App\Livewire\Forms\InvestorManagement\InvestedVehicle\UpdateInvestedVehicleRequest;
 use App\Services\InvestorManagement\Stack\InvestedVehicle\UpdateInvestedVehicleService;
+use Illuminate\Database\Eloquent\Model;
 
 class UpdateInvestedVehicleComponent extends Component
 {
@@ -30,7 +31,7 @@ class UpdateInvestedVehicleComponent extends Component
     /**
      * Define public property $investor
      */
-    public ?string $investor;
+    public Model $investor;
 
     /**
      * Define public method mount()
@@ -41,7 +42,7 @@ class UpdateInvestedVehicleComponent extends Component
         $this->form->profit_percentage = $investedVehicle->profit_percentage;
         $this->form->vehicle_id = $investedVehicle->vehicle_id;
         $this->investedVehicle = $investedVehicle;
-        $this->investor = $investor->id;
+        $this->investor = $investor;
         $this->vehicles = Vehicle::query()->latest()->get();
     }
 
@@ -53,8 +54,8 @@ class UpdateInvestedVehicleComponent extends Component
     {
         $this->validate(rules: $this->form->rules(), attributes: $this->form->attributes());
         $isCreate = UpdateInvestedVehicleService::adapt($this->form, $this->investor, $this->investedVehicle);
-        $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
-        $this->dispatch('success', ['message' => $response]);
+        $response = $isCreate ? 'Data has been submited !' : 'Invalid Amount!!!';
+        $this->dispatch($isCreate ? 'success' : 'error', ['message' => $response]);
     }
 
     #[Title('Invested Vehicle Update')]
