@@ -5,7 +5,6 @@ namespace App\Livewire\InvestorManagement\Stack\InvestedVehicle;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
-use App\Services\InvestorManagement\Stack\Investor\CreateInvestorService;
 use App\Livewire\Forms\InvestorManagement\InvestedVehicle\CreateInvestedVehicleRequest;
 use App\Models\InvestorManagement\Investor;
 use App\Services\InvestorManagement\Stack\InvestedVehicle\CreateInvestedVehicleService;
