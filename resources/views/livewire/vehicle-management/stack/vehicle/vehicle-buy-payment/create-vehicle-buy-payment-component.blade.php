@@ -2,7 +2,7 @@
     <!-- Header Part Start !-->
     <header class="pb-4 d-flex justify-content-between align-items-center">
         <div class="">
-            <p class="fs-5 fw-600">Vehicle Buy Payment of <a href="{{ route('admin.version1.vehicle-management.vehicle.show',['vehicle' => $vehicle->id]) }}"><span class="text-success">{{ $vehicle->name . ' ' . $vehicle->models?->name . ' ' . $vehicle->model_year?->name }}</span></a> </p>
+            <p class="fs-5 fw-600">Vehicle Buy Payment of <a href="{{ route('admin.version1.vehicle-management.vehicle.show', ['vehicle' => $vehicle->id]) }}"><span class="text-success">{{ $vehicle->name . ' ' . $vehicle->models?->name . ' ' . $vehicle->model_year?->name }}</span></a> </p>
             <span>Please must fill the field where (<span class="text-danger">*</span>) sign is visible.</span>
         </div>
     </header>
