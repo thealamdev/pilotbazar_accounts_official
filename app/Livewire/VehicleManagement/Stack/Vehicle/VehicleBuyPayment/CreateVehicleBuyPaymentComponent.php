@@ -105,6 +105,7 @@ class CreateVehicleBuyPaymentComponent extends Component
 
     /**
      * Define the mount method
+     * @param Vehicle $vehicle
      * @return void
      */
     public function mount(Vehicle $vehicle): void
