@@ -11,6 +11,7 @@ use App\Services\VehicleManagement\Stack\Vehicle\VehicleBuyPayment\CreateVehicle
 use App\Services\VehicleManagement\Stack\Vehicle\VehicleSellPayment\CreateVehicleSellPaymentService;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSellPayment\CreateVehicleSellPaymentCeRBRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentCashDepositRequest;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSellPayment\CreateVehicleSellPaymentCashDepositRequest;
 
 class CreateVehicleSellPaymentComponent extends Component
 {
@@ -23,7 +24,7 @@ class CreateVehicleSellPaymentComponent extends Component
      * Define public Form object $formCashDeposit
      * @var object
      */
-    public CreateVehicleBuyPaymentCashDepositRequest $createVehicleBuyPaymentCashDepositRequest;
+    public CreateVehicleSellPaymentCashDepositRequest $createVehicleSellPaymentCashDepositRequest;
 
     /**
      * Define public property $selectedMethod
@@ -89,11 +90,11 @@ class CreateVehicleSellPaymentComponent extends Component
      */
     public function saveCashDeposit(): void
     {
-        $this->createVehicleBuyPaymentCashDepositRequest->validate();
-        $isCreate = CreateVehicleBuyPaymentService::store($this->createVehicleBuyPaymentCashDepositRequest, $this->vehicle, $this->paymentMethodType);
+        $this->createVehicleSellPaymentCashDepositRequest->validate();
+        $isCreate = CreateVehicleSellPaymentService::store($this->createVehicleSellPaymentCashDepositRequest, $this->vehicle, $this->paymentMethodType);
         $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
-        $this->createVehicleBuyPaymentCashDepositRequest->reset();
+        $this->createVehicleSellPaymentCashDepositRequest->reset();
     }
 
     /**

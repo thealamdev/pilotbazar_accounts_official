@@ -17,8 +17,8 @@ class CreateVehicleSellPaymentService
             $response = VehicleSellPayment::create([
                 'vehicle_id' => $vehicle->id,
                 'payment_method_id' => $method?->id,
-                'debit_bank_name' => $form?->credit_bank_name,
-                'debit_bank_account_number' => $form?->credit_bank_account_number,
+                'debit_bank_name' => $form?->debit_bank_name,
+                'debit_bank_account_number' => $form?->debit_bank_account_number,
                 'account_holder_name' => $form?->account_holder_name,
                 'amount' => $form?->amount,
                 'remarks' => $form?->remarks,
