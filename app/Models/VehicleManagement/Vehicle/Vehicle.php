@@ -2,6 +2,7 @@
 
 namespace App\Models\VehicleManagement\Vehicle;
 
+use App\Models\InvestorManagement\InvestedVehicle;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -97,6 +98,15 @@ class Vehicle extends Model
     public function model_year(): BelongsTo
     {
         return $this->belongsTo(ModelYear::class, 'model_year_id', 'id');
+    }
+
+    /**
+     * Define public method vehicle_investors()
+     * @return
+     */
+    public function invested_vehicles()
+    {
+        return $this->hasMany(InvestedVehicle::class, 'vehicle_id', 'id');
     }
 
     /**

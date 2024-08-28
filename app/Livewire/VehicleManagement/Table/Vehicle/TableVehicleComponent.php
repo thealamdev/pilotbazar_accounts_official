@@ -34,6 +34,7 @@ class TableVehicleComponent extends Component
         $responses = Vehicle::query()
             ->latest()
             ->with('color')
+            ->with('invested_vehicles', fn($query) => $query->with('investors'))
             ->where('status', Status::ACTIVE->toString())
             ->where('name', 'like', "%{$this->search}%")
             ->paginate(10);
