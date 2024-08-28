@@ -10,21 +10,28 @@ use App\Models\VehicleManagement\Dependency\Payment\Method\PaymentMethod;
 use App\Services\VehicleManagement\Stack\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentService;
 use App\Services\VehicleManagement\Stack\Vehicle\VehicleSellPayment\CreateVehicleSellPaymentService;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSellPayment\CreateVehicleSellPaymentCeRBRequest;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSellPayment\CreateVehicleSellPaymentCashtRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentCashDepositRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSellPayment\CreateVehicleSellPaymentCashDepositRequest;
 
 class CreateVehicleSellPaymentComponent extends Component
 {
     /**
-     * Define public object $createVehicleBuyPaymentRTGSRequest
+     * Define public object $form
      */
     public CreateVehicleSellPaymentCeRBRequest $form;
 
     /**
-     * Define public Form object $formCashDeposit
+     * Define public Form object $createVehicleSellPaymentCashDepositRequest
      * @var object
      */
     public CreateVehicleSellPaymentCashDepositRequest $createVehicleSellPaymentCashDepositRequest;
+
+    /**
+     * Define public Form object $createVehicleSellPaymentCashtRequest
+     * @var object
+     */
+    public CreateVehicleSellPaymentCashtRequest $createVehicleSellPaymentCashtRequest;
 
     /**
      * Define public property $selectedMethod
@@ -79,6 +86,19 @@ class CreateVehicleSellPaymentComponent extends Component
     {
         $this->form->validate();
         $isCreate = CreateVehicleSellPaymentService::store($this->form, $this->vehicle, $this->paymentMethodType);
+        $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
+        $this->dispatch('success', ['message' => $response]);
+        $this->form->reset();
+    }
+
+    /**
+     * Define public method saveCash() for submit saveCash
+     * @return void
+     */
+    public function saveCash(): void
+    {
+        $this->createVehicleSellPaymentCashtRequest->validate();
+        $isCreate = CreateVehicleSellPaymentService::store($this->createVehicleSellPaymentCashtRequest, $this->vehicle, $this->paymentMethodType);
         $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
         $this->form->reset();

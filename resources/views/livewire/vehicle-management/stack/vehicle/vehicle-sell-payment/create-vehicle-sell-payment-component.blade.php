@@ -33,6 +33,10 @@
         <!-- Select the Payment Method End !-->
 
         <div class="mt-5">
+            <!-- Check Form Start !-->
+            @include('livewire.vehicle-management.stack.vehicle.vehicle-sell-payment.partials.cash-form')
+            <!-- Check Form End !-->
+
             <!-- Cash Deposit Form Start !-->
             @include('livewire.vehicle-management.stack.vehicle.vehicle-sell-payment.partials.cash-deposit-form')
             <!-- Cash Deposit Form End !-->

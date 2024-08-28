@@ -24,6 +24,15 @@ class CreateVehicleSellPaymentService
                 'remarks' => $form?->remarks,
                 'date' => $form->date
             ]);
+        } elseif ($method->name === 'Cash') {
+            $response = VehicleSellPayment::create([
+                'vehicle_id' => $vehicle->id,
+                'payment_method_id' => $method?->id,
+                'account_holder_name' => $form?->account_holder_name,
+                'amount' => $form?->amount,
+                'remarks' => $form?->remarks,
+                'date' => $form->date
+            ]);
         } else {
             $response = VehicleSellPayment::create([
                 'vehicle_id' => $vehicle->id,
