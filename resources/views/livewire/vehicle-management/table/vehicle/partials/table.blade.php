@@ -60,13 +60,13 @@
                             <a class="dropdown-item" href="{{ route('admin.version1.vehicle-management.vehicle.show', ['vehicle' => $each?->id]) }}">Vehicle View</a>
                             <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header dropdown-header-bold">Selling Action</h6>
-                            <a class="dropdown-item" href="{{ route('admin.version1.vehicle-management.vehicle.costing.create', ['vehicle' => $each?->id]) }}">Sell Payment</a>
+                            <a class="dropdown-item" href="{{ route('admin.version1.vehicle-management.vehicle.sell-payment.create', ['vehicle' => $each?->id]) }}">Sell Payment</a>
                         </div>
                     </div>
                 </td>
             </tr>
         @empty
-            <td class="text-center text-danger fs-3" colspan="9">No data found !!</td>
+            <td class="text-center text-danger fs-3" colspan="10">No data found !!</td>
         @endforelse
     </tbody>
 
