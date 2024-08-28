@@ -13,21 +13,21 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="createVehicleBuyPaymentCashDepositRequest.credit_bank_name">Credit Bank Name<span class="text-danger">*</span></label>
+                <label for="createVehicleBuyPaymentCashDepositRequest.debit_bank_name">Debit Bank Name<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="createVehicleBuyPaymentCashDepositRequest.credit_bank_name" class="form-control @error('createVehicleBuyPaymentCashDepositRequest.credit_bank_name') {{ 'is-invalid' }} @enderror" placeholder="credit bank name">
-                    @error('createVehicleBuyPaymentCashDepositRequest.credit_bank_name')
+                    <input type="text" wire:model.live="createVehicleBuyPaymentCashDepositRequest.debit_bank_name" class="form-control @error('createVehicleBuyPaymentCashDepositRequest.debit_bank_name') {{ 'is-invalid' }} @enderror" placeholder="debit bank name">
+                    @error('createVehicleBuyPaymentCashDepositRequest.debit_bank_name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-6">
-                <label for="createVehicleBuyPaymentCashDepositRequest.credit_bank_account_number">Credit Bank Account Number<span class="text-danger">*</span></label>
+                <label for="createVehicleBuyPaymentCashDepositRequest.debit_bank_account_number">Debit Bank Account Number<span class="text-danger">*</span></label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">৳</span>
-                    <input type="text" wire:model.live="createVehicleBuyPaymentCashDepositRequest.credit_bank_account_number" class="form-control @error('createVehicleBuyPaymentCashDepositRequest.credit_bank_account_number') {{ 'is-invalid' }} @enderror" placeholder="client bacnk account number">
-                    @error('createVehicleBuyPaymentCashDepositRequest.credit_bank_account_number')
+                    <input type="text" wire:model.live="createVehicleBuyPaymentCashDepositRequest.debit_bank_account_number" class="form-control @error('createVehicleBuyPaymentCashDepositRequest.debit_bank_account_number') {{ 'is-invalid' }} @enderror" placeholder="client bacnk account number">
+                    @error('createVehicleBuyPaymentCashDepositRequest.debit_bank_account_number')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>

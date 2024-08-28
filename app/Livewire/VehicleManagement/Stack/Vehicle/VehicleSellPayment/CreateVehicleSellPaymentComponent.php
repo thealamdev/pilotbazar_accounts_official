@@ -8,7 +8,8 @@ use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Models\VehicleManagement\Dependency\Bank\PblBank;
 use App\Models\VehicleManagement\Dependency\Payment\Method\PaymentMethod;
 use App\Services\VehicleManagement\Stack\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentService;
-use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentCeDRBRequest;
+use App\Services\VehicleManagement\Stack\Vehicle\VehicleSellPayment\CreateVehicleSellPaymentService;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSellPayment\CreateVehicleSellPaymentCeRBRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentCashDepositRequest;
 
 class CreateVehicleSellPaymentComponent extends Component
@@ -16,7 +17,7 @@ class CreateVehicleSellPaymentComponent extends Component
     /**
      * Define public object $createVehicleBuyPaymentRTGSRequest
      */
-    public CreateVehicleBuyPaymentCeDRBRequest $form;
+    public CreateVehicleSellPaymentCeRBRequest $form;
 
     /**
      * Define public Form object $formCashDeposit
@@ -76,7 +77,7 @@ class CreateVehicleSellPaymentComponent extends Component
     public function saveCeDRB(): void
     {
         $this->form->validate();
-        $isCreate = CreateVehicleBuyPaymentService::store($this->form, $this->vehicle, $this->paymentMethodType);
+        $isCreate = CreateVehicleSellPaymentService::store($this->form, $this->vehicle, $this->paymentMethodType);
         $response = $isCreate ? 'Data has been submitted !' : 'Something went wrong !';
         $this->dispatch('success', ['message' => $response]);
         $this->form->reset();
