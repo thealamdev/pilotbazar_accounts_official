@@ -57,10 +57,10 @@
          </div>
          <hr class="hr">
          <div class="d-flex justify-content-between pb-1">
-            <p style="width:49%">Final Price</p>
-            {{-- <p style="width:1%">:</p> --}}
-            <p style="width:50%;text-align:end">{{ ($response?->purchase_price + $response?->mediaCosting?->sum('amount') + $response?->maintenanceCosting?->sum('amount') + $response?->serviceCosting?->sum('amount') + $response?->partsCosting?->sum('amount')) }} tk</p>
-        </div>
+             <p style="width:49%">Final Price</p>
+             {{-- <p style="width:1%">:</p> --}}
+             <p style="width:50%;text-align:end;" class="text-success">{{ $response?->purchase_price + $response?->mediaCosting?->sum('amount') + $response?->maintenanceCosting?->sum('amount') + $response?->serviceCosting?->sum('amount') + $response?->partsCosting?->sum('amount') }} tk</p>
+         </div>
      </div>
  </div>
  <!-- Basic & Purchase Infos Part End !-->
