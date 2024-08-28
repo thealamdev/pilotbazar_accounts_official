@@ -27,38 +27,31 @@
      <div class="col-lg-12">
          <div class="d-flex justify-content-between pb-1">
              <p style="width:49%">Engine Number</p>
-             {{-- <p style="width:1%">:</p> --}}
              <p style="width:50%;text-align:end">{{ $response?->engine_number ?? '---' }}</p>
          </div>
          <div class="d-flex justify-content-between pb-1">
              <p style="width:49%">Chassis Number</p>
-             {{-- <p style="width:1%">:</p> --}}
              <p style="width:50%;text-align:end">{{ $response?->chassis_number ?? '---' }}</p>
          </div>
          <div class="d-flex justify-content-between pb-1">
              <p style="width:49%">Registration Number</p>
-             {{-- <p style="width:1%">:</p> --}}
              <p style="width:50%;text-align:end">{{ $response?->registration_number ?? '---' }}</p>
          </div>
          <div class="d-flex justify-content-between pb-1">
              <p style="width:49%">Purchase Date</p>
-             {{-- <p style="width:1%">:</p> --}}
              <p style="width:50%;text-align:end">{{ date('d M, Y', strtotime($response?->purchase_date)) ?? '---' }}</p>
          </div>
          <div class="d-flex justify-content-between pb-1">
              <p style="width:49%">Purchase Price</p>
-             {{-- <p style="width:1%">:</p> --}}
              <p style="width:50%;text-align:end">{{ $response?->purchase_price ?? '---' }} tk</p>
          </div>
          <div class="d-flex justify-content-between pb-1">
              <p style="width:49%">Total Costing</p>
-             {{-- <p style="width:1%">:</p> --}}
              <p style="width:50%;text-align:end">{{ $response?->mediaCosting?->sum('amount') + $response?->maintenanceCosting?->sum('amount') + $response?->serviceCosting?->sum('amount') + $response?->partsCosting?->sum('amount') }} tk</p>
          </div>
          <hr class="hr">
          <div class="d-flex justify-content-between pb-1">
              <p style="width:49%">Final Price</p>
-             {{-- <p style="width:1%">:</p> --}}
              <p style="width:50%;text-align:end;" class="text-success">{{ $response?->purchase_price + $response?->mediaCosting?->sum('amount') + $response?->maintenanceCosting?->sum('amount') + $response?->serviceCosting?->sum('amount') + $response?->partsCosting?->sum('amount') }} tk</p>
          </div>
      </div>
@@ -83,7 +76,6 @@
          @forelse ($response?->buyPayments as $payment)
              <div class="d-flex justify-content-between pb-1">
                  <p style="width:78%">{{ $payment->account_holder_name . ' ' . '(' . $payment?->credit_bank_account_number . ')' }} <i class="fa-solid fa-arrow-right"></i> {{ $payment->paymentMethod?->name }}</p>
-                 {{-- <p style="width:1%">:</p> --}}
                  <p style="width:21%;text-align:end">{{ $payment?->amount ?? '---' }} tk</p>
              </div>
          @empty
@@ -94,7 +86,6 @@
          <hr class="hr">
          <div class="d-flex justify-content-between pb-1">
              <p style="width:70%">Total Buy Info</p>
-             {{-- <p style="width:1%">:</p> --}}
              <p style="width:29%;text-align:end">{{ $response?->buyPayments->sum('amount') ?? '---' }} tk</p>
          </div>
 
@@ -120,7 +111,6 @@
          @forelse ($response?->sellPayments as $payment)
              <div class="d-flex justify-content-between pb-1">
                  <p style="width:78%">{{ $payment->account_holder_name . ' ' . '(' . $payment?->debit_bank_account_number . ')' }} <i class="fa-solid fa-arrow-right"></i> {{ $payment->paymentMethod?->name }}</p>
-                 {{-- <p style="width:1%">:</p> --}}
                  <p style="width:21%;text-align:end">{{ $payment?->amount ?? '---' }} tk</p>
              </div>
          @empty
@@ -131,7 +121,6 @@
          <hr class="hr">
          <div class="d-flex justify-content-between pb-1">
              <p style="width:70%">Total Sell Info</p>
-             {{-- <p style="width:1%">:</p> --}}
              <p style="width:29%;text-align:end">{{ $response?->sellPayments->sum('amount') ?? '---' }} tk</p>
          </div>
 
