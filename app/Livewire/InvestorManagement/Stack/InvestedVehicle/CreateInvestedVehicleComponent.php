@@ -37,8 +37,8 @@ class CreateInvestedVehicleComponent extends Component
      */
     public function mount(Investor $investor)
     {
-        $this->investor = $investor->id;
-        $this->current_amount = CreateInvestedVehicleService::current_balance_check($investor->amount, $this->investor);
+        $this->investor = $investor;
+        $this->current_amount = CreateInvestedVehicleService::current_balance_check($investor->amount, $this->investor->id);
         $this->vehicles = Vehicle::query()->latest()->get();
     }
 
