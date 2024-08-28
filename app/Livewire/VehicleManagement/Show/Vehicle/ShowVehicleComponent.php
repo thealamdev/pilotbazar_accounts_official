@@ -77,6 +77,7 @@ class ShowVehicleComponent extends Component
             ->where('id', $vehicle)
             ->with('user', 'color', 'models', 'model_year', 'mediaCosting', 'maintenanceCosting', 'serviceCosting', 'partsCosting')
             ->with('buyPayments', fn($query) => $query->with('paymentMethod'))
+            ->with('sellPayments', fn($query) => $query->with('paymentMethod'))
             ->first();
     }
 
