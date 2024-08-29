@@ -62,6 +62,7 @@
 
                             <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header dropdown-header-bold">Selling Action</h6>
+                            <a class="dropdown-item" href="{{ route('admin.version1.vehicle-management.vehicle.sell.create', ['vehicle' => $each?->id]) }}">Sell</a>
                             <a class="dropdown-item" href="{{ route('admin.version1.vehicle-management.vehicle.sell-payment.create', ['vehicle' => $each?->id]) }}">Sell Payment</a>
                         </div>
                     </div>

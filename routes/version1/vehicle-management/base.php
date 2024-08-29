@@ -14,6 +14,10 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
             Route::get('create', \App\Livewire\VehicleManagement\Stack\Vehicle\VehicleBuyPayment\CreateVehicleBuyPaymentComponent::class)->name('create');
         });
 
+        Route::prefix('sell')->name('sell.')->group(function () {
+            Route::get('create', \App\Livewire\VehicleManagement\Stack\Vehicle\VehicleSell\CreateVehicleSellComponent::class)->name('create');
+        });
+
         Route::prefix('sell-payment')->name('sell-payment.')->group(function () {
             Route::get('create', \App\Livewire\VehicleManagement\Stack\Vehicle\VehicleSellPayment\CreateVehicleSellPaymentComponent::class)->name('create');
         });
