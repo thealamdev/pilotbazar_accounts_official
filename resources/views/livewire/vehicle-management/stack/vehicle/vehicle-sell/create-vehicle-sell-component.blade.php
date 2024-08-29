@@ -1,5 +1,5 @@
-<div class="row mt-7 border border-slate-400 rounded">
-    <div class="col-lg-12 px-4 py-3">
+<div class="row mt-7">
+    <div class="col-lg-12 px-4 py-4 border border-slate-400 rounded">
         <!-- Header Part Start !-->
         <header class="pb-4 d-flex justify-content-between align-items-center">
             <div class="">
@@ -106,10 +106,58 @@
                     </div>
                 </div>
                 <div class="text-start mt-3">
-                    <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save & Next</button>
+                    <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save</button>
                 </div>
             </form>
         </div>
         <!-- Form Part End !-->
     </div>
+
+    <!-- Money Receipt Part Start !-->
+
+    <div class="col-lg-12 mt-7">
+        <table class="border-collapse border border-slate-500 w-100">
+            <tr>
+                <td class="border border-slate-600 px-2">Name</td>
+                <td class="border border-slate-600 px-2">{{ $client_name }}</td>
+            </tr>
+            <tr>
+                <td class="border border-slate-600 px-2">NID NO</td>
+                <td class="border border-slate-600 px-2">{{ $nid }}</td>
+            </tr>
+            <tr>
+                <td class="border border-slate-600 px-2">MOBILE</td>
+                <td class="border border-slate-600 px-2">{{ $mobile }}</td>
+            </tr>
+            <tr>
+                <td class="border border-slate-600 px-2">ADDRESS</td>
+                <td class="border border-slate-600 px-2">{{ $address }}</td>
+            </tr>
+        </table>
+
+        <table class="border-collapse border border-slate-500 w-100 mt-7">
+            <tr>
+                <td class="border border-slate-600 px-2">CAR NAME</td>
+                <td class="border border-slate-600 px-2">{{ $vehicle?->name . ' ' . $vehicle?->models?->name }}</td>
+            </tr>
+            <tr>
+                <td class="border border-slate-600 px-2">REGISTRATION NO</td>
+                <td class="border border-slate-600 px-2">{{ $vehicle?->registration_number }}</td>
+            </tr>
+            <tr>
+                <td class="border border-slate-600 px-2">MODEL YEAR</td>
+                <td class="border border-slate-600 px-2">{{ $vehicle?->model_year->name }}</td>
+            </tr>
+            <tr>
+                <td class="border border-slate-600 px-2">CHASSIS NO</td>
+                <td class="border border-slate-600 px-2">{{ $vehicle?->chassis_number }}</td>
+            </tr>
+            <tr>
+                <td class="border border-slate-600 px-2">ENGINE NO</td>
+                <td class="border border-slate-600 px-2">{{ $vehicle?->engine_number }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Money Receipt Part End !-->
 </div>

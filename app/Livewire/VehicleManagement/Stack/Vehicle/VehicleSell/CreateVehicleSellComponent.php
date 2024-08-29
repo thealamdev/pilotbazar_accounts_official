@@ -2,9 +2,10 @@
 
 namespace App\Livewire\VehicleManagement\Stack\Vehicle\VehicleSell;
 
-use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSell\CreateVehicleSellRequest;
-use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\Attributes\Title;
+use App\Models\VehicleManagement\Vehicle\Vehicle;
+use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSell\CreateVehicleSellRequest;
 
 class CreateVehicleSellComponent extends Component
 {
@@ -15,9 +16,42 @@ class CreateVehicleSellComponent extends Component
     public ?string $client_name = '';
 
     /**
+     * Define public property $mobile
+     * @var string
+     */
+    public ?string $mobile = '';
+
+    /**
+     * Define publilc property $nid
+     * @var ?string
+     */
+    public ?string $nid;
+
+    /**
+     * Define public property $address
+     * @var ?string
+     */
+    public ?string $address;
+
+    /**
+     * Define public property $vehicle
+     * @var array|object
+     */
+    public $vehicle;
+
+    /**
      * Define public form object $form
      */
     public CreateVehicleSellRequest $form;
+
+    /**
+     * Define public method mount()
+     * @return void
+     */
+    public function mount(Vehicle $vehicle): void
+    {
+        $this->vehicle = $vehicle;
+    }
 
     /**
      * Define public method save() to save the resourses
@@ -32,6 +66,17 @@ class CreateVehicleSellComponent extends Component
     public function render()
     {
         $this->client_name = $this->form->name;
-        return view('livewire.vehicle-management.stack.vehicle.vehicle-sell.create-vehicle-sell-component', ['client_name' => $this->client_name]);
+        $this->mobile = $this->form->mobile;
+        $this->nid = $this->form->nid;
+        $this->address = $this->form->address;
+        return view(
+            'livewire.vehicle-management.stack.vehicle.vehicle-sell.create-vehicle-sell-component',
+            [
+                'client_name' => $this->client_name,
+                'mobile' => $this->mobile,
+                'nid' => $this->nid,
+                'address' => $this->address,
+            ]
+        );
     }
 }
