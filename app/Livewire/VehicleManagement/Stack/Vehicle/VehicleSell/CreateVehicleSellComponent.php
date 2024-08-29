@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSell\CreateVehicleSellRequest;
+use App\Services\VehicleManagement\Stack\Vehicle\VehicleSell\CreateVehicleSellService;
 
 class CreateVehicleSellComponent extends Component
 {
@@ -52,9 +53,9 @@ class CreateVehicleSellComponent extends Component
 
     /**
      * Define public property $costing_details
-     * @var array|object
+     * @var string
      */
-    public $costing_details;
+    public $vehicle_id;
 
     /**
      * Define public form object $form
@@ -68,6 +69,7 @@ class CreateVehicleSellComponent extends Component
     public function mount(Vehicle $vehicle): void
     {
         $this->vehicle = Vehicle::query()
+            ->with('seller')
             ->where('id', $vehicle->id)
             ->with('user', 'color', 'models', 'model_year')
             ->with('sellPayments', fn($query) => $query->with('paymentMethod'))
@@ -81,11 +83,16 @@ class CreateVehicleSellComponent extends Component
     public function save(): void
     {
         $this->form->validate();
+        $isCreate = CreateVehicleSellService::store($this->form);
+        $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
+        $this->dispatch('success', ['message' => $response]);
+        $this->form->reset();
     }
 
     #[Title('Vehicle Sell')]
     public function render()
     {
+        $this->form->vehicle_id = $this->vehicle->id;
         $this->client_name = $this->form->name;
         $this->mobile = $this->form->mobile;
         $this->nid = $this->form->nid;

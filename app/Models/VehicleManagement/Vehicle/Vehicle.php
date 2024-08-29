@@ -17,6 +17,7 @@ use App\Models\VehicleManagement\Vehicle\VehicleBuyPayment\VehicleBuyPayment;
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleMaintenanceCosting;
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehiclePartsCosting;
 use App\Models\VehicleManagement\Vehicle\VehicleCosting\VehicleServiceCosting;
+use App\Models\VehicleManagement\Vehicle\VehicleSell\VehicleSell;
 use App\Models\VehicleManagement\Vehicle\VehicleSellPayment\VehicleSellPayment;
 
 class Vehicle extends Model
@@ -117,6 +118,14 @@ class Vehicle extends Model
     public function invested_vehicles()
     {
         return $this->hasMany(InvestedVehicle::class, 'vehicle_id', 'id');
+    }
+
+    /**
+     * Define public method seller()
+     */
+    public function seller()
+    {
+        return $this->hasOne(VehicleSell::class, 'vehicle_id', 'id');
     }
 
     /**

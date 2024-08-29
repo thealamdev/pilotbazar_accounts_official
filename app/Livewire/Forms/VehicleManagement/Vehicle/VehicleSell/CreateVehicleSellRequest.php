@@ -8,6 +8,12 @@ use Livewire\Form;
 class CreateVehicleSellRequest extends Form
 {
     /**
+     * Define public property $vehicle_id
+     * @var string
+     */
+    public $vehicle_id;
+
+    /**
      * Define public property $name
      * @var string
      */
