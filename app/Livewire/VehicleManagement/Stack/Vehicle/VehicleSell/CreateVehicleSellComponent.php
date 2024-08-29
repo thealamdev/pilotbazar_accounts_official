@@ -34,10 +34,22 @@ class CreateVehicleSellComponent extends Component
     public ?string $address;
 
     /**
+     * Define public property $sell_price
+     * @var ?string
+     */
+    public $sell_price;
+
+    /**
      * Define public property $vehicle
      * @var array|object
      */
     public $vehicle;
+
+    /**
+     * Define public property $costing_details
+     * @var array|object
+     */
+    public $costing_details;
 
     /**
      * Define public form object $form
@@ -50,7 +62,11 @@ class CreateVehicleSellComponent extends Component
      */
     public function mount(Vehicle $vehicle): void
     {
-        $this->vehicle = $vehicle;
+        $this->vehicle = Vehicle::query()
+            ->where('id', $vehicle->id)
+            ->with('user', 'color', 'models', 'model_year')
+            ->with('sellPayments', fn($query) => $query->with('paymentMethod'))
+            ->first();;
     }
 
     /**
@@ -68,6 +84,7 @@ class CreateVehicleSellComponent extends Component
         $this->client_name = $this->form->name;
         $this->mobile = $this->form->mobile;
         $this->nid = $this->form->nid;
+        $this->sell_price = $this->form->sell_price;
         $this->address = $this->form->address;
         return view(
             'livewire.vehicle-management.stack.vehicle.vehicle-sell.create-vehicle-sell-component',

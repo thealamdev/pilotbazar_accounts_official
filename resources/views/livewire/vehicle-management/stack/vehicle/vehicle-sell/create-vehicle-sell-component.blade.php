@@ -157,6 +157,29 @@
                 <td class="border border-slate-600 px-2">{{ $vehicle?->engine_number }}</td>
             </tr>
         </table>
+
+        <table class="border-collapse border border-slate-500 w-100 mt-7">
+            <tr>
+                <td class="border border-slate-600 px-2">Car Price</td>
+                <td class="border border-slate-600 px-2">{{ number_format((float) $sell_price, 0) }} /=</td>
+            </tr>
+            @foreach ($vehicle->buyPayments as $each)
+                <tr>
+                    <td class="border border-slate-600 px-2">{{ $each?->paymentMethod->name }}</td>
+                    <td class="border border-slate-600 px-2">{{ number_format($each?->amount, 0) }} /=</td>
+                </tr>
+            @endforeach
+            <tr>
+                <td class="border border-slate-600 px-2 font-bold">Total Paid</td>
+                <td class="border border-slate-600 px-2 font-bold">{{ number_format($vehicle->buyPayments->sum('amount'), 0) }} /=</td>
+            </tr>
+
+            <tr>
+                <td class="border border-slate-600 px-2 font-bold">Customer Due</td>
+                <td class="border border-slate-600 px-2 font-bold">{{ number_format((int)$sell_price - $vehicle->buyPayments->sum('amount'),0) }} /=</td>
+            </tr>
+
+        </table>
     </div>
 
     <!-- Money Receipt Part End !-->
