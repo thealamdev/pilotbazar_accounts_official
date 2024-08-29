@@ -3,7 +3,6 @@
 namespace App\Livewire\VehicleManagement\Stack\Vehicle\VehicleSell;
 
 use Livewire\Component;
-use Barryvdh\DomPDF\Facade\Pdf;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSell\CreateVehicleSellRequest;
@@ -68,42 +67,6 @@ class CreateVehicleSellComponent extends Component
             ->with('user', 'color', 'models', 'model_year')
             ->with('sellPayments', fn($query) => $query->with('paymentMethod'))
             ->first();
-    }
-
-    /**
-     * Define public method generatePDF()
-     */
-    public function generatePDF()
-    {
-        // $this->costing_details = [
-        //     'client_name' => $this->client_name,
-        //     'vehicle'     => $this->vehicle,
-        //     'mobile'      => $this->mobile,
-        //     'nid'         => $this->nid,
-        //     'sell_price'  => $this->sell_price,
-        //     'address'     => $this->address,
-        // ];
-        // $pdf = PDF::loadView('livewire.vehicle-management.stack.vehicle.vehicle-sell.partials.money-receipt-pdf', [$this->costing_details]);
-        // return $pdf->download('itsolutionstuff.pdf');
-        // Prepare the data for the PDF
-        $costing_details = [
-            'client_name' => $this->client_name,
-            'vehicle'     => $this->vehicle,
-            'mobile'      => $this->mobile,
-            'nid'         => $this->nid,
-            'sell_price'  => $this->sell_price,
-            'address'     => $this->address,
-        ];
-        $data = ['one' => 1];
-
-        // Load the view and pass the data
-        $pdf = PDF::loadView('livewire.vehicle-management.stack.vehicle.vehicle-sell.partials.money-receipt-pdf', $data);
-
-        // Provide a meaningful filename or make it dynamic
-        $filename = 'vehicle-receipt-' . now()->format('YmdHis') . '.pdf';
-
-        // Download the PDF file
-        return $pdf->download($filename);
     }
 
     /**

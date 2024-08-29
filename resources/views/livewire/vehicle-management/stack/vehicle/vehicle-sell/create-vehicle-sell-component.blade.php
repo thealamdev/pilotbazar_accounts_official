@@ -112,6 +112,5 @@
         </div>
         <!-- Form Part End !-->
     </div>
-    <button wire:click="generatePDF">PDF</button>
     @include('livewire.vehicle-management.stack.vehicle.vehicle-sell.partials.money-receipt')
 </div>
