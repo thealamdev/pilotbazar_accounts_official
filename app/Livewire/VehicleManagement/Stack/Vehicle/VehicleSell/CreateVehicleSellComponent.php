@@ -40,6 +40,11 @@ class CreateVehicleSellComponent extends Component
     public $sell_price;
 
     /**
+     * Define public property $sell_date
+     */
+    public $sell_date;
+
+    /**
      * Define public property $vehicle
      * @var array|object
      */
@@ -85,6 +90,7 @@ class CreateVehicleSellComponent extends Component
         $this->mobile = $this->form->mobile;
         $this->nid = $this->form->nid;
         $this->sell_price = $this->form->sell_price;
+        $this->sell_date = $this->form->sell_date;
         $this->address = $this->form->address;
         return view(
             'livewire.vehicle-management.stack.vehicle.vehicle-sell.create-vehicle-sell-component',

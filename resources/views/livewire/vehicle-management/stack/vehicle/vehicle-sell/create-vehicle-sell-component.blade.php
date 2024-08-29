@@ -112,5 +112,10 @@
         </div>
         <!-- Form Part End !-->
     </div>
+    <div class="col-lg-12 mt-3">
+        <button class="border border-slate-500 bg-transparent rounded px-3 py-1" onclick="saveDiv('printMoneyReceipt', 'Receipt')">Save as PDF</button>
+        <button class="border border-slate-500 bg-transparent rounded px-3 py-1" onclick="printDiv('printMoneyReceipt', 'Receipt')">Print</button>
+    </div>
+
     @include('livewire.vehicle-management.stack.vehicle.vehicle-sell.partials.money-receipt')
 </div>

@@ -20,85 +20,107 @@
 
      <body>
          <!-- Money Receipt Part Start !-->
-         <div id="divId" class="col-lg-12 mt-7">
-             <table class="border-collapse border border-slate-500 w-100">
-                 <tr>
-                     <td class="border border-slate-600 px-2">Name</td>
-                     <td class="border border-slate-600 px-2">{{ $client_name }}</td>
-                 </tr>
-                 <tr>
-                     <td class="border border-slate-600 px-2">NID NO</td>
-                     <td class="border border-slate-600 px-2">{{ $nid }}</td>
-                 </tr>
-                 <tr>
-                     <td class="border border-slate-600 px-2">MOBILE</td>
-                     <td class="border border-slate-600 px-2">{{ $mobile }}</td>
-                 </tr>
-                 <tr>
-                     <td class="border border-slate-600 px-2">ADDRESS</td>
-                     <td class="border border-slate-600 px-2">{{ $address }}</td>
-                 </tr>
-             </table>
-
-             <table class="border-collapse border border-slate-500 w-100 mt-7">
-                 <tr>
-                     <td class="border border-slate-600 px-2">CAR NAME</td>
-                     <td class="border border-slate-600 px-2">{{ $vehicle?->name . ' ' . $vehicle?->models?->name }}</td>
-                 </tr>
-                 <tr>
-                     <td class="border border-slate-600 px-2">REGISTRATION NO</td>
-                     <td class="border border-slate-600 px-2">{{ $vehicle?->registration_number }}</td>
-                 </tr>
-                 <tr>
-                     <td class="border border-slate-600 px-2">MODEL YEAR</td>
-                     <td class="border border-slate-600 px-2">{{ $vehicle?->model_year->name }}</td>
-                 </tr>
-                 <tr>
-                     <td class="border border-slate-600 px-2">CHASSIS NO</td>
-                     <td class="border border-slate-600 px-2">{{ $vehicle?->chassis_number }}</td>
-                 </tr>
-                 <tr>
-                     <td class="border border-slate-600 px-2">ENGINE NO</td>
-                     <td class="border border-slate-600 px-2">{{ $vehicle?->engine_number }}</td>
-                 </tr>
-             </table>
-
-             <table class="border-collapse border border-slate-500 w-100 mt-7">
-                 <tr>
-                     <td class="border border-slate-600 px-2">Car Price</td>
-                     <td class="border border-slate-600 px-2">{{ number_format((float) $sell_price, 0) }} /=</td>
-                 </tr>
-                 @foreach ($vehicle->buyPayments as $each)
+         <div id="printMoneyReceipt" class="col-lg-12 mt-3 px-7" style="margin-top:-380px !important;z-index:-1000 !important">
+             <div class="mainPdfContnt mt-56">
+                 <div class="d-flex justify-content-center mb-5">
+                     <h3 style="text-decoration: underline">Money Receipt</h3>
+                 </div>
+                 <div class="d-flex justify-content-end mb-3">
+                     <p class="border border-black px-3 py-1">Date : {{ $sell_date }}</p>
+                 </div>
+                 <table class="border-collapse border border-black w-100">
                      <tr>
-                         <td class="border border-slate-600 px-2">{{ $each?->paymentMethod->name }}</td>
-                         <td class="border border-slate-600 px-2">{{ number_format($each?->amount, 0) }} /=</td>
+                         <td class="border border-black px-3 py-1 text-black w-50 fs-5 font-bold">Name</td>
+                         <td class="border border-blac px-3 py-1 text-black w-50 fs-5 font-bold">{{ $client_name }}</td>
                      </tr>
-                 @endforeach
-                 <tr>
-                     <td class="border border-slate-600 px-2 font-bold">Total Paid</td>
-                     <td class="border border-slate-600 px-2 font-bold">{{ number_format($vehicle->buyPayments->sum('amount'), 0) }} /=</td>
-                 </tr>
+                     <tr>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">NID NO</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $nid }}</td>
+                     </tr>
+                     <tr>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">MOBILE</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $mobile }}</td>
+                     </tr>
+                     <tr>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">ADDRESS</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $address }}</td>
+                     </tr>
+                 </table>
 
-                 <tr>
-                     <td class="border border-slate-600 px-2 font-bold">Customer Due</td>
-                     <td class="border border-slate-600 px-2 font-bold">{{ number_format((int) $sell_price - $vehicle->buyPayments->sum('amount'), 0) }} /=</td>
-                 </tr>
+                 <table class="border-collapse border border-slate-500 w-100 mt-7">
+                     <tr>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">CAR NAME</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $vehicle?->name . ' ' . $vehicle?->models?->name }}</td>
+                     </tr>
+                     <tr>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">REGISTRATION NO</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $vehicle?->registration_number }}</td>
+                     </tr>
+                     <tr>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">MODEL YEAR</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $vehicle?->model_year->name }}</td>
+                     </tr>
+                     <tr>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">CHASSIS NO</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $vehicle?->chassis_number }}</td>
+                     </tr>
+                     <tr>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">ENGINE NO</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $vehicle?->engine_number }}</td>
+                     </tr>
+                 </table>
 
-             </table>
+                 <table class="border-collapse border border-slate-500 w-100 mt-7">
+                     <tr>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">Car Price</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ number_format((float) $sell_price, 0) }} /=</td>
+                     </tr>
+                     @foreach ($vehicle->buyPayments as $each)
+                         <tr>
+                             <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $each?->paymentMethod->name }}</td>
+                             <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ number_format($each?->amount, 0) }} /=</td>
+                         </tr>
+                     @endforeach
+                     <tr>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">Total Paid</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ number_format($vehicle->buyPayments->sum('amount'), 0) }} /=</td>
+                     </tr>
+
+                     <tr>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">Customer Due</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ number_format((int) $sell_price - $vehicle->buyPayments->sum('amount'), 0) }} /=</td>
+                     </tr>
+
+                 </table>
+
+                 <div class="comment pt-3">
+                     <h4 class="font-bold">
+                         *Depends on BRTA requirement. Charge may increase.
+                     </h4>
+                     <p class="fs-5 font-bold">Total amount Paid in a word Today : {{ Helper::numberToWords((int) $sell_price) }} only</p>
+                     <p class="fs-5 font-bold">Total amount Paid in a word Till Now : {{ Helper::numberToWords((int) $sell_price) }} only</p>
+                 </div>
+
+                 <div class="signature pt-14 d-flex justify-content-between">
+                     <h4 class="font-bold">
+                         Received Signature
+                     </h4>
+                     <h4 class="font-bold">
+                         Paid Signature
+                     </h4>
+                 </div>
+             </div>
          </div>
          <!-- Money Receipt Part End !-->
-
-         <button onclick="saveDiv('divId', 'Receipt')">Save as PDF</button>
-         <button onclick="printDiv('divId', 'Receipt')">Print</button>
 
          <script>
              const {
                  jsPDF
              } = window.jspdf;
 
-             async function saveDiv(divId, title) {
+             async function saveDiv(printMoneyReceipt, title) {
                  try {
-                     const canvas = await html2canvas(document.getElementById(divId), {
+                     const canvas = await html2canvas(document.getElementById(printMoneyReceipt), {
                          useCORS: true
                      });
                      const imgData = canvas.toDataURL('image/png');
@@ -126,28 +148,51 @@
                  }
              }
 
-             async function printDiv(divId, title) {
+             async function printDiv(printMoneyReceipt, title) {
                  try {
-                     const canvas = await html2canvas(document.getElementById(divId), {
+                     // Ensure the element exists
+                     const element = document.getElementById(printMoneyReceipt);
+                     if (!element) {
+                         throw new Error(`Element with ID ${printMoneyReceipt} not found.`);
+                     }
+
+                     // Capture the content as a canvas image
+                     const canvas = await html2canvas(element, {
                          useCORS: true
                      });
                      const imgData = canvas.toDataURL('image/png');
+
+                     // Open a new window for printing
                      const mywindow = window.open('', 'PRINT', 'height=650,width=700,top=100,left=150');
+                     if (!mywindow) {
+                         throw new Error('Failed to open print window.');
+                     }
 
-                     mywindow.document.write(`<html><head><title>${title}</title>`);
-                     mywindow.document.write('</head><body >');
-                     mywindow.document.write(`<img src="${imgData}" style="width: 100%;" />`);
-                     mywindow.document.write('</body></html>');
+                     // Write the HTML content
+                     mywindow.document.open();
+                     mywindow.document.write(`
+            <html>
+                <head>
+                    <title>${title}</title>
+                </head>
+                <body>
+                    <img src="${imgData}" style="width: 100%;" />
+                </body>
+            </html>
+        `);
+                     mywindow.document.close();
 
-                     mywindow.document.close(); // necessary for IE >= 10
-                     mywindow.focus(); // necessary for IE >= 10
-
-                     mywindow.print();
-                     mywindow.close();
+                     // Ensure the document is fully loaded before printing
+                     mywindow.onload = () => {
+                         mywindow.focus();
+                         mywindow.print();
+                         mywindow.close();
+                     };
 
                      return true;
                  } catch (error) {
                      console.error('Error printing content:', error);
+                     return false;
                  }
              }
          </script>
