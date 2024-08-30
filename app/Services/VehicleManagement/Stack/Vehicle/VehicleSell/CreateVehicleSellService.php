@@ -2,6 +2,7 @@
 
 namespace App\Services\VehicleManagement\Stack\Vehicle\VehicleSell;
 
+use App\Models\InvestorManagement\InvestedVehicle;
 use App\Models\VehicleManagement\Vehicle\VehicleSell\VehicleSell;
 
 
@@ -25,6 +26,15 @@ class CreateVehicleSellService
                 'status' => $form->status,
             ]
         );
+
+        if ($response) {
+
+            $invested_vehicle = InvestedVehicle::where('vehicle_id', $response->vehicle_id)->get();
+            foreach ($invested_vehicle as $each) {
+                // dd($each->profit_percentage);
+                dd($each->invested_amount * (0.01 * $each->profit_percentage));
+            }
+        }
         return $response;
     }
 }
