@@ -28,7 +28,7 @@
                         <label for="form.name">Client Name<span class="text-danger">*</span></label>
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
-                            <input type="text" wire:model.live="form.name" value="{{ $vehicle->seller->name }}" class="form-control @error('form.name') {{ 'is-invalid' }} @enderror" placeholder="vehicle name">
+                            <input type="text" wire:model.live="form.name" value="{{ $vehicle->seller?->name }}" class="form-control @error('form.name') {{ 'is-invalid' }} @enderror" placeholder="vehicle name">
                             @error('form.name')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -39,7 +39,7 @@
                         <label for="form.mobile">Mobile Number<span class="text-danger"></span></label>
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
-                            <input type="text" wire:model.live="form.mobile" value="{{ old('form.mobile', $vehicle->seller->mobile) }} placeholder="mobile number" class="form-control @error('form.mobile') {{ 'is-invalid' }} @enderror"">
+                            <input type="text" wire:model.live="form.mobile" value="{{ old('form.mobile', $vehicle->seller?->mobile) }} placeholder="mobile number" class="form-control @error('form.mobile') {{ 'is-invalid' }} @enderror"">
                             @error('form.mobile')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror

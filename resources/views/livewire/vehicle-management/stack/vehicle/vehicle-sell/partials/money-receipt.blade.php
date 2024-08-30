@@ -26,7 +26,7 @@
                      <h3 style="text-decoration: underline">Money Receipt</h3>
                  </div>
                  <div class="d-flex justify-content-end mb-3">
-                     <p class="border border-black px-3 py-1">Date : {{ $sell_date ? $sell_date : $vehicle?->seller?->sell_date}}</p>
+                     <p class="border border-black px-3 py-1">Date : {{ $sell_date ? $sell_date : $vehicle?->seller?->sell_date }}</p>
                  </div>
                  <table class="border-collapse border border-black w-100">
                      <tr>
@@ -35,7 +35,7 @@
                      </tr>
                      <tr>
                          <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">NID NO</td>
-                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $nid ? $nid : $vehicle?->seller->nid }}</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $nid ? $nid : $vehicle?->seller?->nid }}</td>
                      </tr>
                      <tr>
                          <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">MOBILE</td>
