@@ -13,8 +13,8 @@ class CreateVehicleSellService
      */
     public static function store($form): array|object
     {
-        $response = VehicleSell::createOrUpdate(
-            ['vehicle_id' => $form->vehicle->id],
+        $response = VehicleSell::updateOrCreate(
+            ['vehicle_id' => $form->vehicle_id],
             [
                 'name' => $form->name,
                 'mobile' => $form->mobile,
