@@ -137,7 +137,6 @@ class CreateVehicleSellComponent extends Component
             'amount'     => $this->createVehicleSellServiceRequest->amount
         ]);
         $this->sell_services = VehicleSellService::query()->with('sell_service')->get();
-
         $this->dispatch('success', ['message' => 'Data insert successfully']);
     }
 

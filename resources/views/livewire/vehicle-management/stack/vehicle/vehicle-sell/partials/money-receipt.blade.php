@@ -36,10 +36,7 @@
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">NID NO</td>
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ $nid ? $nid : $vehicle?->seller?->nid }}</td>
                      </tr>
-                     {{-- <tr>
-                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">NID NO</td>
-                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $nid ? $nid : $vehicle?->seller?->nid }}</td>
-                     </tr> --}}
+
                      <tr>
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">MOBILE</td>
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ $mobile ? $mobile : $vehicle->seller?->mobile }}</td>
@@ -47,10 +44,6 @@
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">ADDRESS</td>
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ $address ? $address : $vehicle?->seller?->address }}</td>
                      </tr>
-                     {{-- <tr>
-                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">ADDRESS</td>
-                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $address ? $address : $vehicle?->seller?->address }}</td>
-                     </tr> --}}
                  </table>
 
                  <table class="border-collapse border border-slate-500 w-100 mt-7">
