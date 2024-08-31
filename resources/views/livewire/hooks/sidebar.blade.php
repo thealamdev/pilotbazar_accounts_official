@@ -120,7 +120,7 @@
                      <!-- Sell Management -> Modules !-->
                      <ul class="navbar-nav flex-column">
                          <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.sell-service.*')) active @endif">
-                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_pages">
+                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#sell_service_pages">
                                  <span class="nav-icon-wrap">
                                      <span class="svg-icon">
                                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-kanban" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -134,7 +134,7 @@
                                  </span>
                                  <span class="nav-link-text">Sell Service</span>
                              </a>
-                             <ul id="dash_pages" class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.sell-service.*')) show @endif">
+                             <ul id="sell_service_pages" class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.sell-service.*')) show @endif">
                                  <li class="nav-item">
                                      <ul class="nav flex-column">
                                          <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.sell-service.*') ? 'active' : '' }}">
