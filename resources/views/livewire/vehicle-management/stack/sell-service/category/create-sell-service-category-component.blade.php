@@ -6,7 +6,7 @@
             <span>Please must fill the field where (*) sign is visible.</span>
         </div>
         <div>
-            <a href="{{ route('admin.version1.vehicle-management.vehicle.module.color.index') }}" class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="button">Colors</a>
+            <a href="{{ route('admin.version1.vehicle-management.vehicle.module.color.index') }}" class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="button">Service Category</a>
         </div>
     </header>
     <!-- Header Part End !-->
@@ -19,7 +19,7 @@
                 <div class="col-lg-6">
                     <label for="form.name">Service Category Name <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
-                        <span class="input-group-text"><i class="fa-solid fa-droplet"></i></span>
+                        <span class="input-group-text"><i class="fa-brands fa-servicestack"></i></span>
                         <input type="text" wire:model.live="form.name" class="form-control @error('form.name')
                             {{ 'is-invalid' }}
                         @enderror" placeholder="Service category name">

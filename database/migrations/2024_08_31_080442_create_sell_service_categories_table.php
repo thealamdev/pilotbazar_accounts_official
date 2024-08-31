@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('investment_calculations', function (Blueprint $table) {
+        Schema::create('sell_service_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('investor_id')->constrained();
+            $table->string('name');
+            $table->boolean('status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('investment_calculations');
+        Schema::dropIfExists('sell_service_categories');
     }
 };
