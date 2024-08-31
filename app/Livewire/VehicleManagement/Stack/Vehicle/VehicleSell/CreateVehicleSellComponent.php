@@ -5,6 +5,8 @@ namespace App\Livewire\VehicleManagement\Stack\Vehicle\VehicleSell;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 use App\Models\VehicleManagement\Vehicle\Vehicle;
+use App\Models\VehicleManagement\SellService\SellServiceCategory;
+use App\Livewire\Forms\VehicleManagement\SellService\CreateVehicleSellServiceRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSell\CreateVehicleSellRequest;
 use App\Services\VehicleManagement\Stack\Vehicle\VehicleSell\CreateVehicleSellService;
 
@@ -58,9 +60,20 @@ class CreateVehicleSellComponent extends Component
     public $vehicle_id;
 
     /**
+     * Define public property $sell_service_categories
+     * @var array|object
+     */
+    public $sell_service_categories;
+
+    /**
      * Define public form object $form
      */
     public CreateVehicleSellRequest $form;
+
+    /**
+     * Define public form object CreateVehicleSellServiceRequest $createVehicleSellServiceRequest
+     */
+    public CreateVehicleSellServiceRequest $createVehicleSellServiceRequest;
 
     /**
      * Define public method mount()
@@ -80,6 +93,16 @@ class CreateVehicleSellComponent extends Component
         $this->form->address = $this->vehicle->seller?->address;
         $this->form->status = $this->vehicle->seller?->status;
 
+        /**
+         * Set value to createVehicleSellServiceRequest form.
+         */
+        $this->createVehicleSellServiceRequest->vehicle_id = $this->vehicle->id;
+        
+        /**
+         * Sell service category add or create
+         */
+        $this->sell_service_categories = SellServiceCategory::query()->get();
+
         $this->vehicle = Vehicle::query()
             ->with('seller')
             ->where('id', $vehicle->id)
@@ -98,6 +121,15 @@ class CreateVehicleSellComponent extends Component
         $isCreate = CreateVehicleSellService::store($this->form);
         $response = $isCreate ? 'Data has been submited !' : 'Something went wrong!';
         $this->dispatch('success', ['message' => $response]);
+    }
+
+    /**
+     * Define public method sellServiceSave()
+     * @param $vehicle_id
+     */
+    public function sellServiceSave()
+    {
+        dd($this->createVehicleSellServiceRequest);
     }
 
     #[Title('Vehicle Sell')]

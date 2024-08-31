@@ -113,10 +113,77 @@
         </div>
         <!-- Form Part End !-->
     </div>
-    <div class="col-lg-12 mt-3">
-        <button class="border border-slate-500 bg-transparent rounded px-3 py-1" onclick="saveDiv('printMoneyReceipt', 'Receipt')">Save as PDF</button>
-        <button class="border border-slate-500 bg-transparent rounded px-3 py-1" onclick="printDiv('printMoneyReceipt', 'Receipt')">Print</button>
-    </div>
 
+    <div class="col-lg-12 mt-3 d-flex justify-content-between">
+        <div class="print-save">
+            <button class="border border-slate-500 bg-transparent rounded px-3 py-1" onclick="saveDiv('printMoneyReceipt', 'Receipt')">Save as PDF</button>
+            <button class="border border-slate-500 bg-transparent rounded px-3 py-1" onclick="printDiv('printMoneyReceipt', 'Receipt')">Print</button>
+        </div>
+        <div class="services">
+            <button type="button" data-bs-target="#sellServiceSaveModal" data-bs-toggle="modal" class="border border-slate-500 bg-transparent rounded px-3 py-1">Sell Services</button>
+        </div>
+
+        <!-- Sell service add Modal !-->
+        <div class="modal fade" id="sellServiceSaveModal" tabindex="-1" aria-labelledby="sellServiceSaveLabel" aria-hidden="true" wire:ignore>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="sellServiceSaveLabel">Sell Service Add</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" wire:submit="sellServiceSave" method="POST">
+                            <input type="hidden" wire:model.live="createVehicleSellServiceRequest.vehicle_id">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="createVehicleSellServiceRequest.name">Service Name<span class="text-danger">*</span></label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
+                                        <select wire:model.live="createVehicleSellServiceRequest.name" class="form-control @error('createVehicleSellServiceRequest.name')
+                                            {{ 'is-invalid' }}
+                                        @enderror">
+                                            <option selected value>-- Please Select Status --</option>
+                                            @foreach ($sell_service_categories as $each)
+                                                <option value="{{ $each->id }}">{{ $each->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('form.status')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label for="createVehicleSellServiceRequest.amount">Service Charge <span class="text-danger">*</span></label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"><i class="fa-brands fa-servicestack"></i></span>
+                                        <input type="text" wire:model.live="createVehicleSellServiceRequest.amount" class="form-control @error('createVehicleSellServiceRequest.amount')
+                                            {{ 'is-invalid' }}
+                                        @enderror" placeholder="Service charge">
+                                        @error('createVehicleSellServiceRequest.amount')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-start">
+                                <button class="bg-transparent border border-slate-400 px-4 py-1 rounded" type="submit">Save</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <hr class="hr mt-3">
     @include('livewire.vehicle-management.stack.vehicle.vehicle-sell.partials.money-receipt')
 </div>
