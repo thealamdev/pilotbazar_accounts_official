@@ -50,141 +50,7 @@
                          </li>
                      </ul>
                  </div>
-                 {{-- <div class="menu-gap"></div> --}}
-                 {{-- <div class="menu-group">
-                     <div class="nav-header">
-                         <span>Apps</span>
-                     </div>
-                     <ul class="navbar-nav flex-column">
-                         <li class="nav-item">
-                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_chat">
-                                 <span class="nav-icon-wrap">
-                                     <span class="svg-icon">
-                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                             <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
-                                             <line x1="12" y1="11" x2="12" y2="11.01" />
-                                             <line x1="8" y1="11" x2="8" y2="11.01" />
-                                             <line x1="16" y1="11" x2="16" y2="11.01" />
-                                         </svg>
-                                     </span>
-                                 </span>
-                                 <span class="nav-link-text">Chat</span>
-                             </a>
-                             <ul id="dash_chat" class="nav flex-column collapse  nav-children">
-                                 <li class="nav-item">
-                                     <ul class="nav flex-column">
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="chats.html"><span class="nav-link-text">Chats</span></a>
-                                         </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="chats-group.html"><span class="nav-link-text">Groups</span></a>
-                                         </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="chats-contact.html"><span class="nav-link-text">Contacts</span></a>
-                                         </li>
-                                     </ul>
-                                 </li>
-                             </ul>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_chatpop">
-                                 <span class="nav-icon-wrap">
-                                     <span class="svg-icon">
-                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-circle-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                             <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
-                                             <line x1="12" y1="12" x2="12" y2="12.01" />
-                                             <line x1="8" y1="12" x2="8" y2="12.01" />
-                                             <line x1="16" y1="12" x2="16" y2="12.01" />
-                                         </svg>
-                                     </span>
-                                 </span>
-                                 <span class="nav-link-text">Chat Popup</span>
 
-                             </a>
-                             <ul id="dash_chatpop" class="nav flex-column collapse  nav-children">
-                                 <li class="nav-item">
-                                     <ul class="nav flex-column">
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="chatpopup.html"><span class="nav-link-text">Direct
-                                                     Message</span></a>
-                                         </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="chatbot.html"><span class="nav-link-text">Chatbot</span></a>
-                                         </li>
-                                     </ul>
-                                 </li>
-                             </ul>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="{{ route('admin.investor.index') }}">
-                                 <span class="nav-icon-wrap">
-                                     <span class="svg-icon">
-                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                             <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-                                             <circle cx="18" cy="18" r="4" />
-                                             <path d="M15 3v4" />
-                                             <path d="M7 3v4" />
-                                             <path d="M3 11h16" />
-                                             <path d="M18 16.496v1.504l1 1" />
-                                         </svg>
-                                     </span>
-                                 </span>
-                                 <span class="nav-link-text">Investor</span>
-                             </a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="email.html">
-                                 <span class="nav-icon-wrap">
-                                     <span class="svg-icon">
-                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-inbox" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                             <rect x="4" y="4" width="16" height="16" rx="2" />
-                                             <path d="M4 13h3l3 3h4l3 -3h3" />
-                                         </svg>
-                                     </span>
-                                 </span>
-                                 <span class="nav-link-text">Email</span>
-                             </a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_invoice">
-                                 <span class="nav-icon-wrap">
-                                     <span class="svg-icon">
-                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-digit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                             <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                             <rect x="9" y="12" width="3" height="5" rx="1" />
-                                             <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                                             <path d="M15 12v5" />
-                                         </svg>
-                                     </span>
-                                 </span>
-                                 <span class="nav-link-text">Invoices</span>
-                             </a>
-                             <ul id="dash_invoice" class="nav flex-column collapse  nav-children">
-                                 <li class="nav-item">
-                                     <ul class="nav flex-column">
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="invoice-list.html"><span class="nav-link-text">Invoice List</span></a>
-                                         </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="invoice-templates.html"><span class="nav-link-text">Invoice Templates</span></a>
-                                         </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="create-invoice.html"><span class="nav-link-text">Create Invoice</span></a>
-                                         </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="invoice-preview.html"><span class="nav-link-text">Invoice Preview</span></a>
-                                         </li>
-                                     </ul>
-                                 </li>
-                             </ul>
-                         </li>
-                     </ul>
-                 </div> --}}
                  <!-- Vehicle menu start !-->
                  <div class="menu-gap"></div>
                  <div class="menu-group">
@@ -244,6 +110,37 @@
                                          </li>
                                          <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.model-year.*') ? 'active' : '' }}">
                                              <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.index') }}"><span class="nav-link-text">Model Year</span></a>
+                                         </li>
+                                     </ul>
+                                 </li>
+                             </ul>
+                         </li>
+                     </ul>
+                     <!-- Vehicle Management -> Sell Service -->
+                     <!-- Sell Management -> Modules !-->
+                     <ul class="navbar-nav flex-column">
+                         <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.sell-service.*')) active @endif">
+                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_pages">
+                                 <span class="nav-icon-wrap">
+                                     <span class="svg-icon">
+                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-kanban" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                             <line x1="4" y1="4" x2="10" y2="4"></line>
+                                             <line x1="14" y1="4" x2="20" y2="4"></line>
+                                             <rect x="4" y="8" width="6" height="12" rx="2"></rect>
+                                             <rect x="14" y="8" width="6" height="6" rx="2"></rect>
+                                         </svg>
+                                     </span>
+                                 </span>
+                                 <span class="nav-link-text">Sell Service</span>
+                             </a>
+                             <ul id="dash_pages" class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.sell-service.*')) show @endif">
+                                 <li class="nav-item">
+                                     <ul class="nav flex-column">
+                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.sell-service.*') ? 'active' : '' }}">
+                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.sell-service.create') }}">
+                                                 <span class="nav-link-text">Category</span>
+                                             </a>
                                          </li>
                                      </ul>
                                  </li>
@@ -478,84 +375,6 @@
                              </li>
                          </ul>
                      </div>
-                     {{-- <!-- Vehicle Management -> Modules !-->
-                     <ul class="navbar-nav flex-column">
-                         <li class="nav-item  @if (Route::is('admin.version1.vehicle-management.vehicle.module.*')) active @endif">
-                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_pages">
-                                 <span class="nav-icon-wrap">
-                                     <span class="svg-icon">
-                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                             <circle cx="9" cy="7" r="4" />
-                                             <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                                             <path d="M16 11h6m-3 -3v6" />
-                                         </svg>
-                                     </span>
-                                 </span>
-                                 <span class="nav-link-text">Modules</span>
-                             </a>
-                             <ul id="dash_pages" class="nav flex-column collapse nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.module.*')) show @endif">
-                                 <li class="nav-item">
-                                     <ul class="nav flex-column">
-                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.color.*') ? 'active' : '' }}">
-                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.color.index') }}">
-                                                 <span class="nav-link-text">Color</span>
-                                             </a>
-                                         </li>
-                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.model.*') ? 'active' : '' }}">
-                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.model.index') }}">
-                                                 <span class="nav-link-text">Model</span>
-                                             </a>
-                                         </li>
-                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.module.model-year.*') ? 'active' : '' }}">
-                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.module.model-year.index') }}"><span class="nav-link-text">Model Year</span></a>
-                                         </li>
-                                     </ul>
-                                 </li>
-                             </ul>
-                         </li>
-                     </ul>
-                     <!-- Vehicle Management -> Dependency !-->
-                     <ul class="navbar-nav flex-column">
-                         <li class="nav-item @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.*')) active @endif">
-                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dependency_pages">
-                                 <span class="nav-icon-wrap">
-                                     <span class="svg-icon">
-                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                             <circle cx="9" cy="7" r="4" />
-                                             <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                                             <path d="M16 11h6m-3 -3v6" />
-                                         </svg>
-                                     </span>
-                                 </span>
-                                 <span class="nav-link-text">Dependency</span>
-                             </a>
-                             <ul id="dependency_pages" class="nav flex-column collapse  nav-children @if (Route::is('admin.version1.vehicle-management.vehicle.dependency.*')) show @endif">
-                                 <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.*') ? 'active' : '' }}">
-                                     <ul class="nav flex-column">
-                                         <li class="nav-item">
-                                             <a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_log">
-                                                 <span class="nav-link-text">Payment</span>
-                                             </a>
-                                             <ul id="dash_log" class="nav flex-column collapse  nav-children {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.*') ? 'show' : '' }}">
-                                                 <li class="nav-item">
-                                                     <ul class="nav flex-column">
-                                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.payment.method.*') ? 'active' : '' }}">
-                                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.dependency.payment.method.index') }}"><span class="nav-link-text">Method</span></a>
-                                                         </li>
-                                                     </ul>
-                                                 </li>
-                                             </ul>
-                                         </li>
-                                         <li class="nav-item {{ Route::is('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.*') ? 'active' : '' }}">
-                                             <a class="nav-link" href="{{ route('admin.version1.vehicle-management.vehicle.dependency.bank.pbl_bank.index') }}"><span class="nav-link-text">Bank</span></a>
-                                         </li>
-                                     </ul>
-                                 </li>
-                             </ul>
-                         </li>
-                     </ul> --}}
                  </div>
                  <!-- Expenses menu end !-->
 

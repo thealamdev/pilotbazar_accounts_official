@@ -7,7 +7,7 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
     Route::get('create', \App\Livewire\VehicleManagement\Stack\Vehicle\CreateVehicleComponent::class)->name('create');
     Route::get('{vehicle}/show', \App\Livewire\VehicleManagement\Show\Vehicle\ShowVehicleComponent::class)->name('show');
     /**
-     * Vehicle payment method and costings routes
+     * Vehicle payment method, costings and sell routes
      */
     Route::prefix('{vehicle}')->group(function () {
         Route::prefix('buy-payment')->name('buy-payment.')->group(function () {
@@ -25,6 +25,14 @@ Route::prefix('vehicles')->name('vehicle.')->group(function () {
         Route::prefix('costings')->name('costing.')->group(function () {
             Route::get('create', \App\Livewire\VehicleManagement\Stack\Vehicle\VehicleCosting\VehicleCostingComponent::class)->name('create');
         });
+    });
+
+    /**
+     * Vehicle sell service and it's categories
+     */
+    Route::prefix('sell-services')->name('sell-service.')->group(function () {
+        Route::get('create', \App\Livewire\VehicleManagement\Stack\SellService\Category\CreateSellServiceCategoryComponent::class)->name('create');
+        // Route::prefix('{vehicle}')->group(function () {});
     });
 
     /**
