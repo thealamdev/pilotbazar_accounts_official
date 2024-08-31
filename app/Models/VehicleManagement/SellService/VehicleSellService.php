@@ -4,9 +4,10 @@ namespace App\Models\VehicleManagement\SellService;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SellServiceCategory extends Model
+class VehicleSellService extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -16,7 +17,10 @@ class SellServiceCategory extends Model
     protected $guarded = ['id'];
 
     /**
-     * Dfine protected property $table
+     * Define public method sell_service
      */
-    protected $table = 'sell_service_categories';
+    public function sell_service()
+    {
+        return $this->belongsTo(SellServiceCategory::class, 'sell_service_category_id', 'id');
+    }
 }

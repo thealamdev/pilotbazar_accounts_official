@@ -8,6 +8,7 @@ use App\Models\VehicleManagement\Vehicle\Vehicle;
 use App\Models\VehicleManagement\SellService\SellServiceCategory;
 use App\Livewire\Forms\VehicleManagement\SellService\CreateVehicleSellServiceRequest;
 use App\Livewire\Forms\VehicleManagement\Vehicle\VehicleSell\CreateVehicleSellRequest;
+use App\Models\VehicleManagement\SellService\VehicleSellService;
 use App\Services\VehicleManagement\Stack\Vehicle\VehicleSell\CreateVehicleSellService;
 
 class CreateVehicleSellComponent extends Component
@@ -54,16 +55,16 @@ class CreateVehicleSellComponent extends Component
     public $vehicle;
 
     /**
-     * Define public property $costing_details
-     * @var string
-     */
-    public $vehicle_id;
-
-    /**
      * Define public property $sell_service_categories
      * @var array|object
      */
     public $sell_service_categories;
+
+    /**
+     * Define public property $sell_services
+     * @var array|object
+     */
+    public $sell_services;
 
     /**
      * Define public form object $form
@@ -97,11 +98,12 @@ class CreateVehicleSellComponent extends Component
          * Set value to createVehicleSellServiceRequest form.
          */
         $this->createVehicleSellServiceRequest->vehicle_id = $this->vehicle->id;
-        
+
         /**
-         * Sell service category add or create
+         * Sell service category datas
          */
         $this->sell_service_categories = SellServiceCategory::query()->get();
+        $this->sell_services = VehicleSellService::query()->with('sell_service')->get();
 
         $this->vehicle = Vehicle::query()
             ->with('seller')
@@ -125,18 +127,25 @@ class CreateVehicleSellComponent extends Component
 
     /**
      * Define public method sellServiceSave()
-     * @param $vehicle_id
      */
     public function sellServiceSave()
     {
-        dd($this->createVehicleSellServiceRequest);
+        $this->createVehicleSellServiceRequest->validate();
+        $response = VehicleSellService::create([
+            'vehicle_id' => $this->vehicle->id,
+            'sell_service_category_id' => $this->createVehicleSellServiceRequest->name,
+            'amount'     => $this->createVehicleSellServiceRequest->amount
+        ]);
+        $this->sell_services = VehicleSellService::query()->with('sell_service')->get();
+
+        $this->dispatch('success', ['message' => 'Data insert successfully']);
     }
 
     #[Title('Vehicle Sell')]
     public function render()
     {
         /**
-         * Set old value to the money receipt
+         * Set value to the money receipt
          */
         $this->client_name = $this->form->name;
         $this->mobile = $this->form->mobile;

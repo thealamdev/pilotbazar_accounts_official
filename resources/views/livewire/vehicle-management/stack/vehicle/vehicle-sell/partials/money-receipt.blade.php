@@ -30,21 +30,27 @@
                  </div>
                  <table class="border-collapse border border-black w-100">
                      <tr>
-                         <td class="border border-black px-3 py-1 text-black w-50 fs-5 font-bold">Name</td>
-                         <td class="border border-blac px-3 py-1 text-black w-50 fs-5 font-bold">{{ $client_name ? $client_name : $vehicle->seller?->name }}</td>
+                         <td class="border border-black px-3 py-1 text-black w-25 fs-5 font-bold">Name</td>
+                         <td class="border border-blac px-3 py-1 text-black w-25 fs-5 font-bold">{{ $client_name ? $client_name : $vehicle->seller?->name }}</td>
+
+                         <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">NID NO</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ $nid ? $nid : $vehicle?->seller?->nid }}</td>
                      </tr>
-                     <tr>
+                     {{-- <tr>
                          <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">NID NO</td>
                          <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $nid ? $nid : $vehicle?->seller?->nid }}</td>
-                     </tr>
+                     </tr> --}}
                      <tr>
-                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">MOBILE</td>
-                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $mobile ? $mobile : $vehicle->seller?->mobile }}</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">MOBILE</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ $mobile ? $mobile : $vehicle->seller?->mobile }}</td>
+
+                         <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">ADDRESS</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ $address ? $address : $vehicle?->seller?->address }}</td>
                      </tr>
-                     <tr>
+                     {{-- <tr>
                          <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">ADDRESS</td>
                          <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $address ? $address : $vehicle?->seller?->address }}</td>
-                     </tr>
+                     </tr> --}}
                  </table>
 
                  <table class="border-collapse border border-slate-500 w-100 mt-7">
@@ -70,6 +76,18 @@
                      </tr>
                  </table>
 
+                 <!-- Sell Service Table Start -->
+                 <table class="border-collapse border border-slate-500 w-100 mt-7">
+                     @foreach ($sell_services as $each)
+                         <tr>
+                             <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $each?->sell_service?->name }}</td>
+                             <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold"> {{ $each?->amount }} /=</td>
+                         </tr>
+                     @endforeach
+
+                 </table>
+                 <!-- Sell Service Table End -->
+
                  <table class="border-collapse border border-slate-500 w-100 mt-7">
                      <tr>
                          <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">Car Price</td>
@@ -90,7 +108,6 @@
                          <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">Customer Due</td>
                          <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ number_format((int) $sell_price - $vehicle->buyPayments->sum('amount'), 0) }} /=</td>
                      </tr>
-
                  </table>
 
                  <div class="comment pt-3">
