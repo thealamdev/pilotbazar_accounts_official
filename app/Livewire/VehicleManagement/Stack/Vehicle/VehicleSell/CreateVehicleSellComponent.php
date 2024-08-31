@@ -14,6 +14,12 @@ use App\Services\VehicleManagement\Stack\Vehicle\VehicleSell\CreateVehicleSellSe
 class CreateVehicleSellComponent extends Component
 {
     /**
+     * Define public property $today
+     * @var Date
+     */
+    public $today;
+
+    /**
      * Define public property $client_name
      * @var string
      */
@@ -82,6 +88,7 @@ class CreateVehicleSellComponent extends Component
      */
     public function mount(Vehicle $vehicle): void
     {
+        $this->today = date('d-m-y');
         /**
          * Set old value into the form 
          */

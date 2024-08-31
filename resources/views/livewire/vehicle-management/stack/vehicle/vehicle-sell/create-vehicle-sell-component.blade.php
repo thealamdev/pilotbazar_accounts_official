@@ -116,8 +116,8 @@
 
     <div class="col-lg-12 mt-3 d-flex justify-content-between">
         <div class="print-save">
-            <button class="border border-slate-500 bg-transparent rounded px-3 py-1" onclick="saveDiv('printMoneyReceipt', 'Receipt')">Save as PDF</button>
-            <button class="border border-slate-500 bg-transparent rounded px-3 py-1" onclick="printDiv('printMoneyReceipt', 'Receipt')">Print</button>
+            <button class="border border-slate-500 bg-transparent rounded px-3 py-1" onclick="saveDiv('printMoneyReceipt', '{{ $client_name . '-' . $today }}')">Save as PDF</button>
+            <button class="border border-slate-500 bg-transparent rounded px-3 py-1" onclick="printDiv('printMoneyReceipt', '{{ $client_name . '-' . $today }}')">Print</button>
         </div>
         <div class="services">
             <button type="button" data-bs-target="#sellServiceSaveModal" data-bs-toggle="modal" class="border border-slate-500 bg-transparent rounded px-3 py-1">Sell Services</button>
