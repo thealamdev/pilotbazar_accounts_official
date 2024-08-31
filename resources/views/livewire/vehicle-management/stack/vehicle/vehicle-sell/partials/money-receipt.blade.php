@@ -32,7 +32,6 @@
                      <tr>
                          <td class="border border-black px-3 py-1 text-black w-25 fs-5 font-bold">Name</td>
                          <td class="border border-blac px-3 py-1 text-black w-25 fs-5 font-bold">{{ $client_name ? $client_name : $vehicle->seller?->name }}</td>
-
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">NID NO</td>
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ $nid ? $nid : $vehicle?->seller?->nid }}</td>
                      </tr>
@@ -40,7 +39,6 @@
                      <tr>
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">MOBILE</td>
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ $mobile ? $mobile : $vehicle->seller?->mobile }}</td>
-
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">ADDRESS</td>
                          <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ $address ? $address : $vehicle?->seller?->address }}</td>
                      </tr>
@@ -74,7 +72,8 @@
                      @foreach ($sell_services as $each)
                          <tr>
                              <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $each?->sell_service?->name }}</td>
-                             <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold"> {{ $each?->amount }} /=</td>
+                             <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold"> {{ $each?->amount }} /=</td>
+                             <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold"> {{ Helper::ISODate($each?->created_at) }}</td>
                          </tr>
                      @endforeach
 
@@ -83,23 +82,27 @@
 
                  <table class="border-collapse border border-slate-500 w-100 mt-7">
                      <tr>
-                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">Car Price</td>
-                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ number_format((float) $sell_price, 0) }} /=</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">Car Price(Main Price + Sell Services)</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ number_format($sell_services->sum('amount') + (float) $sell_price, 0) }} /=</td>
+                         <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ Helper::ISODate($vehicle->created_at) }} (Sell Date)</td>
                      </tr>
                      @foreach ($vehicle->buyPayments as $each)
                          <tr>
-                             <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $each?->paymentMethod->name }}</td>
-                             <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ number_format($each?->amount, 0) }} /=</td>
+                             <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ $each?->paymentMethod->name }}(Sell Date)</td>
+                             <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ number_format($each?->amount, 0) }} /=</td>
+                             <td class="border border-slate-600 px-3 py-1 text-black w-25 fs-5 font-bold">{{ Helper::ISODate($each->creatd_at) }}</td>
                          </tr>
                      @endforeach
                      <tr>
                          <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">Total Paid</td>
-                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ number_format($vehicle->buyPayments->sum('amount'), 0) }} /=</td>
+                         <td colspan="2" class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ number_format($vehicle->buyPayments->sum('amount'), 0) }} /=</td>
                      </tr>
 
                      <tr>
                          <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">Customer Due</td>
-                         <td class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold">{{ number_format((int) $sell_price - $vehicle->buyPayments->sum('amount'), 0) }} /=</td>
+                         <td colspan="2" class="border border-slate-600 px-3 py-1 text-black w-50 fs-5 font-bold text-danger">
+                             {{ number_format($sell_services->sum('amount') + $sell_price - $vehicle->buyPayments->sum('amount'), 0) }} /=
+                         </td>
                      </tr>
                  </table>
 
